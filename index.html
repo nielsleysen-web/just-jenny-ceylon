@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just Jenny – Ceylon Cinnamon 7200mg with MCT Oil</title>
+<meta name="description" content="Just Jenny Ceylon Cinnamon – 12:1 extract equal to 7,200 mg raw cinnamon in one MCT oil softgel a day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body x-data="page()" x-init="init()">
+
+<!-- Announcement bar -->
+<div class="announce">
+  <span class="announce-sale">FALL SALE</span>
+  <span>Shop now and get up to 70% off</span>
+  <span class="countdown" aria-label="Sale ends in">
+    <span class="cd" x-text="hh">01</span><small>hrs</small>
+    <span class="cd" x-text="mm">52</span><small>min</small>
+    <span class="cd" x-text="ss">33</span><small>sec</small>
+  </span>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="logo-row">
+    <a href="#top" aria-label="Just Jenny – home"><img src="assets/logo.png" alt="Just Jenny" class="logo"></a>
+  </div>
+  <div class="ticker ticker-orange" aria-label="90-Day Money-Back Guarantee · Buy 2 Get 1 Free · Up To 70% Off">
+    <div class="ticker-track" aria-hidden="true">
+      <template x-for="i in 24"><span class="ticker-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span x-text="['90-Day Money-Back Guarantee','Buy 2 Get 1 Free','Up To 70% Off'][(i-1)%3]"></span></span></template>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="top" x-ref="hero" class="hero">
+  <div class="wrap hero-grid">
+
+    <!-- Gallery column -->
+    <div class="col-gallery">
+      <div class="gallery-main">
+        <div class="ebook-badge">FREE EXCLUSIVE E-BOOK WITH EVERY ORDER TODAY</div>
+        <template x-if="img === 0">
+          <div class="pouch pouch-lg">
+            <div class="pouch-kicker">Authentic Sri Lankan Ceylon</div>
+            <div class="pouch-brand">Just Jenny</div>
+            <div class="pouch-name">Ceylon<br>Cinnamon</div>
+            <div class="pouch-pill">7200mg equivalent · MCT oil</div>
+            <div class="pouch-count">30 SOFTGELS</div>
+          </div>
+        </template>
+        <template x-if="img !== 0">
+          <div class="ph-label" x-text="'[Photo: ' + thumbs[img].label + ']'"></div>
+        </template>
+      </div>
+      <div class="thumbs">
+        <template x-for="(t, i) in thumbs" :key="i">
+          <button type="button" class="thumb" :class="img === i && 'is-active'" @click="img = i" :aria-label="t.label" x-text="t.short"></button>
+        </template>
+      </div>
+
+      <div class="acc-list">
+        <template x-for="(a, i) in productAcc" :key="i">
+          <div class="acc">
+            <button type="button" class="acc-head" @click="acc = acc === i ? -1 : i" :aria-expanded="acc === i">
+              <span x-text="a.t"></span><span class="acc-sign" x-text="acc === i ? '−' : '+'"></span>
+            </button>
+            <div class="acc-body" x-show="acc === i" x-text="a.body"></div>
+          </div>
+        </template>
+      </div>
+
+      <div class="experts">
+        <h3>This is what experts are saying</h3>
+        <div class="expert-grid">
+          <template x-for="n in 3"><div class="expert-video"><span class="play-dark"></span><div x-text="'[Video: Expert ' + n + ']'"></div></div></template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buy box -->
+    <div class="col-buy">
+      <div class="rating-line"><span x-html="stars(4.8, 98)"></span><span>Rated 4.8/5 based on 11.417 reviews</span></div>
+      <h1 class="product-title">Ceylon Cinnamon 7200mg Equivalent with MCT Oil</h1>
+      <ul class="hero-bullets">
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg></span>Restores Insulin Sensitivity</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg></span>Stabilizes Blood Sugar Levels</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>Supports Blood Pressure Naturally</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>Supports Steady Energy</li>
+      </ul>
+
+      <div class="sold-card">
+        <div class="sold-bar"><div style="width: 93%"></div></div>
+        <span>[93]% Sold</span>
+      </div>
+
+      <div class="price-row">
+        <span class="price" x-text="cur.price"></span>
+        <span class="was" x-text="cur.was"></span>
+        <span class="sale-tag" x-text="'Fall Sale – ' + cur.save"></span>
+      </div>
+
+      <div class="low-stock">Low Stock – Selling Fast</div>
+
+      <div class="bundle-list">
+        <template x-for="b in bundles" :key="b.id">
+          <button type="button" class="bundle" :class="bundle === b.id && 'is-active'" @click="bundle = b.id" :aria-pressed="bundle === b.id">
+            <span class="radio"><span></span></span>
+            <span class="bundle-qty" x-text="'×' + b.qty"></span>
+            <span class="bundle-info"><strong x-text="b.title"></strong><small x-text="'You save ' + b.save"></small></span>
+            <span class="bundle-price"><strong x-text="b.price"></strong><s x-text="b.was"></s></span>
+            <span class="bundle-badge" x-show="b.badge" x-text="b.badge"></span>
+          </button>
+        </template>
+      </div>
+
+      <button type="button" class="atc-main" @click="addToCart(bundle)">
+        <span>ADD TO CART | <span x-text="cur.price"></span> <s x-text="cur.was"></s></span>
+        <small>90-Day Money-Back Guarantee</small>
+      </button>
+      <div class="toast" role="status" x-show="toast" x-transition x-text="toastText"></div>
+      <div class="guarantees">
+        <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-Day Guarantee</span>
+        <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Fast Shipping</span>
+      </div>
+
+      <div class="mbg-card">
+        <div class="mbg-badge"><span>90</span><small>DAYS</small></div>
+        <div><div class="mbg-title">90-Day Money-Back Guarantee</div><div class="mbg-sub">Less than [1]% of customers claim our 90-day money-back guarantee.</div></div>
+      </div>
+
+      <div class="warn">
+        <div class="warn-head"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Heads up: limited stock</div>
+        Recent batches have sold out fast, so lock in today's sale price while it lasts. A subscription keeps your supply coming even when we run low. Only sold here – not on Amazon or eBay.
+      </div>
+
+      <div class="ph-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg><div>[Image: guarantees]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer report -->
+<section class="report">
+  <div class="wrap report-grid">
+    <div class="report-stats">
+      <div class="stat"><div class="stat-num">[XX]%</div><p>would keep Just Jenny in their daily routine</p></div>
+      <div class="stat"><div class="stat-num">[XX]%</div><p>felt steadier energy through the day*</p></div>
+      <div class="stat"><div class="stat-num">[XX]%</div><p>found it easier on the stomach than other cinnamon supplements*</p></div>
+      <div class="stat"><div class="stat-num">[XX]%</div><p>would recommend it to a friend*</p></div>
+    </div>
+    <div class="report-cta">
+      <h2>What Customers Report After Using Just Jenny's Ceylon Cinnamon</h2>
+      <a href="#offers" class="btn btn-white">Try Risk-Free Today</a>
+      <p class="guar-line light"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-Day Money-Back Guarantee</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why it works -->
+<section id="benefits" class="sec">
+  <div class="wrap">
+    <h2 class="h2 center">Why This Ceylon Cinnamon Formula Actually Works</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="ph-img">[Photo: Ceylon cinnamon sticks]</div><div class="why-body"><h3>Genuine Ceylon, Not Cassia</h3><p>Every softgel uses Cinnamomum verum – true Ceylon cinnamon from Sri Lanka – concentrated 12:1 to match 7,200 mg of raw cinnamon. Ceylon is naturally low in coumarin, which matters when you take it every day for the long haul.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: cinnamon powder in a bowl]</div><div class="why-body"><h3>7,200 mg Potency, One Softgel</h3><p>Most cinnamon supplements are underdosed at a few hundred milligrams – too little to matter. Just Jenny delivers the 7,200 mg equivalent in a single daily softgel, not a handful of capsules.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: MCT oil + softgels]</div><div class="why-body"><h3>MCT-Powered Absorption</h3><p>Cinnamon's active compounds are fat-soluble. Suspended in MCT oil, they're absorbed better than from dry powder – and gentler on your stomach.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: lab testing]</div><div class="why-body"><h3>Third-Party Lab Verified</h3><p>Every batch is independently tested for purity and potency, so what's on the label is what's in the softgel.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Real stories -->
+<section id="reviews" class="sec bg-vanilla clip">
+  <div class="wrap center-col">
+    <span x-html="stars(4.8, 147)"></span>
+    <h2 class="h2 center">Real Stories, <span class="accent">Real Results</span></h2>
+    <p class="muted center">Honest experiences with Just Jenny Ceylon Cinnamon</p>
+    <div class="full-bleed">
+      <div class="ticker">
+        <div class="ticker-track slow">
+          <template x-for="i in 16"><div class="review-img"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><span x-text="'[Review image ' + (((i-1)%8)+1) + ']'"></span></div></template>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-x w100">
+      <div class="story-grid">
+        <template x-for="(st, i) in storiesPage" :key="revPage + '-' + i">
+          <div class="story-card">
+            <div class="story-top"><span x-html="stars(st.r, 110)"></span><strong x-text="st.r.toFixed(1)"></strong></div>
+            <h3 x-text="st.title"></h3>
+            <p x-text="st.text"></p>
+            <div class="chips"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>
+            <div class="story-foot">
+              <div class="avatar-ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verified by <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div class="pager">
+      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Previous reviews">‹</button>
+      <div class="dots">
+        <template x-for="p in [0,1]"><button type="button" class="dot-btn" @click="revPage = p" :aria-label="'Reviews page ' + (p+1)"><span class="dot" :class="revPage === p && 'is-active'"></span></button></template>
+      </div>
+      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="More reviews">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- Feel better -->
+<section class="feel clip">
+  <div class="wrap feel-grid">
+    <div class="feel-left">
+      <h2>Feel Better. Every Day.</h2>
+      <p>Simple to take, gentle on your body and made for everyday balance – this is what sets Just Jenny apart.</p>
+      <div class="feel-benefits">
+        <div><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/><circle cx="10" cy="15" r="1.2" fill="#fff" stroke="none"/><circle cx="14" cy="13" r="1" fill="#fff" stroke="none"/><circle cx="13" cy="17" r=".8" fill="#fff" stroke="none"/></svg>Blood Sugar Support</div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 1.5s-3 3.4-3 5.6a3 3 0 0 0 6 0c0-2.2-3-5.6-3-5.6Z"/><path d="M1.5 13.5c1.75-1.2 3.5-1.2 5.25 0s3.5 1.2 5.25 0 3.5-1.2 5.25 0 3.5 1.2 5.25 0"/><path d="M7 16.5v5"/><path d="m5.3 19.8 1.7 1.7 1.7-1.7"/><path d="M12 16.5v5"/><path d="m10.3 19.8 1.7 1.7 1.7-1.7"/><path d="M17 16.5v5"/><path d="m15.3 19.8 1.7 1.7 1.7-1.7"/></svg>Better Daily Absorption</div>
+        <div><svg viewBox="0 0 24 24"><path d="M10 2v4c0 2-4 3-4 8a6 6 0 0 0 6 6c4 0 8-3 8-7 0-3-2-5-4.5-5-1.5 0-2.5 1-2.5 2.5S12 11 11.5 9.5 13 7 13 6V2"/><path d="M7.2 17.2C6 18.4 4.5 19 3 18.6"/><path d="M10.5 15.5c1.8 1 4 .8 5.5-.5"/></svg>Gentle on the Stomach</div>
+        <div><svg viewBox="0 0 24 24"><path d="M2 8.5C2 6 4 5 7 5h11c2.5 0 4 1.5 4 3.5 0 2.5-2.5 4.5-6 6.5l-5 3.5c-1.5 1-3 .5-3.5-1C6 14.5 2 12.5 2 8.5Z"/><path d="M12.5 5c-1 3-1 6 .5 9.5"/><path d="M15 15.6c-.2 1.8.6 3.2 1.7 3.2s1.6-1.2 1.1-2.9"/></svg>Liver-Friendly Formula</div>
+      </div>
+    </div>
+    <div class="feel-pouches" role="img" aria-label="Three pouches of Just Jenny Ceylon Cinnamon">
+      <div class="pouch pouch-side l"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 SOFTGELS</div></div>
+      <div class="pouch pouch-mid"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name">Ceylon<br>Cinnamon</div><div class="pouch-pill">7200mg equivalent · MCT oil</div><div class="pouch-count">30 SOFTGELS</div></div>
+      <div class="pouch pouch-side r"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 SOFTGELS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Proven benefits (flip cards) -->
+<section class="proven clip">
+  <div class="wrap-narrow">
+    <div class="center-col">
+      <h2 class="h2-lg"><span class="accent">Proven Benefits.</span> Backed by Science.</h2>
+      <p class="lead">No empty promises. Concentrated <strong>Ceylon cinnamon extract</strong> in a bioavailable MCT oil softgel, made to support healthy blood sugar, liver function and daily metabolic balance.</p>
+    </div>
+    <div class="flip-grid">
+      <template x-for="(a, i) in benefits" :key="i">
+        <div class="flip" :class="ben === i && 'is-flipped'">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div class="flip-img" x-text="'[Photo: ' + a.img + ']'"></div>
+              <div class="flip-text"><h3 x-text="a.t"></h3><p x-text="a.sub"></p></div>
+              <button type="button" class="plus" @click="ben = i" :aria-label="'More about ' + a.t"><span>+</span></button>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-head"><h3 x-text="a.t"></h3><button type="button" class="close" @click="ben = -1" :aria-label="'Close ' + a.t">−</button></div>
+              <p x-text="a.deep"></p>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div class="center-col cta-stack">
+      <a href="#offers" class="btn btn-wide">Try Risk-Free Today</a>
+      <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
+    </div>
+  </div>
+  <div class="ticker badge-ticker" aria-label="GMO-Free · Gluten-Free · Zero additives">
+    <div class="ticker-track" aria-hidden="true">
+      <template x-for="i in 24"><span class="badge-item"><span class="badge-ring" x-html="badgeIcon((i-1)%3)"></span><span x-text="['GMO-Free','Gluten-Free','Zero additives'][(i-1)%3]"></span></span></template>
+    </div>
+  </div>
+</section>
+
+<!-- Journey timeline -->
+<section class="sec">
+  <div class="wrap journey" x-ref="journey">
+    <div class="journey-left">
+      <div class="journey-banner"><span class="ph-tag">[Photo: happy couple 50+ at home]</span><div class="journey-overlay"><span>JUST·JENNY</span></div></div>
+      <h2 class="h2-xl"><span class="accent">Your Wellness</span><br>Journey with Just Jenny</h2>
+      <p class="lead dark">Just Jenny works best as part of your everyday routine. Take your softgel daily, follow the free movement plan, and build better habits one week at a time.</p>
+      <a href="#offers" class="btn btn-wide">Start My Routine</a>
+      <div class="guar-line dark"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
+    </div>
+    <div class="timeline" x-ref="timeline">
+      <div class="tl-line"><div class="tl-fill" :style="'height:' + (tlP * 100).toFixed(2) + '%'"></div></div>
+      <ol>
+        <template x-for="(w, i) in weeks" :key="i">
+          <li class="tl-item" :data-week="i">
+            <span class="tl-ring" :class="i < tlAct && 'on'"><span></span></span>
+            <div class="tl-head" x-text="w.t"></div>
+            <ul>
+              <template x-for="it in w.items"><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span x-text="it"></span></li></template>
+            </ul>
+          </li>
+        </template>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 5 reasons -->
+<section class="sec bg-blush">
+  <div class="wrap-980 center-col">
+    <span class="eyebrow-tag">5 REASONS WHY</span>
+    <h2 class="h2-md">Just Jenny Ceylon Cinnamon is Different From Everything You've Tried</h2>
+    <div class="carousel">
+      <div class="carousel-track" :style="trackStyle">
+        <template x-for="(rc, i) in reasons" :key="i">
+          <article class="reason" :style="'width:' + cardW" :class="i === rStartC && 'is-first'">
+            <div class="ph-img" x-text="'[Photo: ' + rc.photo + ']'"></div>
+            <div class="reason-body"><span class="reason-tag" x-text="'REASON ' + (i+1)"></span><h3 x-text="rc.t"></h3><p x-text="rc.body"></p></div>
+          </article>
+        </template>
+      </div>
+    </div>
+    <div class="dots">
+      <template x-for="d in (reasons.length - per + 1)"><button type="button" class="dot-btn" @click="rStart = d - 1" :aria-label="'Show reasons from ' + d"><span class="dash" :class="rStartC === d - 1 && 'is-active'"></span></button></template>
+    </div>
+    <div class="arrows">
+      <button type="button" class="arrow" :disabled="rStartC === 0" @click="rStart = Math.max(0, rStartC - 1)" aria-label="Previous reasons"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button type="button" class="arrow" :disabled="rStartC >= reasons.length - per" @click="rStart = Math.min(reasons.length - per, rStartC + 1)" aria-label="Next reasons"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+    <a href="#offers" class="btn">Try Risk-Free Today</a>
+    <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="compare">
+  <div class="wrap compare-grid">
+    <div class="cmp-table">
+      <div class="cmp-col us">
+        <div class="cmp-head"><div class="cmp-pouch"><span>JUST JENNY</span><b>Ceylon<br>Cinnamon</b></div><span class="cmp-title">Just Jenny</span></div>
+        <template x-for="row in compare"><div class="cmp-cell"><span x-html="row.icon"></span><span x-text="row.us"></span></div></template>
+      </div>
+      <div class="cmp-col them">
+        <div class="cmp-head"><div class="cmp-photo">[Photo: capsules]</div><span class="cmp-title">Other Brands</span></div>
+        <template x-for="row in compare"><div class="cmp-cell"><span class="x-dot">✕</span><span x-text="row.them"></span></div></template>
+      </div>
+    </div>
+    <div class="cmp-copy">
+      <h2>Just Jenny vs. Other Brands</h2>
+      <ul>
+        <li><span class="ck"></span><span><strong>Real Ceylon, Real Dose</strong> – the 7,200 mg equivalent in one daily softgel</span></li>
+        <li><span class="ck"></span><span><strong>Gentle Every Day</strong> – no burning, no aftertaste, easy on the stomach</span></li>
+        <li><span class="ck"></span><span><strong>Made for the Long Run</strong> – naturally low in coumarin, suited to daily use</span></li>
+        <li><span class="ck"></span><span><strong>Nothing You Don't Need</strong> – no fillers, no GMOs, no harsh additives</span></li>
+      </ul>
+      <a href="#offers" class="btn btn-white">Try Risk-Free Today</a>
+      <div class="guar-line light center"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
+    </div>
+  </div>
+</section>
+
+<!-- Risk free -->
+<section class="riskfree clip">
+  <div class="wrap riskfree-grid">
+    <div class="riskfree-copy">
+      <svg width="190" height="190" viewBox="0 0 200 200" role="img" aria-label="90 days risk-free guarantee"><defs><path id="seal-top" d="M 30 100 A 70 70 0 0 1 170 100"/><path id="seal-bot" d="M 30 100 A 70 70 0 0 0 170 100"/></defs><circle cx="100" cy="100" r="96" fill="#A85F3C"/><circle cx="100" cy="100" r="56" fill="#fff"/><circle cx="100" cy="100" r="50" fill="none" stroke="#A85F3C" stroke-width=".8" opacity=".6"/><text font-family="Jost, sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="6"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">RISK FREE</textPath></text><text font-family="Jost, sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="6" dominant-baseline="hanging"><textPath href="#seal-bot" startOffset="50%" text-anchor="middle">GUARANTEE</textPath></text><circle cx="26" cy="100" r="2.2" fill="#fff"/><circle cx="174" cy="100" r="2.2" fill="#fff"/><text x="100" y="108" text-anchor="middle" font-family="Jost, sans-serif" font-size="46" fill="#A85F3C">90</text><line x1="84" y1="118" x2="116" y2="118" stroke="#A85F3C" opacity=".8"/><text x="100" y="134" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#A85F3C" letter-spacing="4">DAYS</text></svg>
+      <div class="eyebrow">FEEL THE DIFFERENCE</div>
+      <h2 class="h2-xl light-w">90-Day Risk-Free Trial</h2>
+      <p class="lead">Try it for 90 days. If you're not happy, send it back for a full refund – no questions asked.</p>
+      <a href="#offers" class="btn btn-shadow">Try Risk-Free Today</a>
+    </div>
+    <div class="riskfree-photo"><div>[Photo: smiling woman 50+ holding cinnamon sticks – cut-out, no background]</div></div>
+  </div>
+</section>
+
+<!-- Real people video stories -->
+<section class="sec bg-vanilla">
+  <div class="center-col">
+    <h2 class="h2-md">Real People. Real Results.</h2>
+    <p class="muted">Hear it in their own words.</p>
+    <div class="scroll-x stories-wrap">
+      <div class="video-grid">
+        <template x-for="n in 4"><div class="story-video"><span class="ph-tag dark" x-text="'[Story video ' + n + ']'"></span><span class="play-light"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></template>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Offers -->
+<section id="offers" class="sec bg-cream">
+  <div class="wrap-1000 center-col">
+    <h2 class="h2 center"><span class="accent">Share the benefits.</span><br>Stock up. Save more.</h2>
+    <p class="muted center narrow">Genuine Ceylon cinnamon, concentrated 12:1 and suspended in MCT oil – easy to absorb, gentle on the stomach, made for every day.</p>
+    <div class="scroll-x w100 pt14">
+      <div class="offer-grid">
+        <template x-for="b in bundles" :key="b.id">
+          <div class="offer" :class="b.id === 2 && 'is-popular'">
+            <span class="offer-badge" x-show="b.badge" x-text="b.badge"></span>
+            <span class="offer-img">
+              <template x-for="(pk, k) in packs(b.qty)"><span class="mini-pouch" :style="pk"><span>JUST JENNY</span><b>Ceylon<br>Cinnamon</b></span></template>
+            </span>
+            <span class="offer-price"><strong x-text="b.price"></strong><s x-text="b.was"></s></span>
+            <span class="save-tag" x-text="'SAVE ' + b.save"></span>
+            <button type="button" class="offer-atc" @click="addToCart(b.id)">ADD TO CART</button>
+            <span class="offer-guar">
+              <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-Day Guarantee</span>
+              <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Fast Shipping</span>
+            </span>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div class="toast" role="status" x-show="toast" x-transition x-text="toastText"></div>
+  </div>
+</section>
+
+<!-- Customer reviews feed -->
+<section class="sec">
+  <div class="wrap-1000 center-col">
+    <h2 class="h2-md">Customer Reviews</h2>
+    <div class="rv-summary">
+      <div class="rv-avg"><span class="rv-num">[4.8]</span><span x-html="stars(4.8, 120)"></span><span class="tp-muted">Based on [X,XXX] reviews</span></div>
+      <div class="rv-bars">
+        <template x-for="(w, i) in [78,14,4,2,2]"><div class="rv-bar"><span x-text="(5-i) + ' star'"></span><span class="bar"><span :style="'width:' + w + '%'"></span></span><span class="tp-muted">[X]</span></div></template>
+      </div>
+      <div class="rv-photos">
+        <span class="tp-muted">Customer photos &amp; videos</span>
+        <div><template x-for="n in 6"><span class="rv-thumb" :class="n % 2 && 'alt'"></span></template><a href="#reviews">See more</a></div>
+      </div>
+    </div>
+    <div class="rv-feed">
+      <template x-for="(fr, i) in feed" :key="i">
+        <article class="tp-card">
+          <div class="tp-user"><span class="tp-avatar" :style="'background:' + fr.bg" x-text="fr.initials"></span><div><div class="tp-name" x-text="'[Customer name ' + (i+1) + ']'"></div><div class="tp-muted">[1] review · [Country]</div></div></div>
+          <div class="tp-sep"></div>
+          <div class="tp-row"><span x-html="stars(fr.r, 100)"></span><span class="tp-muted" x-text="fr.ago"></span></div>
+          <h3 x-text="'[Review title ' + (i+1) + ']'"></h3>
+          <p>[Paste a real customer review here – 2 to 5 sentences in their own words.]</p>
+          <div class="tp-photo" x-show="fr.photo"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>[Customer photo]</div>
+          <div class="chips"><span class="chip-g">[Date of experience]</span><span class="chip-g">Verified purchase</span></div>
+          <div class="tp-sep"></div>
+          <div class="tp-actions">
+            <button type="button"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Useful</button>
+            <button type="button"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/></svg>Share</button>
+          </div>
+        </article>
+      </template>
+    </div>
+    <a href="#reviews" class="link-more">Read More Reviews</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec bg-vanilla">
+  <div class="wrap-760">
+    <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+    <template x-for="(a, i) in faqs" :key="i">
+      <div class="acc">
+        <button type="button" class="acc-head" @click="faq = faq === i ? -1 : i" :aria-expanded="faq === i"><span x-text="a.t"></span><span class="acc-sign" x-text="faq === i ? '−' : '+'"></span></button>
+        <div class="acc-body" x-show="faq === i" x-text="a.body"></div>
+      </div>
+    </template>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="f-brand">
+        <div class="f-logo">Just Jenny</div>
+        <div><em>Real Ceylon cinnamon, one softgel a day.</em></div>
+        <div>[support e-mail]</div>
+        <div>We're here 7 days a week.</div>
+        <div>[Phone support hours]</div>
+      </div>
+      <div class="f-links">
+        <div class="f-head">QUICK LINKS</div>
+        <a href="#top">Home</a><a href="#footer">Manage My Subscription</a><a href="#footer">Contact</a><a href="#faq">FAQ</a><a href="#footer">Track My Order</a><a href="#footer">Cancel or Change My Order</a>
+      </div>
+      <div class="f-links">
+        <div class="f-head">POLICIES</div>
+        <a href="#footer">Privacy Policy</a><a href="#footer">Terms of Service</a><a href="#footer">Refund Policy</a><a href="#footer">Shipping Policy</a>
+      </div>
+      <div class="f-news">
+        <div class="f-head">JOIN OUR EMAIL LIST</div>
+        <div>Sale alerts, offers and simple tips for steadier energy. That's it.</div>
+        <form x-show="!subscribed" @submit.prevent="subscribed = true" class="news-form">
+          <label for="jj-email" class="sr-only">Email address</label>
+          <input id="jj-email" type="email" required placeholder="Email address">
+          <button type="submit">Sign Up</button>
+        </form>
+        <div x-show="subscribed" class="news-ok" role="status">Thanks – you're on the list.</div>
+        <small>Unsubscribe in one click.</small>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div><em>Disclosure: These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></div>
+      <div>© 2026, Just Jenny</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky add to cart -->
+<div class="sticky-atc" :class="sticky && 'show'" aria-hidden="true" :aria-hidden="!sticky">
+  <div class="wrap sticky-inner">
+    <div class="sticky-pouch">JUST JENNY<span>Ceylon Cinnamon</span></div>
+    <div class="sticky-text">
+      <div class="sticky-name">Ceylon Cinnamon 7200mg Equivalent with MCT Oil</div>
+      <div class="sticky-rating"><span x-html="stars(4.8, 72)"></span><span>4.8/5 · 11.417 reviews</span></div>
+    </div>
+    <button type="button" class="sticky-btn" @click="addToCart(bundle)">ADD TO CART</button>
+  </div>
+</div>
+
+</body>
+</html>
