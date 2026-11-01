@@ -1,9 +1,9 @@
 // Just Jenny – Ceylon Cinnamon product page logic (Alpine.js)
 function page() {
   const BUNDLES = [
-    { id: 1, qty: 1, title: 'Buy One', save: '50%', price: '$29.99', was: '$59.99', badge: '' },
-    { id: 2, qty: 3, title: 'Buy 2 Get 1 FREE', save: '67%', price: '$59.99', was: '$179.97', badge: 'Most Popular' },
-    { id: 3, qty: 5, title: 'Buy 3 Get 2 FREE', save: '70%', price: '$89.99', was: '$299.95', badge: 'Free Shipping' }
+    { id: 1, qty: 1, title: 'Buy One', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
+    { id: 2, qty: 3, title: 'Buy 2 Get 1 FREE', save: '67%', price: '€59.99', was: '€179.97', badge: 'Most Popular' },
+    { id: 3, qty: 5, title: 'Buy 3 Get 2 FREE', save: '70%', price: '€89.99', was: '€299.95', badge: 'Free Shipping' }
   ];
   const IC = (d) => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
   const BADGE = (d) => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9643A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '<path d="M3 3l18 18"/></svg>';
@@ -12,9 +12,21 @@ function page() {
     // state
     bundle: 2, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0,
     cart: 0, toast: false, toastQty: 0, subscribed: false, sticky: false,
+    whyIdx: 0,
+    vidIdx: 0,
+    storyIdx: 0,
     tlP: 0, tlAct: 0, wide: true, now: Date.now(), end: Date.now() + 6753000,
 
     bundles: BUNDLES,
+    // Customer survey results. Fill in YOUR OWN survey numbers (e.g. value: 84).
+    // While value is null the page shows "[XX]%" and nothing animates.
+    reportStats: [
+      { value: null, label: 'would keep Just Jenny in their daily routine' },
+      { value: null, label: 'felt steadier energy through the day*' },
+      { value: null, label: 'found it easier on the stomach than other cinnamon supplements*' },
+      { value: null, label: 'would recommend it to a friend*' }
+    ],
+    statShown: [0, 0, 0, 0],
     thumbs: [
       { short: 'Pouch', label: 'Product pouch' },
       { short: 'Softgels', label: 'Softgels close-up' },
@@ -27,10 +39,10 @@ function page() {
       { t: 'How It Works', body: 'Take one softgel a day with a meal. The MCT oil carries cinnamon’s fat-soluble compounds for better absorption, so one softgel does the work of several capsules.' }
     ],
     benefits: [
-      { t: 'Blood Sugar Support', sub: 'Supports healthy blood sugar levels', img: 'blood sugar / glucose', deep: 'Ceylon cinnamon contains polyphenols that are studied for their role in how the body handles glucose after meals. Taken every day, it helps support healthy blood sugar levels that are already within the normal range – fewer spikes, fewer afternoon crashes.*' },
-      { t: 'Gentle on the Stomach', sub: 'Designed for comfortable daily use', img: 'woman with a calm stomach', deep: 'Powdered cinnamon capsules can burn, repeat on you or leave a bitter aftertaste. Just Jenny suspends the extract in MCT oil inside a smooth softgel, so it dissolves gently – no burning, no aftertaste, easy to take with breakfast.' },
-      { t: 'Liver Health Support', sub: 'Made with coumarin-free Ceylon cinnamon', img: 'healthy liver / Ceylon vs Cassia', deep: 'Cassia cinnamon – the kind in most supplements and spice jars – is high in coumarin, which can put strain on the liver when taken daily. True Ceylon cinnamon is naturally very low in coumarin, which makes it the better choice for long-term daily use.' },
-      { t: 'Enhanced Absorption', sub: 'Helps your body absorb cinnamon', img: 'MCT oil softgel', deep: 'Cinnamon’s active compounds are fat-soluble. Bound to MCT oil, a fast-digesting fat, more of them are taken up by your body instead of passing straight through – so one softgel works harder than several dry capsules.' }
+      { t: 'Blood Sugar Support', sub: 'Supports healthy blood sugar levels', img: 'blood sugar / glucose', short: 'Ceylon cinnamon is studied for its role in healthy glucose metabolism – one daily softgel helps keep your levels steady.*', deep: 'Ceylon cinnamon contains polyphenols that are studied for their role in how the body handles glucose after meals. Taken every day, it helps support healthy blood sugar levels that are already within the normal range – fewer spikes, fewer afternoon crashes.*' },
+      { t: 'Gentle on the Stomach', sub: 'Designed for comfortable daily use', img: 'woman with a calm stomach', short: 'Suspended in MCT oil inside a smooth softgel – no burning, no bitter aftertaste, easy on your stomach.', deep: 'Powdered cinnamon capsules can burn, repeat on you or leave a bitter aftertaste. Just Jenny suspends the extract in MCT oil inside a smooth softgel, so it dissolves gently – no burning, no aftertaste, easy to take with breakfast.' },
+      { t: 'Liver Health Support', sub: 'Made with coumarin-free Ceylon cinnamon', img: 'healthy liver / Ceylon vs Cassia', short: 'True Ceylon is naturally low in coumarin, so it’s suited to taking every day for the long term.', deep: 'Cassia cinnamon – the kind in most supplements and spice jars – is high in coumarin, which can put strain on the liver when taken daily. True Ceylon cinnamon is naturally very low in coumarin, which makes it the better choice for long-term daily use.' },
+      { t: 'Enhanced Absorption', sub: 'Helps your body absorb cinnamon', img: 'MCT oil softgel', short: 'Cinnamon’s active compounds are fat-soluble – MCT oil helps your body take up more of them.', deep: 'Cinnamon’s active compounds are fat-soluble. Bound to MCT oil, a fast-digesting fat, more of them are taken up by your body instead of passing straight through – so one softgel works harder than several dry capsules.' }
     ],
     weeks: [
       { t: 'Week 1–2: Easy Start', items: ['One softgel a day slots straight into your morning', 'Many people feel their energy start to even out', 'Fewer late-afternoon sugar cravings for some', 'Your body starts getting used to daily Ceylon support'] },
@@ -98,6 +110,14 @@ function page() {
         [0, 20, 40, 60].map((x) => '<rect x="' + x + '" width="18" height="18" fill="#00B67A"/>').join('') +
         '<rect x="80" width="18" height="18" fill="#DCDCE6"/><rect x="80" width="' + last + '" height="18" fill="#00B67A"/>' + pts + '</svg>';
     },
+    tickerIcon(i) {
+      const s = (d) => '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+      return [
+        s('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>'),
+        s('<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>'),
+        s('<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/>')
+      ][i];
+    },
     badgeIcon(i) {
       return [
         BADGE('<path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"/><path d="M5 19l8-8"/>'),
@@ -122,6 +142,45 @@ function page() {
       this._t = setTimeout(() => { this.toast = false; }, 2600);
       // TODO: hook up to your Shopify cart / checkout link here
     },
+    whyScroll() {
+      const el = this.$refs.whyTrack; const card = el.children[0];
+      if (!card) return;
+      const w = card.offsetWidth + 14;
+      this.whyIdx = Math.max(0, Math.min(3, Math.round(el.scrollLeft / w)));
+    },
+    vidScroll(){ const t=this.$refs.vidTrack; if(!t) return; const c=t.querySelector('.story-video'); if(!c) return; const w=c.offsetWidth+12; this.vidIdx=Math.max(0,Math.min(3,Math.round(t.scrollLeft/w))); },
+    vidGo(i){ const t=this.$refs.vidTrack; const c=t.querySelector('.story-video'); t.scrollTo({left:i*(c.offsetWidth+12),behavior:'smooth'}); },
+    storyScroll() {
+      const el = this.$refs.storyTrack; const c = el.children[0];
+      if (!c) return;
+      this.storyIdx = Math.max(0, Math.min(this.stories.length - 1, Math.round(el.scrollLeft / (c.offsetWidth + 12))));
+    },
+    storyGo(i) {
+      const el = this.$refs.storyTrack; const c = el.children[0];
+      i = Math.max(0, Math.min(this.stories.length - 1, i));
+      el.scrollTo({ left: i * (c.offsetWidth + 12), behavior: 'smooth' });
+      this.storyIdx = i;
+    },
+    whyGo(i) {
+      const el = this.$refs.whyTrack; const card = el.children[0];
+      i = Math.max(0, Math.min(3, i));
+      el.scrollTo({ left: i * (card.offsetWidth + 14), behavior: 'smooth' });
+      this.whyIdx = i;
+    },
+    statText(i) {
+      const st = this.reportStats[i];
+      return st.value == null ? '[XX]%' : Math.round(this.statShown[i]) + '%';
+    },
+    countUp() {
+      const dur = 2200, t0 = performance.now();
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur);
+        const ease = 1 - Math.pow(1 - k, 3);
+        this.statShown = this.reportStats.map((s) => (s.value || 0) * ease);
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    },
     measure() {
       this.wide = window.innerWidth > 900;
       const el = this.$refs.timeline;
@@ -143,6 +202,10 @@ function page() {
         this.sticky = !e.isIntersecting && e.boundingClientRect.top < 0;
       });
       io.observe(this.$refs.hero);
+      const io2 = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { io2.disconnect(); this.countUp(); }
+      }, { threshold: 0.35 });
+      io2.observe(this.$refs.report);
       let raf = null;
       const onScroll = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = null; this.measure(); }); };
       window.addEventListener('scroll', onScroll, { passive: true });
