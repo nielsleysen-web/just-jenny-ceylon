@@ -15,3 +15,6 @@ Statische site (HTML + CSS + Alpine.js via CDN). Geen build-stap nodig.
 
 ## Reviews
 Alle Trustpilot-reviews staan in `reviews.js` (`stories` = 6 uitgelichte kaarten, `feed` = alle reviews). Gemiddelde, aantal en sterrenverdeling worden automatisch uit `feed` berekend.
+
+## Bewerken zonder code
+Open `/editor` op de live site (bv. https://just-jenny-ceylon.vercel.app/editor). Teksten en foto's aanpassen, dan **Opslaan & publiceren**: de pagina pusht `content.json` en de foto's (`assets/uploads/`) naar deze repo met jouw GitHub-token; Vercel zet het automatisch live. `apply-content.js` past `content.json` toe op de live pagina.
