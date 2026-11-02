@@ -10,7 +10,7 @@ Statische site (HTML + CSS + Alpine.js via CDN). Geen build-stap nodig.
 
 ## Nog in te vullen voor livegang
 - Alle `[placeholders]`: foto's, video's, cijfers, support-e-mail, telefoonuren.
-- `addToCart()` in app.js koppelen aan je Shopify-cart/checkout (nu alleen een demo-melding).
+- `CHECKOUT_URL` bovenaan app.js op de URL van de custom checkout zetten (nu `/checkout`); elke koopknop stuurt daarheen met `?bundle=<id>&qty=<aantal>`.
 - Ratings/"Verified by Trustpilot" alleen tonen als ze van je echte Trustpilot-profiel komen.
 
 ## Reviews

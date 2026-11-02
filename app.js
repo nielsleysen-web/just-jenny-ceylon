@@ -1,5 +1,8 @@
 // Just Jenny – Ceylon Cinnamon product page logic (Alpine.js)
 function page() {
+  // Checkout: elke "Aggiungi al carrello"-knop stuurt direct door naar deze URL,
+  // met ?bundle=<id>&qty=<aantal>. Pas dit pad aan zodra de custom checkout klaar is.
+  const CHECKOUT_URL = '/checkout';
   const BUNDLES = [
     { id: 1, qty: 1, title: 'Acquista 1', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
     { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '67%', price: '€59.99', was: '€179.97', badge: 'Più popolare' },
@@ -14,7 +17,7 @@ function page() {
     // state
     bundle: 2, img: 0, acc: -1, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 6,
     showReviews: true, // reviews komen uit reviews.js (Trustpilot-export)
-    cart: 0, toast: false, toastQty: 0, subscribed: false, sticky: false,
+    subscribed: false, sticky: false,
     whyIdx: 0,
     vidIdx: 0,
     storyIdx: 0,
@@ -86,7 +89,6 @@ function page() {
     get hh() { return String(Math.floor(this.secs / 3600)).padStart(2, '0'); },
     get mm() { return String(Math.floor((this.secs % 3600) / 60)).padStart(2, '0'); },
     get ss() { return String(this.secs % 60).padStart(2, '0'); },
-    get toastText() { return 'Hai aggiunto ' + this.toastQty + (this.toastQty === 1 ? ' confezione' : ' confezioni') + ' al carrello'; },
     get storiesPage() { return this.stories.slice(this.revPage * 3, this.revPage * 3 + 3); },
     get per() { return this.wide ? 3 : 1; },
     get rStartC() { return Math.min(this.rStart, this.reasons.length - this.per); },
@@ -143,12 +145,7 @@ function page() {
     addToCart(id) {
       const b = BUNDLES.find((x) => x.id === id) || BUNDLES[1];
       this.bundle = b.id;
-      this.cart += b.qty;
-      this.toastQty = b.qty;
-      this.toast = true;
-      clearTimeout(this._t);
-      this._t = setTimeout(() => { this.toast = false; }, 2600);
-      // TODO: hook up to your Shopify cart / checkout link here
+      window.location.href = CHECKOUT_URL + '?bundle=' + b.id + '&qty=' + b.qty;
     },
     whyScroll() {
       const el = this.$refs.whyTrack; const card = el.children[0];
