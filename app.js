@@ -11,7 +11,7 @@ function page() {
   return {
     // state
     bundle: 3, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 3,
-    showReviews: false, // zet op true zodra er echte reviews zijn
+    showReviews: true, // zet op true zodra er echte reviews zijn
     cart: 0, toast: false, toastQty: 0, subscribed: false, sticky: false,
     whyIdx: 0,
     vidIdx: 0,
