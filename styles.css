@@ -713,3 +713,4 @@ svg{flex:none}
 .tp-photo-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
 .tp-card .chips{gap:6px;flex-wrap:nowrap}
 .tp-card .chip-g{white-space:nowrap}
+#offerta{scroll-margin-top:14px}

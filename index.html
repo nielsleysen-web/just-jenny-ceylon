@@ -17,8 +17,8 @@
 
 <!-- Announcement bar -->
 <div class="announce">
-  <span class="announce-text"><span class="announce-sale">FALL SALE</span><span class="announce-sub">Acquista ora e risparmia fino al 70%</span></span>
-  <span class="countdown" aria-label="Sale ends in">
+  <span class="announce-text"><span class="announce-sale">SALDI D'AUTUNNO</span><span class="announce-sub">Acquista ora e risparmia fino al 70%</span></span>
+  <span class="countdown" aria-label="L'offerta termina tra">
     <span class="cd-unit"><span class="cd" x-text="hh">01</span><small>Ore</small></span>
     <span class="cd-unit"><span class="cd" x-text="mm">52</span><small>Min</small></span>
     <span class="cd-unit"><span class="cd" x-text="ss">33</span><small>Sec</small></span>
@@ -28,7 +28,7 @@
 <!-- Header -->
 <header class="site-header">
   <div class="logo-row">
-    <a href="#top" aria-label="Just Jenny – home"><img src="assets/logo.png" alt="Just Jenny" class="logo"></a>
+    <a href="#top" aria-label="Just Jenny – pagina iniziale"><img src="assets/logo.png" alt="Just Jenny" class="logo"></a>
   </div>
   <div class="ticker ticker-orange" aria-label="Garanzia soddisfatti o rimborsati di 90 giorni · Acquista 2 e ricevine 1 gratis · Fino al 70% di sconto">
     <div class="ticker-track" aria-hidden="true">
@@ -49,8 +49,8 @@
             <div class="pouch-kicker">Autentica Ceylon dello Sri Lanka</div>
             <div class="pouch-brand">Just Jenny</div>
             <div class="pouch-name">Ceylon<br>Cinnamon</div>
-            <div class="pouch-pill">7200mg equivalent · MCT oil</div>
-            <div class="pouch-count">30 SOFTGELS</div>
+            <div class="pouch-pill">Equivalente a 7200mg · olio MCT</div>
+            <div class="pouch-count">30 CAPSULE MOLLI</div>
           </div>
         </template>
         <template x-if="img !== 0">
@@ -85,7 +85,7 @@
     <!-- Buy box -->
     <div class="col-buy">
       <div class="rating-line" x-show="showReviews"><span x-html="stars(revAvg, 98)"></span><span x-text="'Valutazione di ' + revAvgTxt + '/5 basata su ' + revCount + ' recensioni'"></span></div>
-      <h1 class="product-title">Stabilizza i tuoi livelli nel sangue in 18 giorni.</h1>
+      <h1 class="product-title" id="offerta">Stabilizza i tuoi livelli nel sangue in 18 giorni.</h1>
       <ul class="hero-bullets">
         <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg></span>Ripristina la sensibilità all'insulina</li>
         <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg></span>Stabilizza i livelli di glicemia</li>
@@ -101,7 +101,7 @@
       <div class="price-row">
         <span class="price" x-text="cur.price"></span>
         <span class="was" x-text="cur.was"></span>
-        <span class="sale-tag" x-text="'Fall Sale – ' + cur.save"></span>
+        <span class="sale-tag" x-text="'Saldi d\'autunno – ' + cur.save"></span>
       </div>
 
       <div class="low-stock">Scorte limitate – Si esauriscono rapidamente</div>
@@ -153,7 +153,7 @@
     </div>
     <div class="report-cta">
       <h2>Cosa riferiscono i clienti dopo aver utilizzato la cannella di Ceylon di Just Jenny</h2>
-      <a href="#offers" class="btn btn-white">Provalo oggi senza rischi</a>
+      <a href="#offerta" class="btn btn-white">Provalo oggi senza rischi</a>
       <p class="guar-line light"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</p>
     </div>
   </div>
@@ -170,10 +170,10 @@
       <div class="why-card"><div class="ph-img">[Foto: test di laboratorio]</div><div class="why-body"><h3>Verificato da laboratori indipendenti</h3><p>Ogni lotto viene inviato a un laboratorio indipendente, non per una semplice formalità, ma perché meriti di sapere esattamente cosa introduci nel tuo organismo. Ogni lotto viene verificato per accertare l'assenza di cumarina, OGM, glutine e riempitivi artificiali, così non c'è nulla di nascosto in ciò che assumi ogni giorno.</p></div></div>
     </div>
     <div class="why-ctrl">
-      <div class="dots"><template x-for="d in 4"><button type="button" class="dot-btn" @click="whyGo(d-1)" :aria-label="'Card ' + d"><span class="dash" :class="whyIdx === d-1 && 'is-active'"></span></button></template></div>
+      <div class="dots"><template x-for="d in 4"><button type="button" class="dot-btn" @click="whyGo(d-1)" :aria-label="'Scheda ' + d"><span class="dash" :class="whyIdx === d-1 && 'is-active'"></span></button></template></div>
       <div class="arrows">
-        <button type="button" class="arrow" :disabled="whyIdx === 0" @click="whyGo(whyIdx-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-        <button type="button" class="arrow" :disabled="whyIdx === 3" @click="whyGo(whyIdx+1)" aria-label="Next"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        <button type="button" class="arrow" :disabled="whyIdx === 0" @click="whyGo(whyIdx-1)" aria-label="Precedente"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button type="button" class="arrow" :disabled="whyIdx === 3" @click="whyGo(whyIdx+1)" aria-label="Successivo"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
       </div>
     </div>
   </div>
@@ -202,7 +202,7 @@
             <div class="chips"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>
             <div class="story-foot">
               <div class="avatar-ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
-              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verified by <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
+              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verificato da <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
             </div>
           </div>
         </template>
@@ -217,26 +217,26 @@
             <p x-text="st.text"></p>
             <div class="story-foot">
               <div class="avatar-ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
-              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verified by <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
+              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verificato da <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
             </div>
             <div class="chips chips-row"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>
           </div>
         </template>
       </div>
       <div class="why-ctrl" style="display:flex">
-        <div class="dots"><template x-for="d in stories.length"><button type="button" class="dot-btn" @click="storyGo(d-1)" :aria-label="'Review ' + d"><span class="dash" :class="storyIdx === d-1 && 'is-active'"></span></button></template></div>
+        <div class="dots"><template x-for="d in stories.length"><button type="button" class="dot-btn" @click="storyGo(d-1)" :aria-label="'Recensione ' + d"><span class="dash" :class="storyIdx === d-1 && 'is-active'"></span></button></template></div>
         <div class="arrows">
-          <button type="button" class="arrow" :disabled="storyIdx === 0" @click="storyGo(storyIdx-1)" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-          <button type="button" class="arrow" :disabled="storyIdx === stories.length-1" @click="storyGo(storyIdx+1)" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+          <button type="button" class="arrow" :disabled="storyIdx === 0" @click="storyGo(storyIdx-1)" aria-label="Recensione precedente"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button type="button" class="arrow" :disabled="storyIdx === stories.length-1" @click="storyGo(storyIdx+1)" aria-label="Recensione successiva"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
       </div>
     </div>
     <div class="pager">
-      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Previous reviews">‹</button>
+      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Recensioni precedenti">‹</button>
       <div class="dots">
-        <template x-for="p in [0,1]"><button type="button" class="dot-btn" @click="revPage = p" :aria-label="'Reviews page ' + (p+1)"><span class="dot" :class="revPage === p && 'is-active'"></span></button></template>
+        <template x-for="p in [0,1]"><button type="button" class="dot-btn" @click="revPage = p" :aria-label="'Pagina recensioni ' + (p+1)"><span class="dot" :class="revPage === p && 'is-active'"></span></button></template>
       </div>
-      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="More reviews">›</button>
+      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Altre recensioni">›</button>
     </div>
   </div>
 </section>
@@ -255,9 +255,9 @@
       </div>
     </div>
     <div class="feel-pouches" role="img" aria-label="Tre confezioni di Just Jenny Cannella di Ceylon">
-      <div class="pouch pouch-side l"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 SOFTGELS</div></div>
-      <div class="pouch pouch-mid"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name">Ceylon<br>Cinnamon</div><div class="pouch-pill">7200mg equivalent · MCT oil</div><div class="pouch-count">30 SOFTGELS</div></div>
-      <div class="pouch pouch-side r"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 SOFTGELS</div></div>
+      <div class="pouch pouch-side l"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 CAPSULE MOLLI</div></div>
+      <div class="pouch pouch-mid"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name">Ceylon<br>Cinnamon</div><div class="pouch-pill">Equivalente a 7200mg · olio MCT</div><div class="pouch-count">30 CAPSULE MOLLI</div></div>
+      <div class="pouch pouch-side r"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 CAPSULE MOLLI</div></div>
     </div>
   </div>
 </section>
@@ -276,19 +276,19 @@
             <div class="flip-face flip-front">
               <div class="flip-img" x-text="'[Foto: ' + a.img + ']'"></div>
               <div class="flip-text"><h3 x-text="a.t"></h3><p x-text="a.sub"></p></div>
-              <button type="button" class="plus" @click="ben = i" :aria-label="'More about ' + a.t"><span>+</span></button>
+              <button type="button" class="plus" @click="ben = i" :aria-label="'Scopri di più su ' + a.t"><span>+</span></button>
             </div>
             <div class="flip-face flip-back">
-              <div class="flip-back-head"><h3 x-text="a.t"></h3><button type="button" class="close" @click="ben = -1" :aria-label="'Close ' + a.t">−</button></div>
+              <div class="flip-back-head"><h3 x-text="a.t"></h3><button type="button" class="close" @click="ben = -1" :aria-label="'Chiudi ' + a.t">−</button></div>
               <p class="flip-deep" x-text="a.deep"></p>
-              <div class="flip-short-row"><p class="flip-short" x-text="a.short"></p><button type="button" class="close close-sm" @click="ben = -1" :aria-label="'Close ' + a.t">−</button></div>
+              <div class="flip-short-row"><p class="flip-short" x-text="a.short"></p><button type="button" class="close close-sm" @click="ben = -1" :aria-label="'Chiudi ' + a.t">−</button></div>
             </div>
           </div>
         </div>
       </template>
     </div>
     <div class="center-col cta-stack">
-      <a href="#offers" class="btn btn-wide">Provalo oggi senza rischi</a>
+      <a href="#offerta" class="btn btn-wide">Provalo oggi senza rischi</a>
       <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
     </div>
   </div>
@@ -306,7 +306,7 @@
       <div class="journey-banner"><span class="ph-tag">[Foto: coppia felice 50+ a casa]</span><div class="journey-overlay"><span>JUST·JENNY</span></div></div>
       <h2 class="h2-xl"><span class="accent">Il tuo percorso</span><br>di benessere con Just Jenny</h2>
       <p class="lead dark">Just Jenny è formulato per accompagnarti nel tempo nella tua routine quotidiana di benessere. Assumi la tua capsula molle con costanza, segui il tuo programma di attività fisica gratuito e sviluppa abitudini più sane, settimana dopo settimana.</p>
-      <a href="#offers" class="btn btn-wide">Inizia la mia routine</a>
+      <a href="#offerta" class="btn btn-wide">Inizia la mia routine</a>
       <div class="guar-line dark"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
     </div>
     <div class="timeline" x-ref="timeline">
@@ -342,13 +342,13 @@
       </div>
     </div>
     <div class="dots">
-      <template x-for="d in (reasons.length - per + 1)"><button type="button" class="dot-btn" @click="rStart = d - 1" :aria-label="'Show reasons from ' + d"><span class="dash" :class="rStartC === d - 1 && 'is-active'"></span></button></template>
+      <template x-for="d in (reasons.length - per + 1)"><button type="button" class="dot-btn" @click="rStart = d - 1" :aria-label="'Mostra i motivi dal ' + d"><span class="dash" :class="rStartC === d - 1 && 'is-active'"></span></button></template>
     </div>
     <div class="arrows">
-      <button type="button" class="arrow" :disabled="rStartC === 0" @click="rStart = Math.max(0, rStartC - 1)" aria-label="Previous reasons"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-      <button type="button" class="arrow" :disabled="rStartC >= reasons.length - per" @click="rStart = Math.min(reasons.length - per, rStartC + 1)" aria-label="Next reasons"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+      <button type="button" class="arrow" :disabled="rStartC === 0" @click="rStart = Math.max(0, rStartC - 1)" aria-label="Motivi precedenti"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button type="button" class="arrow" :disabled="rStartC >= reasons.length - per" @click="rStart = Math.min(reasons.length - per, rStartC + 1)" aria-label="Motivi successivi"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
-    <a href="#offers" class="btn">Provalo oggi senza rischi</a>
+    <a href="#offerta" class="btn">Provalo oggi senza rischi</a>
     <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
   </div>
 </section>
@@ -374,7 +374,7 @@
         <li><span class="ck"></span><span><strong>Formulato per un uso a lungo termine</strong> – non si limita ad alleviare i sintomi</span></li>
         <li><span class="ck"></span><span><strong>Ingredienti puri e di qualità</strong> – senza riempitivi, OGM o additivi superflui</span></li>
       </ul>
-      <a href="#offers" class="btn btn-white">Provalo oggi senza rischi</a>
+      <a href="#offerta" class="btn btn-white">Provalo oggi senza rischi</a>
       <div class="guar-line light center"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
     </div>
   </div>
@@ -388,7 +388,7 @@
       <div class="eyebrow">SENTI LA DIFFERENZA</div>
       <h2 class="h2-xl light-w">Prova senza rischi per 90 giorni</h2>
       <p class="lead">Se non sei completamente soddisfatto entro i primi 90 giorni, ti basta restituire il tuo ordine per ricevere un rimborso completo, senza dover fornire alcuna spiegazione.</p>
-      <a href="#offers" class="btn btn-shadow">Provalo oggi senza rischi</a>
+      <a href="#offerta" class="btn btn-shadow">Provalo oggi senza rischi</a>
     </div>
     <div class="riskfree-photo"><div>[Foto: donna sorridente 50+ con stecche di cannella – scontornata, senza sfondo]</div></div>
   </div>
@@ -438,7 +438,7 @@
           <span class="offer-row-img">
             <template x-for="(pk, k) in packs(b.qty)"><span class="mini-pouch" :style="pk"><span>JUST JENNY</span><b>Ceylon<br>Cinnamon</b></span></template>
           </span>
-          <span class="offer-row-info"><strong x-text="b.title"></strong><small x-text="'You save ' + b.save"></small></span>
+          <span class="offer-row-info"><strong x-text="b.title"></strong><small x-text="'Risparmi il ' + b.save"></small></span>
           <span class="offer-row-price"><strong x-text="b.price"></strong><s x-text="b.was"></s></span>
         </button>
       </template>
@@ -448,8 +448,8 @@
       </button>
     </div>
     <div class="guarantees offer-guar-d">
-      <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-Day Guarantee</span>
-      <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Fast Shipping</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia di 90 giorni</span>
+      <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Spedizione rapida</span>
     </div>
     <div class="toast" role="status" x-show="toast" x-transition x-text="toastText"></div>
   </div>
