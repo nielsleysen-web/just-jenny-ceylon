@@ -30,9 +30,9 @@
   <div class="logo-row">
     <a href="#top" aria-label="Just Jenny – pagina iniziale"><img src="assets/logo.png" alt="Just Jenny" class="logo"></a>
   </div>
-  <div class="ticker ticker-orange" aria-label="Garanzia soddisfatti o rimborsati di 90 giorni · Acquista 2 e ricevine 1 gratis · Fino al 70% di sconto">
+  <div class="ticker ticker-orange" aria-label="Garanzia di 90 giorni · 2+1 GRATIS · Fino al 70% di sconto">
     <div class="ticker-track" aria-hidden="true">
-      <template x-for="i in 24"><span class="ticker-item"><span class="ti-ico" x-html="tickerIcon((i-1)%3)"></span><span x-text="['Garanzia soddisfatti o rimborsati di 90 giorni','Acquista 2 e ricevine 1 GRATIS','Fino al 70% di sconto'][(i-1)%3]"></span></span></template>
+      <template x-for="i in 24"><span class="ticker-item"><span class="ti-ico" x-html="tickerIcon((i-1)%3)"></span><span x-text="['Garanzia di 90 giorni','2+1 GRATIS','Fino al 70% di sconto'][(i-1)%3]"></span></span></template>
     </div>
   </div>
 </header>
@@ -163,10 +163,10 @@
   <div class="wrap">
     <h2 class="h2 center">Perché questa formula a base di cannella di Ceylon funziona davvero</h2>
     <div class="why-grid" x-ref="whyTrack" @scroll.passive="whyScroll()">
-      <div class="why-card"><div class="ph-img">[Foto: stecche di cannella di Ceylon]</div><div class="why-body"><h3>Vera cannella di Ceylon, non Cassia</h3><p>Ogni capsula molle contiene autentica cannella di Ceylon dello Sri Lanka, concentrata 12:1: l'equivalente di 7.200 mg per dose. A differenza della Cassia è naturalmente povera di cumarina, fondamentale se la assumi ogni giorno per anni.</p></div></div>
-      <div class="why-card"><div class="ph-img">[Foto: polvere di cannella in una ciotola]</div><div class="why-body"><h3>Potenza di 7.200 mg in una sola capsula molle</h3><p>La maggior parte degli integratori di cannella è sottodosata: poche centinaia di milligrammi non bastano. Una sola capsula molle di Just Jenny fornisce una dose completa, senza manciate di capsule o polvere nel caffè.</p></div></div>
-      <div class="why-card"><div class="ph-img">[Foto: olio MCT + capsule molli]</div><div class="why-body"><h3>Assorbimento potenziato dall'olio MCT</h3><p>I principi attivi della cannella sono liposolubili: senza un veicolo lipidico attraversano l'organismo senza essere utilizzati, soprattutto dopo i 50 anni. L'olio MCT li trasporta direttamente nel flusso sanguigno, dove possono agire davvero.</p></div></div>
-      <div class="why-card"><div class="ph-img">[Foto: test di laboratorio]</div><div class="why-body"><h3>Verificato da laboratori indipendenti</h3><p>Ogni lotto viene testato da un laboratorio indipendente, perché meriti di sapere esattamente cosa assumi: verificato senza cumarina, OGM, glutine e riempitivi artificiali. Nulla di nascosto.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Foto: stecche di cannella di Ceylon]</div><div class="why-body"><h3>Vera cannella di Ceylon, non Cassia</h3><p>Ogni capsula molle contiene Cinnamomum verum, l'autentica varietà di cannella di Ceylon, raccolta in Sri Lanka e concentrata con un rapporto di 12:1 per fornire l'equivalente di 7.200 mg di cannella grezza per dose. A differenza della Cassia, è naturalmente povera di cumarina, un aspetto importante se hai più di 50 anni e la assumi ogni giorno per anni, non solo per qualche settimana.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Foto: polvere di cannella in una ciotola]</div><div class="why-body"><h3>Potenza di 7.200 mg in una sola capsula molle</h3><p>La maggior parte degli integratori di cannella contiene dosi insufficienti: poche centinaia di milligrammi di polvere non bastano per fare la differenza. Una sola capsula molle di Just Jenny fornisce una dose completa di livello terapeutico in un'unica assunzione, senza dover ingoiare una manciata di capsule o mescolare la polvere nel caffè solo per assumerne una quantità significativa.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Foto: olio MCT + capsule molli]</div><div class="why-body"><h3>Assorbimento potenziato dall'olio MCT</h3><p>I principi attivi della cannella sono liposolubili, cosa che molti non sanno. Senza un veicolo lipidico, attraversano in gran parte l'apparato digerente senza essere utilizzati, e questo problema peggiora con il rallentamento della digestione dovuto all'età. L'olio MCT risolve il problema trasportando l'estratto direttamente nel flusso sanguigno, dove può effettivamente svolgere la sua azione.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Foto: test di laboratorio]</div><div class="why-body"><h3>Verificato da laboratori indipendenti</h3><p>Ogni lotto viene inviato a un laboratorio indipendente, non per una semplice formalità, ma perché meriti di sapere esattamente cosa introduci nel tuo organismo. Ogni lotto viene verificato per accertare l'assenza di cumarina, OGM, glutine e riempitivi artificiali, così non c'è nulla di nascosto in ciò che assumi ogni giorno.</p></div></div>
     </div>
     <div class="why-ctrl">
       <div class="dots"><template x-for="d in 4"><button type="button" class="dot-btn" @click="whyGo(d-1)" :aria-label="'Scheda ' + d"><span class="dash" :class="whyIdx === d-1 && 'is-active'"></span></button></template></div>
