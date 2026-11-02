@@ -12,7 +12,7 @@ function page() {
 
   return {
     // state
-    bundle: 2, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 6,
+    bundle: 2, img: 0, acc: -1, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 6,
     showReviews: true, // reviews komen uit reviews.js (Trustpilot-export)
     cart: 0, toast: false, toastQty: 0, subscribed: false, sticky: false,
     whyIdx: 0,
