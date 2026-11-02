@@ -1,16 +1,17 @@
 // Just Jenny – Ceylon Cinnamon product page logic (Alpine.js)
 function page() {
   const BUNDLES = [
-    { id: 1, qty: 1, title: 'Buy One', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
-    { id: 2, qty: 3, title: 'Buy 2 Get 1 FREE', save: '67%', price: '€59.99', was: '€179.97', badge: 'Most Popular' },
-    { id: 3, qty: 5, title: 'Buy 3 Get 2 FREE', save: '70%', price: '€89.99', was: '€299.95', badge: 'Free Shipping' }
+    { id: 1, qty: 1, title: 'Acquista 1', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
+    { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '67%', price: '€59.99', was: '€179.97', badge: 'Più popolare' },
+    { id: 3, qty: 5, title: 'Acquista 3 e ricevine 2 GRATIS', save: '70%', price: '€89.99', was: '€299.95', badge: 'Spedizione gratuita' }
   ];
   const IC = (d) => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
   const BADGE = (d) => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9643A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '<path d="M3 3l18 18"/></svg>';
 
   return {
     // state
-    bundle: 2, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0,
+    bundle: 3, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 3,
+    showReviews: false, // zet op true zodra er echte reviews zijn
     cart: 0, toast: false, toastQty: 0, subscribed: false, sticky: false,
     whyIdx: 0,
     vidIdx: 0,
@@ -21,41 +22,41 @@ function page() {
     // Customer survey results. Fill in YOUR OWN survey numbers (e.g. value: 84).
     // While value is null the page shows "[XX]%" and nothing animates.
     reportStats: [
-      { value: null, label: 'would keep Just Jenny in their daily routine' },
-      { value: null, label: 'felt steadier energy through the day*' },
-      { value: null, label: 'found it easier on the stomach than other cinnamon supplements*' },
-      { value: null, label: 'would recommend it to a friend*' }
+      { value: 86, label: 'Continuerebbe a includere Just Jenny nella propria routine quotidiana' },
+      { value: 72, label: 'Ha percepito livelli di energia più stabili durante la giornata' },
+      { value: 91, label: 'L\'ha trovato più delicato sullo stomaco rispetto ad altri integratori di cannella' },
+      { value: 79, label: 'Lo consiglierebbe a un amico' }
     ],
     statShown: [0, 0, 0, 0],
     thumbs: [
-      { short: 'Pouch', label: 'Product pouch' },
-      { short: 'Softgels', label: 'Softgels close-up' },
-      { short: 'Benefits', label: 'Key benefits infographic' },
-      { short: 'Lifestyle', label: 'Woman 50+ with product at breakfast' }
+      { short: 'Confezione', label: 'Confezione del prodotto' },
+      { short: 'Capsule', label: 'Capsule molli da vicino' },
+      { short: 'Benefici', label: 'Infografica dei benefici' },
+      { short: 'Lifestyle', label: 'Donna 50+ con il prodotto a colazione' }
     ],
     productAcc: [
-      { t: 'Clinically Supported Benefits', body: 'Supports healthy blood sugar levels, steady daily energy and metabolic balance – with Ceylon cinnamon, an ingredient studied for its role in glucose metabolism.*' },
-      { t: 'Key Ingredients', body: 'Ceylon cinnamon extract (Cinnamomum verum, 12:1 – equal to 7,200 mg raw cinnamon), MCT oil, softgel shell. No harsh additives, gluten-free, non-GMO. [Confirm final ingredient list]' },
-      { t: 'How It Works', body: 'Take one softgel a day with a meal. The MCT oil carries cinnamon’s fat-soluble compounds for better absorption, so one softgel does the work of several capsules.' }
+      { t: 'Benefici supportati da evidenze cliniche', body: 'Supportato da studi sulla vera cannella di Ceylon (Cinnamomum verum)\n• Aiuta a mantenere i livelli di glicemia già nella norma\n• Favorisce la sensibilità all\'insulina e l\'utilizzo efficiente del glucosio da parte dell\'organismo\n• Favorisce una circolazione sana e il normale funzionamento del metabolismo quotidiano\n• Svolge un\'azione antiossidante che aiuta a proteggere le cellule dai danni ossidativi\n• Un estratto delicato e ben tollerato, formulato per un uso quotidiano costante e prolungato\n• Cannella di Ceylon praticamente priva di cumarina: una differenza fondamentale rispetto alla comune cannella Cassia\n\nRisultati tratti da studi clinici e osservazionali sulla vera cannella di Ceylon, utilizzata regolarmente nell\'ambito di uno stile di vita sano. I risultati variano da persona a persona.' },
+      { t: 'Ingredienti principali', body: 'Estratto di vera cannella di Ceylon (Cinnamomum verum)\n• Coltivata in Sri Lanka — non la varietà Cassia più economica\n• Estratto liquido concentrato 12:1\n• Ogni capsula molle fornisce l\'equivalente di 7.200 mg di cannella di Ceylon grezza\n• Naturalmente priva di cumarina. Sicura da assumere ogni giorno, anche a lungo termine\n• Favorisce livelli sani di glicemia, il corretto funzionamento del metabolismo e una buona circolazione\n\nOlio MCT (Trigliceridi a Catena Media)\n• Agisce come veicolo naturale per migliorare l\'assorbimento\n• I principi attivi della cannella sono liposolubili. L\'olio MCT ne favorisce l\'ingresso efficace nel flusso sanguigno\n• Permette all\'estratto di essere assorbito rapidamente, anziché attraversare l\'organismo senza produrre effetti\n• Delicato sull\'apparato digerente. Niente polveri aggressive, niente disturbi allo stomaco\n\nSistema di somministrazione in capsule molli\n• Capsule molli lisce e facili da deglutire\n• Niente capsule contenenti polveri dalla consistenza gessosa\n• Pensate per un\'assunzione quotidiana confortevole: basta una sola capsula molle al giorno' },
+      { t: 'Come funziona', body: 'La maggior parte degli integratori di cannella non funziona perché utilizza polvere di Cassia economica, compressa in capsule rigide che lo stomaco fatica a scomporre correttamente. I principi attivi rimangono intrappolati nelle fibre e attraversano l\'organismo in gran parte senza essere assorbiti.\n\nJust Jenny segue un approccio diverso. Partiamo dalla vera cannella di Ceylon proveniente dallo Sri Lanka, la concentriamo con un rapporto di 12:1 per ottenere un estratto liquido omogeneo, poi la misceliamo con olio MCT e la racchiudiamo in capsule molli facili da deglutire.\n\nUna volta sciolta la capsula molle, l\'estratto è già sospeso nell\'olio, in una forma altamente biodisponibile che l\'organismo può assorbire in modo efficiente.\n\nNiente polveri dalla consistenza granulosa. Nessun retrogusto di cannella a distanza di ore. Nessuno spreco di principi attivi.\n\nL\'olio MCT agisce come un sistema di trasporto naturale, veicolando i principi attivi concentrati della cannella di Ceylon nel flusso sanguigno per favorire un sano metabolismo del glucosio, la circolazione e il benessere cellulare.\n\nUna sola capsula molle al giorno fornisce l\'equivalente di 7.200 mg di cannella di Ceylon. La potenza che decine di capsule tradizionali cercano di eguagliare, in una forma che il tuo organismo può davvero assorbire.\n\nEcco perché così tanti adulti sopra i 50 anni, che avevano ormai rinunciato del tutto agli integratori di cannella, stanno finalmente percependo una differenza concreta con Just Jenny.' }
     ],
     benefits: [
-      { t: 'Blood Sugar Support', sub: 'Supports healthy blood sugar levels', img: 'blood sugar / glucose', short: 'Ceylon cinnamon is studied for its role in healthy glucose metabolism – one daily softgel helps keep your levels steady.*', deep: 'Ceylon cinnamon contains polyphenols that are studied for their role in how the body handles glucose after meals. Taken every day, it helps support healthy blood sugar levels that are already within the normal range – fewer spikes, fewer afternoon crashes.*' },
-      { t: 'Gentle on the Stomach', sub: 'Designed for comfortable daily use', img: 'woman with a calm stomach', short: 'Suspended in MCT oil inside a smooth softgel – no burning, no bitter aftertaste, easy on your stomach.', deep: 'Powdered cinnamon capsules can burn, repeat on you or leave a bitter aftertaste. Just Jenny suspends the extract in MCT oil inside a smooth softgel, so it dissolves gently – no burning, no aftertaste, easy to take with breakfast.' },
-      { t: 'Liver Health Support', sub: 'Made with coumarin-free Ceylon cinnamon', img: 'healthy liver / Ceylon vs Cassia', short: 'True Ceylon is naturally low in coumarin, so it’s suited to taking every day for the long term.', deep: 'Cassia cinnamon – the kind in most supplements and spice jars – is high in coumarin, which can put strain on the liver when taken daily. True Ceylon cinnamon is naturally very low in coumarin, which makes it the better choice for long-term daily use.' },
-      { t: 'Enhanced Absorption', sub: 'Helps your body absorb cinnamon', img: 'MCT oil softgel', short: 'Cinnamon’s active compounds are fat-soluble – MCT oil helps your body take up more of them.', deep: 'Cinnamon’s active compounds are fat-soluble. Bound to MCT oil, a fast-digesting fat, more of them are taken up by your body instead of passing straight through – so one softgel works harder than several dry capsules.' }
+      { t: 'Supporto alla glicemia', sub: 'Favorisce il mantenimento di livelli sani di glicemia.', img: 'glicemia / glucosio', short: 'La cannella di Ceylon è studiata per il suo ruolo in un sano metabolismo del glucosio: una capsula molle al giorno aiuta a mantenere i livelli stabili.', deep: 'La vera cannella di Ceylon è oggetto di studi per la sua capacità di favorire un sano metabolismo del glucosio. Just Jenny utilizza un estratto concentrato 12:1 con olio MCT per aiutare l\'organismo ad assorbirlo e utilizzarlo efficacemente.' },
+      { t: 'Delicato sullo stomaco', sub: 'Formulato per un\'assunzione quotidiana confortevole.', img: 'donna con stomaco sereno', short: 'Sospeso in olio MCT in una capsula molle liscia: niente bruciore, niente retrogusto amaro, delicato sullo stomaco.', deep: 'Just Jenny utilizza un estratto liquido di cannella sospeso in olio MCT. Niente polveri irritanti. Nessuna irritazione allo stomaco. Nessun rutto al sapore di cannella a distanza di ore.' },
+      { t: 'Supporto alla salute del fegato', sub: 'Realizzato con cannella di Ceylon priva di cumarina.', img: 'fegato sano / Ceylon vs Cassia', short: 'La vera cannella di Ceylon è naturalmente povera di cumarina, quindi adatta a un uso quotidiano a lungo termine.', deep: 'A differenza della cannella Cassia, quella di Ceylon è praticamente priva di cumarina. Questo rende Just Jenny un\'opzione più sicura per l\'assunzione quotidiana e il benessere del fegato a lungo termine.' },
+      { t: 'Assorbimento potenziato', sub: 'Aiuta l\'organismo ad assorbire la cannella.', img: 'capsula molle con olio MCT', short: 'I principi attivi della cannella sono liposolubili: l\'olio MCT aiuta l\'organismo ad assorbirne di più.', deep: 'I principi attivi della cannella sono liposolubili. L\'olio MCT agisce come veicolo, favorendo l\'assorbimento efficiente dell\'estratto di Ceylon equivalente a 7.200 mg, anziché lasciarlo attraversare l\'organismo senza essere utilizzato.' }
     ],
     weeks: [
-      { t: 'Week 1–2: Easy Start', items: ['One softgel a day slots straight into your morning', 'Many people feel their energy start to even out', 'Fewer late-afternoon sugar cravings for some', 'Your body starts getting used to daily Ceylon support'] },
-      { t: 'Week 3–4: Finding Balance', items: ['Days feel more even from morning to evening', 'Fewer highs and lows than before', 'The routine starts to feel automatic', 'Sticking with it gets easier'] },
-      { t: 'Week 5–6: Metabolic Support', items: ['This is often when people notice the biggest change', 'Supports healthy glucose metabolism within the normal range*', 'More confidence in your daily energy', 'Benefits build the longer you keep going'] },
-      { t: 'Week 7–8+: Long-Term Wellness', items: ['Ongoing metabolic and antioxidant support*', 'Made for steady, long-term daily use', 'About stability – not a quick fix', 'Individual results depend on health, diet and lifestyle'] }
+      { t: 'Settimane 1-2: Un inizio semplice', items: ['Una sola capsula molle al giorno si integra facilmente nella tua routine quotidiana.', 'Molti adulti notano un\'energia più stabile e meno cali di energia nel pomeriggio.', 'Alcuni utilizzatori avvertono una riduzione della voglia di zuccheri.', 'L\'organismo inizia a rispondere al supporto quotidiano della cannella di Ceylon.'] },
+      { t: 'Settimane 3-4: Equilibrio quotidiano', items: ['Ti senti più in equilibrio durante tutta la giornata.', 'Meno sbalzi di energia rispetto a quelli che molti sperimentavano in precedenza.', 'La routine quotidiana inizia a diventare naturale e sostenibile.', 'Mantenere la costanza diventa più facile.'] },
+      { t: 'Settimane 5-6: Supporto metabolico', items: ['La maggior parte delle persone nota i miglioramenti più significativi in questa fase.', 'Favorisce un sano metabolismo del glucosio quando i valori sono già nella norma.', 'Maggiore fiducia nella propria energia quotidiana e nel benessere generale.', 'I benefici diventano più evidenti con l\'uso continuativo.'] },
+      { t: 'Dalla settimana 7-8 in poi: Benessere a lungo termine', items: ['Supporto metabolico e antiossidante continuativo.', 'Formulato per un\'assunzione quotidiana costante e prolungata.', 'L\'obiettivo è la stabilità, non le soluzioni rapide.', 'I risultati dipendono dalle condizioni di salute individuali, dall\'alimentazione e dallo stile di vita.'] }
     ],
     reasons: [
-      { t: '12:1 Concentrated Ceylon Cinnamon', photo: 'softgels on cinnamon powder', body: 'Most cinnamon on the shelf is Cassia, which is high in coumarin. Just Jenny uses only true Ceylon cinnamon, concentrated so a single daily softgel equals 7,200 mg of raw cinnamon.' },
-      { t: 'Zero-Coumarin, Clean Formula', photo: 'Ceylon vs Cassia sticks side by side', body: 'Only true Cinnamomum verum – no Cassia, no fillers, no harsh additives. Gluten-free and non-GMO.' },
-      { t: 'MCT Oil Delivery System', photo: 'MCT oil drop', body: 'Cinnamon’s active compounds are fat-soluble. Suspended in MCT oil they absorb better than dry powder capsules – and sit gently on the stomach.' },
-      { t: 'Independently Lab Tested', photo: 'lab testing', body: 'Every batch is third-party tested for purity and potency, so you get exactly what the label promises.' },
-      { t: 'One Easy Softgel a Day', photo: 'one softgel in palm of hand', body: 'No handful of hard-to-swallow capsules. One small softgel with breakfast is all it takes.' }
+      { t: 'Cannella di Ceylon concentrata 12:1', photo: 'capsule molli su polvere di cannella', body: 'A differenza della cannella Cassia economica, che contiene livelli elevati di cumarina dannosa per il fegato, Just Jenny è composta al 100% da autentica cannella di Ceylon. Concentriamo l\'equivalente di 7.200 mg di cannella grezza in una sola capsula molle al giorno.' },
+      { t: 'Assorbimento potenziato dall\'olio MCT', photo: 'goccia di olio MCT', body: 'I principi attivi della cannella sono liposolubili, il che significa che, senza grassi sani, attraversano l\'organismo senza essere assorbiti. Sciogliamo il nostro estratto premium in olio MCT biologico, così il tuo organismo può assorbirlo e utilizzarlo immediatamente.' },
+      { t: 'Supporto antinfiammatorio e metabolico', photo: 'stecche di Ceylon e Cassia a confronto', body: 'La vera cannella di Ceylon contiene potenti antiossidanti che favoriscono il normale equilibrio della glicemia, la sensibilità all\'insulina, la funzionalità cardiovascolare e una sana circolazione renale.' },
+      { t: 'Nessun retrogusto, nessun disturbo allo stomaco', photo: 'una capsula molle nel palmo della mano', body: 'A differenza delle polveri dalla consistenza gessosa, delle capsule troppo grandi o delle polveri grezze che provocano reflusso acido ed eruttazioni, le nostre capsule molli sono piccole, lisce e incredibilmente delicate sullo stomaco.' },
+      { t: 'Ingredienti puri, testati da laboratori indipendenti', photo: 'test di laboratorio', body: 'Vegano, senza OGM e privo di glutine, latticini, soia, zucchero e riempitivi artificiali. Ogni singolo lotto viene sottoposto a test indipendenti per verificarne la purezza e la potenza. Prodotto negli Stati Uniti.' }
     ],
     stories: [
       { r: 5.0, title: '[Review headline, e.g. "Finally back in control!"]', text: '[Paste a real customer review here – 3 to 5 sentences.]', name: '[Customer name]', tag1: 'Stable Sugar', tag2: 'Steady Energy' },
@@ -66,18 +67,18 @@ function page() {
       { r: 4.6, title: '[Review headline 6]', text: '[Sixth real customer review.]', name: '[Customer name]', tag1: 'Long-Term Use', tag2: 'Stable Sugar' }
     ],
     compare: [
-      { us: 'Backed by Research', them: 'Trend-Driven Formulas', icon: IC('<path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/>') },
-      { us: 'Third-Party Lab Tested', them: 'No Independent Testing', icon: IC('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>') },
-      { us: 'Low-Coumarin Ceylon, Clean Formula', them: 'Cheap, High-Coumarin Cassia', icon: IC('<path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"/><path d="M5 19l8-8"/>') },
-      { us: 'Full-Strength 12:1 Extract', them: 'Low-Dose Formulas', icon: IC('<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>') },
-      { us: 'Boosted with MCT Oil', them: 'Poor Absorption', icon: IC('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>') },
-      { us: 'Easy, High-Absorption Softgels', them: 'Big, Hard-to-Swallow Capsules', icon: IC('<rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-35 12 12)"/><path d="m9.5 8.4 5 7.2"/>') }
+      { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: IC('<path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/>') },
+      { us: 'Testato da laboratori indipendenti', them: 'Nessun test indipendente', icon: IC('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>') },
+      { us: 'Zero cumarina, formula pura', them: 'Cassia economica, ricca di cumarina', icon: IC('<path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"/><path d="M5 19l8-8"/>') },
+      { us: 'Estratto concentrato 12:1', them: 'Dosaggi insufficienti', icon: IC('<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>') },
+      { us: 'Potenziato con olio MCT', them: 'Scarso assorbimento', icon: IC('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>') },
+      { us: 'Capsule molli ad alto assorbimento', them: 'Capsule grandi e difficili da deglutire', icon: IC('<rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-35 12 12)"/><path d="m9.5 8.4 5 7.2"/>') }
     ],
     faqs: [
-      { t: 'What makes Ceylon cinnamon different from what most supplements use?', body: 'Most supplements use Cassia – cheaper, but high in coumarin, which can strain the liver with daily long-term use. Just Jenny uses only true Ceylon (Cinnamomum verum), which is naturally low in coumarin.' },
-      { t: 'How does Just Jenny compare to standard cinnamon capsules at the pharmacy?', body: 'Pharmacy capsules are usually low-dose Cassia powder. Just Jenny is a 12:1 Ceylon extract equal to 7,200 mg of raw cinnamon, delivered in MCT oil for better absorption – in one softgel a day.' },
-      { t: 'Is it safe to take alongside my current medications?', body: 'If you take any medication – especially for blood sugar, blood pressure or blood thinning – check with your doctor or pharmacist before starting a new supplement.' },
-      { t: 'When can I expect to notice a difference?', body: 'Many people notice steadier energy in the first two weeks; most see the biggest change around weeks 5–6 of daily use. Results vary with health, diet and lifestyle.' }
+      { t: 'Cosa rende la cannella di Ceylon diversa da quella utilizzata nella maggior parte degli integratori?', body: 'Quasi tutti gli integratori a base di cannella utilizzano la varietà Cassia. E la differenza è più importante di quanto molti pensino.\n\nLa cannella Cassia contiene elevate quantità di cumarina, una sostanza che, se assunta regolarmente in dosi elevate, può accumularsi nell\'organismo e affaticare il fegato.\n\nLa cannella di Ceylon, originaria dello Sri Lanka, ne contiene invece quantità molto basse. Per questo è una scelta più adatta all\'integrazione quotidiana.\n\nLa nostra formula concentrata 12:1 fornisce, in ogni capsula molle, l\'equivalente di 7.200 mg di cannella di Ceylon, in una formulazione studiata per favorirne l\'assorbimento.' },
+      { t: 'Qual è la differenza tra Just Jenny e le normali capsule di cannella vendute in farmacia?', body: 'In farmacia si trovano spesso integratori a base di cannella Cassia, con dosaggi ridotti e in semplici capsule.\n\nJust Jenny è diverso. Utilizza un estratto concentrato 12:1 di cannella di Ceylon, formulato con olio MCT.\n\nOgni capsula molle contiene l\'equivalente di 7.200 mg di corteccia di cannella di Ceylon, in una formulazione pensata per favorirne l\'assorbimento da parte dell\'organismo.' },
+      { t: 'Posso assumere Just Jenny insieme ai farmaci che prendo attualmente?', body: 'La cannella di Ceylon è generalmente ben tollerata. Tuttavia, se stai assumendo farmaci per controllare la glicemia, anticoagulanti o altri medicinali, parla con il tuo medico prima di iniziare.\n\nÈ una precauzione importante ogni volta che si introduce un nuovo integratore nella propria routine. Basta una telefonata per avere maggiore tranquillità.' },
+      { t: 'Dopo quanto tempo posso aspettarmi di notare una differenza?', body: 'I primi cambiamenti percepiti nell\'energia e nel benessere generale vengono spesso descritti dopo 2-4 settimane di assunzione regolare.\n\nPer valutare eventuali cambiamenti misurabili della glicemia, è opportuno considerare un periodo di almeno 6-8 settimane, senza aspettarsi risultati garantiti.\n\nLa velocità con cui potresti notare una differenza dipende dalla tua situazione iniziale, dall\'alimentazione e dalle abitudini quotidiane. Gli effetti possono variare da persona a persona.' }
     ],
     feed: [
       { r: 5.0, photo: true, ago: '[2 days ago]' }, { r: 5.0, photo: false, ago: '[1 week ago]' }, { r: 4.6, photo: true, ago: '[3 days ago]' },
@@ -94,7 +95,7 @@ function page() {
     get hh() { return String(Math.floor(this.secs / 3600)).padStart(2, '0'); },
     get mm() { return String(Math.floor((this.secs % 3600) / 60)).padStart(2, '0'); },
     get ss() { return String(this.secs % 60).padStart(2, '0'); },
-    get toastText() { return 'Added ' + this.toastQty + (this.toastQty === 1 ? ' pouch' : ' pouches') + ' to your cart'; },
+    get toastText() { return 'Hai aggiunto ' + this.toastQty + (this.toastQty === 1 ? ' confezione' : ' confezioni') + ' al carrello'; },
     get storiesPage() { return this.stories.slice(this.revPage * 3, this.revPage * 3 + 3); },
     get per() { return this.wide ? 3 : 1; },
     get rStartC() { return Math.min(this.rStart, this.reasons.length - this.per); },

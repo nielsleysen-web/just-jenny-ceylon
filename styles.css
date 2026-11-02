@@ -698,3 +698,9 @@ svg{flex:none}
   .offer-m-meta i{width:1px;height:18px;background:var(--ink)}
   .offer-m-meta svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 }
+/* review feed: load more */
+.rv-bars{pointer-events:none}
+.rv-more{margin:28px auto 0;display:block;padding:14px 36px;border-radius:999px;border:2px solid var(--orange);background:#fff;color:var(--orange);font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+.rv-more:hover{background:var(--orange);color:#fff}
+
+.acc-body{white-space:pre-line}
