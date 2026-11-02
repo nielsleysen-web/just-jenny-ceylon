@@ -44,7 +44,10 @@
     <!-- Gallery column -->
     <div class="col-gallery">
       <div class="gallery-main">
-        <template x-if="img === 0">
+        <template x-if="thumbs[img].src">
+          <img class="gallery-img" :src="thumbs[img].src" :alt="thumbs[img].label">
+        </template>
+        <template x-if="!thumbs[img].src && img === 0">
           <div class="pouch pouch-lg">
             <div class="pouch-kicker">Autentica Ceylon dello Sri Lanka</div>
             <div class="pouch-brand">Just Jenny</div>
@@ -53,13 +56,13 @@
             <div class="pouch-count">30 CAPSULE MOLLI</div>
           </div>
         </template>
-        <template x-if="img !== 0">
+        <template x-if="!thumbs[img].src && img !== 0">
           <div class="ph-label" x-text="'[Foto: ' + thumbs[img].label + ']'"></div>
         </template>
       </div>
       <div class="thumbs">
         <template x-for="(t, i) in thumbs" :key="i">
-          <button type="button" class="thumb" :class="img === i && 'is-active'" @click="img = i" :aria-label="t.label" x-text="t.short"></button>
+          <button type="button" class="thumb" :class="img === i && 'is-active'" :style="t.src ? 'background-image:url(' + t.src + ')' : ''" @click="img = i" :aria-label="t.label"><span x-show="!t.src" x-text="t.short"></span></button>
         </template>
       </div>
 

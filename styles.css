@@ -99,7 +99,7 @@ svg{flex:none}
 .pouch-name.md{font-size:22px;color:var(--rust)}
 .pouch-pill{font-size:9px;border:1px solid var(--orange);border-radius:99px;padding:3px 8px;color:var(--orange)}
 .pouch-count{font-size:9px;color:var(--muted);letter-spacing:.08em;margin-top:4px}
-.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 .thumb{aspect-ratio:1/1;min-height:44px;border-radius:10px;cursor:pointer;font-size:12px;font-weight:600;color:var(--body);background:var(--vanilla);border:1px solid var(--line)}
 .thumb.is-active{border:2px solid var(--orange)}
 .acc-list{display:flex;flex-direction:column;gap:10px}
@@ -737,3 +737,6 @@ svg{flex:none}
   .offer-row-info strong{font-size:10.5px}
   .offer-row-price strong{font-size:13px}
 }
+.gallery-img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb{background-size:cover;background-position:center;padding:0}
+@media (max-width:600px){.thumbs{gap:6px}.thumb{min-height:0;font-size:11px}}

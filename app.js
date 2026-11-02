@@ -33,11 +33,17 @@ function page() {
       { value: 79, label: 'Lo consiglierebbe a un amico' }
     ],
     statShown: [0, 0, 0, 0],
+    // Galerij: 9 foto's. Zet bij elke foto het pad in src (bv. 'assets/gallery/1.jpg'); de eerste is de hoofdfoto.
     thumbs: [
-      { short: 'Confezione', label: 'Confezione del prodotto' },
-      { short: 'Capsule', label: 'Capsule molli da vicino' },
-      { short: 'Benefici', label: 'Infografica dei benefici' },
-      { short: 'Lifestyle', label: 'Donna 50+ con il prodotto a colazione' }
+      { short: '1', label: 'Confezione del prodotto', src: '' },
+      { short: '2', label: 'Capsule molli da vicino', src: '' },
+      { short: '3', label: 'Infografica dei benefici', src: '' },
+      { short: '4', label: 'Donna 50+ con il prodotto a colazione', src: '' },
+      { short: '5', label: 'Foto 5', src: '' },
+      { short: '6', label: 'Foto 6', src: '' },
+      { short: '7', label: 'Foto 7', src: '' },
+      { short: '8', label: 'Foto 8', src: '' },
+      { short: '9', label: 'Foto 9', src: '' }
     ],
     productAcc: [
       { t: 'Benefici supportati da evidenze cliniche', body: 'Supportato da studi sulla vera cannella di Ceylon (Cinnamomum verum)\n• Aiuta a mantenere i livelli di glicemia già nella norma\n• Favorisce la sensibilità all\'insulina e l\'utilizzo efficiente del glucosio da parte dell\'organismo\n• Favorisce una circolazione sana e il normale funzionamento del metabolismo quotidiano\n• Svolge un\'azione antiossidante che aiuta a proteggere le cellule dai danni ossidativi\n• Un estratto delicato e ben tollerato, formulato per un uso quotidiano costante e prolungato\n• Cannella di Ceylon praticamente priva di cumarina: una differenza fondamentale rispetto alla comune cannella Cassia\n\nRisultati tratti da studi clinici e osservazionali sulla vera cannella di Ceylon, utilizzata regolarmente nell\'ambito di uno stile di vita sano. I risultati variano da persona a persona.' },
