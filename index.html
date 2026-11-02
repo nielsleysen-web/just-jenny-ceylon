@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+<script src="reviews.js"></script>
 <script src="app.js"></script>
 </head>
 <body x-data="page()" x-init="init()">
@@ -83,7 +84,7 @@
 
     <!-- Buy box -->
     <div class="col-buy">
-      <div class="rating-line" x-show="showReviews"><span x-html="stars(4.8, 98)"></span><span>Valutazione di 4,8/5 basata su [X] recensioni</span></div>
+      <div class="rating-line" x-show="showReviews"><span x-html="stars(revAvg, 98)"></span><span x-text="'Valutazione di ' + revAvgTxt + '/5 basata su ' + revCount + ' recensioni'"></span></div>
       <h1 class="product-title">Stabilizza i tuoi livelli nel sangue in 18 giorni.</h1>
       <ul class="hero-bullets">
         <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg></span>Ripristina la sensibilità all'insulina</li>
@@ -181,7 +182,7 @@
 <!-- Real stories -->
 <section id="reviews" class="sec bg-blush clip" x-show="showReviews">
   <div class="wrap center-col">
-    <span x-html="stars(4.8, 100)"></span>
+    <span x-html="stars(revAvg, 100)"></span>
     <h2 class="h2 center">Storie vere, <span class="accent">risultati reali</span></h2>
     <p class="muted center">Esperienze autentiche con la cannella di Ceylon Just Jenny</p>
     <div class="full-bleed">
@@ -459,9 +460,9 @@
   <div class="wrap-1000 center-col">
     <h2 class="h2-md">Recensioni dei clienti</h2>
     <div class="rv-summary">
-      <div class="rv-avg"><span class="rv-num">[4.8]</span><span x-html="stars(4.8, 120)"></span><span class="tp-muted">basata su [X] recensioni</span></div>
+      <div class="rv-avg"><span class="rv-num" x-text="revAvgTxt"></span><span x-html="stars(revAvg, 120)"></span><span class="tp-muted" x-text="'basata su ' + revCount + ' recensioni'"></span></div>
       <div class="rv-bars">
-        <template x-for="(w, i) in [78,14,4,2,2]"><div class="rv-bar"><span x-text="(5-i) + (i === 4 ? ' stella' : ' stelle')"></span><span class="bar"><span :style="'width:' + w + '%'"></span></span><span class="tp-muted">[X]</span></div></template>
+        <template x-for="(c, i) in revDist"><div class="rv-bar"><span x-text="(5-i) + (i === 4 ? ' stella' : ' stelle')"></span><span class="bar"><span :style="'width:' + (revCount ? c / revCount * 100 : 0) + '%'"></span></span><span class="tp-muted" x-text="c"></span></div></template>
       </div>
       <div class="rv-photos">
         <span class="tp-muted">Foto e video dei clienti</span>
@@ -471,13 +472,13 @@
     <div class="rv-feed">
       <template x-for="(fr, i) in feed.slice(0, feedShown)" :key="i">
         <article class="tp-card">
-          <div class="tp-user"><span class="tp-avatar" :style="'background:' + fr.bg" x-text="fr.initials"></span><div><div class="tp-name" x-text="'[Customer name ' + (i+1) + ']'"></div><div class="tp-muted">[1] review · [Country]</div></div></div>
+          <div class="tp-user"><span class="tp-avatar" :style="'background:' + fr.bg" x-text="fr.initials"></span><div><div class="tp-name" x-text="fr.name"></div><div class="tp-muted tp-loc"><span x-text="fr.city + ', ' + fr.country"></span><span x-html="flagIT()"></span></div></div></div>
           <div class="tp-sep"></div>
-          <div class="tp-row"><span x-html="stars(fr.r, 100)"></span><span class="tp-muted" x-text="fr.ago"></span></div>
-          <h3 x-text="'[Review title ' + (i+1) + ']'"></h3>
-          <p>[Paste a real customer review here – 2 to 5 sentences in their own words.]</p>
-          <div class="tp-photo" x-show="fr.photo"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>[Customer photo]</div>
-          <div class="chips"><span class="chip-g">[Date of experience]</span><span class="chip-g">Acquisto verificato</span></div>
+          <div class="tp-row"><span x-html="stars(fr.r, 100)"></span><span class="tp-muted" x-text="revAgo(fr.date)"></span></div>
+          <h3 x-text="fr.title"></h3>
+          <p x-text="fr.text"></p>
+          <img class="tp-photo-img" x-show="fr.photo" :src="fr.photo || ''" :alt="'Foto di ' + fr.name" loading="lazy">
+          <div class="chips"><span class="chip-g" x-text="'Esperienza: ' + revDate(fr.date)"></span><span class="chip-g">Acquisto verificato</span></div>
           <div class="tp-sep"></div>
           <div class="tp-actions">
             <button type="button"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Utile</button>
@@ -538,7 +539,7 @@
     <div class="sticky-pouch">JUST JENNY<span>Ceylon Cinnamon</span></div>
     <div class="sticky-text">
       <div class="sticky-name"><span class="sn-full">Cannella di Ceylon 7200mg con olio MCT</span><span class="sn-short">Cannella di Ceylon 7200mg</span></div>
-      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(4.8, 72)"></span><span>4,8/5 · [X] recensioni</span></div>
+      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(revAvg, 72)"></span><span x-text="revAvgTxt + '/5 · ' + revCount + ' recensioni'"></span></div>
     </div>
     <button type="button" class="sticky-btn" @click="addToCart(bundle)">AGGIUNGI AL CARRELLO</button>
   </div>

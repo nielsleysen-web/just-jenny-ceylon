@@ -704,3 +704,12 @@ svg{flex:none}
 .rv-more:hover{background:var(--orange);color:#fff}
 
 .acc-body{white-space:pre-line}
+
+/* review location + photos */
+.tp-loc{display:flex;align-items:center;gap:6px}
+.flag-it{display:inline-block;flex:none;border-radius:2px;box-shadow:0 0 0 .5px rgba(0,0,0,.18);vertical-align:middle}
+.story-name{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.story-loc{font-weight:400;color:var(--muted)}
+.tp-photo-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
+.tp-card .chips{gap:6px;flex-wrap:nowrap}
+.tp-card .chip-g{white-space:nowrap}

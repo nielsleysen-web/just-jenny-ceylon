@@ -6,12 +6,14 @@ function page() {
     { id: 3, qty: 5, title: 'Acquista 3 e ricevine 2 GRATIS', save: '70%', price: '€89.99', was: '€299.95', badge: 'Spedizione gratuita' }
   ];
   const IC = (d) => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+  const REV = window.JJ_REVIEWS || { stories: [], feed: [] };
+  const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
   const BADGE = (d) => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9643A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '<path d="M3 3l18 18"/></svg>';
 
   return {
     // state
-    bundle: 3, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 3,
-    showReviews: true, // zet op true zodra er echte reviews zijn
+    bundle: 3, img: 0, acc: 0, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 6,
+    showReviews: true, // reviews komen uit reviews.js (Trustpilot-export)
     cart: 0, toast: false, toastQty: 0, subscribed: false, sticky: false,
     whyIdx: 0,
     vidIdx: 0,
@@ -58,14 +60,7 @@ function page() {
       { t: 'Nessun retrogusto, nessun disturbo allo stomaco', photo: 'una capsula molle nel palmo della mano', body: 'A differenza delle polveri dalla consistenza gessosa, delle capsule troppo grandi o delle polveri grezze che provocano reflusso acido ed eruttazioni, le nostre capsule molli sono piccole, lisce e incredibilmente delicate sullo stomaco.' },
       { t: 'Ingredienti puri, testati da laboratori indipendenti', photo: 'test di laboratorio', body: 'Vegano, senza OGM e privo di glutine, latticini, soia, zucchero e riempitivi artificiali. Ogni singolo lotto viene sottoposto a test indipendenti per verificarne la purezza e la potenza. Prodotto negli Stati Uniti.' }
     ],
-    stories: [
-      { r: 5.0, title: '[Review headline, e.g. "Finally back in control!"]', text: '[Paste a real customer review here – 3 to 5 sentences.]', name: '[Customer name]', tag1: 'Stable Sugar', tag2: 'Steady Energy' },
-      { r: 4.8, title: '[Review headline 2]', text: '[Second real customer review.]', name: '[Customer name]', tag1: 'Fewer Cravings', tag2: 'Daily Routine' },
-      { r: 4.9, title: '[Review headline 3]', text: '[Third real customer review.]', name: '[Customer name]', tag1: 'Gentle on Stomach', tag2: 'Long-Term Use' },
-      { r: 4.7, title: '[Review headline 4]', text: '[Fourth real customer review.]', name: '[Customer name]', tag1: 'Easy to Swallow', tag2: 'No Aftertaste' },
-      { r: 5.0, title: '[Review headline 5]', text: '[Fifth real customer review.]', name: '[Customer name]', tag1: 'Fewer Crashes', tag2: 'Steady Energy' },
-      { r: 4.6, title: '[Review headline 6]', text: '[Sixth real customer review.]', name: '[Customer name]', tag1: 'Long-Term Use', tag2: 'Stable Sugar' }
-    ],
+    stories: REV.stories.map((x) => Object.assign({}, x)),
     compare: [
       { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: IC('<path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/>') },
       { us: 'Testato da laboratori indipendenti', them: 'Nessun test indipendente', icon: IC('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>') },
@@ -80,13 +75,9 @@ function page() {
       { t: 'Posso assumere Just Jenny insieme ai farmaci che prendo attualmente?', body: 'La cannella di Ceylon è generalmente ben tollerata. Tuttavia, se stai assumendo farmaci per controllare la glicemia, anticoagulanti o altri medicinali, parla con il tuo medico prima di iniziare.\n\nÈ una precauzione importante ogni volta che si introduce un nuovo integratore nella propria routine. Basta una telefonata per avere maggiore tranquillità.' },
       { t: 'Dopo quanto tempo posso aspettarmi di notare una differenza?', body: 'I primi cambiamenti percepiti nell\'energia e nel benessere generale vengono spesso descritti dopo 2-4 settimane di assunzione regolare.\n\nPer valutare eventuali cambiamenti misurabili della glicemia, è opportuno considerare un periodo di almeno 6-8 settimane, senza aspettarsi risultati garantiti.\n\nLa velocità con cui potresti notare una differenza dipende dalla tua situazione iniziale, dall\'alimentazione e dalle abitudini quotidiane. Gli effetti possono variare da persona a persona.' }
     ],
-    feed: [
-      { r: 5.0, photo: true, ago: '[2 days ago]' }, { r: 5.0, photo: false, ago: '[1 week ago]' }, { r: 4.6, photo: true, ago: '[3 days ago]' },
-      { r: 5.0, photo: false, ago: '[5 days ago]' }, { r: 4.8, photo: true, ago: '[2 weeks ago]' }, { r: 5.0, photo: false, ago: '[3 weeks ago]' },
-      { r: 4.7, photo: false, ago: '[1 month ago]' }, { r: 5.0, photo: true, ago: '[1 month ago]' }, { r: 4.9, photo: false, ago: '[1 month ago]' }
-    ].map((x, i) => Object.assign(x, {
-      initials: ['AM', 'JS', 'LK', 'RT', 'MB', 'CW', 'DP', 'EH', 'SN'][i],
-      bg: ['#F6E2D6', '#E4EEF3', '#EAF3E4', '#F3E8F1', '#FBF0CF', '#E8EAF6', '#F6E2D6', '#E4EEF3', '#EAF3E4'][i]
+    feed: REV.feed.map((x, i) => Object.assign({}, x, {
+      initials: x.name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
+      bg: ['#F6E2D6', '#E4EEF3', '#EAF3E4', '#F3E8F1', '#FBF0CF', '#E8EAF6'][i % 6]
     })),
 
     // derived
@@ -102,14 +93,30 @@ function page() {
     get cardW() { return 'calc((100% - ' + ((this.per - 1) * 24) + 'px) / ' + this.per + ')'; },
     get trackStyle() { return 'transform: translateX(calc(-' + this.rStartC + ' * (100% + 24px) / ' + this.per + '))'; },
 
+    get revCount() { return this.feed.length; },
+    get revAvg() { return this.feed.length ? this.feed.reduce((t, x) => t + x.r, 0) / this.feed.length : 0; },
+    get revAvgTxt() { return this.revAvg.toFixed(1).replace('.', ','); },
+    get revDist() { return [5, 4, 3, 2, 1].map((n) => this.feed.filter((x) => x.r === n).length); },
+
     // helpers
+    revAgo(d) {
+      const days = Math.floor((Date.now() - new Date(d + 'T12:00:00').getTime()) / 86400000);
+      if (days < 1) return 'Oggi';
+      if (days === 1) return '1 giorno fa';
+      if (days < 7) return days + ' giorni fa';
+      if (days < 30) { const w = Math.floor(days / 7); return w === 1 ? '1 settimana fa' : w + ' settimane fa'; }
+      const m = Math.floor(days / 30); return m === 1 ? '1 mese fa' : m + ' mesi fa';
+    },
+    flagIT() { return '<svg class="flag-it" width="18" height="12" viewBox="0 0 3 2" aria-label="Italia" role="img"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>'; },
+    revDate(d) { const p = d.split('-'); return parseInt(p[2], 10) + ' ' + MESI[parseInt(p[1], 10) - 1] + ' ' + p[0]; },
     stars(r, w) {
       const h = Math.round(w * 18 / 98);
-      const last = Math.round(18 * Math.max(0, Math.min(1, r - 4)));
       const pts = [9, 29, 49, 69, 89].map((x) => '<polygon fill="#fff" points="' + [[0, -7], [2, -2], [7, -2], [3, 1.5], [4.5, 7], [0, 3.8], [-4.5, 7], [-3, 1.5], [-7, -2], [-2, -2]].map((p) => (x + p[0]) + ',' + (9 + p[1])).join(' ') + '"/>').join('');
-      return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 98 18" role="img" aria-label="Rated ' + r.toFixed(1) + ' out of 5" style="display:block">' +
-        [0, 20, 40, 60].map((x) => '<rect x="' + x + '" width="18" height="18" fill="#00B67A"/>').join('') +
-        '<rect x="80" width="18" height="18" fill="#DCDCE6"/><rect x="80" width="' + last + '" height="18" fill="#00B67A"/>' + pts + '</svg>';
+      const boxes = [0, 20, 40, 60, 80].map((x, k) => {
+        const f = Math.round(18 * Math.max(0, Math.min(1, r - k)));
+        return '<rect x="' + x + '" width="18" height="18" fill="#DCDCE6"/>' + (f ? '<rect x="' + x + '" width="' + f + '" height="18" fill="#00B67A"/>' : '');
+      }).join('');
+      return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 98 18" role="img" aria-label="Valutazione ' + r.toFixed(1) + ' su 5" style="display:block">' + boxes + pts + '</svg>';
     },
     tickerIcon(i) {
       const s = (d) => '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
