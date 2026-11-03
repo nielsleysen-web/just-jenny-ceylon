@@ -2,7 +2,7 @@
 function page() {
   // Checkout: elke "Aggiungi al carrello"-knop stuurt direct door naar deze URL,
   // met ?bundle=<id>&qty=<aantal>. Pas dit pad aan zodra de custom checkout klaar is.
-  const CHECKOUT_URL = '/checkout';
+  const CHECKOUT_URL = 'https://checkout.getjustjenny.com/ceylon'; // Stripe/PayPal-checkout (jjb-profit-dashboard, product 'ceylon')
   const BUNDLES = [
     { id: 1, qty: 1, title: 'Acquista 1', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
     { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '67%', price: '€59.99', was: '€179.97', badge: 'Più popolare' },
@@ -162,7 +162,7 @@ function page() {
     addToCart(id) {
       const b = BUNDLES.find((x) => x.id === id) || BUNDLES[1];
       this.bundle = b.id;
-      window.location.href = CHECKOUT_URL + '?bundle=' + b.id + '&qty=' + b.qty;
+      window.location.href = CHECKOUT_URL + '?b=' + b.qty;
     },
     whyScroll() {
       const el = this.$refs.whyTrack; const card = el.children[0];
