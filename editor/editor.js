@@ -186,7 +186,7 @@
       }
     }
   }
-  const MAXW = { '.gallery-main': 1400, '.thumb': 1400, '.report': 2000, '.review-img': 600, '.rv-thumb': 300, '.avatar-ph': 200, '.bundle-qty': 300, '.offer-row-img': 300, '.sticky-pouch': 200, '.offer-img': 700, '.cmp-photo': 400, '.cmp-pouch': 400, '.flip-img': 500, '.journey-banner': 1400, '.ph-box': 1200, '.ph-img': 900, '.feel-pouches': 1000 };
+  const MAXW = { '.gallery-main': 1400, '.thumb': 1400, '.report': 2000, '.review-img': 800, '.rv-thumb': 1000, '.avatar-ph': 200, '.bundle-qty': 300, '.offer-row-img': 300, '.sticky-pouch': 200, '.offer-img': 700, '.cmp-photo': 400, '.cmp-pouch': 400, '.flip-img': 500, '.journey-banner': 1400, '.ph-box': 1200, '.ph-img': 900, '.feel-pouches': 1000 };
   // Foto's verkleinen + omzetten naar WebP vóór upload, zodat de site snel blijft.
   async function optimize(im) {
     if (!/^image\/(png|jpe?g|webp|avif|bmp)$/i.test(im.type)) return { blob: im.blob, type: im.type, ext: extOf(im.type, im.name) };

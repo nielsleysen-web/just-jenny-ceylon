@@ -783,3 +783,35 @@ svg{flex:none}
 /* Sentiti meglio: productfoto volledig tonen */
 .feel-pouches.has-img{background-size:contain!important;background-position:center!important;aspect-ratio:693/763;max-width:440px;margin:0 auto;padding:0;align-self:center}
 @media (max-width:600px){.feel-pouches.has-img{max-width:280px;width:100%}}
+/* vergelijkingstabel: productfoto's zoals voorbeeld */
+.cmp-head{height:150px}
+.cmp-pouch.has-img{width:118px;height:150px;top:-62px;background-color:transparent!important;box-shadow:none;border-radius:0;padding:0;background-size:contain!important;background-position:center bottom!important;filter:drop-shadow(0 10px 14px rgba(0,0,0,.28))}
+.cmp-photo.has-img{width:124px;height:124px;top:-42px;border:0;background-color:#fff!important;background-size:78%!important;background-position:center 60%!important;background-repeat:no-repeat}
+@media (max-width:600px){
+  .cmp-head{height:132px}
+  .cmp-pouch.has-img{width:100px;height:128px;top:-52px}
+  .cmp-photo.has-img{width:108px;height:108px;top:-36px}
+}
+.cmp-pouch.has-img{width:140px;height:176px;top:-84px}
+@media (max-width:600px){.cmp-pouch.has-img{width:112px;height:144px;top:-66px}}
+/* risk-free foto: geen achtergrond, niet afgesneden */
+.riskfree-photo > div.has-img{background-color:transparent!important;border-radius:0;background-size:contain!important;background-position:center bottom!important;aspect-ratio:1200/797;max-width:560px;padding:0}
+@media (max-width:600px){.riskfree-photo > div.has-img{max-width:100%}}
+/* offers: titel vet, één kleur, groter */
+#offers .h2{font-size:38px;font-weight:700;color:var(--orange);letter-spacing:.01em;line-height:1.15}
+#offers .h2 .accent{color:inherit}
+@media (max-width:600px){#offers .h2{font-size:28px}}
+/* offers: productfoto zonder achtergrond */
+.offer-img.has-img{background-color:transparent!important;padding:0}
+/* lightbox klantfoto's */
+.rv-thumb.has-img,.review-img.has-img{cursor:zoom-in}
+.jj-lb{position:fixed;inset:0;z-index:200;background:rgba(17,12,10,.92);display:none;align-items:center;justify-content:center;padding:56px 64px}
+.jj-lb.open{display:flex}
+.jj-lb-img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.jj-lb-x{position:absolute;top:14px;right:16px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:#111;font-size:32px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 3px}
+.jj-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;color:#222}
+.jj-lb-nav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.jj-lb-prev{left:12px}.jj-lb-next{right:12px}
+.jj-lb.single .jj-lb-nav{display:none}
+@media (max-width:600px){.jj-lb{padding:72px 12px 24px}.jj-lb-nav{top:auto;bottom:20px;transform:none}.jj-lb-prev{left:calc(50% - 56px)}.jj-lb-next{right:calc(50% - 56px)}.jj-lb{padding-bottom:84px}}
+.jj-lb-img{width:auto;height:auto;max-height:calc(100vh - 112px)}

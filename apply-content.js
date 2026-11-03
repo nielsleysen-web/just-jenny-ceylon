@@ -35,7 +35,7 @@
       el.style.backgroundImage = 'url(' + src + ')';
       el.style.backgroundSize = el.matches('.bundle-qty, .offer-row-img, .offer-img, .sticky-pouch, .cmp-pouch') ? 'contain' : 'cover';
       el.style.backgroundPosition = 'center'; el.style.backgroundRepeat = 'no-repeat';
-      if (el.matches('.ph-box, .feel-pouches')) { const im = new Image(); im.onload = () => { el.style.aspectRatio = im.naturalWidth + '/' + im.naturalHeight; }; im.src = src; }
+      if (el.matches('.ph-box, .feel-pouches, .riskfree-photo > div')) { const im = new Image(); im.onload = () => { el.style.aspectRatio = im.naturalWidth + '/' + im.naturalHeight; }; im.src = src; }
     }
   }
   function cssPath(el) {
@@ -76,4 +76,41 @@
     if (window.Alpine) run(); else document.addEventListener('alpine:initialized', run);
   }
   window.JJ_CONTENT = api;
+
+  /* Lightbox: klantfoto's in het groot */
+  if (!window.JJ_NO_APPLY) {
+    const LB_SEL = '.rv-thumb.has-img, .review-img.has-img';
+    let lb = null, list = [], idx = 0;
+    const urlOf = (el) => { const m = /url\(["']?([^"')]+)["']?\)/.exec(el.style.backgroundImage || ''); return m ? m[1] : ''; };
+    function build() {
+      lb = document.createElement('div'); lb.className = 'jj-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true');
+      lb.innerHTML = '<button type="button" class="jj-lb-x" aria-label="Chiudi">&times;</button>' +
+        '<button type="button" class="jj-lb-nav jj-lb-prev" aria-label="Foto precedente"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>' +
+        '<img class="jj-lb-img" alt="Foto del cliente">' +
+        '<button type="button" class="jj-lb-nav jj-lb-next" aria-label="Foto successiva"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>';
+      document.body.appendChild(lb);
+      lb.addEventListener('click', (e) => { if (e.target === lb || e.target.closest('.jj-lb-x')) close(); });
+      lb.querySelector('.jj-lb-prev').addEventListener('click', (e) => { e.stopPropagation(); show(idx - 1); });
+      lb.querySelector('.jj-lb-next').addEventListener('click', (e) => { e.stopPropagation(); show(idx + 1); });
+      let tx = 0;
+      lb.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', (e) => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1)); }, { passive: true });
+    }
+    function show(i) { idx = (i + list.length) % list.length; lb.querySelector('.jj-lb-img').src = list[idx]; lb.classList.toggle('single', list.length < 2); }
+    function close() { if (lb) { lb.classList.remove('open'); document.documentElement.style.overflow = ''; } }
+    document.addEventListener('click', (e) => {
+      const el = e.target.closest(LB_SEL); if (!el) return;
+      const group = el.closest('.rv-photos, .ticker') || document;
+      const els = Array.from(group.querySelectorAll(LB_SEL));
+      list = Array.from(new Set(els.map(urlOf).filter(Boolean)));
+      if (!list.length) return;
+      if (!lb) build();
+      show(Math.max(0, list.indexOf(urlOf(el))));
+      lb.classList.add('open'); document.documentElement.style.overflow = 'hidden';
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!lb || !lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(idx - 1); else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  }
 })();
