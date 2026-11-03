@@ -1,1 +1,12 @@
-{"texts":[],"images":[]}
+{
+ "saved": "2026-11-03T00:23:38.795Z",
+ "texts": [],
+ "images": [
+  {
+   "key": ".gallery-main#1",
+   "label": "gallery-main",
+   "src": "assets/uploads/gallery-main-1.png?v=mvzy2uqz",
+   "type": "image/png"
+  }
+ ]
+}
