@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T01:12:14.145Z",
+ "saved": "2026-11-03T01:14:48.233Z",
  "texts": [
   {
    "section": "#top Stabilizza i tuoi livelli nel sangue in 18 giorni.",
@@ -242,6 +242,12 @@
    "key": ".flip-img#4",
    "label": "[Foto: capsula molle con olio MCT]",
    "src": "assets/uploads/flip-img-4.png?v=mvzzs3s6",
+   "type": "image/png"
+  },
+  {
+   "key": ".journey-banner#1",
+   "label": "[Foto: coppia felice 50+ a casa] JUST·JENNY",
+   "src": "assets/uploads/journey-banner-1.png?v=mvzzwn55",
    "type": "image/png"
   }
  ]
