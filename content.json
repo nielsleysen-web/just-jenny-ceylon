@@ -339,6 +339,12 @@
    "label": "Sticky balk",
    "src": "assets/opt/bundle-qty-1.webp?v=s1",
    "type": "image/webp"
+  },
+  {
+   "key": ".ph-img#9",
+   "label": "[Foto: test di laboratorio]",
+   "src": "assets/opt/ph-img-9.webp?v=6ae9f2d5",
+   "type": "image/webp"
   }
  ]
 }
