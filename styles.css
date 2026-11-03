@@ -80,6 +80,7 @@ svg{flex:none}
 .review-img{width:180px;aspect-ratio:1/1;margin-right:12px;border-radius:12px;background:var(--ph);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--muted)}
 .review-img svg{width:36px;height:36px;fill:none;stroke:var(--orange);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .badge-ticker{background:#F7E1D1;border-top:1px solid #EAC4AD;border-bottom:1px solid #EAC4AD;margin:28px -20px 0;width:auto;padding:2px 0}
+.badge-ticker .ticker-track{animation-duration:53s}
 .badge-item{display:inline-flex;align-items:center;gap:10px;padding:5px 28px;font-size:15px;font-weight:500;white-space:nowrap;color:var(--navy)}
 .badge-ring{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--orange);background:#fff;display:inline-flex;align-items:center;justify-content:center}
 
