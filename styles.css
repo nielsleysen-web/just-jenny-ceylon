@@ -774,3 +774,4 @@ svg{flex:none}
 @media (max-width:600px){.bundle-qty.has-img{width:48px;height:62px}.bundle{gap:8px}}
 @media (max-width:374px){.bundle-qty.has-img{width:44px;height:56px}}
 .rv-bar>span:last-child{width:34px;text-align:right;flex:none}
+.has-img:not(.report){color:transparent!important}

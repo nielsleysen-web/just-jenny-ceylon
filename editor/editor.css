@@ -36,3 +36,4 @@ body{padding-top:44px}
 @media (max-width:600px){.ed-ui:not(.ed-help){flex-wrap:wrap;gap:8px;padding:8px 10px}.ed-ui:not(.ed-help) span{flex-basis:100%;font-size:11px}body{padding-top:96px}.ed-help{left:10px;right:10px;width:auto;top:104px}}
 .bundle-qty.ed-has-img{background-color:transparent!important;color:transparent;font-size:0;padding:0;width:68px;height:76px;border-radius:0}
 @media (max-width:600px){.bundle-qty.ed-has-img{width:48px;height:62px}}
+.ed-has-img:not(.report):not(.ed-bg){color:transparent!important}
