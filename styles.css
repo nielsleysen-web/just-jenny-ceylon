@@ -775,3 +775,7 @@ svg{flex:none}
 @media (max-width:374px){.bundle-qty.has-img{width:44px;height:56px}}
 .rv-bar>span:last-child{width:34px;text-align:right;flex:none}
 .has-img:not(.report){color:transparent!important}
+/* Storie vere: titel groter, vet, één kleur */
+#reviews .h2{font-size:36px;font-weight:700;color:var(--orange);letter-spacing:.01em;line-height:1.15}
+#reviews .h2 .accent{color:inherit}
+@media (max-width:600px){#reviews .h2{font-size:28px}}
