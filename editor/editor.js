@@ -186,6 +186,19 @@
       }
     }
   }
+  const MAXW = { '.gallery-main': 1400, '.thumb': 1400, '.report': 2000, '.review-img': 600, '.rv-thumb': 300, '.avatar-ph': 200, '.bundle-qty': 300, '.offer-row-img': 300, '.sticky-pouch': 200, '.offer-img': 700, '.cmp-photo': 400, '.cmp-pouch': 400, '.flip-img': 500, '.journey-banner': 1400, '.ph-box': 1200, '.ph-img': 900, '.feel-pouches': 1000 };
+  // Foto's verkleinen + omzetten naar WebP vóór upload, zodat de site snel blijft.
+  async function optimize(im) {
+    if (!/^image\/(png|jpe?g|webp|avif|bmp)$/i.test(im.type)) return { blob: im.blob, type: im.type, ext: extOf(im.type, im.name) };
+    const max = MAXW[im.key.split('#')[0]] || 1200;
+    const bmp = await createImageBitmap(im.blob);
+    const w = Math.min(max, bmp.width), h = Math.round(bmp.height * w / bmp.width);
+    const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+    cv.getContext('2d').drawImage(bmp, 0, 0, w, h);
+    const out = await new Promise(r => cv.toBlob(r, 'image/webp', 0.82));
+    if (!out || out.type !== 'image/webp') return { blob: im.blob, type: im.type, ext: extOf(im.type, im.name) };
+    return { blob: out, type: 'image/webp', ext: 'webp' };
+  }
   function blobToBase64(blob) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(blob); }); }
   function safeName(key) { return key.replace(/^\./, '').replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '').toLowerCase(); }
   function extOf(type, name) { const m = /\.([a-z0-9]{2,5})$/i.exec(name || ''); if (m) return m[1].toLowerCase(); return ({ 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'video/mp4': 'mp4', 'video/webm': 'webm', 'video/quicktime': 'mov' })[type] || 'bin'; }
@@ -200,10 +213,11 @@
       for (let i = 0; i < list.length; i++) {
         const im = list[i];
         btn.textContent = 'Foto ' + (i + 1) + '/' + list.length + ' uploaden…';
-        if (im.blob.size > 25 * 1024 * 1024) throw new Error(im.label + ': bestand groter dan 25 MB');
-        const path = 'assets/uploads/' + safeName(im.key) + '.' + extOf(im.type, im.name);
-        await putFile(path, await blobToBase64(im.blob), 'Upload ' + im.label);
-        imgs.set(im.key, { key: im.key, label: im.label, src: path + '?v=' + Date.now().toString(36), type: im.type });
+        const o = await optimize(im);
+        if (o.blob.size > 25 * 1024 * 1024) throw new Error(im.label + ': bestand groter dan 25 MB');
+        const path = 'assets/uploads/' + safeName(im.key) + '.' + o.ext;
+        await putFile(path, await blobToBase64(o.blob), 'Upload ' + im.label);
+        imgs.set(im.key, { key: im.key, label: im.label, src: path + '?v=' + Date.now().toString(36), type: o.type });
         im.committed = true;
       }
       btn.textContent = 'Teksten opslaan…';

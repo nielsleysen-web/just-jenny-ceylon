@@ -95,7 +95,7 @@
 
     <!-- Buy box -->
     <div class="col-buy">
-      <div class="rating-line" x-show="showReviews"><span x-html="stars(revAvg, 98)"></span><span x-text="'Valutazione di ' + revAvgTxt + '/5 basata su ' + revCount + ' recensioni'"></span></div>
+      <div class="rating-line" x-show="showReviews"><span x-html="stars(revAvg, 98)"></span><span x-text="'Valutazione di ' + revAvgTxt + '/5 basata su ' + revTotalTxt + ' recensioni'"></span></div>
       <h1 class="product-title" id="offerta">Stabilizza i tuoi livelli nel sangue in 18 giorni.</h1>
       <ul class="hero-bullets">
         <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg></span>Ripristina la sensibilità all'insulina</li>
@@ -469,9 +469,9 @@
   <div class="wrap-1000 center-col">
     <h2 class="h2-md">Recensioni dei clienti</h2>
     <div class="rv-summary">
-      <div class="rv-avg"><span class="rv-num" x-text="revAvgTxt"></span><span x-html="stars(revAvg, 120)"></span><span class="tp-muted" x-text="'basata su ' + revCount + ' recensioni'"></span></div>
+      <div class="rv-avg"><span class="rv-num" x-text="revAvgTxt"></span><span x-html="stars(revAvg, 120)"></span><span class="tp-muted" x-text="'basata su ' + revTotalTxt + ' recensioni'"></span></div>
       <div class="rv-bars">
-        <template x-for="(c, i) in revDist"><div class="rv-bar"><span x-text="(5-i) + (i === 4 ? ' stella' : ' stelle')"></span><span class="bar"><span :style="'width:' + (revCount ? c / revCount * 100 : 0) + '%'"></span></span><span class="tp-muted" x-text="c"></span></div></template>
+        <template x-for="(c, i) in revDist"><div class="rv-bar"><span x-text="(5-i) + (i === 4 ? ' stella' : ' stelle')"></span><span class="bar"><span :style="'width:' + (revCount ? c / revCount * 100 : 0) + '%'"></span></span><span class="tp-muted" x-text="revPct(c) + '%'"></span></div></template>
       </div>
       <div class="rv-photos">
         <span class="tp-muted">Foto e video dei clienti</span>
@@ -548,7 +548,7 @@
     <div class="sticky-pouch">JUST JENNY<span>Ceylon Cinnamon</span></div>
     <div class="sticky-text">
       <div class="sticky-name"><span class="sn-full">Cannella di Ceylon 7200mg con olio MCT</span><span class="sn-short">Cannella di Ceylon 7200mg</span></div>
-      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(revAvg, 72)"></span><span x-text="revAvgTxt + '/5 · ' + revCount + ' recensioni'"></span></div>
+      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(revAvg, 72)"></span><span x-text="revAvgTxt + '/5 · ' + revTotalTxt + ' recensioni'"></span></div>
     </div>
     <button type="button" class="sticky-btn" @click="addToCart(bundle)">AGGIUNGI AL CARRELLO</button>
   </div>

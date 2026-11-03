@@ -13,338 +13,338 @@
   {
    "key": ".gallery-main#1",
    "label": "gallery-main",
-   "src": "assets/uploads/gallery-main-1.png?v=mvzy2uqz",
-   "type": "image/png"
+   "src": "assets/opt/gallery-main-1.webp?v=mvzy2uqz",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#2",
    "label": "2",
-   "src": "assets/uploads/thumb-2.png?v=mvzy4u6k",
-   "type": "image/png"
+   "src": "assets/opt/thumb-2.webp?v=mvzy4u6k",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#3",
    "label": "3",
-   "src": "assets/uploads/thumb-3.png?v=mvzy4vm7",
-   "type": "image/png"
+   "src": "assets/opt/thumb-3.webp?v=mvzy4vm7",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#4",
    "label": "4",
-   "src": "assets/uploads/thumb-4.png?v=mvzy4x29",
-   "type": "image/png"
+   "src": "assets/opt/thumb-4.webp?v=mvzy4x29",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#5",
    "label": "5",
-   "src": "assets/uploads/thumb-5.png?v=mvzy4yqc",
-   "type": "image/png"
+   "src": "assets/opt/thumb-5.webp?v=mvzy4yqc",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#6",
    "label": "6",
-   "src": "assets/uploads/thumb-6.png?v=mvzy50cv",
-   "type": "image/png"
+   "src": "assets/opt/thumb-6.webp?v=mvzy50cv",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#7",
    "label": "7",
-   "src": "assets/uploads/thumb-7.png?v=mvzy51vk",
-   "type": "image/png"
+   "src": "assets/opt/thumb-7.webp?v=mvzy51vk",
+   "type": "image/webp"
   },
   {
    "key": ".thumb#8",
    "label": "8",
-   "src": "assets/uploads/thumb-8.png?v=mvzy53d8",
-   "type": "image/png"
+   "src": "assets/opt/thumb-8.webp?v=mvzy53d8",
+   "type": "image/webp"
   },
   {
    "key": ".bundle-qty#1",
    "label": "×1",
-   "src": "assets/uploads/bundle-qty-1.png?v=mvzy54ki",
-   "type": "image/png"
+   "src": "assets/opt/bundle-qty-1.webp?v=mvzy54ki",
+   "type": "image/webp"
   },
   {
    "key": ".bundle-qty#2",
    "label": "×3",
-   "src": "assets/uploads/bundle-qty-2.png?v=mvzy55vv",
-   "type": "image/png"
+   "src": "assets/opt/bundle-qty-2.webp?v=mvzy55vv",
+   "type": "image/webp"
   },
   {
    "key": ".bundle-qty#3",
    "label": "×5",
-   "src": "assets/uploads/bundle-qty-3.png?v=mvzy5793",
-   "type": "image/png"
+   "src": "assets/opt/bundle-qty-3.webp?v=mvzy5793",
+   "type": "image/webp"
   },
   {
    "key": ".ph-box#1",
    "label": "[Immagine: garanzie]",
-   "src": "assets/uploads/ph-box-1.png?v=mvzy58w4",
-   "type": "image/png"
+   "src": "assets/opt/ph-box-1.webp?v=mvzy58w4",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#1",
    "label": "[Foto: stecche di cannella di Ceylon]",
-   "src": "assets/uploads/ph-img-1.png?v=mvzy6c0n",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-1.webp?v=mvzy6c0n",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#2",
    "label": "[Foto: polvere di cannella in una ciotola]",
-   "src": "assets/uploads/ph-img-2.png?v=mvzy6es2",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-2.webp?v=mvzy6es2",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#3",
    "label": "[Foto: olio MCT + capsule molli]",
-   "src": "assets/uploads/ph-img-3.png?v=mvzy6htb",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-3.webp?v=mvzy6htb",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#4",
    "label": "[Foto: test di laboratorio]",
-   "src": "assets/uploads/ph-img-4.png?v=mvzy6kml",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-4.webp?v=mvzy6kml",
+   "type": "image/webp"
   },
   {
    "key": ".feel-pouches#1",
    "label": "feel-pouches",
-   "src": "assets/uploads/feel-pouches-1.png?v=mvzy6m6v",
-   "type": "image/png"
+   "src": "assets/opt/feel-pouches-1.webp?v=mvzy6m6v",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#9",
    "label": "[Review image 1]",
-   "src": "assets/uploads/review-img-9.png?v=mvzytcde",
-   "type": "image/png"
+   "src": "assets/opt/review-img-9.webp?v=mvzytcde",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#2",
    "label": "[Review image 2]",
-   "src": "assets/uploads/review-img-2.png?v=mvzytfyw",
-   "type": "image/png"
+   "src": "assets/opt/review-img-2.webp?v=mvzytfyw",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#3",
    "label": "[Review image 3]",
-   "src": "assets/uploads/review-img-3.png?v=mvzytjbm",
-   "type": "image/png"
+   "src": "assets/opt/review-img-3.webp?v=mvzytjbm",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#4",
    "label": "[Review image 4]",
-   "src": "assets/uploads/review-img-4.png?v=mvzytlwe",
-   "type": "image/png"
+   "src": "assets/opt/review-img-4.webp?v=mvzytlwe",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#5",
    "label": "[Review image 5]",
-   "src": "assets/uploads/review-img-5.png?v=mvzyto9s",
-   "type": "image/png"
+   "src": "assets/opt/review-img-5.webp?v=mvzyto9s",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#6",
    "label": "[Review image 6]",
-   "src": "assets/uploads/review-img-6.png?v=mvzytrma",
-   "type": "image/png"
+   "src": "assets/opt/review-img-6.webp?v=mvzytrma",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#7",
    "label": "[Review image 7]",
-   "src": "assets/uploads/review-img-7.png?v=mvzytu8h",
-   "type": "image/png"
+   "src": "assets/opt/review-img-7.webp?v=mvzytu8h",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#8",
    "label": "[Review image 8]",
-   "src": "assets/uploads/review-img-8.png?v=mvzytwki",
-   "type": "image/png"
+   "src": "assets/opt/review-img-8.webp?v=mvzytwki",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#10",
    "label": "[Review image 2]",
-   "src": "assets/uploads/review-img-10.png?v=mvzytyy5",
-   "type": "image/png"
+   "src": "assets/opt/review-img-10.webp?v=mvzytyy5",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#11",
    "label": "[Review image 3]",
-   "src": "assets/uploads/review-img-11.png?v=mvzzc1os",
-   "type": "image/png"
+   "src": "assets/opt/review-img-11.webp?v=mvzzc1os",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#12",
    "label": "[Review image 4]",
-   "src": "assets/uploads/review-img-12.png?v=mvzzc4oe",
-   "type": "image/png"
+   "src": "assets/opt/review-img-12.webp?v=mvzzc4oe",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#13",
    "label": "[Review image 5]",
-   "src": "assets/uploads/review-img-13.png?v=mvzzc74y",
-   "type": "image/png"
+   "src": "assets/opt/review-img-13.webp?v=mvzzc74y",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#14",
    "label": "[Review image 6]",
-   "src": "assets/uploads/review-img-14.png?v=mvzzca3j",
-   "type": "image/png"
+   "src": "assets/opt/review-img-14.webp?v=mvzzca3j",
+   "type": "image/webp"
   },
   {
    "key": ".avatar-ph#1",
    "label": "avatar-ph",
-   "src": "assets/uploads/avatar-ph-1.jpg?v=mvzzpjyt",
-   "type": "image/jpeg"
+   "src": "assets/opt/avatar-ph-1.webp?v=mvzzpjyt",
+   "type": "image/webp"
   },
   {
    "key": ".avatar-ph#2",
    "label": "avatar-ph",
-   "src": "assets/uploads/avatar-ph-2.jpg?v=mvzzpkrn",
-   "type": "image/jpeg"
+   "src": "assets/opt/avatar-ph-2.webp?v=mvzzpkrn",
+   "type": "image/webp"
   },
   {
    "key": ".avatar-ph#3",
    "label": "avatar-ph",
-   "src": "assets/uploads/avatar-ph-3.jpg?v=mvzzplrz",
-   "type": "image/jpeg"
+   "src": "assets/opt/avatar-ph-3.webp?v=mvzzplrz",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#15",
    "label": "[Review image 7]",
-   "src": "assets/uploads/review-img-15.png?v=mvzzcfvv",
-   "type": "image/png"
+   "src": "assets/opt/review-img-15.webp?v=mvzzcfvv",
+   "type": "image/webp"
   },
   {
    "key": ".review-img#16",
    "label": "[Review image 8]",
-   "src": "assets/uploads/review-img-16.png?v=mvzzci7j",
-   "type": "image/png"
+   "src": "assets/opt/review-img-16.webp?v=mvzzci7j",
+   "type": "image/webp"
   },
   {
    "key": ".flip-img#1",
    "label": "[Foto: glicemia / glucosio]",
-   "src": "assets/uploads/flip-img-1.png?v=mvzzrwk2",
-   "type": "image/png"
+   "src": "assets/opt/flip-img-1.webp?v=mvzzrwk2",
+   "type": "image/webp"
   },
   {
    "key": ".flip-img#2",
    "label": "[Foto: donna con stomaco sereno]",
-   "src": "assets/uploads/flip-img-2.png?v=mvzzrz06",
-   "type": "image/png"
+   "src": "assets/opt/flip-img-2.webp?v=mvzzrz06",
+   "type": "image/webp"
   },
   {
    "key": ".flip-img#3",
    "label": "[Foto: fegato sano / Ceylon vs Cassia]",
-   "src": "assets/uploads/flip-img-3.png?v=mvzzs1g5",
-   "type": "image/png"
+   "src": "assets/opt/flip-img-3.webp?v=mvzzs1g5",
+   "type": "image/webp"
   },
   {
    "key": ".flip-img#4",
    "label": "[Foto: capsula molle con olio MCT]",
-   "src": "assets/uploads/flip-img-4.png?v=mvzzs3s6",
-   "type": "image/png"
+   "src": "assets/opt/flip-img-4.webp?v=mvzzs3s6",
+   "type": "image/webp"
   },
   {
    "key": ".journey-banner#1",
    "label": "[Foto: coppia felice 50+ a casa] JUST·JENNY",
-   "src": "assets/uploads/journey-banner-1.png?v=mvzzwn55",
-   "type": "image/png"
+   "src": "assets/opt/journey-banner-1.webp?v=mvzzwn55",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#5",
    "label": "[Foto: capsule molli su polvere di cannella]",
-   "src": "assets/uploads/ph-img-5.png?v=mvzzzkvh",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-5.webp?v=mvzzzkvh",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#6",
    "label": "[Foto: goccia di olio MCT]",
-   "src": "assets/uploads/ph-img-6.png?v=mvzzzng0",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-6.webp?v=mvzzzng0",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#7",
    "label": "[Foto: stecche di Ceylon e Cassia a confronto]",
-   "src": "assets/uploads/ph-img-7.png?v=mvzzzpgf",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-7.webp?v=mvzzzpgf",
+   "type": "image/webp"
   },
   {
    "key": ".ph-img#8",
    "label": "[Foto: una capsula molle nel palmo della mano]",
-   "src": "assets/uploads/ph-img-8.png?v=mvzzzrga",
-   "type": "image/png"
+   "src": "assets/opt/ph-img-8.webp?v=mvzzzrga",
+   "type": "image/webp"
   },
   {
    "key": ".cmp-pouch#1",
    "label": "JUST JENNY Ceylon Cinnamon",
-   "src": "assets/uploads/cmp-pouch-1.png?v=mw000jm6",
-   "type": "image/png"
+   "src": "assets/opt/cmp-pouch-1.webp?v=mw000jm6",
+   "type": "image/webp"
   },
   {
    "key": ".cmp-photo#1",
    "label": "[Foto: capsule]",
-   "src": "assets/uploads/cmp-photo-1.avif?v=mw000kst",
-   "type": "image/avif"
+   "src": "assets/opt/cmp-photo-1.webp?v=mw000kst",
+   "type": "image/webp"
   },
   {
    "key": ".offer-img#1",
    "label": "JUST JENNY Ceylon Cinnamon",
-   "src": "assets/uploads/offer-img-1.png?v=mw005fgz",
-   "type": "image/png"
+   "src": "assets/opt/offer-img-1.webp?v=mw005fgz",
+   "type": "image/webp"
   },
   {
    "key": ".offer-img#2",
    "label": "offer-img",
-   "src": "assets/uploads/offer-img-2.png?v=mw005gu7",
-   "type": "image/png"
+   "src": "assets/opt/offer-img-2.webp?v=mw005gu7",
+   "type": "image/webp"
   },
   {
    "key": ".offer-img#3",
    "label": "offer-img",
-   "src": "assets/uploads/offer-img-3.png?v=mw005i7h",
-   "type": "image/png"
+   "src": "assets/opt/offer-img-3.webp?v=mw005i7h",
+   "type": "image/webp"
   },
   {
    "key": ".riskfree-photo > div#1",
    "label": "DIV",
-   "src": "assets/uploads/riskfree-photo-div-1.png?v=mw005ksu",
-   "type": "image/png"
+   "src": "assets/opt/riskfree-photo-div-1.webp?v=mw005ksu",
+   "type": "image/webp"
   },
   {
    "key": ".rv-thumb#1",
    "label": "rv-thumb",
-   "src": "assets/uploads/rv-thumb-1.png?v=mw005n3c",
-   "type": "image/png"
+   "src": "assets/opt/rv-thumb-1.webp?v=mw005n3c",
+   "type": "image/webp"
   },
   {
    "key": ".rv-thumb#2",
    "label": "rv-thumb",
-   "src": "assets/uploads/rv-thumb-2.png?v=mw005pek",
-   "type": "image/png"
+   "src": "assets/opt/rv-thumb-2.webp?v=mw005pek",
+   "type": "image/webp"
   },
   {
    "key": ".rv-thumb#3",
    "label": "rv-thumb",
-   "src": "assets/uploads/rv-thumb-3.png?v=mw005rpw",
-   "type": "image/png"
+   "src": "assets/opt/rv-thumb-3.webp?v=mw005rpw",
+   "type": "image/webp"
   },
   {
    "key": ".rv-thumb#4",
    "label": "rv-thumb",
-   "src": "assets/uploads/rv-thumb-4.png?v=mw005ura",
-   "type": "image/png"
+   "src": "assets/opt/rv-thumb-4.webp?v=mw005ura",
+   "type": "image/webp"
   },
   {
    "key": ".rv-thumb#5",
    "label": "rv-thumb",
-   "src": "assets/uploads/rv-thumb-5.png?v=mw005xre",
-   "type": "image/png"
+   "src": "assets/opt/rv-thumb-5.webp?v=mw005xre",
+   "type": "image/webp"
   },
   {
    "key": ".rv-thumb#6",
    "label": "rv-thumb",
-   "src": "assets/uploads/rv-thumb-6.png?v=mw0060cr",
-   "type": "image/png"
+   "src": "assets/opt/rv-thumb-6.webp?v=mw0060cr",
+   "type": "image/webp"
   }
  ]
 }

@@ -102,6 +102,10 @@ function page() {
     get trackStyle() { return 'transform: translateX(calc(-' + this.rStartC + ' * (100% + 24px) / ' + this.per + '))'; },
 
     get revCount() { return this.feed.length; },
+    // Totaal aantal reviews op Trustpilot (handmatig bijwerken). Leeg laten (null) = aantal reviews in reviews.js.
+    revTotal: 11419,
+    get revTotalTxt() { return (this.revTotal || this.feed.length).toLocaleString('it-IT'); },
+    revPct(c) { return this.revCount ? Math.round(c / this.revCount * 100) : 0; },
     get revAvg() { return this.feed.length ? this.feed.reduce((t, x) => t + x.r, 0) / this.feed.length : 0; },
     get revAvgTxt() { return this.revAvg.toFixed(1).replace('.', ','); },
     get revDist() { return [5, 4, 3, 2, 1].map((n) => this.feed.filter((x) => x.r === n).length); },
