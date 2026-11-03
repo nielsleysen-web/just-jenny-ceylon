@@ -126,7 +126,7 @@ svg{flex:none}
 .sold-bar div{height:100%;background:var(--orange)}
 .price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .price{font-size:18px;font-weight:700;color:var(--orange)}
-.was{font-size:13px;color:var(--muted);text-decoration:line-through}
+.was{font-size:15px;color:var(--ink);text-decoration:line-through}
 .sale-tag{background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:3px 7px;border-radius:4px}
 .low-stock{align-self:center;color:#B42318;font-size:14px;font-weight:600}
 .bundle-list{display:flex;flex-direction:column;gap:14px;padding-top:6px}
