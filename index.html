@@ -208,7 +208,7 @@
             <p x-text="st.text"></p>
             <div class="chips"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>
             <div class="story-foot">
-              <div class="avatar-ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+              <div class="avatar-ph"><img x-show="st.avatar" :src="st.avatar" :alt="st.name" loading="lazy"><svg x-show="!st.avatar" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
               <div><div class="story-name" x-text="st.name"></div><div class="verified">Verificato da <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
             </div>
           </div>
@@ -223,7 +223,7 @@
             <h3 x-text="st.title"></h3>
             <p x-text="st.text"></p>
             <div class="story-foot">
-              <div class="avatar-ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+              <div class="avatar-ph"><img x-show="st.avatar" :src="st.avatar" :alt="st.name" loading="lazy"><svg x-show="!st.avatar" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
               <div><div class="story-name" x-text="st.name"></div><div class="verified">Verificato da <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
             </div>
             <div class="chips chips-row"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>

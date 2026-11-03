@@ -191,24 +191,6 @@
    "type": "image/webp"
   },
   {
-   "key": ".avatar-ph#1",
-   "label": "avatar-ph",
-   "src": "assets/opt/avatar-ph-1.webp?v=mvzzpjyt",
-   "type": "image/webp"
-  },
-  {
-   "key": ".avatar-ph#2",
-   "label": "avatar-ph",
-   "src": "assets/opt/avatar-ph-2.webp?v=mvzzpkrn",
-   "type": "image/webp"
-  },
-  {
-   "key": ".avatar-ph#3",
-   "label": "avatar-ph",
-   "src": "assets/opt/avatar-ph-3.webp?v=mvzzplrz",
-   "type": "image/webp"
-  },
-  {
    "key": ".review-img#15",
    "label": "[Review image 7]",
    "src": "assets/opt/review-img-15.webp?v=mvzzcfvv",

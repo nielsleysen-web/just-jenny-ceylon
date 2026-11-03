@@ -12,7 +12,8 @@ window.JJ_REVIEWS = {
    "country": "Italia",
    "photo": "",
    "tag1": "Più movimento",
-   "tag2": "Capsula comoda"
+   "tag2": "Capsula comoda",
+   "avatar": "assets/opt/avatar-riccardo-l.webp"
   },
   {
    "name": "Ilaria L.",
@@ -24,7 +25,8 @@ window.JJ_REVIEWS = {
    "country": "Italia",
    "photo": "",
    "tag1": "Pasti più sereni",
-   "tag2": "Facile da usare"
+   "tag2": "Facile da usare",
+   "avatar": "assets/opt/avatar-ilaria-l.webp"
   },
   {
    "name": "Francesco S.",
@@ -36,7 +38,8 @@ window.JJ_REVIEWS = {
    "country": "Italia",
    "photo": "",
    "tag1": "Routine costante",
-   "tag2": "Una capsula al giorno"
+   "tag2": "Una capsula al giorno",
+   "avatar": "assets/opt/avatar-francesco-s.webp"
   },
   {
    "name": "Alice R.",
@@ -48,7 +51,8 @@ window.JJ_REVIEWS = {
    "country": "Italia",
    "photo": "",
    "tag1": "Meno sensi di colpa",
-   "tag2": "Routine semplice"
+   "tag2": "Routine semplice",
+   "avatar": "assets/opt/avatar-alice-r.webp"
   },
   {
    "name": "Paolo D.",
@@ -60,7 +64,8 @@ window.JJ_REVIEWS = {
    "country": "Italia",
    "photo": "",
    "tag1": "Più motivazione",
-   "tag2": "Semplice da usare"
+   "tag2": "Semplice da usare",
+   "avatar": "assets/opt/avatar-paolo-d.webp"
   },
   {
    "name": "Monica C.",
@@ -72,7 +77,8 @@ window.JJ_REVIEWS = {
    "country": "Italia",
    "photo": "",
    "tag1": "Mattine più calme",
-   "tag2": "Capsula comoda"
+   "tag2": "Capsula comoda",
+   "avatar": "assets/opt/avatar-monica-c.webp"
   }
  ],
  "feed": [
