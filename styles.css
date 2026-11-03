@@ -411,7 +411,7 @@ svg{flex:none}
 .journey-left .h2-xl{font-size:34px}
 .journey-left .lead{font-size:15px}
 .reasons-sec .eyebrow-tag{margin-bottom:-12px}
-.btn+.guar-line{margin-top:-12px;font-size:13.5px}
+.btn+.guar-line{margin-top:2px;font-size:13.5px}
 .cmp-copy .btn{font-size:15px;padding:15px 32px}
 .cmp-copy .guar-line{margin-top:-8px;font-size:13px}
 .riskfree svg[role=img]{width:140px;height:140px}
@@ -618,7 +618,7 @@ svg{flex:none}
   .journey-left .lead{order:3;text-align:center;align-self:center}
   .timeline{order:4;flex:none;margin-top:12px}
   .journey-left .btn{order:5;align-self:center;margin-top:14px}
-  .journey-left .guar-line{order:6;margin-top:-6px}
+  .journey-left .guar-line{order:6;margin-top:6px}
 }
 /* mobile: 5 reasons compact */
 @media (max-width:600px){
