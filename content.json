@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T00:25:30.436Z",
+ "saved": "2026-11-03T00:26:34.327Z",
  "texts": [],
  "images": [
   {
@@ -72,6 +72,36 @@
    "key": ".ph-box#1",
    "label": "[Immagine: garanzie]",
    "src": "assets/uploads/ph-box-1.png?v=mvzy58w4",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#1",
+   "label": "[Foto: stecche di cannella di Ceylon]",
+   "src": "assets/uploads/ph-img-1.png?v=mvzy6c0n",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#2",
+   "label": "[Foto: polvere di cannella in una ciotola]",
+   "src": "assets/uploads/ph-img-2.png?v=mvzy6es2",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#3",
+   "label": "[Foto: olio MCT + capsule molli]",
+   "src": "assets/uploads/ph-img-3.png?v=mvzy6htb",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#4",
+   "label": "[Foto: test di laboratorio]",
+   "src": "assets/uploads/ph-img-4.png?v=mvzy6kml",
+   "type": "image/png"
+  },
+  {
+   "key": ".feel-pouches#1",
+   "label": "feel-pouches",
+   "src": "assets/uploads/feel-pouches-1.png?v=mvzy6m6v",
    "type": "image/png"
   }
  ]
