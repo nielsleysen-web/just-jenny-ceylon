@@ -269,24 +269,6 @@
    "type": "image/webp"
   },
   {
-   "key": ".offer-img#1",
-   "label": "JUST JENNY Ceylon Cinnamon",
-   "src": "assets/opt/offer-img-1.webp?v=mw005fgz",
-   "type": "image/webp"
-  },
-  {
-   "key": ".offer-img#2",
-   "label": "offer-img",
-   "src": "assets/opt/offer-img-2.webp?v=mw005gu7",
-   "type": "image/webp"
-  },
-  {
-   "key": ".offer-img#3",
-   "label": "offer-img",
-   "src": "assets/opt/offer-img-3.webp?v=mw005i7h",
-   "type": "image/webp"
-  },
-  {
    "key": ".riskfree-photo > div#1",
    "label": "DIV",
    "src": "assets/opt/riskfree-photo-div-1.webp?v=mw005ksu",
@@ -344,6 +326,42 @@
    "key": ".ph-img#9",
    "label": "[Foto: test di laboratorio]",
    "src": "assets/opt/ph-img-9.webp?v=6ae9f32e",
+   "type": "image/webp"
+  },
+  {
+   "key": ".offer-img#1",
+   "label": "offer 1",
+   "src": "assets/opt/offer-img-1.webp?v=6aea5229",
+   "type": "image/webp"
+  },
+  {
+   "key": ".offer-row-img#1",
+   "label": "offer 1",
+   "src": "assets/opt/offer-img-1.webp?v=6aea5229",
+   "type": "image/webp"
+  },
+  {
+   "key": ".offer-img#2",
+   "label": "offer 2",
+   "src": "assets/opt/offer-img-2.webp?v=6aea5229",
+   "type": "image/webp"
+  },
+  {
+   "key": ".offer-row-img#2",
+   "label": "offer 2",
+   "src": "assets/opt/offer-img-2.webp?v=6aea5229",
+   "type": "image/webp"
+  },
+  {
+   "key": ".offer-img#3",
+   "label": "offer 3",
+   "src": "assets/opt/offer-img-3.webp?v=6aea5229",
+   "type": "image/webp"
+  },
+  {
+   "key": ".offer-row-img#3",
+   "label": "offer 3",
+   "src": "assets/opt/offer-img-3.webp?v=6aea5229",
    "type": "image/webp"
   }
  ]
