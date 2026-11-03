@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T01:14:48.233Z",
+ "saved": "2026-11-03T01:17:13.786Z",
  "texts": [
   {
    "section": "#top Stabilizza i tuoi livelli nel sangue in 18 giorni.",
@@ -248,6 +248,30 @@
    "key": ".journey-banner#1",
    "label": "[Foto: coppia felice 50+ a casa] JUST·JENNY",
    "src": "assets/uploads/journey-banner-1.png?v=mvzzwn55",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#5",
+   "label": "[Foto: capsule molli su polvere di cannella]",
+   "src": "assets/uploads/ph-img-5.png?v=mvzzzkvh",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#6",
+   "label": "[Foto: goccia di olio MCT]",
+   "src": "assets/uploads/ph-img-6.png?v=mvzzzng0",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#7",
+   "label": "[Foto: stecche di Ceylon e Cassia a confronto]",
+   "src": "assets/uploads/ph-img-7.png?v=mvzzzpgf",
+   "type": "image/png"
+  },
+  {
+   "key": ".ph-img#8",
+   "label": "[Foto: una capsula molle nel palmo della mano]",
+   "src": "assets/uploads/ph-img-8.png?v=mvzzzrga",
    "type": "image/png"
   }
  ]
