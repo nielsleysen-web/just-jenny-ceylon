@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T01:17:51.821Z",
+ "saved": "2026-11-03T01:22:05.259Z",
  "texts": [
   {
    "section": "#top Stabilizza i tuoi livelli nel sangue in 18 giorni.",
@@ -285,6 +285,66 @@
    "label": "[Foto: capsule]",
    "src": "assets/uploads/cmp-photo-1.avif?v=mw000kst",
    "type": "image/avif"
+  },
+  {
+   "key": ".offer-img#1",
+   "label": "JUST JENNY Ceylon Cinnamon",
+   "src": "assets/uploads/offer-img-1.png?v=mw005fgz",
+   "type": "image/png"
+  },
+  {
+   "key": ".offer-img#2",
+   "label": "offer-img",
+   "src": "assets/uploads/offer-img-2.png?v=mw005gu7",
+   "type": "image/png"
+  },
+  {
+   "key": ".offer-img#3",
+   "label": "offer-img",
+   "src": "assets/uploads/offer-img-3.png?v=mw005i7h",
+   "type": "image/png"
+  },
+  {
+   "key": ".riskfree-photo > div#1",
+   "label": "DIV",
+   "src": "assets/uploads/riskfree-photo-div-1.png?v=mw005ksu",
+   "type": "image/png"
+  },
+  {
+   "key": ".rv-thumb#1",
+   "label": "rv-thumb",
+   "src": "assets/uploads/rv-thumb-1.png?v=mw005n3c",
+   "type": "image/png"
+  },
+  {
+   "key": ".rv-thumb#2",
+   "label": "rv-thumb",
+   "src": "assets/uploads/rv-thumb-2.png?v=mw005pek",
+   "type": "image/png"
+  },
+  {
+   "key": ".rv-thumb#3",
+   "label": "rv-thumb",
+   "src": "assets/uploads/rv-thumb-3.png?v=mw005rpw",
+   "type": "image/png"
+  },
+  {
+   "key": ".rv-thumb#4",
+   "label": "rv-thumb",
+   "src": "assets/uploads/rv-thumb-4.png?v=mw005ura",
+   "type": "image/png"
+  },
+  {
+   "key": ".rv-thumb#5",
+   "label": "rv-thumb",
+   "src": "assets/uploads/rv-thumb-5.png?v=mw005xre",
+   "type": "image/png"
+  },
+  {
+   "key": ".rv-thumb#6",
+   "label": "rv-thumb",
+   "src": "assets/uploads/rv-thumb-6.png?v=mw0060cr",
+   "type": "image/png"
   }
  ]
 }
