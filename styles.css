@@ -614,7 +614,7 @@ svg{flex:none}
   .journey{flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:18px}
   .journey-left{display:contents}
   .journey-banner{order:1;align-self:center}
-  .journey-left .h2-xl{order:2;text-align:center}
+  .journey-left .h2-xl{order:2;text-align:center;font-size:min(27px,calc((100vw - 40px) * .077));white-space:nowrap}
   .journey-left .lead{order:3;text-align:center;align-self:center}
   .timeline{order:4;flex:none;margin-top:12px}
   .journey-left .btn{order:5;align-self:center;margin-top:14px}
