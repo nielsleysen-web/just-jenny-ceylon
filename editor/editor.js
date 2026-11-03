@@ -118,11 +118,21 @@
     if (!r.ok && r.status !== 404) throw new Error('GitHub ' + r.status + ': ' + (await r.text()).slice(0, 120));
     return r.status === 404 ? null : r.json();
   }
-  async function shaOf(path) { const j = await gh('GET', 'contents/' + path + '?ref=' + REPO.branch); return j && j.sha; }
+  const shaCache = new Map();
+  async function shaOf(path) { const j = await gh('GET', 'contents/' + path + '?ref=' + REPO.branch + '&t=' + Date.now()); return j && j.sha; }
   async function putFile(path, base64, message) {
-    const sha = await shaOf(path);
-    const body = { message, content: base64, branch: REPO.branch }; if (sha) body.sha = sha;
-    return gh('PUT', 'contents/' + path, body);
+    for (let attempt = 0; attempt < 4; attempt++) {
+      const sha = shaCache.has(path) ? shaCache.get(path) : await shaOf(path);
+      const body = { message, content: base64, branch: REPO.branch }; if (sha) body.sha = sha;
+      try {
+        const j = await gh('PUT', 'contents/' + path, body);
+        if (j && j.content && j.content.sha) shaCache.set(path, j.content.sha);
+        return j;
+      } catch (e) {
+        if (!/GitHub 409/.test(e.message) || attempt === 3) throw e;
+        shaCache.delete(path); await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
+      }
+    }
   }
   function blobToBase64(blob) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(blob); }); }
   function safeName(key) { return key.replace(/^\./, '').replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '').toLowerCase(); }
