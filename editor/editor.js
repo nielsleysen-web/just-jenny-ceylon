@@ -25,7 +25,16 @@
       if (el.closest(SKIP)) return;
       if (el.closest(C.IMG_SEL)) return;
       if (!hasOwnText(el)) return;
-      if (el.closest('[x-text],[x-html]')) { el.classList.add('ed-fixed'); el.title = 'Deze tekst komt uit de data (reviews, bundels, cijfers) – vraag Claude om ze aan te passen'; return; }
+      if (el.closest('[x-text],[x-html]')) {
+        const expr = (el.getAttribute('x-text') || '').trim();
+        const addr = el.hasAttribute('x-text') && SIMPLE.test(expr) ? addressOf(expr, forChain(el)) : null;
+        if (!addr || typeof getPath(root(), addr) !== 'string') { el.classList.add('ed-fixed'); el.title = 'Deze tekst is berekend (prijs, score, nummer) en kan hier niet getypt worden'; return; }
+        el.setAttribute('contenteditable', 'true'); el.classList.add('ed-text', 'ed-data'); el.dataset.edAddr = addr; el.dataset.edOrig = el.innerText.trim();
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); } });
+        el.addEventListener('input', () => { dataEdits.set(addr, el.innerText.trim()); saveDraft(); });
+        el.addEventListener('blur', () => { const v = el.innerText.trim(); if (v !== el.dataset.edOrig) { dataEdits.set(addr, v); setPath(root(), addr, v); saveDraft(); } });
+        return;
+      }
       if (el.isContentEditable && el.closest('[contenteditable=true]') !== el) return;
       el.setAttribute('contenteditable', 'true');
       el.classList.add('ed-text');
@@ -35,9 +44,50 @@
       el.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !['P', 'LI', 'DIV'].includes(el.tagName)) { e.preventDefault(); el.blur(); } });
     });
   }
+  /* ---------- teksten uit de data (x-text) ---------- */
+  const dataEdits = new Map(); // adres (bv. faqs[2].body) -> nieuwe tekst
+  const SIMPLE = /^[A-Za-z_$][\w$]*(\.[A-Za-z_$][\w$]*)*$/;
+  const root = () => (window.Alpine && Alpine.$data) ? Alpine.$data(document.body) : null;
+  function getPath(o, addr) { const t = addr.match(/[^.\[\]]+/g) || []; for (const k of t) { if (o == null) return undefined; o = o[k]; } return o; }
+  function setPath(o, addr, v) { const t = addr.match(/[^.\[\]]+/g) || []; for (let i = 0; i < t.length - 1; i++) { o = o && o[t[i]]; } if (o == null) return false; o[t[t.length - 1]] = v; return true; }
+  function forChain(node) {
+    const chain = []; let n = node;
+    while (n && n !== document.body) {
+      if (n._x_dataStack) {
+        let p = n.previousElementSibling; while (p && !(p.tagName === 'TEMPLATE' && p.hasAttribute('x-for'))) p = p.previousElementSibling;
+        const m = p && /^\s*\(?\s*([\w$]+)\s*(?:,\s*([\w$]+))?\s*\)?\s+in\s+(.+)$/.exec(p.getAttribute('x-for'));
+        if (m) {
+          let idx = null; try { idx = m[2] ? Alpine.$data(n)[m[2]] : null; } catch (e) { }
+          if (typeof idx !== 'number') { idx = 0; let q = p.nextElementSibling; while (q && q !== n) { idx++; q = q.nextElementSibling; } }
+          chain.unshift({ item: m[1], iterable: m[3].trim(), idx });
+        }
+      }
+      n = n.parentElement;
+    }
+    return chain;
+  }
+  function resolveVar(name, chain, upto) {
+    for (let k = upto - 1; k >= 0; k--) {
+      const c = chain[k]; if (c.item !== name) continue;
+      const it = c.iterable;
+      if (it === 'storiesPage') return 'stories[' + (c.idx + ((root() || {}).revPage || 0) * 3) + ']';
+      if (/^feed\.slice/.test(it)) return 'feed[' + c.idx + ']';
+      if (!SIMPLE.test(it)) return null;
+      const ip = it.split('.'); const base = resolveVar(ip[0], chain, k) || ip[0];
+      return base + ip.slice(1).map(x => '.' + x).join('') + '[' + c.idx + ']';
+    }
+    return null;
+  }
+  function addressOf(expr, chain) {
+    const parts = expr.split('.');
+    const base = resolveVar(parts[0], chain, chain.length) || (chain.some(c => c.item === parts[0]) ? null : parts[0]);
+    return base ? base + parts.slice(1).map(x => '.' + x).join('') : null;
+  }
+  function applyDataEdits() { const r = root(); if (r) dataEdits.forEach((v, a) => setPath(r, a, v)); }
+
   function changedTexts() {
     const out = [];
-    document.querySelectorAll('.ed-text').forEach(el => {
+    document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => {
       const now = el.innerText.trim();
       if (now !== el.dataset.edOrig) out.push({ section: sectionOf(el), path: el.dataset.edPath, original: el.dataset.edOrig, new: now });
     });
@@ -50,12 +100,14 @@
   }
   function saveDraft() {
     updateCount();
-    try { const d = {}; changedTexts().forEach(t => { d[t.path] = t.new; }); localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); } catch (e) { }
+    try { const d = {}; changedTexts().forEach(t => { d[t.path] = t.new; }); localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); localStorage.setItem(DRAFT_KEY + '-data', JSON.stringify(Object.fromEntries(dataEdits))); } catch (e) { }
   }
+  let draftDataLoaded = false;
   function loadDraft() {
     try {
       const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || '{}');
-      document.querySelectorAll('.ed-text').forEach(el => { const v = d[el.dataset.edPath]; if (v != null && el.innerText.trim() !== v) el.innerText = v; });
+      document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => { const v = d[el.dataset.edPath]; if (v != null && el.innerText.trim() !== v) el.innerText = v; });
+      if (!draftDataLoaded) { draftDataLoaded = true; const dd = JSON.parse(localStorage.getItem(DRAFT_KEY + '-data') || '{}'); Object.entries(dd).forEach(([a, v]) => dataEdits.set(a, v)); applyDataEdits(); }
     } catch (e) { }
   }
 
@@ -155,10 +207,11 @@
         im.committed = true;
       }
       btn.textContent = 'Teksten opslaan…';
-      const content = { saved: new Date().toISOString(), texts: mergedTexts(), images: Array.from(imgs.values()) };
-      await putFile('content.json', btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 1)))), 'Update content (' + content.texts.length + ' teksten, ' + content.images.length + ' foto\'s)');
-      baseline = content;
+      const content = { saved: new Date().toISOString(), texts: mergedTexts(), data: Object.assign({}, baseline.data || {}, Object.fromEntries(dataEdits)), images: Array.from(imgs.values()) };
+      await putFile('content.json', btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 1)))), 'Update content (' + (content.texts.length + Object.keys(content.data).length) + ' teksten, ' + content.images.length + ' foto\'s)');
+      baseline = content; dataEdits.clear();
       document.querySelectorAll('.ed-text').forEach(el => { el.dataset.edOrig = el.innerText.trim(); });
+      try { localStorage.removeItem(DRAFT_KEY + '-data'); } catch (e) { }
       images.forEach(im => { if (im.objectURL) { /* bewaren voor weergave */ } });
       images.clear();
       try { localStorage.removeItem(DRAFT_KEY); } catch (e) { }
@@ -174,7 +227,7 @@
   /* ---------- UI ---------- */
   function updateCount() {
     const c = document.getElementById('ed-count');
-    if (c) c.textContent = changedTexts().length + ' teksten · ' + images.size + ' foto\'s nog niet gepubliceerd';
+    if (c) c.textContent = (changedTexts().length + dataEdits.size) + ' teksten · ' + images.size + ' foto\'s nog niet gepubliceerd';
   }
   function ui() {
     const bar = document.createElement('div'); bar.className = 'ed-ui';
@@ -182,14 +235,14 @@
       '<em id="ed-saved"></em><button type="button" id="ed-help">Uitleg</button><button type="button" id="ed-live">Bekijk live</button><button type="button" id="ed-save" class="ed-primary">🚀 Opslaan & publiceren</button><button type="button" id="ed-token">Token</button><button type="button" id="ed-reset">Reset</button>';
     document.body.appendChild(bar);
     const help = document.createElement('div'); help.className = 'ed-ui ed-help';
-    help.innerHTML = '<b>Zo werkt het</b><ol><li>Klik op een tekst en typ erover (oranje stippellijn = bewerkbaar; grijs = komt uit de data, vraag Claude).</li><li>Klik op een foto-/videovak (groen gestreept) of sleep er een bestand in. Grote foto = foto 1; vakjes 2–9 zijn de andere productfoto\'s. De sectie "Cosa riferiscono i clienti" krijgt een achtergrondfoto met overlay.</li><li>Klik op <b>Opslaan & publiceren</b>: alles gaat naar GitHub en Vercel zet het binnen ±1 minuut live. De eerste keer vraagt de pagina je GitHub-token.</li></ol><p>Niet-gepubliceerde teksten blijven in deze browser staan; foto\'s alleen tot je de pagina herlaadt. Koopknoppen sturen hier niet door naar de checkout.</p><button type="button" id="ed-close">Sluiten</button>';
+    help.innerHTML = '<b>Zo werkt het</b><ol><li>Klik op een tekst en typ erover (oranje stippellijn = bewerkbaar; grijs = berekend, zoals prijzen en scores).</li><li>Klik op een foto-/videovak (groen gestreept) of sleep er een bestand in. Grote foto = foto 1; vakjes 2–9 zijn de andere productfoto\'s. De sectie "Cosa riferiscono i clienti" krijgt een achtergrondfoto met overlay.</li><li>Klik op <b>Opslaan & publiceren</b>: alles gaat naar GitHub en Vercel zet het binnen ±1 minuut live. De eerste keer vraagt de pagina je GitHub-token.</li></ol><p>Niet-gepubliceerde teksten blijven in deze browser staan; foto\'s alleen tot je de pagina herlaadt. Koopknoppen sturen hier niet door naar de checkout.</p><button type="button" id="ed-close">Sluiten</button>';
     help.style.display = 'none'; document.body.appendChild(help);
     document.getElementById('ed-save').onclick = publish;
     document.getElementById('ed-live').onclick = () => window.open(LIVE + '?v=' + Date.now(), '_blank');
     document.getElementById('ed-token').onclick = () => token(true);
     document.getElementById('ed-help').onclick = () => help.style.display = 'block';
     document.getElementById('ed-close').onclick = () => help.style.display = 'none';
-    let rc = 0; document.getElementById('ed-reset').onclick = (e) => { rc++; if (rc < 2) { e.target.textContent = 'Zeker? Klik nogmaals'; setTimeout(() => { rc = 0; e.target.textContent = 'Reset'; }, 3000); return; } try { localStorage.removeItem(DRAFT_KEY); } catch (x) { } location.reload(); };
+    let rc = 0; document.getElementById('ed-reset').onclick = (e) => { rc++; if (rc < 2) { e.target.textContent = 'Zeker? Klik nogmaals'; setTimeout(() => { rc = 0; e.target.textContent = 'Reset'; }, 3000); return; } try { localStorage.removeItem(DRAFT_KEY); localStorage.removeItem(DRAFT_KEY + '-data'); } catch (x) { } location.reload(); };
   }
 
   function init() {

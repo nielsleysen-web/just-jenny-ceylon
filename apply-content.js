@@ -58,6 +58,7 @@
     (c.texts || []).forEach(t => {
       try { const el = document.querySelector(t.path); if (el && !el.closest('[x-text],[x-html]')) el.innerText = t.new; } catch (e) { }
     });
+    if (data && c.data) Object.entries(c.data).forEach(([a, v]) => { try { const t = a.match(/[^.\[\]]+/g); let o = data; for (let i = 0; i < t.length - 1; i++) o = o[t[i]]; if (o) o[t[t.length - 1]] = v; } catch (e) { } });
     const map = keyElements();
     (c.images || []).forEach(im => {
       const gi = galleryIndex(im.key);
