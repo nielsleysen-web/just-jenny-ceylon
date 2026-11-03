@@ -584,7 +584,7 @@ svg{flex:none}
 /* flip back: short version on mobile */
 .flip-short-row{display:none}
 @media (max-width:600px){
-  .flip-text h3{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .flip-text h3{font-size:19px;line-height:1.15;white-space:normal}
   .flip-text p{font-size:12.5px}
   .flip-back{background:#fff;justify-content:center;overflow:hidden}
   .flip-back .flip-back-head,.flip-back .flip-deep{display:none}
