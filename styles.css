@@ -780,3 +780,6 @@ svg{flex:none}
 #reviews .h2 .accent{color:inherit}
 @media (max-width:600px){#reviews .h2{font-size:28px}}
 .avatar-ph{overflow:hidden}.avatar-ph img{width:100%;height:100%;object-fit:cover;display:block}
+/* Sentiti meglio: productfoto volledig tonen */
+.feel-pouches.has-img{background-size:contain!important;background-position:center!important;aspect-ratio:693/763;max-width:440px;margin:0 auto;padding:0;align-self:center}
+@media (max-width:600px){.feel-pouches.has-img{max-width:280px;width:100%}}

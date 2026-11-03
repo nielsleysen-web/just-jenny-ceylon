@@ -35,7 +35,7 @@
       el.style.backgroundImage = 'url(' + src + ')';
       el.style.backgroundSize = el.matches('.bundle-qty, .offer-row-img, .offer-img, .sticky-pouch, .cmp-pouch') ? 'contain' : 'cover';
       el.style.backgroundPosition = 'center'; el.style.backgroundRepeat = 'no-repeat';
-      if (el.matches('.ph-box')) { const im = new Image(); im.onload = () => { el.style.aspectRatio = im.naturalWidth + '/' + im.naturalHeight; }; im.src = src; }
+      if (el.matches('.ph-box, .feel-pouches')) { const im = new Image(); im.onload = () => { el.style.aspectRatio = im.naturalWidth + '/' + im.naturalHeight; }; im.src = src; }
     }
   }
   function cssPath(el) {
