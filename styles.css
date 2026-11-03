@@ -834,3 +834,7 @@ svg{flex:none}
 /* 'Utile' klikbaar: duim kleurt en toont 1 */
 .tp-actions button.on svg{fill:#191919}
 .tp-like{font-weight:700;margin-left:2px}
+
+/* hero rating: korte tekst op mobiel */
+.rl-short{display:none}
+@media (max-width:600px){.rl-long{display:none}.rl-short{display:inline}.rating-line{font-size:13px}}
