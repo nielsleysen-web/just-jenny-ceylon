@@ -333,6 +333,12 @@
    "label": "Achtergrondfoto: Cosa riferiscono i clienti",
    "src": "assets/opt/report-1.webp?v=bg1",
    "type": "image/webp"
+  },
+  {
+   "key": ".sticky-pouch#1",
+   "label": "Sticky balk",
+   "src": "assets/opt/bundle-qty-1.webp?v=s1",
+   "type": "image/webp"
   }
  ]
 }

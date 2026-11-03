@@ -545,7 +545,7 @@
     <div class="sticky-pouch">JUST JENNY<span>Ceylon Cinnamon</span></div>
     <div class="sticky-text">
       <div class="sticky-name"><span class="sn-full">Cannella di Ceylon 7200mg con olio MCT</span><span class="sn-short">Cannella di Ceylon 7200mg</span></div>
-      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(revAvg, 72)"></span><span x-text="revAvgTxt + '/5 · ' + revTotalTxt + ' recensioni'"></span></div>
+      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(revAvg, 72)"></span><span><span x-text="revAvgTxt + '/5 · ' + revTotalTxt"></span><span class="sr-rec"> recensioni</span></span></div>
     </div>
     <button type="button" class="sticky-btn" @click="addToCart(bundle)">AGGIUNGI AL CARRELLO</button>
   </div>
