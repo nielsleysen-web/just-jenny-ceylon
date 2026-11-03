@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T00:44:43.949Z",
+ "saved": "2026-11-03T00:59:08.719Z",
  "texts": [
   {
    "section": "#top Stabilizza i tuoi livelli nel sangue in 18 giorni.",
@@ -163,6 +163,60 @@
    "key": ".review-img#10",
    "label": "[Review image 2]",
    "src": "assets/uploads/review-img-10.png?v=mvzytyy5",
+   "type": "image/png"
+  },
+  {
+   "key": ".review-img#11",
+   "label": "[Review image 3]",
+   "src": "assets/uploads/review-img-11.png?v=mvzzc1os",
+   "type": "image/png"
+  },
+  {
+   "key": ".review-img#12",
+   "label": "[Review image 4]",
+   "src": "assets/uploads/review-img-12.png?v=mvzzc4oe",
+   "type": "image/png"
+  },
+  {
+   "key": ".review-img#13",
+   "label": "[Review image 5]",
+   "src": "assets/uploads/review-img-13.png?v=mvzzc74y",
+   "type": "image/png"
+  },
+  {
+   "key": ".review-img#14",
+   "label": "[Review image 6]",
+   "src": "assets/uploads/review-img-14.png?v=mvzzca3j",
+   "type": "image/png"
+  },
+  {
+   "key": ".avatar-ph#1",
+   "label": "avatar-ph",
+   "src": "assets/uploads/avatar-ph-1.jpg?v=mvzzcbb7",
+   "type": "image/jpeg"
+  },
+  {
+   "key": ".avatar-ph#2",
+   "label": "avatar-ph",
+   "src": "assets/uploads/avatar-ph-2.jpg?v=mvzzccj0",
+   "type": "image/jpeg"
+  },
+  {
+   "key": ".avatar-ph#3",
+   "label": "avatar-ph",
+   "src": "assets/uploads/avatar-ph-3.jpg?v=mvzzcdlo",
+   "type": "image/jpeg"
+  },
+  {
+   "key": ".review-img#15",
+   "label": "[Review image 7]",
+   "src": "assets/uploads/review-img-15.png?v=mvzzcfvv",
+   "type": "image/png"
+  },
+  {
+   "key": ".review-img#16",
+   "label": "[Review image 8]",
+   "src": "assets/uploads/review-img-16.png?v=mvzzci7j",
    "type": "image/png"
   }
  ]
