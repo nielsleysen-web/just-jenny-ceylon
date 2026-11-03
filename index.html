@@ -491,7 +491,7 @@
           <div class="chips"><span class="chip-g" x-text="'Esperienza: ' + revDate(fr.date)"></span><span class="chip-g">Acquisto verificato</span></div>
           <div class="tp-sep"></div>
           <div class="tp-actions">
-            <button type="button"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Utile</button>
+            <button type="button" :class="fr.liked && 'on'" @click="fr.liked = !fr.liked" :aria-pressed="!!fr.liked"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Utile<span class="tp-like" x-show="fr.liked" x-text="1"></span></button>
           </div>
         </article>
       </template>
