@@ -584,7 +584,10 @@ svg{flex:none}
 /* flip back: short version on mobile */
 .flip-short-row{display:none}
 @media (max-width:600px){
-  .flip-text h3{font-size:19px;line-height:1.15;white-space:normal}
+  .flip-text h3{font-size:16px;line-height:1.15;white-space:nowrap;overflow:visible;letter-spacing:-.01em}
+  .flip-img{width:84px;height:84px}
+  .flip-front{gap:10px}
+  .plus{width:30px;height:30px;margin-left:-6px}
   .flip-text p{font-size:12.5px}
   .flip-back{background:#fff;justify-content:center;overflow:hidden}
   .flip-back .flip-back-head,.flip-back .flip-deep{display:none}
