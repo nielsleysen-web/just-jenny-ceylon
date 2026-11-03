@@ -458,7 +458,7 @@ svg{flex:none}
 /* mobile hero order */
 @media (max-width:600px){
   .hero{padding-top:20px}
-  .hero-grid{flex-direction:column;flex-wrap:nowrap;gap:14px;align-items:stretch}
+  .hero-grid{flex-direction:column;flex-wrap:nowrap;gap:24px;align-items:stretch}
   .col-gallery,.col-buy{display:contents}
   .gallery-wrap{order:1}
   .thumbs{order:2;margin-top:-4px}
@@ -838,3 +838,6 @@ svg{flex:none}
 /* hero rating: korte tekst op mobiel */
 .rl-short{display:none}
 @media (max-width:600px){.rl-long{display:none}.rl-short{display:inline}.rating-line{font-size:13px}}
+
+/* mobiele koopknop: alles op één lijn */
+@media (max-width:600px){.atc-main>span{white-space:nowrap;font-size:min(16px,calc((100vw - 40px) * .044));letter-spacing:.03em}}

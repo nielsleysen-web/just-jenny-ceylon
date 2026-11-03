@@ -226,6 +226,14 @@ function page() {
         else if (r > box.scrollLeft + box.clientWidth) box.scrollTo({ left: r - box.clientWidth + 4, behavior: 'smooth' });
       });
       setInterval(() => { this.now = Date.now(); }, 1000);
+      // '93% venduto': balk en getal lopen in 2 s op zodra het blok in beeld komt
+      const sold = document.querySelector('.sold-card');
+      if (sold) {
+        const fill = sold.querySelector('.sold-fill'), num = sold.querySelector('.sold-num');
+        const pct = parseInt((fill && fill.dataset.pct) || (num && num.dataset.pct) || '93', 10);
+        const run = () => { const t0 = performance.now(); const step = (t) => { const k = Math.min(1, (t - t0) / 2000), e = 1 - Math.pow(1 - k, 3); if (fill) fill.style.width = (pct * e).toFixed(1) + '%'; if (num) num.textContent = Math.round(pct * e); if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+        if ('IntersectionObserver' in window) { const so = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { so.disconnect(); run(); } }, { threshold: 0.4 }); so.observe(sold); } else run();
+      }
       const io = new IntersectionObserver((entries) => {
         const e = entries[entries.length - 1];
         this.sticky = !e.isIntersecting && e.boundingClientRect.top < 0;
