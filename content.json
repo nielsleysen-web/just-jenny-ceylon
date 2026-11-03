@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T01:09:19.871Z",
+ "saved": "2026-11-03T01:11:16.519Z",
  "texts": [
   {
    "section": "#top Stabilizza i tuoi livelli nel sangue in 18 giorni.",
@@ -218,6 +218,30 @@
    "key": ".review-img#16",
    "label": "[Review image 8]",
    "src": "assets/uploads/review-img-16.png?v=mvzzci7j",
+   "type": "image/png"
+  },
+  {
+   "key": ".flip-img#1",
+   "label": "[Foto: glicemia / glucosio]",
+   "src": "assets/uploads/flip-img-1.png?v=mvzzrwk2",
+   "type": "image/png"
+  },
+  {
+   "key": ".flip-img#2",
+   "label": "[Foto: donna con stomaco sereno]",
+   "src": "assets/uploads/flip-img-2.png?v=mvzzrz06",
+   "type": "image/png"
+  },
+  {
+   "key": ".flip-img#3",
+   "label": "[Foto: fegato sano / Ceylon vs Cassia]",
+   "src": "assets/uploads/flip-img-3.png?v=mvzzs1g5",
+   "type": "image/png"
+  },
+  {
+   "key": ".flip-img#4",
+   "label": "[Foto: capsula molle con olio MCT]",
+   "src": "assets/uploads/flip-img-4.png?v=mvzzs3s6",
    "type": "image/png"
   }
  ]
