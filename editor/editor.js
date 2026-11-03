@@ -203,6 +203,22 @@
   function safeName(key) { return key.replace(/^\./, '').replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '').toLowerCase(); }
   function extOf(type, name) { const m = /\.([a-z0-9]{2,5})$/i.exec(name || ''); if (m) return m[1].toLowerCase(); return ({ 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'video/mp4': 'mp4', 'video/webm': 'webm', 'video/quicktime': 'mov' })[type] || 'bin'; }
 
+  // Alles in ÉÉN commit (Git Data API), zodat Vercel maar één keer bouwt per Opslaan.
+  async function commitFiles(files, message) {
+    const ref = await gh('GET', 'git/ref/heads/' + REPO.branch);
+    const parentSha = ref.object.sha;
+    const parent = await gh('GET', 'git/commits/' + parentSha);
+    const tree = [];
+    for (const f of files) {
+      const blob = await gh('POST', 'git/blobs', { content: f.base64, encoding: 'base64' });
+      tree.push({ path: f.path, mode: '100644', type: 'blob', sha: blob.sha });
+    }
+    const newTree = await gh('POST', 'git/trees', { base_tree: parent.tree.sha, tree });
+    const commit = await gh('POST', 'git/commits', { message, tree: newTree.sha, parents: [parentSha] });
+    await gh('PATCH', 'git/refs/heads/' + REPO.branch, { sha: commit.sha });
+    return commit.sha;
+  }
+
   async function publish() {
     const btn = document.getElementById('ed-save');
     if (!token()) { btn.textContent = '⚠ geen token'; return; }
@@ -210,23 +226,23 @@
     try {
       const imgs = new Map(); (baseline.images || []).forEach(im => imgs.set(im.key, im));
       const list = Array.from(images.values());
+      const files = [];
+      const v = Date.now().toString(36);
       for (let i = 0; i < list.length; i++) {
         const im = list[i];
-        btn.textContent = 'Foto ' + (i + 1) + '/' + list.length + ' uploaden…';
+        btn.textContent = 'Foto ' + (i + 1) + '/' + list.length + ' voorbereiden…';
         const o = await optimize(im);
         if (o.blob.size > 25 * 1024 * 1024) throw new Error(im.label + ': bestand groter dan 25 MB');
         const path = 'assets/uploads/' + safeName(im.key) + '.' + o.ext;
-        await putFile(path, await blobToBase64(o.blob), 'Upload ' + im.label);
-        imgs.set(im.key, { key: im.key, label: im.label, src: path + '?v=' + Date.now().toString(36), type: o.type });
-        im.committed = true;
+        files.push({ path, base64: await blobToBase64(o.blob) });
+        imgs.set(im.key, { key: im.key, label: im.label, src: path + '?v=' + v, type: o.type });
       }
-      btn.textContent = 'Teksten opslaan…';
-      const content = { saved: new Date().toISOString(), texts: mergedTexts(), data: Object.assign({}, baseline.data || {}, Object.fromEntries(dataEdits)), images: Array.from(imgs.values()) };
-      await putFile('content.json', btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 1)))), 'Update content (' + (content.texts.length + Object.keys(content.data).length) + ' teksten, ' + content.images.length + ' foto\'s)');
-      baseline = content; dataEdits.clear();
+      const content = { saved: new Date().toISOString(), texts: mergedTexts(), images: Array.from(imgs.values()) };
+      files.push({ path: 'content.json', base64: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 1)))) });
+      btn.textContent = 'Publiceren…';
+      await commitFiles(files, 'Update content (' + changedTexts().length + ' teksten, ' + list.length + ' nieuwe foto\'s)');
+      baseline = content;
       document.querySelectorAll('.ed-text').forEach(el => { el.dataset.edOrig = el.innerText.trim(); });
-      try { localStorage.removeItem(DRAFT_KEY + '-data'); } catch (e) { }
-      images.forEach(im => { if (im.objectURL) { /* bewaren voor weergave */ } });
       images.clear();
       try { localStorage.removeItem(DRAFT_KEY); } catch (e) { }
       updateCount();
