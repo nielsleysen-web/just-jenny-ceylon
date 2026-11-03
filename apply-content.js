@@ -8,7 +8,7 @@
   ].join(',');
   const BG_SEL = '.report';
   const DROP_SEL = IMG_SEL + ',' + BG_SEL;
-  const OVERLAY = 'linear-gradient(rgba(176,79,40,.78),rgba(176,79,40,.78))';
+  const OVERLAY = 'linear-gradient(rgba(168,85,48,.72),rgba(150,72,38,.76))';
 
   // Zelfde sleutels als in de bewerkmodus: selector + volgnummer, in documentvolgorde.
   function keyElements() {

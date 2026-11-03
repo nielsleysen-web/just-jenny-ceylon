@@ -345,6 +345,12 @@
    "label": "rv-thumb",
    "src": "assets/opt/rv-thumb-6.webp?v=mw0060cr",
    "type": "image/webp"
+  },
+  {
+   "key": ".report#1",
+   "label": "Achtergrondfoto: Cosa riferiscono i clienti",
+   "src": "assets/opt/report-1.webp?v=bg1",
+   "type": "image/webp"
   }
  ]
 }
