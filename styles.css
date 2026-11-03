@@ -150,13 +150,13 @@ svg{flex:none}
 .guarantees{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 24px;font-size:13px;color:var(--muted)}
 .guarantees span,.offer-guar span{display:inline-flex;align-items:center;gap:6px}
 .guarantees svg,.offer-guar svg{width:16px;height:16px;fill:none;stroke:var(--orange);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.mbg-card{display:flex;gap:18px;align-items:center;background:#FBF7F3;border:2px dashed #E9C9B3;border-radius:14px;padding:18px 20px}
-.mbg-seal{width:84px;height:84px;flex:none}
+.mbg-card{display:flex;gap:14px;align-items:center;background:#FBF7F3;border:1.5px dashed #E9C9B3;border-radius:12px;padding:12px 16px}
+.mbg-seal{width:62px;height:62px;flex:none}
 .mbg-badge{width:60px;height:60px;flex:none;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;line-height:1;background:var(--orange);box-shadow:0 0 0 4px #FFF8F3,0 0 0 5px #E2AE8D;gap:2px}
 .mbg-badge span{font-family:Jost,sans-serif;font-weight:600;font-size:20px}
 .mbg-badge small{font-size:8px;font-weight:700;letter-spacing:.14em}
-.mbg-title{font-family:Jost,sans-serif;font-weight:700;font-size:19px;color:var(--ink);margin-bottom:4px}
-.mbg-sub{color:#55596E;font-size:14.5px;line-height:1.4}
+.mbg-title{font-family:Jost,sans-serif;font-weight:700;font-size:16px;color:var(--ink);margin-bottom:2px}
+.mbg-sub{color:#55596E;font-size:13px;line-height:1.35}
 .warn{background:#FFF6F5;border:1px dashed #F0A49B;border-radius:10px;padding:12px 14px;font-size:13px;color:#D0473A}
 .warn-head{font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px}
 .warn-head svg{width:16px;height:16px;fill:none;stroke:#D0473A;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
