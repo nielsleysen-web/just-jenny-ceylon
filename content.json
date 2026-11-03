@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-03T01:17:20.608Z",
+ "saved": "2026-11-03T01:17:51.821Z",
  "texts": [
   {
    "section": "#top Stabilizza i tuoi livelli nel sangue in 18 giorni.",
@@ -273,6 +273,18 @@
    "label": "[Foto: una capsula molle nel palmo della mano]",
    "src": "assets/uploads/ph-img-8.png?v=mvzzzrga",
    "type": "image/png"
+  },
+  {
+   "key": ".cmp-pouch#1",
+   "label": "JUST JENNY Ceylon Cinnamon",
+   "src": "assets/uploads/cmp-pouch-1.png?v=mw000jm6",
+   "type": "image/png"
+  },
+  {
+   "key": ".cmp-photo#1",
+   "label": "[Foto: capsule]",
+   "src": "assets/uploads/cmp-photo-1.avif?v=mw000kst",
+   "type": "image/avif"
   }
  ]
 }
