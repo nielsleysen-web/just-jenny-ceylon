@@ -459,7 +459,7 @@ svg{flex:none}
   .hero{padding-top:20px}
   .hero-grid{flex-direction:column;flex-wrap:nowrap;gap:14px;align-items:stretch}
   .col-gallery,.col-buy{display:contents}
-  .gallery-main{order:1}
+  .gallery-wrap{order:1}
   .thumbs{order:2;margin-top:-4px}
   .rating-line{order:3;flex-wrap:nowrap;white-space:nowrap;font-size:12px;gap:6px;margin-top:6px}
   .product-title{order:4;margin-top:-6px}
@@ -752,3 +752,20 @@ svg{flex:none}
 /* low-stock: compacter en dichter bij de offers */
 .low-stock{margin:-8px 0 -12px;line-height:1.2}
 @media (max-width:600px){.low-stock{margin:-6px 0 -10px}}
+
+/* galerij: pijlen + thumbnail-slider */
+.gallery-wrap{position:relative}
+.g-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#333;padding:0}
+.g-arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.g-prev{left:12px}.g-next{right:12px}
+.g-arrow:hover{background:#fff}
+.thumbs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px}
+.thumbs::-webkit-scrollbar{display:none}
+.thumb{flex:0 0 calc((100% - 4*10px) / 4.6);aspect-ratio:1/1;scroll-snap-align:start;border:1px solid var(--line);border-radius:10px;background-color:var(--vanilla)}
+.thumb.is-active{border:2.5px solid var(--orange)}
+@media (max-width:600px){
+  .g-arrow{width:38px;height:38px}.g-arrow svg{width:17px;height:17px}
+  .g-prev{left:8px}.g-next{right:8px}
+  .thumbs{gap:8px}
+  .thumb{flex-basis:calc((100% - 3*8px) / 3.6)}
+}

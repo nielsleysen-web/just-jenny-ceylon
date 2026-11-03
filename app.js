@@ -18,7 +18,7 @@ function page() {
     bundle: 2, img: 0, acc: -1, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 6,
     showReviews: true, // reviews komen uit reviews.js (Trustpilot-export)
     subscribed: false, sticky: false,
-    whyIdx: 0,
+    whyIdx: 0, tx: 0,
     vidIdx: 0,
     storyIdx: 0,
     tlP: 0, tlAct: 0, wide: true, now: Date.now(), end: Date.now() + 6753000,
@@ -107,6 +107,13 @@ function page() {
     get revDist() { return [5, 4, 3, 2, 1].map((n) => this.feed.filter((x) => x.r === n).length); },
 
     // helpers
+    showThumb(i) { return !!window.JJ_NO_APPLY || !!this.thumbs[i].src || i === 0 || !this.thumbs.some((t) => t.src); },
+    galStep(d) {
+      const vis = this.thumbs.map((t, i) => i).filter((i) => this.showThumb(i));
+      const k = vis.indexOf(this.img);
+      this.img = vis[(k + d + vis.length) % vis.length];
+    },
+    swipe(dx) { if (Math.abs(dx) > 40) this.galStep(dx < 0 ? 1 : -1); },
     revAgo(d) {
       const days = Math.floor((Date.now() - new Date(d + 'T12:00:00').getTime()) / 86400000);
       if (days < 1) return 'Oggi';
@@ -207,6 +214,13 @@ function page() {
       this.tlAct = act;
     },
     init() {
+      this.$watch('img', (i) => {
+        const box = this.$refs.thumbs; if (!box) return;
+        const t = box.querySelectorAll('.thumb')[i]; if (!t) return;
+        const l = t.offsetLeft - box.offsetLeft, r = l + t.offsetWidth;
+        if (l < box.scrollLeft) box.scrollTo({ left: l - 4, behavior: 'smooth' });
+        else if (r > box.scrollLeft + box.clientWidth) box.scrollTo({ left: r - box.clientWidth + 4, behavior: 'smooth' });
+      });
       setInterval(() => { this.now = Date.now(); }, 1000);
       const io = new IntersectionObserver((entries) => {
         const e = entries[entries.length - 1];
