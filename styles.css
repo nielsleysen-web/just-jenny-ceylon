@@ -749,3 +749,6 @@ svg{flex:none}
 .bundle-qty.has-img,.offer-row-img.has-img,.offer-img.has-img,.sticky-pouch.has-img,.cmp-pouch.has-img{background-origin:content-box;padding:5px;background-color:var(--vanilla)}
 .bundle-qty.has-img{width:62px;height:52px;border-radius:8px}
 .ph-box.has-img{border:0;background-color:#fff;background-size:contain!important;aspect-ratio:auto;min-height:120px}
+/* low-stock: compacter en dichter bij de offers */
+.low-stock{margin:-8px 0 -12px;line-height:1.2}
+@media (max-width:600px){.low-stock{margin:-6px 0 -10px}}
