@@ -47,7 +47,7 @@ header.top img{height:26px;margin:0 auto}
 .ben .kicker{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--body);font-weight:600;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px}
 .ben h2{font-size:28px;font-weight:700;margin-bottom:14px}
 .ben p{color:var(--body);margin:0 0 14px}
-.ben .ph{margin:16px 0 4px}
+.ben .ph{margin:4px 0 16px}
 .stats{border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin:22px 0 0;background:#fff}
 .stats h3{font-size:22px;font-weight:600;text-align:center}
 .stats .lead{text-align:center;color:var(--body);font-size:14.5px;margin:6px 0 16px}
@@ -96,8 +96,11 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:30px 0 40px}
   .hero .ph{margin:0;max-width:440px;justify-self:end}
   .hero h1,.hero .sub,.hero .intro{text-align:left}.hero .btn{margin:0;width:100%;max-width:420px;font-size:17px;padding:16px 24px}.hero .proof{text-align:left}
-  .ben{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-  .ben .ph{margin:0}
+  .ben{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:center;grid-auto-rows:max-content;align-content:center}
+  .ben>div:first-child{display:contents}
+  .ben .kicker,.ben h2,.ben p{grid-column:1}
+  .ben .ph{grid-column:2;grid-row:1/span 6;margin:0;align-self:center}
+  .ben.flip .kicker,.ben.flip h2,.ben.flip p{grid-column:1}
   .stats{grid-column:1/-1}.stats .grid{grid-template-columns:repeat(4,1fr)}
   .rv-grid{grid-template-columns:repeat(4,1fr)}.rv-grid.list{grid-template-columns:1fr 1fr}
   .offer .prod{max-width:560px}
@@ -167,10 +170,10 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Resistenza all'insulina</span><span>01</span></div>
     <h2>Ripristina la sensibilità all'insulina (il vero motivo per cui la tua glicemia non scende)</h2>
+  <div class="ph" style="background:#fff"><img src="/benefici/img/b1-insulina.webp" alt="" style="object-fit:contain"></div>
     <p>Le tue cellule non riescono a utilizzare correttamente il glucosio quando smettono di rispondere all'insulina. Questa "resistenza all'insulina" mantiene la glicemia alta per quanto sano tu possa mangiare, e la maggior parte degli integratori non la affronta.</p>
     <p>La Cannella di Ceylon contiene MHCP, un composto clinicamente dimostrato in grado di imitare l'insulina a livello cellulare. In combinazione con l'olio MCT per il massimo assorbimento, Just Jenny aiuta le tue cellule a rispondere di nuovo correttamente all'insulina, riducendo l'infiammazione e sostenendo un sano metabolismo del glucosio in modo naturale.</p>
   </div>
-  <div class="ph" style="background:#fff"><img src="/benefici/img/b1-insulina.webp" alt="" style="object-fit:contain"></div>
 </section>
 
 <!-- 02 -->
@@ -178,10 +181,10 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Stabilizzazione della glicemia</span><span>02</span></div>
     <h2>Sostieni una glicemia stabile per tutto il giorno</h2>
+  <div class="ph"><img src="/benefici/img/b2-glicemia.webp" alt=""></div>
     <p>La maggior parte degli integratori per la glicemia agisce "bloccando l'assorbimento" – ma non affronta il motivo per cui le tue cellule sono diventate insulino-resistenti, lasciandoti dipendente dagli integratori per sempre.</p>
     <p>Just Jenny fornisce la Cannella di Ceylon biodisponibile di cui il tuo corpo ha bisogno per ripristinare una sana sensibilità all'insulina, affrontando la causa principale della glicemia alta, e non semplicemente mascherando i sintomi con soluzioni temporanee.</p>
   </div>
-  <div class="ph"><img src="/benefici/img/b2-glicemia.webp" alt=""></div>
 </section>
 
 <!-- 03 -->
@@ -189,10 +192,10 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Recupero dell'energia</span><span>03</span></div>
     <h2>Elimina i cali pomeridiani e la nebbia mentale</h2>
+  <div class="ph"><img src="/benefici/img/b3-energia.webp" alt=""></div>
     <p>Quando le tue cellule sono insulino-resistenti, il glucosio non riesce a entrare correttamente – lasciandoti esausto, annebbiato e disperatamente in cerca di zuccheri, anche se la tua glicemia è alta.</p>
     <p>La Cannella di Ceylon di Just Jenny aiuta a ripristinare la funzione cellulare, così il glucosio può davvero alimentare le tue cellule invece di restare fermo nel sangue, dandoti un'energia costante tutto il giorno, senza cali né voglia di carboidrati.</p>
   </div>
-  <div class="ph"><img src="/benefici/img/b3-energia.webp" alt=""></div>
 </section>
 
 <!-- 04 -->
@@ -200,10 +203,10 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Nessun effetto collaterale</span><span>04</span></div>
     <h2>Liberati da effetti collaterali che non ti danno tregua</h2>
+  <div class="ph"><img src="/benefici/img/b4-effetti.webp" alt=""></div>
     <p>Quei disturbi digestivi non sono solo sfortuna. I farmaci per la glicemia che ti ha prescritto il medico danneggiano la mucosa intestinale e impoveriscono la vitamina B12, e quel danno peggiora ancora di più nausea, crampi e stanchezza, creando un circolo vizioso.</p>
     <p>Just Jenny è naturale al 100%, usata da secoli, e aiuta a ripristinare l'equilibrio cellulare necessario per gestire la glicemia in modo naturale, sostenendo sia il metabolismo del glucosio sia livelli sani di energia, senza gonfiore, crampi o corse in bagno.</p>
   </div>
-  <div class="ph"><img src="/benefici/img/b4-effetti.webp" alt=""></div>
 </section>
 
 <!-- 05 -->
@@ -211,10 +214,10 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Autentica Ceylon</span><span>05</span></div>
     <h2>Non la "Cassia economica" dei marchi da supermercato</h2>
+  <div class="ph"><img src="/benefici/img/b5-cassia.webp" alt=""></div>
     <p>La maggior parte degli integratori di cannella usa la cannella Cassia, una varietà più economica con fino a 250 volte più cumarina, un composto associato a danni al fegato con l'uso quotidiano. Non sono verificati, sono di bassa qualità e spesso contaminati da metalli pesanti.</p>
     <p>Just Jenny usa Cannella di Ceylon autentica al 100% dallo Sri Lanka, testata da laboratori terzi e priva di cumarina. Fornisce l'estratto sicuro e biodisponibile di cui le tue cellule hanno bisogno per un uso quotidiano a lungo termine. Ecco perché sostiene davvero una glicemia sana invece di avere solo il profumo della cannella.</p>
   </div>
-  <div class="ph"><img src="/benefici/img/b5-cassia.webp" alt=""></div>
 </section>
 
 <!-- 06 -->
@@ -222,9 +225,9 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Clinicamente convalidata</span><span>06</span></div>
     <h2>Non è solo naturale. È supportata da risultati reali.</h2>
+  <div class="ph"><img src="/benefici/img/b6-clinica.webp" alt=""></div>
     <p>La Cannella di Ceylon è stata ampiamente studiata per il supporto della glicemia e del metabolismo. La ricerca dimostra che aiuta a ripristinare la sensibilità all'insulina, ridurre i livelli di glucosio e sostenere un metabolismo sano. Proviene direttamente da coltivatori fairtrade dello Sri Lanka ed è verificata dal nostro comitato medico. Senza gli effetti collaterali dei farmaci.</p>
   </div>
-  <div class="ph"><img src="/benefici/img/b6-clinica.webp" alt=""></div>
 
   <div class="stats">
     <h3>Utenti reali, risultati reali</h3>
@@ -243,9 +246,9 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   <div>
     <div class="kicker"><span>Amata da migliaia di persone</span><span>07</span></div>
     <h2>Scelta da oltre 11.000 clienti</h2>
+  <div class="ph"><img src="/benefici/img/b7-clienti.webp" alt=""></div>
     <p>Con oltre 11.000 recensioni a cinque stelle e una base di abbonati in continua crescita, Just Jenny è la scelta numero uno per chi vuole abbassare la glicemia in modo naturale, senza farmaci aggressivi, restrizioni continue sui carboidrati o rinunciare ai cibi che ama.</p>
   </div>
-  <div class="ph"><img src="/benefici/img/b7-clienti.webp" alt=""></div>
 </section>
 
 </div>
