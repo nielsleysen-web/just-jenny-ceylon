@@ -8,6 +8,7 @@ function page() {
     { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '67%', price: '€59.99', was: '€179.97', badge: 'Più popolare' },
     { id: 3, qty: 5, title: 'Acquista 3 e ricevine 2 GRATIS', save: '70%', price: '€89.99', was: '€299.95', badge: 'Spedizione gratuita' }
   ];
+  const ICF = (d) => '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">' + d + '</svg>'; // gevulde iconen (vergelijking)
   const IC = (d) => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
   const REV = window.JJ_REVIEWS || { stories: [], feed: [] };
   const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
@@ -71,12 +72,12 @@ function page() {
     ],
     stories: REV.stories.map((x) => Object.assign({}, x)),
     compare: [
-      { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: IC('<path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/>') },
-      { us: 'Testato da laboratori indipendenti', them: 'Nessun test indipendente', icon: IC('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>') },
-      { us: 'Zero cumarina, formula pura', them: 'Cassia economica, ricca di cumarina', icon: IC('<path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"/><path d="M5 19l8-8"/>') },
-      { us: 'Estratto concentrato 12:1', them: 'Dosaggi insufficienti', icon: IC('<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>') },
-      { us: 'Potenziato con olio MCT', them: 'Scarso assorbimento', icon: IC('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>') },
-      { us: 'Capsule molli ad alto assorbimento', them: 'Capsule grandi e difficili da deglutire', icon: IC('<rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-35 12 12)"/><path d="m9.5 8.4 5 7.2"/>') }
+      { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: ICF('<polygon points="8.5,2.5 12.5,1 16,8 12,9.5"/><polygon points="11,9.2 15,7.7 16.2,10.3 12.2,11.8"/><path d="M14.2 11.5a5.2 5.2 0 0 1 1.3 9" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/><rect x="6.5" y="12.8" width="8.5" height="2.2" rx="1"/><rect x="9.2" y="15" width="2.6" height="5"/><rect x="4.5" y="19.5" width="15" height="2.6" rx="1.3"/>') },
+      { us: 'Testato da laboratori indipendenti', them: 'Nessun test indipendente', icon: ICF('<path d="M12 2l8 3v6c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5zm-1.3 13.6l6-6-1.4-1.4-4.6 4.6-2.2-2.2-1.4 1.4z"/>') },
+      { us: 'Zero cumarina, formula pura', them: 'Cassia economica, ricca di cumarina', icon: ICF('<path d="M20.5 3.5C12 3.5 5.5 8 4.2 16.3c-.1.7.1 1.4.5 1.9l-1.9 2.2 1.4 1.2 1.9-2.2c.5.3 1.1.5 1.8.4C16.3 18.4 20.5 12 20.5 3.5zM7.6 17.2c1.2-4.1 4-7.6 7.9-9.7-2.6 2.6-4.6 5.9-5.7 9.6z"/>') },
+      { us: 'Estratto concentrato 12:1', them: 'Dosaggi insufficienti', icon: ICF('<path d="M12 1.5l2.4 1.9 3-.4 1.1 2.8 2.8 1.1-.4 3L22.5 12l-1.6 2.1.4 3-2.8 1.1-1.1 2.8-3-.4L12 22.5l-2.4-1.9-3 .4-1.1-2.8-2.8-1.1.4-3L1.5 12l1.6-2.1-.4-3 2.8-1.1 1.1-2.8 3 .4zm-1.4 14.1l6-6-1.4-1.4-4.6 4.6-2.2-2.2L7 12z"/>') },
+      { us: 'Potenziato con olio MCT', them: 'Scarso assorbimento', icon: ICF('<path d="M12 2.5s6.5 7 6.5 12a6.5 6.5 0 0 1-13 0c0-5 6.5-12 6.5-12z"/>') },
+      { us: 'Capsule molli ad alto assorbimento', them: 'Capsule grandi e difficili da deglutire', icon: ICF('<path d="M7.8 4.2a4.5 4.5 0 0 1 6.4 0l5.6 5.6a4.5 4.5 0 1 1-6.4 6.4L7.8 10.6a4.5 4.5 0 0 1 0-6.4zm1.4 1.4a2.5 2.5 0 0 0 0 3.6l2.8 2.8 3.6-3.6-2.8-2.8a2.5 2.5 0 0 0-3.6 0z"/>') }
     ],
     faqs: [
       { t: 'Cosa rende la cannella di Ceylon diversa da quella utilizzata nella maggior parte degli integratori?', body: 'Quasi tutti gli integratori a base di cannella utilizzano la varietà Cassia. E la differenza è più importante di quanto molti pensino.\n\nLa cannella Cassia contiene elevate quantità di cumarina, una sostanza che, se assunta regolarmente in dosi elevate, può accumularsi nell\'organismo e affaticare il fegato.\n\nLa cannella di Ceylon, originaria dello Sri Lanka, ne contiene invece quantità molto basse. Per questo è una scelta più adatta all\'integrazione quotidiana.\n\nLa nostra formula concentrata 12:1 fornisce, in ogni capsula molle, l\'equivalente di 7.200 mg di cannella di Ceylon, in una formulazione studiata per favorirne l\'assorbimento.' },
@@ -218,6 +219,7 @@ function page() {
       this.tlAct = act;
     },
     init() {
+      if (window.__jjInit) return; window.__jjInit = true; // Alpine roept init() zelf al aan én via x-init
       this.$watch('img', (i) => {
         const box = this.$refs.thumbs; if (!box) return;
         const t = box.querySelectorAll('.thumb')[i]; if (!t) return;
@@ -226,6 +228,16 @@ function page() {
         else if (r > box.scrollLeft + box.clientWidth) box.scrollTo({ left: r - box.clientWidth + 4, behavior: 'smooth' });
       });
       setInterval(() => { this.now = Date.now(); }, 1000);
+      // Swipe met de duim op de 5-motivi-slider (galerij heeft al swipe via .gallery-wrap): links = volgende, rechts = vorige
+      const swipe = (sel, go) => {
+        const el = document.querySelector(sel); if (!el) return; let s = null;
+        el.addEventListener('touchstart', (e) => { const t = e.touches[0]; s = t ? { x: t.clientX, y: t.clientY, t: Date.now() } : null; }, { passive: true });
+        el.addEventListener('touchend', (e) => {
+          const t = e.changedTouches[0]; if (!s || !t) return; const dx = t.clientX - s.x, dy = t.clientY - s.y; s = null;
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) go(dx < 0 ? 1 : -1);
+        }, { passive: true });
+      };
+      swipe('.reasons-sec .carousel', (d) => { this.rStart = Math.max(0, Math.min(this.reasons.length - this.per, this.rStartC + d)); });
       // '93% venduto': balk en getal lopen in 2 s op zodra het blok in beeld komt
       const sold = document.querySelector('.sold-card');
       if (sold) {
