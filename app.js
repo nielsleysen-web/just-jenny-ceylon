@@ -3,7 +3,7 @@ function page() {
   // Checkout: elke "Aggiungi al carrello"-knop stuurt direct door naar deze URL,
   // met ?bundle=<id>&qty=<aantal>. Pas dit pad aan zodra de custom checkout klaar is.
   const CHECKOUT_URL = 'https://checkout.getjustjenny.com/ceylon'; // Stripe/PayPal-checkout (jjb-profit-dashboard, product 'ceylon')
-  const META_PIXEL_ID = ''; // Meta Pixel-ID (zelfde als META_PIXEL_ID op de checkout). Leeg = geen pixel-events vanaf deze pagina.
+  const META_PIXEL_ID = '1514819433466204'; // Meta Pixel-ID (zelfde als META_PIXEL_ID op de checkout). Leeg = geen pixel-events vanaf deze pagina.
   const PRODUCT_ID = '10700016156938'; // Shopify-product "Cannella di Ceylon" (content_ids, zelfde als op de checkout)
   // Tracking-parameters (fbclid, ad_id, utm's…) die jjb-track.js in localStorage bewaart, meesturen naar de checkout
   function trackedCheckoutUrl(qty) {
