@@ -158,7 +158,7 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
     <h1>7 benefici per cui tutti vanno pazzi per la Cannella di Ceylon Just Jenny</h1>
     <p class="sub">(Oltre ad abbassare finalmente la glicemia ostinata)</p>
     <p class="intro">Hai problemi di glicemia alta? Che tu stia cercando di evitare i farmaci da prescrizione o che tu sia ormai stufo di sopportarne gli effetti collaterali. Ecco perché migliaia di persone stanno passando alla Cannella di Ceylon Just Jenny.</p>
-    <a class="btn js-cta" href="/#offers">Risparmia fino al 70%</a>
+    <a class="btn js-cta" href="/">Risparmia fino al 70%</a>
     <p class="proof"><svg viewBox="0 0 100 18" width="98" height="18" aria-hidden="true" style="vertical-align:middle"><rect x="0" width="18" height="18" fill="#00B67A"/><polygon fill="#fff" points="9,2 11,7 16,7 12,10.5 13.5,16 9,12.8 4.5,16 6,10.5 2,7 7,7"/><rect x="20" width="18" height="18" fill="#00B67A"/><polygon fill="#fff" points="29,2 31,7 36,7 32,10.5 33.5,16 29,12.8 24.5,16 26,10.5 22,7 27,7"/><rect x="40" width="18" height="18" fill="#00B67A"/><polygon fill="#fff" points="49,2 51,7 56,7 52,10.5 53.5,16 49,12.8 44.5,16 46,10.5 42,7 47,7"/><rect x="60" width="18" height="18" fill="#00B67A"/><polygon fill="#fff" points="69,2 71,7 76,7 72,10.5 73.5,16 69,12.8 64.5,16 66,10.5 62,7 67,7"/><rect x="80" width="18" height="18" fill="#00B67A"/><polygon fill="#fff" points="89,2 91,7 96,7 92,10.5 93.5,16 89,12.8 84.5,16 86,10.5 82,7 87,7"/></svg> <span style="vertical-align:middle">Valutazione di 4.7/5 basata su 11.419 recensioni</span></p>
   </div>
 </section>
@@ -262,7 +262,7 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
     <div class="box">
       <h3>COMPRANE 2, IL 3° È GRATIS – SOLO PER UN PERIODO LIMITATO!</h3>
       <p>Questa offerta a tempo limitato è richiestissima e le scorte continuano a esaurirsi.</p>
-      <a class="btn js-cta" href="/#offers">Risparmia fino al 70%</a>
+      <a class="btn js-cta" href="/">Risparmia fino al 70%</a>
       <div class="timer">L'OFFERTA SCADE TRA: <span id="cd">10:00</span></div>
       <div class="risk"><span>Rischio esaurimento: <em>Alto</em></span><span>|</span><span>E-BOOK GRATUITO</span></div>
       <div class="guar">Provala oggi con la garanzia soddisfatti o rimborsati di 90 giorni!</div>
@@ -367,7 +367,7 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
         <div class="tp-actions"><button type="button" onclick="this.classList.toggle('on')"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Utile</button></div>
       </div></article>
     </div>
-    <p style="margin-top:22px"><a class="btn js-cta" href="/#offers">Risparmia il 40% + Spedizione gratuita</a></p>
+    <p style="margin-top:22px"><a class="btn js-cta" href="/">Risparmia il 40% + Spedizione gratuita</a></p>
   </div>
 </section>
 
@@ -377,7 +377,7 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
 </footer>
 
 <div class="sticky">
-  <a class="btn js-cta" href="/#offers">Risparmia fino al 40%</a>
+  <a class="btn js-cta" href="/">Risparmia fino al 40%</a>
   <small>🛡️ Garanzia soddisfatti o rimborsati di 90 giorni</small>
 </div>
 
@@ -385,10 +385,10 @@ footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
 // countdown 10 min (per bezoek)
 (function(){var end=Date.now()+10*60*1000,el=document.getElementById('cd');function t(){var s=Math.max(0,Math.floor((end-Date.now())/1000));el.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');if(s>0)setTimeout(t,1000)}t()})();
 // CTA: tracking-parameters doorgeven naar de productpagina + Meta-event
-document.querySelectorAll('.js-cta').forEach(function(a){a.addEventListener('click',function(){
-  try{var u=new URL(a.href,location.href),q=new URLSearchParams(location.search);['fbclid','ad_id','adset_id','campaign_id','utm_source','utm_campaign','utm_content'].forEach(function(k){if(q.get(k))u.searchParams.set(k,q.get(k))});a.href=u.toString();}catch(e){}
-  if(window.fbq)fbq('trackCustom','AdvertorialCTA');
-});});
+function ctaUrl(){var u=new URL('/',location.href),q=new URLSearchParams(location.search);['fbclid','ad_id','adset_id','campaign_id','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))u.searchParams.set(k,q.get(k))});return u.toString()}
+function goCta(e){if(e)e.preventDefault();if(window.fbq)fbq('trackCustom','AdvertorialCTA');location.href=ctaUrl()}
+document.querySelectorAll('.js-cta').forEach(function(a){a.href=ctaUrl();a.addEventListener('click',goCta)});
+document.querySelectorAll('img').forEach(function(im){if(im.closest('footer'))return;im.style.cursor='pointer';im.addEventListener('click',goCta)});
 </script>
 <script>(function(){var st=document.querySelector(".sticky");function f(){st.classList.toggle("on",window.scrollY>window.innerHeight*0.9)}window.addEventListener("scroll",f,{passive:true});f()})();
 function storyStep(d){var g=document.querySelector(".story-grid"),c=g.querySelector(".story-card");g.scrollBy({left:d*(c.offsetWidth+14),behavior:"smooth"})}</script>
