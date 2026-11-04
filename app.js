@@ -3,6 +3,20 @@ function page() {
   // Checkout: elke "Aggiungi al carrello"-knop stuurt direct door naar deze URL,
   // met ?bundle=<id>&qty=<aantal>. Pas dit pad aan zodra de custom checkout klaar is.
   const CHECKOUT_URL = 'https://checkout.getjustjenny.com/ceylon'; // Stripe/PayPal-checkout (jjb-profit-dashboard, product 'ceylon')
+  const META_PIXEL_ID = ''; // Meta Pixel-ID (zelfde als META_PIXEL_ID op de checkout). Leeg = geen pixel-events vanaf deze pagina.
+  const PRODUCT_ID = '10700016156938'; // Shopify-product "Cannella di Ceylon" (content_ids, zelfde als op de checkout)
+  // Tracking-parameters (fbclid, ad_id, utm's…) die jjb-track.js in localStorage bewaart, meesturen naar de checkout
+  function trackedCheckoutUrl(qty) {
+    const url = new URL(CHECKOUT_URL); url.searchParams.set('b', qty);
+    try {
+      const d = JSON.parse(localStorage.getItem('jjb_track') || '{}');
+      ['ad_id', 'adset_id', 'campaign_id', 'fbclid', 'fbc', 'fbp', 'vid', 'utm_source', 'utm_campaign', 'utm_content', 'first_touch', 'host', 'path', 'pgs'].forEach((k) => { if (d[k]) url.searchParams.set(k, d[k]); });
+      const q = new URLSearchParams(location.search);
+      ['fbclid', 'ad_id', 'adset_id', 'campaign_id', 'utm_source', 'utm_campaign', 'utm_content'].forEach((k) => { if (q.get(k) && !url.searchParams.get(k)) url.searchParams.set(k, q.get(k)); });
+    } catch (e) { }
+    return url.toString();
+  }
+  if (META_PIXEL_ID && window.fbq) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'EUR' }); }
   const BUNDLES = [
     { id: 1, qty: 1, title: 'Acquista 1', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
     { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '67%', price: '€59.99', was: '€179.97', badge: 'Più popolare' },
@@ -163,7 +177,10 @@ function page() {
     addToCart(id) {
       const b = BUNDLES.find((x) => x.id === id) || BUNDLES[1];
       this.bundle = b.id;
-      window.location.href = CHECKOUT_URL + '?b=' + b.qty;
+      const price = parseFloat(String(b.price).replace(/[^0-9.]/g, '')) || 0;
+      if (META_PIXEL_ID && window.fbq) fbq('track', 'InitiateCheckout', { content_ids: [PRODUCT_ID], content_type: 'product', num_items: b.qty, value: price, currency: 'EUR' });
+      const go = () => { window.location.href = trackedCheckoutUrl(b.qty); };
+      setTimeout(go, META_PIXEL_ID && window.fbq ? 250 : 0);
     },
     whyScroll() {
       const el = this.$refs.whyTrack; const card = el.children[0];
