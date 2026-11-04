@@ -88,8 +88,8 @@ header.top img{height:26px;margin:0 auto}
 footer{border-top:1px solid var(--line);padding:30px 0 120px;text-align:center}
 footer img{height:22px;margin:0 auto 14px}
 footer a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
-.sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px 14px;text-align:center;z-index:10;box-shadow:0 -6px 18px rgba(0,0,0,.06)}
-.sticky .btn{padding:14px}
+.sticky{position:fixed;transform:translateY(110%);transition:transform .3s;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px 14px;text-align:center;z-index:10;box-shadow:0 -6px 18px rgba(0,0,0,.06)}
+.sticky.on{transform:none}.sticky .btn{padding:14px}
 .sticky small{display:block;font-size:12px;color:var(--muted);margin-top:6px}
 @media (min-width:860px){
   .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:30px 0 40px}
@@ -386,6 +386,7 @@ document.querySelectorAll('.js-cta').forEach(function(a){a.addEventListener('cli
   if(window.fbq)fbq('trackCustom','AdvertorialCTA');
 });});
 </script>
-<script>function storyStep(d){var g=document.querySelector(".story-grid"),c=g.querySelector(".story-card");g.scrollBy({left:d*(c.offsetWidth+14),behavior:"smooth"})}</script>
+<script>(function(){var st=document.querySelector(".sticky");function f(){st.classList.toggle("on",window.scrollY>window.innerHeight*0.9)}window.addEventListener("scroll",f,{passive:true});f()})();
+function storyStep(d){var g=document.querySelector(".story-grid"),c=g.querySelector(".story-card");g.scrollBy({left:d*(c.offsetWidth+14),behavior:"smooth"})}</script>
 </body>
 </html>
