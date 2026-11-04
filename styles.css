@@ -76,7 +76,7 @@ svg{flex:none}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 .ticker-orange{background:var(--orange);color:#fff}
-.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:8px 24px;font-size:12.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:8px 44px;font-size:12.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
 .review-img{width:180px;aspect-ratio:1/1;margin-right:12px;border-radius:12px;background:var(--ph);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--muted)}
 .review-img svg{width:36px;height:36px;fill:none;stroke:var(--orange);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .badge-ticker{background:#F7E1D1;border-top:1px solid #EAC4AD;border-bottom:1px solid #EAC4AD;margin:28px -20px 0;width:auto;padding:2px 0}
