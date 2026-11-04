@@ -95,7 +95,7 @@
       <div class="experts">
         <h3>Ecco cosa dicono gli esperti</h3>
         <div class="expert-grid">
-          <template x-for="n in 3"><div class="expert-video"><span class="play-dark"></span><div x-text="'[Video: Expert ' + n + ']'"></div></div></template>
+          <template x-for="n in 3"><div class="expert-video jj-vid" @click="playVid($event)"><video :src="'assets/video/expert-' + n + '.mp4'" :poster="'assets/video/expert-' + n + '.jpg'" playsinline preload="metadata"></video><span class="play-dark"></span></div></template>
         </div>
       </div>
     </div>
@@ -418,11 +418,11 @@
     <p class="muted">Ascolta le loro esperienze raccontate in prima persona.</p>
     <div class="scroll-x stories-wrap" x-ref="vidTrack" @scroll.passive="vidScroll()">
       <div class="video-grid">
-        <template x-for="n in 4"><div class="story-video"><span class="ph-tag dark" x-text="'[Video storia ' + n + ']'"></span><span class="play-light"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></template>
+        <template x-for="n in 3"><div class="story-video jj-vid" @click="playVid($event)"><video :src="'assets/video/expert-' + n + '.mp4'" :poster="'assets/video/expert-' + n + '.jpg'" playsinline preload="metadata"></video><span class="play-light"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></template>
       </div>
     </div>
     <div class="vid-dots" aria-label="Scorri per altri video">
-      <template x-for="n in 4"><button type="button" class="vid-dot" :class="{on: vidIdx===n-1}" @click="vidGo(n-1)" :aria-label="'Video ' + n"></button></template>
+      <template x-for="n in 3"><button type="button" class="vid-dot" :class="{on: vidIdx===n-1}" @click="vidGo(n-1)" :aria-label="'Video ' + n"></button></template>
     </div>
   </div>
 </section>

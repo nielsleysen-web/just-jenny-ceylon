@@ -174,6 +174,14 @@ function page() {
         return 'width:' + Math.round(48 * big) + 'px;height:' + Math.round(64 * big) + 'px;margin:0 -' + (n > 1 ? 8 : 0) + 'px;z-index:' + (10 - Math.round(Math.abs(off) * 2)) + ';transform:rotate(' + (off * 5) + 'deg)';
       });
     },
+    // Video's (esperti + storie): klik = afspelen met geluid en bediening; andere video's pauzeren
+    playVid(e) {
+      const box = e.currentTarget, v = box.querySelector('video'); if (!v) return;
+      if (box.classList.contains('playing')) return; // bediening van de video zelf
+      document.querySelectorAll('.jj-vid.playing video').forEach((o) => { if (o !== v) { o.pause(); o.closest('.jj-vid').classList.remove('playing'); o.controls = false; } });
+      box.classList.add('playing'); v.controls = true; v.muted = false; v.play().catch(() => {});
+      v.onended = () => { box.classList.remove('playing'); v.controls = false; };
+    },
     addToCart(id) {
       const b = BUNDLES.find((x) => x.id === id) || BUNDLES[1];
       this.bundle = b.id;
