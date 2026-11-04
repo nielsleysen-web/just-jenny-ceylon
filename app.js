@@ -19,8 +19,8 @@ function page() {
   if (META_PIXEL_ID && window.fbq) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'EUR' }); }
   const BUNDLES = [
     { id: 1, qty: 1, title: 'Acquista 1', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
-    { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '67%', price: '€59.99', was: '€179.97', badge: 'Più popolare' },
-    { id: 3, qty: 5, title: 'Acquista 3 e ricevine 2 GRATIS', save: '70%', price: '€89.99', was: '€299.95', badge: 'Spedizione gratuita' }
+    { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '69%', price: '€54.95', was: '€179.97', badge: 'Più popolare' },
+    { id: 3, qty: 5, title: 'Acquista 3 e ricevine 2 GRATIS', save: '73%', price: '€79.95', was: '€299.95', badge: 'Spedizione gratuita' }
   ];
   const ICF = (d) => '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">' + d + '</svg>'; // gevulde iconen (vergelijking)
   const IC = (d) => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
