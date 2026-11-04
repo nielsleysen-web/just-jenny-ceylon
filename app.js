@@ -72,7 +72,7 @@ function page() {
     ],
     stories: REV.stories.map((x) => Object.assign({}, x)),
     compare: [
-      { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: ICF('<polygon points="8.5,2.5 12.5,1 16,8 12,9.5"/><polygon points="11,9.2 15,7.7 16.2,10.3 12.2,11.8"/><path d="M14.2 11.5a5.2 5.2 0 0 1 1.3 9" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/><rect x="6.5" y="12.8" width="8.5" height="2.2" rx="1"/><rect x="9.2" y="15" width="2.6" height="5"/><rect x="4.5" y="19.5" width="15" height="2.6" rx="1.3"/>') },
+      { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: IC('<path d="M9 3.5l3.5-1.5 3 6.5-3.5 1.5z"/><path d="M11.5 9.5l1 2.3"/><path d="M14 11.8a5.5 5.5 0 0 1 1.5 9.2"/><path d="M6.5 14h8"/><path d="M10.5 14v6"/><path d="M4.5 20.5h15"/>') },
       { us: 'Testato da laboratori indipendenti', them: 'Nessun test indipendente', icon: ICF('<path d="M12 2l8 3v6c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5zm-1.3 13.6l6-6-1.4-1.4-4.6 4.6-2.2-2.2-1.4 1.4z"/>') },
       { us: 'Zero cumarina, formula pura', them: 'Cassia economica, ricca di cumarina', icon: ICF('<path d="M20.5 3.5C12 3.5 5.5 8 4.2 16.3c-.1.7.1 1.4.5 1.9l-1.9 2.2 1.4 1.2 1.9-2.2c.5.3 1.1.5 1.8.4C16.3 18.4 20.5 12 20.5 3.5zM7.6 17.2c1.2-4.1 4-7.6 7.9-9.7-2.6 2.6-4.6 5.9-5.7 9.6z"/>') },
       { us: 'Estratto concentrato 12:1', them: 'Dosaggi insufficienti', icon: ICF('<path d="M12 1.5l2.4 1.9 3-.4 1.1 2.8 2.8 1.1-.4 3L22.5 12l-1.6 2.1.4 3-2.8 1.1-1.1 2.8-3-.4L12 22.5l-2.4-1.9-3 .4-1.1-2.8-2.8-1.1.4-3L1.5 12l1.6-2.1-.4-3 2.8-1.1 1.1-2.8 3 .4zm-1.4 14.1l6-6-1.4-1.4-4.6 4.6-2.2-2.2L7 12z"/>') },
