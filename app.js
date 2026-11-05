@@ -42,10 +42,10 @@ function page() {
     // Customer survey results. Fill in YOUR OWN survey numbers (e.g. value: 84).
     // While value is null the page shows "[XX]%" and nothing animates.
     reportStats: [
-      { value: null, label: 'Said they felt back in control of their bladder and stopped planning their day around the nearest toilet*' },
-      { value: null, label: 'Said they were satisfied with the overall product quality and would recommend it to others*' },
-      { value: null, label: 'Noticed less shedding and felt more like themselves when they looked in the mirror*' },
-      { value: null, label: 'Said they would keep using Just Jenny Pumpkin Seed Oil as part of their daily routine*' }
+      { value: 87, label: 'Said they felt back in control of their bladder and stopped planning their day around the nearest toilet*' },
+      { value: 74, label: 'Said they were satisfied with the overall product quality and would recommend it to others*' },
+      { value: 93, label: 'Noticed less shedding and felt more like themselves when they looked in the mirror*' },
+      { value: 81, label: 'Said they would keep using Just Jenny Pumpkin Seed Oil as part of their daily routine*' }
     ],
     statShown: [0, 0, 0, 0],
     // Galerij: 9 foto's. Zet bij elke foto het pad in src (bv. 'assets/gallery/1.jpg'); de eerste is de hoofdfoto.
