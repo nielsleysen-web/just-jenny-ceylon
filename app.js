@@ -18,20 +18,20 @@ function page() {
   }
   if (META_PIXEL_ID && window.fbq) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'EUR' }); }
   const BUNDLES = [
-    { id: 1, qty: 1, title: 'Acquista 1', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
-    { id: 2, qty: 3, title: 'Acquista 2 e ricevine 1 GRATIS', save: '69%', price: '€54.95', was: '€179.97', badge: 'Più popolare' },
-    { id: 3, qty: 5, title: 'Acquista 3 e ricevine 2 GRATIS', save: '73%', price: '€79.95', was: '€299.95', badge: 'Spedizione gratuita' }
+    { id: 1, qty: 1, title: 'Buy One', save: '50%', price: '€29.99', was: '€59.99', badge: '' },
+    { id: 2, qty: 3, title: 'Buy 2, Get 1 FREE', save: '69%', price: '€54.95', was: '€179.97', badge: 'Most Popular' },
+    { id: 3, qty: 5, title: 'Buy 3, Get 2 FREE', save: '73%', price: '€79.95', was: '€299.95', badge: 'Best Value' }
   ];
   const ICF = (d) => '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">' + d + '</svg>'; // gevulde iconen (vergelijking)
   const IC = (d) => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
   const REV = window.JJ_REVIEWS || { stories: [], feed: [] };
-  const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+  const MESI = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const BADGE = (d) => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9643A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '<path d="M3 3l18 18"/></svg>';
 
   return {
     // state
     bundle: 2, img: 0, acc: -1, ben: -1, faq: -1, revPage: 0, rStart: 0, feedShown: 6,
-    showReviews: true, // reviews komen uit reviews.js (Trustpilot-export)
+    showReviews: false, // reviews komen uit reviews.js (Trustpilot-export)
     subscribed: false, sticky: false,
     whyIdx: 0, tx: 0,
     vidIdx: 0,
@@ -42,62 +42,66 @@ function page() {
     // Customer survey results. Fill in YOUR OWN survey numbers (e.g. value: 84).
     // While value is null the page shows "[XX]%" and nothing animates.
     reportStats: [
-      { value: 86, label: 'Continuerebbe a includere Just Jenny nella propria routine quotidiana' },
-      { value: 72, label: 'Ha percepito livelli di energia più stabili durante la giornata' },
-      { value: 91, label: 'L\'ha trovato più delicato sullo stomaco rispetto ad altri integratori di cannella' },
-      { value: 79, label: 'Lo consiglierebbe a un amico' }
+      { value: null, label: 'Said they felt back in control of their bladder and stopped planning their day around the nearest toilet*' },
+      { value: null, label: 'Said they were satisfied with the overall product quality and would recommend it to others*' },
+      { value: null, label: 'Noticed less shedding and felt more like themselves when they looked in the mirror*' },
+      { value: null, label: 'Said they would keep using Just Jenny Pumpkin Seed Oil as part of their daily routine*' }
     ],
     statShown: [0, 0, 0, 0],
     // Galerij: 9 foto's. Zet bij elke foto het pad in src (bv. 'assets/gallery/1.jpg'); de eerste is de hoofdfoto.
     thumbs: [
-      { short: '1', label: 'Confezione del prodotto', src: '' },
-      { short: '2', label: 'Capsule molli da vicino', src: '' },
-      { short: '3', label: 'Infografica dei benefici', src: '' },
-      { short: '4', label: 'Donna 50+ con il prodotto a colazione', src: '' },
-      { short: '5', label: 'Foto 5', src: '' },
-      { short: '6', label: 'Foto 6', src: '' },
-      { short: '7', label: 'Foto 7', src: '' },
-      { short: '8', label: 'Foto 8', src: '' },
-      { short: '9', label: 'Foto 9', src: '' }
+      { short: '1', label: 'Product pouch', src: '' },
+      { short: '2', label: 'Softgels close-up', src: '' },
+      { short: '3', label: 'Benefits infographic', src: '' },
+      { short: '4', label: 'Daily routine', src: '' },
+      { short: '5', label: 'Photo 5', src: '' },
+      { short: '6', label: 'Photo 6', src: '' },
+      { short: '7', label: 'Photo 7', src: '' },
+      { short: '8', label: 'Photo 8', src: '' },
+      { short: '9', label: 'Photo 9', src: '' }
     ],
     productAcc: [
-      { t: 'Benefici supportati da evidenze cliniche', body: 'Supportato da studi sulla vera cannella di Ceylon (Cinnamomum verum)\n• Aiuta a mantenere i livelli di glicemia già nella norma\n• Favorisce la sensibilità all\'insulina e l\'utilizzo efficiente del glucosio da parte dell\'organismo\n• Favorisce una circolazione sana e il normale funzionamento del metabolismo quotidiano\n• Svolge un\'azione antiossidante che aiuta a proteggere le cellule dai danni ossidativi\n• Un estratto delicato e ben tollerato, formulato per un uso quotidiano costante e prolungato\n• Cannella di Ceylon praticamente priva di cumarina: una differenza fondamentale rispetto alla comune cannella Cassia\n\nRisultati tratti da studi clinici e osservazionali sulla vera cannella di Ceylon, utilizzata regolarmente nell\'ambito di uno stile di vita sano. I risultati variano da persona a persona.' },
-      { t: 'Ingredienti principali', body: 'Estratto di vera cannella di Ceylon (Cinnamomum verum)\n• Coltivata in Sri Lanka — non la varietà Cassia più economica\n• Estratto liquido concentrato 12:1\n• Ogni capsula molle fornisce l\'equivalente di 7.200 mg di cannella di Ceylon grezza\n• Naturalmente priva di cumarina. Sicura da assumere ogni giorno, anche a lungo termine\n• Favorisce livelli sani di glicemia, il corretto funzionamento del metabolismo e una buona circolazione\n\nOlio MCT (Trigliceridi a Catena Media)\n• Agisce come veicolo naturale per migliorare l\'assorbimento\n• I principi attivi della cannella sono liposolubili. L\'olio MCT ne favorisce l\'ingresso efficace nel flusso sanguigno\n• Permette all\'estratto di essere assorbito rapidamente, anziché attraversare l\'organismo senza produrre effetti\n• Delicato sull\'apparato digerente. Niente polveri aggressive, niente disturbi allo stomaco\n\nSistema di somministrazione in capsule molli\n• Capsule molli lisce e facili da deglutire\n• Niente capsule contenenti polveri dalla consistenza gessosa\n• Pensate per un\'assunzione quotidiana confortevole: basta una sola capsula molle al giorno' },
-      { t: 'Come funziona', body: 'La maggior parte degli integratori di cannella non funziona perché utilizza polvere di Cassia economica, compressa in capsule rigide che lo stomaco fatica a scomporre correttamente. I principi attivi rimangono intrappolati nelle fibre e attraversano l\'organismo in gran parte senza essere assorbiti.\n\nJust Jenny segue un approccio diverso. Partiamo dalla vera cannella di Ceylon proveniente dallo Sri Lanka, la concentriamo con un rapporto di 12:1 per ottenere un estratto liquido omogeneo, poi la misceliamo con olio MCT e la racchiudiamo in capsule molli facili da deglutire.\n\nUna volta sciolta la capsula molle, l\'estratto è già sospeso nell\'olio, in una forma altamente biodisponibile che l\'organismo può assorbire in modo efficiente.\n\nNiente polveri dalla consistenza granulosa. Nessun retrogusto di cannella a distanza di ore. Nessuno spreco di principi attivi.\n\nL\'olio MCT agisce come un sistema di trasporto naturale, veicolando i principi attivi concentrati della cannella di Ceylon nel flusso sanguigno per favorire un sano metabolismo del glucosio, la circolazione e il benessere cellulare.\n\nUna sola capsula molle al giorno fornisce l\'equivalente di 7.200 mg di cannella di Ceylon. La potenza che decine di capsule tradizionali cercano di eguagliare, in una forma che il tuo organismo può davvero assorbire.\n\nEcco perché così tanti adulti sopra i 50 anni, che avevano ormai rinunciato del tutto agli integratori di cannella, stanno finalmente percependo una differenza concreta con Just Jenny.' }
+      { t: 'Research-backed benefits', body: 'Built on research into cold-pressed pumpkin seed oil (Cucurbita pepo) and saw palmetto\n• Supports a calmer bladder with fewer urgent bathroom trips\n• Helps you sleep through the night with fewer night-time wake-ups\n• Supports healthy kidney filtration and urinary flow\n• Supports prostate comfort for men\n• Helps reduce hair shedding for a fuller-looking scalp\n• Supports healthy cholesterol levels and arterial function\n\nBased on studies of pumpkin seed oil and saw palmetto used consistently as part of a healthy lifestyle. Individual results vary.' },
+      { t: 'Key ingredients', body: 'Cold-pressed pumpkin seed oil (Cucurbita pepo)\n• A full 1,000mg daily serving\n• Cold-pressed to protect the delicate plant sterols, including beta-sitosterol and delta-7 sterols\n• Naturally rich in phytosterols, fatty acids, zinc and antioxidants\n\nSaw palmetto\n• Paired with pumpkin seed oil in one targeted 2-in-1 formula\n• Covers the hormone-and-urinary overlap, so you don\'t need two separate bottles\n\nSmooth softgel delivery\n• Small, smooth, odorless softgels that are easy to swallow\n• No chalky powders, no fishy aftertaste' },
+      { t: 'How it works', body: 'Most "pumpkin seed oil" supplements use oil that has been heat- or chemically-extracted. That process damages the delicate delta-7 sterols and beta-sitosterol, the compounds that actually do the work.\n\nJust Jenny is cold-pressed, so those fragile compounds arrive intact, at a full 1,000mg dose with no underdosed fairy-dusting.\n\nThe phytosterols in pumpkin seed oil help support bladder comfort, healthy prostate function, kidney filtration, reduced hair shedding and healthy cholesterol balance.\n\nWe pair it with saw palmetto in the same softgel, so you cover the hormone-and-urinary overlap together instead of stacking two different supplements.\n\nOne to two softgels a day. That\'s it.' },
+      { t: 'How long before I see results?', body: 'Many people notice fewer urgent trips and better sleep within the first 2-4 weeks of daily use.\n\nChanges in hair shedding and overall comfort usually become more noticeable after 6-8 weeks.\n\nFor the best results, take it consistently every day for at least 90 days. Individual results vary.' },
+      { t: 'Money Back Guarantee', body: 'Try Just Jenny for a full 90 days. If you\'re not completely satisfied, simply return your order for a full refund, no questions asked.' }
     ],
     benefits: [
-      { t: 'Supporto alla glicemia', sub: 'Favorisce il mantenimento di livelli sani di glicemia.', img: 'glicemia / glucosio', short: 'La cannella di Ceylon è studiata per il suo ruolo in un sano metabolismo del glucosio: una capsula molle al giorno aiuta a mantenere i livelli stabili.', deep: 'La vera cannella di Ceylon è oggetto di studi per la sua capacità di favorire un sano metabolismo del glucosio. Just Jenny utilizza un estratto concentrato 12:1 con olio MCT per aiutare l\'organismo ad assorbirlo e utilizzarlo efficacemente.' },
-      { t: 'Delicato sullo stomaco', sub: 'Formulato per un\'assunzione quotidiana confortevole.', img: 'donna con stomaco sereno', short: 'Sospeso in olio MCT in una capsula molle liscia: niente bruciore, niente retrogusto amaro, delicato sullo stomaco.', deep: 'Just Jenny utilizza un estratto liquido di cannella sospeso in olio MCT. Niente polveri irritanti. Nessuna irritazione allo stomaco. Nessun rutto al sapore di cannella a distanza di ore.' },
-      { t: 'Salute del fegato', sub: 'Realizzato con cannella di Ceylon priva di cumarina.', img: 'fegato sano / Ceylon vs Cassia', short: 'La vera cannella di Ceylon è naturalmente povera di cumarina, quindi adatta a un uso quotidiano a lungo termine.', deep: 'A differenza della cannella Cassia, quella di Ceylon è praticamente priva di cumarina. Questo rende Just Jenny un\'opzione più sicura per l\'assunzione quotidiana e il benessere del fegato a lungo termine.' },
-      { t: 'Assorbimento potenziato', sub: 'Aiuta l\'organismo ad assorbire la cannella.', img: 'capsula molle con olio MCT', short: 'I principi attivi della cannella sono liposolubili: l\'olio MCT aiuta l\'organismo ad assorbirne di più.', deep: 'I principi attivi della cannella sono liposolubili. L\'olio MCT agisce come veicolo, favorendo l\'assorbimento efficiente dell\'estratto di Ceylon equivalente a 7.200 mg, anziché lasciarlo attraversare l\'organismo senza essere utilizzato.' }
+      { t: 'Kidney & Filtration Support', sub: 'Support your body\'s natural filtration', img: 'kidney / filtration', short: 'Phytosterols in cold-pressed pumpkin seed oil support healthy kidney filtration and urinary flow.', deep: 'Your kidneys filter your blood all day, every day. The phytosterols, antioxidants and fatty acids in cold-pressed pumpkin seed oil help support healthy kidney filtration and a comfortable urinary flow, as part of your daily routine.' },
+      { t: 'Bladder & Prostate Comfort', sub: 'Fewer trips. Better flow. More confidence.', img: 'relaxed woman at home', short: 'Pumpkin seed oil and saw palmetto support a calmer bladder and prostate comfort.', deep: 'Pumpkin seed oil has been studied for its role in supporting bladder comfort and reducing urgency. Paired with saw palmetto, Just Jenny also supports healthy prostate function, so you can stop planning your day around the nearest toilet.' },
+      { t: 'Hair Health', sub: 'Keep more hair where it belongs', img: 'fuller scalp', short: 'Pumpkin seed oil helps reduce shedding for a fuller-looking scalp.', deep: 'Pumpkin seed oil and saw palmetto are studied for their role in supporting healthy DHT balance, which helps reduce hair shedding. Less hair in the shower drain, a fuller-looking scalp in the mirror.' },
+      { t: 'Cholesterol & Arterial Support', sub: 'Healthier cholesterol. Stronger arterial support.', img: 'heart & arteries', short: 'Plant sterols in pumpkin seed oil support healthy cholesterol and arterial function.', deep: 'Phytosterols like beta-sitosterol support healthy cholesterol levels, and the healthy fats in pumpkin seed oil support arterial function and healthy blood pressure as part of a balanced lifestyle.' }
     ],
     weeks: [
-      { t: 'Settimane 1-2: Un inizio semplice', items: ['Una sola capsula molle al giorno si integra facilmente nella tua routine quotidiana.', 'Molti adulti notano un\'energia più stabile e meno cali di energia nel pomeriggio.', 'Alcuni utilizzatori avvertono una riduzione della voglia di zuccheri.', 'L\'organismo inizia a rispondere al supporto quotidiano della cannella di Ceylon.'] },
-      { t: 'Settimane 3-4: Equilibrio quotidiano', items: ['Ti senti più in equilibrio durante tutta la giornata.', 'Meno sbalzi di energia rispetto a quelli che molti sperimentavano in precedenza.', 'La routine quotidiana inizia a diventare naturale e sostenibile.', 'Mantenere la costanza diventa più facile.'] },
-      { t: 'Settimane 5-6: Supporto metabolico', items: ['La maggior parte delle persone nota i miglioramenti più significativi in questa fase.', 'Favorisce un sano metabolismo del glucosio quando i valori sono già nella norma.', 'Maggiore fiducia nella propria energia quotidiana e nel benessere generale.', 'I benefici diventano più evidenti con l\'uso continuativo.'] },
-      { t: 'Dalla settimana 7-8 in poi: Benessere a lungo termine', items: ['Supporto metabolico e antiossidante continuativo.', 'Formulato per un\'assunzione quotidiana costante e prolungata.', 'L\'obiettivo è la stabilità, non le soluzioni rapide.', 'I risultati dipendono dalle condizioni di salute individuali, dall\'alimentazione e dallo stile di vita.'] }
+      { t: 'Week 1-2: Take Back Control', items: ['Fewer urges deciding where you can go', 'Longer sleep without constant bathroom trips', 'Less waking up puffy, foggy and drained', 'Start trusting your body again'] },
+      { t: 'Week 3-4: Stop Living Around the Problem', items: ['Less hair left behind in the shower', 'Less panic about finding the nearest loo', 'Easier flow with less waiting and stopping', 'Wake up clearer and more like yourself'] },
+      { t: 'Week 5-6: Start Feeling Normal Again', items: ['Stronger, more complete urinary flow', 'Fewer broken nights ruining the next day', 'Fuller-looking hair with less visible shedding', 'Continued support for healthy kidney filtration'] },
+      { t: 'Week 7-8+: Protect What You\'re Not Willing to Lose', items: ['Support healthier cholesterol and arterial function', 'Ongoing bladder, prostate and DHT support', 'More confidence in what\'s happening beneath the surface', 'Stop waiting for things to get worse before you act'] }
     ],
     reasons: [
-      { t: 'Cannella di Ceylon concentrata 12:1', photo: 'capsule molli su polvere di cannella', body: 'A differenza della cannella Cassia economica, che contiene livelli elevati di cumarina dannosa per il fegato, Just Jenny è composta al 100% da autentica cannella di Ceylon. Concentriamo l\'equivalente di 7.200 mg di cannella grezza in una sola capsula molle al giorno.' },
-      { t: 'Assorbimento potenziato dall\'olio MCT', photo: 'goccia di olio MCT', body: 'I principi attivi della cannella sono liposolubili, il che significa che, senza grassi sani, attraversano l\'organismo senza essere assorbiti. Sciogliamo il nostro estratto premium in olio MCT biologico, così il tuo organismo può assorbirlo e utilizzarlo immediatamente.' },
-      { t: 'Supporto antinfiammatorio e metabolico', photo: 'stecche di Ceylon e Cassia a confronto', body: 'La vera cannella di Ceylon contiene potenti antiossidanti che favoriscono il normale equilibrio della glicemia, la sensibilità all\'insulina, la funzionalità cardiovascolare e una sana circolazione renale.' },
-      { t: 'Nessun retrogusto, nessun disturbo allo stomaco', photo: 'una capsula molle nel palmo della mano', body: 'A differenza delle polveri dalla consistenza gessosa, delle capsule troppo grandi o delle polveri grezze che provocano reflusso acido ed eruttazioni, le nostre capsule molli sono piccole, lisce e incredibilmente delicate sullo stomaco.' },
-      { t: 'Ingredienti puri, testati da laboratori indipendenti', photo: 'test di laboratorio', body: 'Vegano, senza OGM e privo di glutine, latticini, soia, zucchero e riempitivi artificiali. Ogni singolo lotto viene sottoposto a test indipendenti per verificarne la purezza e la potenza. Prodotto negli Stati Uniti.' }
+      { t: 'Cold-Pressed at a Real 1,000mg Dose', photo: 'softgel with pumpkin seeds', body: 'Most "pumpkin seed oil" on the market is a dead oil. Heat and chemical extraction destroy the delta-7 sterols and beta-sitosterol that do the actual work. Just Jenny is cold-pressed so those fragile compounds arrive intact, at a full 1,000mg dose with no underdosed fairy-dusting.' },
+      { t: 'Built for Your Kidneys, Bladder, and More', photo: 'hands holding glowing kidneys', body: 'Why take three different supplements? One daily formula supports your natural filtration, a calmer bladder, and prostate comfort, all from cold-pressed Cucurbita pepo oil.' },
+      { t: '2-in-1 With Saw Palmetto', photo: 'pumpkin seed oil + saw palmetto', body: 'Competitors sell pumpkin seed oil or saw palmetto. Just Jenny pairs them in one softgel, so you\'re covering inflammation and the hormone-and-urinary overlap together instead of stacking two bottles to get the full effect.' },
+      { t: 'Smooth, Odorless Softgels', photo: 'one softgel in the palm of a hand', body: 'No chalky capsules, no fishy burps, no oily aftertaste. Our softgels are small, smooth and easy to swallow, so taking them every day actually fits into your routine.' },
+      { t: 'Clean & Third-Party Tested', photo: 'lab testing', body: 'Every batch is third-party tested for purity and potency, including heavy-metal screening. Non-GMO and free from gluten, soy, dairy, added sugar, artificial colors and preservatives, so you know exactly what you\'re putting into your body every day.' }
     ],
     stories: REV.stories.map((x) => Object.assign({}, x)),
     compare: [
-      { us: 'Supportato scientificamente', them: 'Formule che seguono le mode', icon: IC('<path d="M9 3.5l3.5-1.5 3 6.5-3.5 1.5z"/><path d="M11.5 9.5l1 2.3"/><path d="M14 11.8a5.5 5.5 0 0 1 1.5 9.2"/><path d="M6.5 14h8"/><path d="M10.5 14v6"/><path d="M4.5 20.5h15"/>') },
-      { us: 'Testato da laboratori indipendenti', them: 'Nessun test indipendente', icon: ICF('<path d="M12 2l8 3v6c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5zm-1.3 13.6l6-6-1.4-1.4-4.6 4.6-2.2-2.2-1.4 1.4z"/>') },
-      { us: 'Zero cumarina, formula pura', them: 'Cassia economica, ricca di cumarina', icon: ICF('<path d="M20.5 3.5C12 3.5 5.5 8 4.2 16.3c-.1.7.1 1.4.5 1.9l-1.9 2.2 1.4 1.2 1.9-2.2c.5.3 1.1.5 1.8.4C16.3 18.4 20.5 12 20.5 3.5zM7.6 17.2c1.2-4.1 4-7.6 7.9-9.7-2.6 2.6-4.6 5.9-5.7 9.6z"/>') },
-      { us: 'Estratto concentrato 12:1', them: 'Dosaggi insufficienti', icon: ICF('<path d="M12 1.5l2.4 1.9 3-.4 1.1 2.8 2.8 1.1-.4 3L22.5 12l-1.6 2.1.4 3-2.8 1.1-1.1 2.8-3-.4L12 22.5l-2.4-1.9-3 .4-1.1-2.8-2.8-1.1.4-3L1.5 12l1.6-2.1-.4-3 2.8-1.1 1.1-2.8 3 .4zm-1.4 14.1l6-6-1.4-1.4-4.6 4.6-2.2-2.2L7 12z"/>') },
-      { us: 'Potenziato con olio MCT', them: 'Scarso assorbimento', icon: ICF('<path d="M12 2.5s6.5 7 6.5 12a6.5 6.5 0 0 1-13 0c0-5 6.5-12 6.5-12z"/>') },
-      { us: 'Capsule molli ad alto assorbimento', them: 'Capsule grandi e difficili da deglutire', icon: ICF('<path d="M7.8 4.2a4.5 4.5 0 0 1 6.4 0l5.6 5.6a4.5 4.5 0 1 1-6.4 6.4L7.8 10.6a4.5 4.5 0 0 1 0-6.4zm1.4 1.4a2.5 2.5 0 0 0 0 3.6l2.8 2.8 3.6-3.6-2.8-2.8a2.5 2.5 0 0 0-3.6 0z"/>') }
+      { us: 'Cold-Pressed Actives Preserved', them: 'Heat-Damaged Compounds', icon: IC('<path d="M9 3.5l3.5-1.5 3 6.5-3.5 1.5z"/><path d="M11.5 9.5l1 2.3"/><path d="M14 11.8a5.5 5.5 0 0 1 1.5 9.2"/><path d="M6.5 14h8"/><path d="M10.5 14v6"/><path d="M4.5 20.5h15"/>') },
+      { us: 'Third-Party Verified', them: 'No Verified Testing', icon: ICF('<path d="M12 2l8 3v6c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5zm-1.3 13.6l6-6-1.4-1.4-4.6 4.6-2.2-2.2-1.4 1.4z"/>') },
+      { us: '2-in-1 Targeted Formula', them: 'Single-Ingredient Formula', icon: ICF('<path d="M20.5 3.5C12 3.5 5.5 8 4.2 16.3c-.1.7.1 1.4.5 1.9l-1.9 2.2 1.4 1.2 1.9-2.2c.5.3 1.1.5 1.8.4C16.3 18.4 20.5 12 20.5 3.5zM7.6 17.2c1.2-4.1 4-7.6 7.9-9.7-2.6 2.6-4.6 5.9-5.7 9.6z"/>') },
+      { us: 'Full 1,000mg Daily Dose', them: 'Weak, Underdosed Servings', icon: ICF('<path d="M12 1.5l2.4 1.9 3-.4 1.1 2.8 2.8 1.1-.4 3L22.5 12l-1.6 2.1.4 3-2.8 1.1-1.1 2.8-3-.4L12 22.5l-2.4-1.9-3 .4-1.1-2.8-2.8-1.1.4-3L1.5 12l1.6-2.1-.4-3 2.8-1.1 1.1-2.8 3 .4zm-1.4 14.1l6-6-1.4-1.4-4.6 4.6-2.2-2.2L7 12z"/>') },
+      { us: 'No Heat-Damaged Oil', them: 'Cheap Processed Oil', icon: ICF('<path d="M12 2.5s6.5 7 6.5 12a6.5 6.5 0 0 1-13 0c0-5 6.5-12 6.5-12z"/>') },
+      { us: 'Smooth Odorless Softgels', them: 'Hard-to-Swallow Capsules', icon: ICF('<path d="M7.8 4.2a4.5 4.5 0 0 1 6.4 0l5.6 5.6a4.5 4.5 0 1 1-6.4 6.4L7.8 10.6a4.5 4.5 0 0 1 0-6.4zm1.4 1.4a2.5 2.5 0 0 0 0 3.6l2.8 2.8 3.6-3.6-2.8-2.8a2.5 2.5 0 0 0-3.6 0z"/>') }
     ],
     faqs: [
-      { t: 'Cosa rende la cannella di Ceylon diversa da quella utilizzata nella maggior parte degli integratori?', body: 'Quasi tutti gli integratori a base di cannella utilizzano la varietà Cassia. E la differenza è più importante di quanto molti pensino.\n\nLa cannella Cassia contiene elevate quantità di cumarina, una sostanza che, se assunta regolarmente in dosi elevate, può accumularsi nell\'organismo e affaticare il fegato.\n\nLa cannella di Ceylon, originaria dello Sri Lanka, ne contiene invece quantità molto basse. Per questo è una scelta più adatta all\'integrazione quotidiana.\n\nLa nostra formula concentrata 12:1 fornisce, in ogni capsula molle, l\'equivalente di 7.200 mg di cannella di Ceylon, in una formulazione studiata per favorirne l\'assorbimento.' },
-      { t: 'Qual è la differenza tra Just Jenny e le normali capsule di cannella vendute in farmacia?', body: 'In farmacia si trovano spesso integratori a base di cannella Cassia, con dosaggi ridotti e in semplici capsule.\n\nJust Jenny è diverso. Utilizza un estratto concentrato 12:1 di cannella di Ceylon, formulato con olio MCT.\n\nOgni capsula molle contiene l\'equivalente di 7.200 mg di corteccia di cannella di Ceylon, in una formulazione pensata per favorirne l\'assorbimento da parte dell\'organismo.' },
-      { t: 'Posso assumere Just Jenny insieme ai farmaci che prendo attualmente?', body: 'La cannella di Ceylon è generalmente ben tollerata. Tuttavia, se stai assumendo farmaci per controllare la glicemia, anticoagulanti o altri medicinali, parla con il tuo medico prima di iniziare.\n\nÈ una precauzione importante ogni volta che si introduce un nuovo integratore nella propria routine. Basta una telefonata per avere maggiore tranquillità.' },
-      { t: 'Dopo quanto tempo posso aspettarmi di notare una differenza?', body: 'I primi cambiamenti percepiti nell\'energia e nel benessere generale vengono spesso descritti dopo 2-4 settimane di assunzione regolare.\n\nPer valutare eventuali cambiamenti misurabili della glicemia, è opportuno considerare un periodo di almeno 6-8 settimane, senza aspettarsi risultati garantiti.\n\nLa velocità con cui potresti notare una differenza dipende dalla tua situazione iniziale, dall\'alimentazione e dalle abitudini quotidiane. Gli effetti possono variare da persona a persona.' }
+      { t: 'How many softgels should I take daily?', body: 'Take one to two softgels a day with a glass of water, ideally with a meal. One pouch contains 30 softgels.' },
+      { t: 'When\'s the best time to take it?', body: 'Any time that fits your routine. Many people take it with breakfast or dinner, because the oil is best absorbed with food. Consistency matters more than the exact time.' },
+      { t: 'Is this safe for my kidneys, or if I already have kidney concerns?', body: 'Pumpkin seed oil is a food-based ingredient and is generally well tolerated. If you have a diagnosed kidney condition or are under a doctor\'s care, talk to your doctor before starting any new supplement.' },
+      { t: 'Can I take this with my current blood pressure, blood sugar, or kidney medication?', body: 'If you take prescription medication, including blood pressure, blood sugar, blood thinners or hormone-related medication, check with your doctor or pharmacist before you start. It\'s a quick call that gives you peace of mind.' },
+      { t: 'How is cold-pressed different, and why does it matter?', body: 'Heat and chemical extraction damage the delicate plant sterols in pumpkin seed oil, like beta-sitosterol and delta-7 sterols. Cold pressing keeps those compounds intact, so you get the oil the way nature made it.' },
+      { t: 'How do I know these are high quality and third-party tested?', body: 'Every batch is third-party tested for purity and potency, including heavy-metal screening. Our softgels are non-GMO and free from gluten, soy, dairy, added sugar, artificial colors and preservatives.' }
     ],
     feed: REV.feed.map((x, i) => Object.assign({}, x, {
       initials: x.name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
@@ -119,7 +123,7 @@ function page() {
     get revCount() { return this.feed.length; },
     // Totaal aantal reviews op Trustpilot (handmatig bijwerken). Leeg laten (null) = aantal reviews in reviews.js.
     revTotal: 11419,
-    get revTotalTxt() { return (this.revTotal || this.feed.length).toLocaleString('it-IT'); },
+    get revTotalTxt() { return (this.revTotal || this.feed.length).toLocaleString('en-US'); },
     revPct(c) { return this.revCount ? Math.round(c / this.revCount * 100) : 0; },
     get revAvg() { return this.feed.length ? this.feed.reduce((t, x) => t + x.r, 0) / this.feed.length : 0; },
     get revAvgTxt() { return this.revAvg.toFixed(1).replace('.', ','); },
@@ -135,11 +139,11 @@ function page() {
     swipe(dx) { if (Math.abs(dx) > 40) this.galStep(dx < 0 ? 1 : -1); },
     revAgo(d) {
       const days = Math.floor((Date.now() - new Date(d + 'T12:00:00').getTime()) / 86400000);
-      if (days < 1) return 'Oggi';
-      if (days === 1) return '1 giorno fa';
-      if (days < 7) return days + ' giorni fa';
-      if (days < 30) { const w = Math.floor(days / 7); return w === 1 ? '1 settimana fa' : w + ' settimane fa'; }
-      const m = Math.floor(days / 30); return m === 1 ? '1 mese fa' : m + ' mesi fa';
+      if (days < 1) return 'Today';
+      if (days === 1) return '1 day ago';
+      if (days < 7) return days + ' days ago';
+      if (days < 30) { const w = Math.floor(days / 7); return w === 1 ? '1 week ago' : w + ' weeks ago'; }
+      const m = Math.floor(days / 30); return m === 1 ? '1 month ago' : m + ' months ago';
     },
     flagIT() { return '<svg class="flag-it" width="18" height="12" viewBox="0 0 3 2" aria-label="Italia" role="img"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>'; },
     revDate(d) { const p = d.split('-'); return parseInt(p[2], 10) + ' ' + MESI[parseInt(p[1], 10) - 1] + ' ' + p[0]; },
@@ -150,7 +154,7 @@ function page() {
         const f = Math.round(18 * Math.max(0, Math.min(1, r - k)));
         return '<rect x="' + x + '" width="18" height="18" fill="#DCDCE6"/>' + (f ? '<rect x="' + x + '" width="' + f + '" height="18" fill="#00B67A"/>' : '');
       }).join('');
-      return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 98 18" role="img" aria-label="Valutazione ' + r.toFixed(1) + ' su 5" style="display:block">' + boxes + pts + '</svg>';
+      return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 98 18" role="img" aria-label="Rated ' + r.toFixed(1) + ' out of 5" style="display:block">' + boxes + pts + '</svg>';
     },
     tickerIcon(i) {
       const s = (d) => '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';

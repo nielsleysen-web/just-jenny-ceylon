@@ -854,3 +854,4 @@ svg{flex:none}
 @media (max-width:600px){.video-grid{display:flex;max-width:none}}
 .jj-vid .play-light{position:relative;z-index:2}
 .jj-vid .play-dark{z-index:2}
+.f-disclaimer{margin-top:28px;font-size:12px;line-height:1.5;opacity:.85}
