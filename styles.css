@@ -1022,3 +1022,14 @@ svg{flex:none}
 .sp-card{display:flex;flex-direction:column}
 .sp-card p{flex:1}
 @media (min-width:761px){.sp-cards{max-width:1000px}}
+/* review cards: horizontal slider, 3 visible desktop / 1 mobile */
+.sp-cards{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;max-width:1000px;margin:0 auto;padding:2px 2px 8px;scrollbar-width:none}
+.sp-cards::-webkit-scrollbar{display:none}
+.sp-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start}
+.sp-chips span{min-width:84px;height:28px;padding:0;border-style:dashed;border-color:#E3C7B3}
+.sp-person{margin-top:18px;padding-top:14px;border-top:1px solid #EFE7E0;gap:10px}
+.sp-avatar{width:40px;height:40px}
+.sp-name{width:110px;height:14px;border-radius:6px;background:#EFE7E0}
+.sp-nav{display:flex;justify-content:center;gap:12px;margin-top:18px}
+.sp-nav button{width:40px;height:40px;border-radius:50%;border:1px solid #E3D8CE;background:#fff;font-size:22px;line-height:1;cursor:pointer;color:#333}
+@media (max-width:760px){.sp-cards{display:flex;padding:0 20px 8px;scroll-padding:0 20px}.sp-card{flex:0 0 86%}}
