@@ -4,7 +4,7 @@
   const IMG_SEL = [
     '.gallery-main', '.thumb', '.expert-video', '.ph-box', '.ph-img', '.review-img', '.flip-img',
     '.journey-banner', '.cmp-photo', '.cmp-pouch', '.riskfree-photo > div', '.story-video',
-    '.feel-pouches', '.offer-img', '.offer-row-img', '.bundle-qty', '.rv-thumb', '.tp-photo', '.sticky-pouch', '.sp-photo'
+    '.feel-pouches', '.offer-img', '.offer-row-img', '.bundle-qty', '.rv-thumb', '.tp-photo', '.sticky-pouch'
   ].join(',');
   const BG_SEL = '.report';
   const DROP_SEL = IMG_SEL + ',' + BG_SEL;
