@@ -116,19 +116,19 @@ svg{flex:none}
 .play-dark::after{content:"";position:absolute;left:19px;top:15px;border-left:16px solid var(--orange);border-top:9px solid transparent;border-bottom:9px solid transparent}
 .rating-line{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
 .product-title{font-family:Jost,sans-serif;font-weight:600;font-size:25px;line-height:1.15}
-.hero-bullets{margin:0;padding:0;list-style:none;display:grid;gap:10px 20px;font-size:15px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+.hero-bullets{margin:0;padding:0;list-style:none;display:grid;gap:12px;font-size:18px;grid-template-columns:1fr}
 .hero-bullets li{display:flex;gap:10px;align-items:center}
 .hb-ico{width:30px;height:30px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
 .hb-ico svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.sold-card{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:0 6px 20px rgba(46,53,80,.1)}
-.sold-card span{font-size:13px;font-weight:700;color:#C62828}
-.sold-bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
-.sold-bar div{height:100%;background:#C62828}
-.price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.price{font-size:18px;font-weight:700;color:var(--orange)}
-.was{font-size:15px;color:var(--ink);text-decoration:line-through}
-.sale-tag{background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:3px 7px;border-radius:4px}
-.low-stock{align-self:center;color:#B42318;font-size:14px;font-weight:600}
+.sold-card{display:flex;align-items:center;gap:24px;border:0;border-top:1px solid var(--line);border-radius:0;padding:22px 0 6px;box-shadow:none;margin-top:4px}
+.sold-card span{font-size:22px;font-weight:700;color:var(--orange);white-space:nowrap}
+.sold-bar{flex:1;height:12px;background:#ECECEC;border-radius:6px;overflow:hidden}
+.sold-bar div{height:100%;background:var(--orange);border-radius:6px}
+.price-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 10px}
+.price{font-size:36px;font-weight:700;color:var(--orange);line-height:1}
+.was{font-size:24px;color:var(--ink);text-decoration:line-through;line-height:1}
+.sale-tag{background:var(--orange);color:#fff;font-size:17px;font-weight:700;padding:8px 14px;border-radius:8px;text-transform:uppercase;letter-spacing:.01em}
+.low-stock{align-self:stretch;display:flex;align-items:center;gap:12px;color:var(--orange);font-size:20px;font-weight:700;text-align:center}.low-stock::before,.low-stock::after{content:"";flex:1;height:1px;background:#E3C7B3}
 .bundle-list{display:flex;flex-direction:column;gap:14px;padding-top:6px}
 .bundle{position:relative;display:flex;align-items:center;gap:12px;width:100%;text-align:left;border-radius:12px;cursor:pointer;color:var(--navy);padding:17px;background:#fff;border:1px solid var(--line)}
 .bundle.is-active{padding:16px;background:#FDF1EA;border:2px solid var(--orange)}
@@ -470,7 +470,7 @@ svg{flex:none}
   .hero-bullets{order:5;grid-template-columns:1fr;gap:8px}
   .sold-card{order:6}
   .price-row{order:7}
-  .low-stock{order:8;margin-top:-4px}
+  .low-stock{order:8}
   .bundle-list{order:9}
   .atc-main{order:10}
   .guarantees{order:12;margin-top:-4px}
@@ -757,9 +757,9 @@ svg{flex:none}
 .bundle-qty.has-img,.offer-row-img.has-img,.offer-img.has-img,.sticky-pouch.has-img,.cmp-pouch.has-img{background-origin:content-box;padding:5px;background-color:var(--vanilla)}
 .bundle-qty.has-img{width:62px;height:52px;border-radius:8px}
 .ph-box.has-img{border:0;background-color:#fff;background-size:contain!important;aspect-ratio:auto;min-height:120px}
-/* low-stock: compacter en dichter bij de offers */
-.low-stock{margin:-8px 0 -12px;line-height:1.2}
-@media (max-width:600px){.low-stock{margin:-6px 0 -10px}}
+/* low-stock */
+.low-stock{margin:18px 0 4px;line-height:1.2}
+@media (max-width:600px){.low-stock{margin:12px 0 0;font-size:17px}.price{font-size:30px}.was{font-size:20px}.sale-tag{font-size:14px;padding:6px 10px}.sold-card span{font-size:18px}.sold-card{gap:16px;padding:16px 0 4px}}
 
 /* galerij: pijlen + thumbnail-slider */
 .gallery-wrap{position:relative}

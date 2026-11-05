@@ -115,24 +115,24 @@
       <div class="rating-line" x-show="showReviews"><span x-html="stars(revAvg, 98)"></span><span class="rl-long" x-text="'Valutazione di ' + revAvgTxt + '/5 basata su ' + revTotalTxt + ' recensioni'"></span><span class="rl-short" x-text="revAvgTxt + '/5 · ' + revTotalTxt + ' recensioni'"></span></div>
       <h1 class="product-title" id="offerta">Just Jenny™ Pumpkin Seed Oil Softgels</h1>
       <ul class="hero-bullets">
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg></span>Ripristina la sensibilità all'insulina</li>
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg></span>Stabilizza i livelli di glicemia</li>
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>Favorisce naturalmente una pressione sanguigna sana</li>
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>Aiuta a mantenere livelli di energia costanti</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/><path d="M12 20V11"/><path d="M9 14l3-3 3 3"/></svg></span>Reduces bladder urgency &amp; night trips</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M10 4C6 4 5 8 5 11s1 7 5 7c1.5 0 2-1 2-2V6c0-1-.5-2-2-2z"/><path d="M12 8h3.5"/><path d="M12 12h3.5"/><path d="M12 16h3.5"/><path d="M18 6v12"/></svg></span>Stimulates healthy kidney filtration</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M4 16c3-7 7-9 12-9"/><path d="M8 18c2-5 5-7 9-7"/><path d="M13 19c1-3 3-4 6-4"/><path d="M6 20h.01"/><path d="M11 21h.01"/><path d="M17 21h.01"/></svg></span>Reduces shedding hair for a fuller scalp</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/><path d="M5 12h4l1.5-2.5 2 5 1.5-2.5H19"/></svg></span>Supports healthy cholesterol &amp; arterial function</li>
       </ul>
 
       <div class="sold-card">
         <div class="sold-bar"><div class="sold-fill" data-pct="93" style="width:0"></div></div>
-        <span><span class="sold-num" data-pct="93">0</span>% venduto</span>
+        <span><span class="sold-num" data-pct="93">0</span>% Sold</span>
       </div>
 
       <div class="price-row">
         <span class="price" x-text="cur.price"></span>
         <span class="was" x-text="cur.was"></span>
-        <span class="sale-tag" x-text="'Saldi d\'autunno – ' + cur.save"></span>
+        <span class="sale-tag" x-text="'FALL SALE – SAVE ' + cur.save"></span>
       </div>
 
-      <div class="low-stock">Scorte limitate – Si esauriscono rapidamente</div>
+      <div class="low-stock"><span>Low Stock – Selling Fast</span></div>
 
       <div class="bundle-list">
         <template x-for="b in bundles" :key="b.id">
