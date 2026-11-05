@@ -1033,3 +1033,7 @@ svg{flex:none}
 .sp-nav{display:flex;justify-content:center;gap:12px;margin-top:18px}
 .sp-nav button{width:40px;height:40px;border-radius:50%;border:1px solid #E3D8CE;background:#fff;font-size:22px;line-height:1;cursor:pointer;color:#333}
 @media (max-width:760px){.sp-cards{display:flex;padding:0 20px 8px;scroll-padding:0 20px}.sp-card{flex:0 0 86%}}
+.feel-benefits svg.solid{fill:#fff;stroke:none;width:72px;height:72px}
+@media (max-width:600px){.feel-benefits svg.solid{width:52px;height:52px}}
+.feel-benefits div{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700}
+.feel-benefits div{align-items:center;text-align:center}
