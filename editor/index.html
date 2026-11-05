@@ -1,21 +1,18 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Just Jenny – Bewerken & publiceren</title><meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Just Jenny Cannella di Ceylon – estratto 12:1 pari a 7.200 mg di cannella grezza in una sola capsula molle con olio MCT al giorno.">
+<title>Just Jenny – Edit &amp; publish</title><meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Just Jenny Pumpkin Seed Oil Softgels – cold-pressed 1,000mg pumpkin seed oil with saw palmetto for bladder, kidney, hair and cholesterol support. 90-day money back guarantee.">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="/styles.css?v=en17">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 <script src="/reviews.js"></script>
-<script src="/app.js"></script>
+<script src="/app.js?v=en9"></script>
 <script>window.JJ_NO_APPLY=true;window.JJ_CONTENT_URL="/content.json";window.JJ_ASSET_BASE="/";</script>
 <script defer src="/apply-content.js"></script>
 <link rel="stylesheet" href="/editor/editor.css">
@@ -25,22 +22,22 @@
 
 <!-- Announcement bar -->
 <div class="announce">
-  <span class="announce-text"><span class="announce-sale">SALDI D'AUTUNNO</span><span class="announce-sub">Acquista ora e risparmia fino al 70%</span></span>
-  <span class="countdown" aria-label="L'offerta termina tra">
-    <span class="cd-unit"><span class="cd" x-text="hh">01</span><small>Ore</small></span>
-    <span class="cd-unit"><span class="cd" x-text="mm">52</span><small>Min</small></span>
-    <span class="cd-unit"><span class="cd" x-text="ss">33</span><small>Sec</small></span>
+  <span class="announce-text"><span class="announce-sale">FALL SALE</span><span class="announce-sub">Shop Now and Get Up To 70% Off</span></span>
+  <span class="countdown" aria-label="Offer ends in">
+    <span class="cd-unit"><span class="cd" x-text="hh">01</span><small>Hrs</small></span><span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd" x-text="mm">52</span><small>Mins</small></span><span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd" x-text="ss">33</span><small>Secs</small></span>
   </span>
 </div>
 
 <!-- Header -->
 <header class="site-header">
   <div class="logo-row">
-    <a href="#top" aria-label="Just Jenny – pagina iniziale"><img src="/assets/logo.webp" width="215" height="19" alt="Just Jenny" class="logo"></a>
+    <a href="#top" aria-label="Just Jenny – home"><img src="/assets/logo.webp" width="215" height="19" alt="Just Jenny" class="logo"></a>
   </div>
-  <div class="ticker ticker-orange" aria-label="Garanzia di 90 giorni · 2+1 GRATIS · Fino al 70% di sconto">
+  <div class="ticker ticker-orange" aria-label="90-Day Guarantee · Up To 70% Off · Subscribe & Save · Buy 2 Get 1 Free">
     <div class="ticker-track" aria-hidden="true">
-      <template x-for="i in 24"><span class="ticker-item"><span class="ti-ico" x-html="tickerIcon((i-1)%3)"></span><span x-text="['Garanzia di 90 giorni','2+1 GRATIS','Fino al 70% di sconto'][(i-1)%3]"></span></span></template>
+      <template x-for="i in 24"><span class="ticker-item"><span class="ti-ico" x-html="tickerIcon((i-1)%4)"></span><span x-text="['90-Day Guarantee','Up To 70% Off','Subscribe & Save','Buy 2 Get 1 Free'][(i-1)%4]"></span></span></template>
     </div>
   </div>
 </header>
@@ -58,19 +55,19 @@
         </template>
         <template x-if="!thumbs[img].src && img === 0">
           <div class="pouch pouch-lg">
-            <div class="pouch-kicker">Autentica Ceylon dello Sri Lanka</div>
+            <div class="pouch-kicker">Cold-Pressed · Natural</div>
             <div class="pouch-brand">Just Jenny</div>
-            <div class="pouch-name">Ceylon<br>Cinnamon</div>
-            <div class="pouch-pill">Equivalente a 7200mg · olio MCT</div>
-            <div class="pouch-count">30 CAPSULE MOLLI</div>
+            <div class="pouch-name">Pumpkin<br>Seed Oil</div>
+            <div class="pouch-pill">1,000mg · 2-in-1 formula</div>
+            <div class="pouch-count">30 SOFTGELS</div>
           </div>
         </template>
         <template x-if="!thumbs[img].src && img !== 0">
-          <div class="ph-label" x-text="'[Foto: ' + thumbs[img].label + ']'"></div>
+          <div class="ph-label" x-text="'[Photo: ' + thumbs[img].label + ']'"></div>
         </template>
       </div>
-      <button type="button" class="g-arrow g-prev" @click="galStep(-1)" aria-label="Foto precedente"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-      <button type="button" class="g-arrow g-next" @click="galStep(1)" aria-label="Foto successiva"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+      <button type="button" class="g-arrow g-prev" @click="galStep(-1)" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button type="button" class="g-arrow g-next" @click="galStep(1)" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
       </div>
       <div class="thumbs" x-ref="thumbs">
         <template x-for="(t, i) in thumbs" :key="i">
@@ -78,55 +75,38 @@
         </template>
       </div>
 
-      <div class="acc-list">
-        <template x-for="(a, i) in productAcc" :key="i">
-          <div class="acc">
-            <button type="button" class="acc-head" @click="acc = acc === i ? -1 : i" :aria-expanded="acc === i">
-              <span x-text="a.t"></span><span class="acc-sign" x-text="acc === i ? '−' : '+'"></span>
-            </button>
-            <div class="acc-body" x-show="acc === i" x-text="a.body"></div>
-          </div>
-        </template>
-      </div>
-
-      <div class="experts">
-        <h3>Ecco cosa dicono gli esperti</h3>
-        <div class="expert-grid">
-          <template x-for="n in 3"><div class="expert-video"><span class="play-dark"></span><div x-text="'[Video: Expert ' + n + ']'"></div></div></template>
-        </div>
-      </div>
     </div>
 
     <!-- Buy box -->
     <div class="col-buy">
-      <div class="rating-line" x-show="showReviews"><span x-html="stars(revAvg, 98)"></span><span x-text="'Valutazione di ' + revAvgTxt + '/5 basata su ' + revTotalTxt + ' recensioni'"></span></div>
-      <h1 class="product-title" id="offerta">Stabilizza i tuoi livelli nel sangue in 18 giorni.</h1>
+      <div class="rating-line rl-store" x-show="storeRating && storeReviews"><span class="rl-stars"><svg viewBox="0 0 24 24" width="21" height="21"><path fill="#BC7650" d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24" width="21" height="21"><path fill="#BC7650" d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24" width="21" height="21"><path fill="#BC7650" d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24" width="21" height="21"><path fill="#BC7650" d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24" width="21" height="21"><path fill="#BC7650" d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg></span><span>Rated <strong x-text="storeRating"></strong> <strong>Excellent</strong> <span x-text="storeReviews"></span> Reviews</span></div>
+      <h1 class="product-title" id="offerta">Just Jenny™ Pumpkin Seed Oil Softgels</h1>
       <ul class="hero-bullets">
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg></span>Ripristina la sensibilità all'insulina</li>
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg></span>Stabilizza i livelli di glicemia</li>
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>Favorisce naturalmente una pressione sanguigna sana</li>
-        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>Aiuta a mantenere livelli di energia costanti</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 1 1 10 4.5a6.3 6.3 0 0 0 9.5 10z"/><path d="M17.5 2.5s-2 2.2-2 3.5a2 2 0 0 0 4 0c0-1.3-2-3.5-2-3.5z"/></svg></span>Reduces bladder urgency &amp; night trips</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M8.5 3C5 3 3.5 6.5 3.5 10.5S5 21 9 21c2 0 2.5-1.5 2-3.5-.4-1.6-1.5-2.4-1.5-4.5s1.1-2.9 1.5-4.5C11.5 6 11 3 8.5 3z"/><path d="M15.5 3C19 3 20.5 6.5 20.5 10.5S19 21 15 21c-2 0-2.5-1.5-2-3.5.4-1.6 1.5-2.4 1.5-4.5s-1.1-2.9-1.5-4.5C12.5 6 13 3 15.5 3z"/></svg></span>Improves renal kidney filtration</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M3 20.5c4-2.2 14-2.2 18 0"/><path d="M8 19c-1.2-4 1.2-7.5-.2-13"/><path d="M12 18.5c0-4.5 1.6-8 .4-14"/><path d="M16 19c1.2-4-1.2-7.5.2-13"/></svg></span>Reduces shedding hair for a fuller scalp</li>
+        <li><span class="hb-ico"><svg viewBox="0 0 24 24"><path d="M12 20.5s-8-4.8-8-10.6A4.4 4.4 0 0 1 12 7.3a4.4 4.4 0 0 1 8 2.6c0 5.8-8 10.6-8 10.6z"/><path d="M6.5 12.5h3l1.5-2.5 2 4.5 1.5-2h3"/></svg></span>Supports healthy cholesterol &amp; arterial function</li>
       </ul>
 
       <div class="sold-card">
-        <div class="sold-bar"><div style="width: 93%"></div></div>
-        <span>[93]% venduto</span>
+        <div class="sold-bar"><div class="sold-fill" data-pct="93" style="width:0"></div></div>
+        <span><span class="sold-num" data-pct="93">0</span>% Sold</span>
       </div>
 
       <div class="price-row">
         <span class="price" x-text="cur.price"></span>
         <span class="was" x-text="cur.was"></span>
-        <span class="sale-tag" x-text="'Saldi d\'autunno – ' + cur.save"></span>
+        <span class="sale-tag" x-text="'FALL SALE – SAVE ' + cur.save"></span>
       </div>
 
-      <div class="low-stock">Scorte limitate – Si esauriscono rapidamente</div>
+      <div class="low-stock"><span>Low Stock – Selling Fast</span></div>
 
       <div class="bundle-list">
         <template x-for="b in bundles" :key="b.id">
           <button type="button" class="bundle" :class="bundle === b.id && 'is-active'" @click="bundle = b.id" :aria-pressed="bundle === b.id">
             <span class="radio"><span></span></span>
             <span class="bundle-qty" x-text="'×' + b.qty"></span>
-            <span class="bundle-info"><strong x-text="b.title"></strong><small x-text="'Risparmi il ' + b.save"></small></span>
+            <span class="bundle-info"><strong x-text="b.title"></strong><small x-text="'You save ' + b.save"></small></span>
             <span class="bundle-price"><strong x-text="b.price"></strong><s x-text="b.was"></s></span>
             <span class="bundle-badge" x-show="b.badge" x-text="b.badge"></span>
           </button>
@@ -134,25 +114,32 @@
       </div>
 
       <button type="button" class="atc-main" @click="addToCart(bundle)">
-        <span>AGGIUNGI AL CARRELLO | <span x-text="cur.price"></span> <s x-text="cur.was"></s></span>
-        <small>Garanzia di 90 giorni</small>
+        <span>ADD TO CART | <span x-text="cur.price"></span> <s x-text="cur.was"></s></span>
+        <small>90-Day Money-Back Guarantee</small>
       </button>
-      <div class="guarantees">
-        <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia di 90 giorni</span>
-        <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Spedizione rapida</span>
-      </div>
+      <div class="delivery-line"><span class="dl-dot"></span><span>🇺🇸 Fast &amp; Free Delivery (<span x-text="deliveryRange"></span>)</span></div>
 
       <div class="mbg-card">
-        <div class="mbg-badge"><span>90</span><small>GIORNI</small></div>
-        <div><div class="mbg-title">Garanzia di 90 giorni</div><div class="mbg-sub"><strong class="mbg-hl">Meno dell'1%</strong> dei clienti richiede un rimborso nell'ambito della nostra garanzia soddisfatti o rimborsati di 90 giorni.</div></div>
+        <svg class="mbg-seal" viewBox="0 0 200 200" role="img" aria-label="90-day money back guarantee"><defs><path id="t1" d="M38 100a62 62 0 0 1 124 0"/><path id="b1" d="M38 100a62 62 0 0 0 124 0"/></defs><polygon fill="#A85F3C" points="100.0,4.0 111.5,12.8 124.8,7.3 133.7,18.7 148.0,16.9 153.6,30.2 167.9,32.1 169.8,46.4 183.1,52.0 181.3,66.3 192.7,75.2 187.2,88.5 196.0,100.0 187.2,111.5 192.7,124.8 181.3,133.7 183.1,148.0 169.8,153.6 167.9,167.9 153.6,169.8 148.0,183.1 133.7,181.3 124.8,192.7 111.5,187.2 100.0,196.0 88.5,187.2 75.2,192.7 66.3,181.3 52.0,183.1 46.4,169.8 32.1,167.9 30.2,153.6 16.9,148.0 18.7,133.7 7.3,124.8 12.8,111.5 4.0,100.0 12.8,88.5 7.3,75.2 18.7,66.3 16.9,52.0 30.2,46.4 32.1,32.1 46.4,30.2 52.0,16.9 66.3,18.7 75.2,7.3 88.5,12.8"/><circle cx="100" cy="100" r="80" fill="none" stroke="#fff" stroke-width="1.5"/><text font-family="Jost,Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" letter-spacing="3"><textPath href="#t1" startOffset="50%" text-anchor="middle">MONEY BACK</textPath></text><text font-family="Jost,Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" letter-spacing="3" dominant-baseline="hanging"><textPath href="#b1" startOffset="50%" text-anchor="middle">GUARANTEE</textPath></text><text x="100" y="114" text-anchor="middle" font-family="Jost,Inter,Arial,sans-serif" font-size="58" font-weight="600" fill="#fff">90</text><text x="100" y="136" text-anchor="middle" font-family="Jost,Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" letter-spacing="3">DAYS</text></svg>
+        <div><div class="mbg-title">90-Day Money Back Guarantee</div><div class="mbg-sub"><strong class="mbg-hl">Less than 1%</strong> of customers claim our 90-Day Money Back Guarantee.</div></div>
       </div>
 
       <div class="warn">
-        <div class="warn-head"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Attenzione: scorte limitate</div>
-        Gli ultimi lotti sono andati esauriti rapidamente, quindi assicurati il prezzo scontato di oggi finché è disponibile. Con un abbonamento, continuerai a ricevere il prodotto anche quando le nostre scorte saranno limitate. In vendita solo qui, non in farmacia.
+        <div class="warn-head"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>WARNING: Low Stock Notice</div>
+        This product sold out 12 times last year. We encourage you to take advantage of the limited sale and buy now. PS: Only available here, don't buy fakes on Amazon/eBay.
       </div>
 
-      <div class="ph-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg><div>[Immagine: garanzie]</div></div>
+      <div class="ph-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg><div>[Image: guarantees]</div></div>
+      <div class="acc-list">
+        <template x-for="(a, i) in productAcc" :key="i">
+          <div class="acc">
+            <button type="button" class="acc-head" @click="acc = acc === i ? -1 : i" :aria-expanded="acc === i">
+              <span x-text="a.t"></span><span class="acc-sign" x-text="acc === i ? '−' : '+'"></span>
+            </button>
+            <div class="acc-body acc-rich" x-show="acc === i" x-html="a.html"></div>
+          </div>
+        </template>
+      </div>
     </div>
   </div>
 </section>
@@ -166,9 +153,9 @@
       </template>
     </div>
     <div class="report-cta">
-      <h2>Cosa riferiscono i clienti dopo aver utilizzato la cannella di Ceylon di Just Jenny</h2>
-      <a href="#offerta" class="btn btn-white">Provalo oggi senza rischi</a>
-      <p class="guar-line light"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</p>
+      <h2>What Customers Report After Using Just Jenny™</h2>
+      <a href="#offerta" class="btn btn-white">Try Risk-Free Today</a>
+      <p class="guar-line light"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</p>
     </div>
   </div>
 </section>
@@ -176,19 +163,50 @@
 <!-- Why it works -->
 <section id="benefits" class="sec">
   <div class="wrap">
-    <h2 class="h2 center">Perché questa formula a base di cannella di Ceylon funziona davvero</h2>
+    <h2 class="h2 center">Why This Pumpkin Seed Oil Formula Actually Works</h2>
     <div class="why-grid" x-ref="whyTrack" @scroll.passive="whyScroll()">
-      <div class="why-card"><div class="ph-img">[Foto: stecche di cannella di Ceylon]</div><div class="why-body"><h3>Vera cannella di Ceylon, non Cassia</h3><p>Ogni capsula molle contiene Cinnamomum verum, l'autentica varietà di cannella di Ceylon, raccolta in Sri Lanka e concentrata con un rapporto di 12:1 per fornire l'equivalente di 7.200 mg di cannella grezza per dose. A differenza della Cassia, è naturalmente povera di cumarina, un aspetto importante se hai più di 50 anni e la assumi ogni giorno per anni, non solo per qualche settimana.</p></div></div>
-      <div class="why-card"><div class="ph-img">[Foto: polvere di cannella in una ciotola]</div><div class="why-body"><h3>Potenza di 7.200 mg in una sola capsula molle</h3><p>La maggior parte degli integratori di cannella contiene dosi insufficienti: poche centinaia di milligrammi di polvere non bastano per fare la differenza. Una sola capsula molle di Just Jenny fornisce una dose completa di livello terapeutico in un'unica assunzione, senza dover ingoiare una manciata di capsule o mescolare la polvere nel caffè solo per assumerne una quantità significativa.</p></div></div>
-      <div class="why-card"><div class="ph-img">[Foto: olio MCT + capsule molli]</div><div class="why-body"><h3>Assorbimento potenziato dall'olio MCT</h3><p>I principi attivi della cannella sono liposolubili, cosa che molti non sanno. Senza un veicolo lipidico, attraversano in gran parte l'apparato digerente senza essere utilizzati, e questo problema peggiora con il rallentamento della digestione dovuto all'età. L'olio MCT risolve il problema trasportando l'estratto direttamente nel flusso sanguigno, dove può effettivamente svolgere la sua azione.</p></div></div>
-      <div class="why-card"><div class="ph-img">[Foto: test di laboratorio]</div><div class="why-body"><h3>Verificato da laboratori indipendenti</h3><p>Ogni lotto viene inviato a un laboratorio indipendente, non per una semplice formalità, ma perché meriti di sapere esattamente cosa introduci nel tuo organismo. Ogni lotto viene verificato per accertare l'assenza di cumarina, OGM, glutine e riempitivi artificiali, così non c'è nulla di nascosto in ciò che assumi ogni giorno.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: pumpkin seed oil pouch]</div><div class="why-body"><h3>Genuine Cold-Pressed Pumpkin Seed Oil</h3><p>Each softgel delivers 1,000mg of cold-pressed Cucurbita pepo pumpkin seed oil. Cold pressing helps preserve the naturally occurring phytosterols, fatty acids and antioxidants that support healthy bladder, kidney, hair and cardiovascular function.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: softgels in a bowl]</div><div class="why-body"><h3>Full 1,000mg Daily Serving</h3><p>One Just Jenny softgel delivers the full 1,000mg daily serving of cold-pressed pumpkin seed oil. No underdosed fairy-dusting. No handful of capsules. Just a concentrated daily dose reinforced with saw palmetto in one targeted 2-in-1 formula.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: pumpkin seeds + oil]</div><div class="why-body"><h3>Phytosterol-Powered Support</h3><p>Pumpkin seed oil is naturally rich in phytosterols, including beta-sitosterol. These key plant compounds help support bladder comfort, healthy prostate function, kidney filtration, reduced hair shedding, healthy cholesterol balance and healthy blood pressure levels.</p></div></div>
+      <div class="why-card"><div class="ph-img">[Photo: lab testing]</div><div class="why-body"><h3>Third-Party Lab Verified</h3><p>Every batch of Just Jenny is third-party tested for purity and potency, including heavy-metal screening. It's also non-GMO and free from gluten, soy, dairy, artificial colours and preservatives — so you know exactly what you're putting into your body every day.</p></div></div>
     </div>
     <div class="why-ctrl">
-      <div class="dots"><template x-for="d in 4"><button type="button" class="dot-btn" @click="whyGo(d-1)" :aria-label="'Scheda ' + d"><span class="dash" :class="whyIdx === d-1 && 'is-active'"></span></button></template></div>
+      <div class="dots"><template x-for="d in 4"><button type="button" class="dot-btn" @click="whyGo(d-1)" :aria-label="'Card ' + d"><span class="dash" :class="whyIdx === d-1 && 'is-active'"></span></button></template></div>
       <div class="arrows">
-        <button type="button" class="arrow" :disabled="whyIdx === 0" @click="whyGo(whyIdx-1)" aria-label="Precedente"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-        <button type="button" class="arrow" :disabled="whyIdx === 3" @click="whyGo(whyIdx+1)" aria-label="Successivo"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        <button type="button" class="arrow" :disabled="whyIdx === 0" @click="whyGo(whyIdx-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button type="button" class="arrow" :disabled="whyIdx === 3" @click="whyGo(whyIdx+1)" aria-label="Next"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social proof: customer photos + reviews -->
+<section class="sp">
+  <div class="wrap">
+    <div class="sp-head-stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg></div>
+    <h2 class="sp-title">Real Stories, <span class="accent">Real Results</span></h2>
+    <p class="sp-sub">See what our customers are saying about Just Jenny™</p>
+  </div>
+  <div class="sp-marquee" aria-label="Customer photos">
+    <div class="sp-track"><div class="sp-photo"><span>[Customer photo 1]</span></div><div class="sp-photo"><span>[Customer photo 2]</span></div><div class="sp-photo"><span>[Customer photo 3]</span></div><div class="sp-photo"><span>[Customer photo 4]</span></div><div class="sp-photo"><span>[Customer photo 5]</span></div><div class="sp-photo"><span>[Customer photo 6]</span></div><div class="sp-photo"><span>[Customer photo 7]</span></div><div class="sp-photo"><span>[Customer photo 8]</span></div><div class="sp-photo"><span>[Customer photo 1]</span></div><div class="sp-photo"><span>[Customer photo 2]</span></div><div class="sp-photo"><span>[Customer photo 3]</span></div><div class="sp-photo"><span>[Customer photo 4]</span></div><div class="sp-photo"><span>[Customer photo 5]</span></div><div class="sp-photo"><span>[Customer photo 6]</span></div><div class="sp-photo"><span>[Customer photo 7]</span></div><div class="sp-photo"><span>[Customer photo 8]</span></div></div>
+  </div>
+  <div class="wrap">
+    <div class="sp-cards">
+      <article class="sp-card">
+        <div class="sp-rate"><strong>[5]</strong><span class="sp-stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg></span><span class="sp-quote">&rdquo;</span></div>
+        <h3>[Review title 1]</h3>
+        <p>&ldquo;[Customer review 1 &ndash; paste the real review text here.]&rdquo;</p>
+      </article>
+      <article class="sp-card">
+        <div class="sp-rate"><strong>[5]</strong><span class="sp-stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg></span><span class="sp-quote">&rdquo;</span></div>
+        <h3>[Review title 2]</h3>
+        <p>&ldquo;[Customer review 2 &ndash; paste the real review text here.]&rdquo;</p>
+      </article>
+      <article class="sp-card">
+        <div class="sp-rate"><strong>[5]</strong><span class="sp-stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.4l7.1-.6z"/></svg></span><span class="sp-quote">&rdquo;</span></div>
+        <h3>[Review title 3]</h3>
+        <p>&ldquo;[Customer review 3 &ndash; paste the real review text here.]&rdquo;</p>
+      </article>
     </div>
   </div>
 </section>
@@ -197,8 +215,8 @@
 <section id="reviews" class="sec bg-blush clip" x-show="showReviews">
   <div class="wrap center-col">
     <span x-html="stars(revAvg, 100)"></span>
-    <h2 class="h2 center">Storie vere, <span class="accent">risultati reali</span></h2>
-    <p class="muted center">Esperienze autentiche con la cannella di Ceylon Just Jenny</p>
+    <h2 class="h2 center">Real Stories, <span class="accent">Real Results</span></h2>
+    <p class="muted center">See what our customers are saying about Just Jenny™</p>
     <div class="full-bleed">
       <div class="ticker">
         <div class="ticker-track slow">
@@ -216,7 +234,7 @@
             <div class="chips"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>
             <div class="story-foot">
               <div class="avatar-ph"><img x-show="st.avatar" :src="st.avatar" :alt="st.name" loading="lazy"><svg x-show="!st.avatar" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
-              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verificato da <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
+              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verified by <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
             </div>
           </div>
         </template>
@@ -231,26 +249,26 @@
             <p x-text="st.text"></p>
             <div class="story-foot">
               <div class="avatar-ph"><img x-show="st.avatar" :src="st.avatar" :alt="st.name" loading="lazy"><svg x-show="!st.avatar" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
-              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verificato da <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
+              <div><div class="story-name" x-text="st.name"></div><div class="verified">Verified by <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,9 23,9 16.5,13.8 19,22 12,17 5,22 7.5,13.8 1,9 9.1,9"/></svg><strong>Trustpilot</strong></div></div>
             </div>
             <div class="chips chips-row"><span class="chip-o" x-text="st.tag1"></span><span class="chip-o" x-text="st.tag2"></span></div>
           </div>
         </template>
       </div>
       <div class="why-ctrl" style="display:flex">
-        <div class="dots"><template x-for="d in stories.length"><button type="button" class="dot-btn" @click="storyGo(d-1)" :aria-label="'Recensione ' + d"><span class="dash" :class="storyIdx === d-1 && 'is-active'"></span></button></template></div>
+        <div class="dots"><template x-for="d in stories.length"><button type="button" class="dot-btn" @click="storyGo(d-1)" :aria-label="'Review ' + d"><span class="dash" :class="storyIdx === d-1 && 'is-active'"></span></button></template></div>
         <div class="arrows">
-          <button type="button" class="arrow" :disabled="storyIdx === 0" @click="storyGo(storyIdx-1)" aria-label="Recensione precedente"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-          <button type="button" class="arrow" :disabled="storyIdx === stories.length-1" @click="storyGo(storyIdx+1)" aria-label="Recensione successiva"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+          <button type="button" class="arrow" :disabled="storyIdx === 0" @click="storyGo(storyIdx-1)" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button type="button" class="arrow" :disabled="storyIdx === stories.length-1" @click="storyGo(storyIdx+1)" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
       </div>
     </div>
     <div class="pager">
-      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Recensioni precedenti">‹</button>
+      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Previous reviews">‹</button>
       <div class="dots">
-        <template x-for="p in [0,1]"><button type="button" class="dot-btn" @click="revPage = p" :aria-label="'Pagina recensioni ' + (p+1)"><span class="dot" :class="revPage === p && 'is-active'"></span></button></template>
+        <template x-for="p in [0,1]"><button type="button" class="dot-btn" @click="revPage = p" :aria-label="'Reviews page ' + (p+1)"><span class="dot" :class="revPage === p && 'is-active'"></span></button></template>
       </div>
-      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="Altre recensioni">›</button>
+      <button type="button" class="round-btn" @click="revPage = (revPage + 1) % 2" aria-label="More reviews">›</button>
     </div>
   </div>
 </section>
@@ -259,19 +277,19 @@
 <section class="feel clip">
   <div class="wrap feel-grid">
     <div class="feel-left">
-      <h2>Sentiti meglio. Ogni giorno.</h2>
-      <p>Dal supporto costante al metabolismo alla praticità dell'assunzione quotidiana, ecco cosa rende diversa la cannella di Ceylon Just Jenny.</p>
+      <h2>Feel Better. Every Day.</h2>
+      <p>Cold-pressed pumpkin seed oil + saw palmetto in one targeted 2-in-1 formula, built to support the everyday functions that matter most.</p>
       <div class="feel-benefits">
-        <div><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/><circle cx="10" cy="15" r="1.2" fill="#fff" stroke="none"/><circle cx="14" cy="13" r="1" fill="#fff" stroke="none"/><circle cx="13" cy="17" r=".8" fill="#fff" stroke="none"/></svg>Supporto alla glicemia</div>
-        <div><svg viewBox="0 0 24 24"><path d="M12 1.5s-3 3.4-3 5.6a3 3 0 0 0 6 0c0-2.2-3-5.6-3-5.6Z"/><path d="M1.5 13.5c1.75-1.2 3.5-1.2 5.25 0s3.5 1.2 5.25 0 3.5-1.2 5.25 0 3.5 1.2 5.25 0"/><path d="M7 16.5v5"/><path d="m5.3 19.8 1.7 1.7 1.7-1.7"/><path d="M12 16.5v5"/><path d="m10.3 19.8 1.7 1.7 1.7-1.7"/><path d="M17 16.5v5"/><path d="m15.3 19.8 1.7 1.7 1.7-1.7"/></svg>Migliore assorbimento quotidiano</div>
-        <div><svg viewBox="0 0 24 24"><path d="M10 2v4c0 2-4 3-4 8a6 6 0 0 0 6 6c4 0 8-3 8-7 0-3-2-5-4.5-5-1.5 0-2.5 1-2.5 2.5S12 11 11.5 9.5 13 7 13 6V2"/><path d="M7.2 17.2C6 18.4 4.5 19 3 18.6"/><path d="M10.5 15.5c1.8 1 4 .8 5.5-.5"/></svg>Delicato sullo stomaco</div>
-        <div><svg viewBox="0 0 24 24"><path d="M2 8.5C2 6 4 5 7 5h11c2.5 0 4 1.5 4 3.5 0 2.5-2.5 4.5-6 6.5l-5 3.5c-1.5 1-3 .5-3.5-1C6 14.5 2 12.5 2 8.5Z"/><path d="M12.5 5c-1 3-1 6 .5 9.5"/><path d="M15 15.6c-.2 1.8.6 3.2 1.7 3.2s1.6-1.2 1.1-2.9"/></svg>Formula delicata sul fegato</div>
+        <div><svg viewBox="0 0 24 24"><path d="M9 4C5 4 4 8 4 11s1 7 5 7c1.5 0 2-1 2-2V6c0-1-.5-2-2-2z"/><path d="M15 4c4 0 5 4 5 7s-1 7-5 7c-1.5 0-2-1-2-2V6c0-1 .5-2 2-2z"/><path d="M11 10h2"/><path d="M12 10v11"/></svg>Kidney &amp; Filtration Support</div>
+        <div><svg viewBox="0 0 24 24"><path d="M7 3c0 3 2 4 5 4s5-1 5-4"/><path d="M5 9c0 6 3 10 7 10s7-4 7-10c0-1-1-2-2-2H7c-1 0-2 1-2 2z"/><path d="M12 19v3"/></svg>Bladder Health &amp; Comfort</div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 4c-4 0-7 3-7 7 0 3 1.5 5 3 6l1 3h6l1-3c1.5-1 3-3 3-6 0-4-3-7-7-7z"/><path d="M12 8v8"/><path d="M9.5 11.5h5"/></svg>Prostate Comfort</div>
+        <div><svg viewBox="0 0 24 24"><path d="M6 21c0-6 1-11 3-14"/><path d="M11 21c0-6 .5-10 1-13"/><path d="M16 21c0-5-.5-9-1.5-12"/><path d="M18 8V3"/><path d="m16 5 2-2 2 2"/><path d="M6 8V3"/><path d="m4 5 2-2 2 2"/></svg>Hair Shedding Defense</div>
       </div>
     </div>
-    <div class="feel-pouches" role="img" aria-label="Tre confezioni di Just Jenny Cannella di Ceylon">
-      <div class="pouch pouch-side l"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 CAPSULE MOLLI</div></div>
-      <div class="pouch pouch-mid"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name">Ceylon<br>Cinnamon</div><div class="pouch-pill">Equivalente a 7200mg · olio MCT</div><div class="pouch-count">30 CAPSULE MOLLI</div></div>
-      <div class="pouch pouch-side r"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Ceylon<br>Cinnamon</div><div class="pouch-count">30 CAPSULE MOLLI</div></div>
+    <div class="feel-pouches" role="img" aria-label="Three pouches of Just Jenny Pumpkin Seed Oil">
+      <div class="pouch pouch-side l"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Pumpkin<br>Seed Oil</div><div class="pouch-count">30 SOFTGELS</div></div>
+      <div class="pouch pouch-mid"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name">Pumpkin<br>Seed Oil</div><div class="pouch-pill">1,000mg · 2-in-1 formula</div><div class="pouch-count">30 SOFTGELS</div></div>
+      <div class="pouch pouch-side r"><div class="pouch-brand sm">JUST JENNY</div><div class="pouch-name md">Pumpkin<br>Seed Oil</div><div class="pouch-count">30 SOFTGELS</div></div>
     </div>
   </div>
 </section>
@@ -280,35 +298,35 @@
 <section class="proven clip">
   <div class="wrap-narrow">
     <div class="center-col">
-      <h2 class="h2-lg"><span class="accent">Benefici comprovati.</span> Supportati dalla scienza.</h2>
-      <p class="lead">Il tuo organismo merita più di semplici promesse. L'<strong>estratto di cannella di Ceylon</strong> favorisce livelli sani di glicemia, la funzionalità epatica e l'equilibrio metabolico quotidiano grazie a ingredienti clinicamente studiati e a un sistema di veicolazione con olio MCT biodisponibile.</p>
+      <h2 class="h2-lg"><span class="accent">Real Benefits.</span> Backed by Science.</h2>
+      <p class="lead">Your body deserves more than empty claims. <strong>Just Jenny™</strong> delivers real, measurable results using ingredients with decades of clinical research.</p>
     </div>
     <div class="flip-grid">
       <template x-for="(a, i) in benefits" :key="i">
         <div class="flip" :class="ben === i && 'is-flipped'">
           <div class="flip-inner">
             <div class="flip-face flip-front">
-              <div class="flip-img" x-text="'[Foto: ' + a.img + ']'"></div>
+              <div class="flip-img" x-text="'[Photo: ' + a.img + ']'"></div>
               <div class="flip-text"><h3 x-text="a.t"></h3><p x-text="a.sub"></p></div>
-              <button type="button" class="plus" @click="ben = i" :aria-label="'Scopri di più su ' + a.t"><span>+</span></button>
+              <button type="button" class="plus" @click="ben = i" :aria-label="'Learn more about ' + a.t"><span>+</span></button>
             </div>
             <div class="flip-face flip-back">
-              <div class="flip-back-head"><h3 x-text="a.t"></h3><button type="button" class="close" @click="ben = -1" :aria-label="'Chiudi ' + a.t">−</button></div>
+              <div class="flip-back-head"><h3 x-text="a.t"></h3><button type="button" class="close" @click="ben = -1" :aria-label="'Close ' + a.t">−</button></div>
               <p class="flip-deep" x-text="a.deep"></p>
-              <div class="flip-short-row"><p class="flip-short" x-text="a.short"></p><button type="button" class="close close-sm" @click="ben = -1" :aria-label="'Chiudi ' + a.t">−</button></div>
+              <div class="flip-short-row"><p class="flip-short" x-text="a.short"></p><button type="button" class="close close-sm" @click="ben = -1" :aria-label="'Close ' + a.t">−</button></div>
             </div>
           </div>
         </div>
       </template>
     </div>
     <div class="center-col cta-stack">
-      <a href="#offerta" class="btn btn-wide">Provalo oggi senza rischi</a>
-      <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
+      <a href="#offerta" class="btn btn-wide">Try Risk-Free Today</a>
+      <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
     </div>
   </div>
-  <div class="ticker badge-ticker" aria-label="Senza OGM · Senza glutine · Zero additivi">
+  <div class="ticker badge-ticker" aria-label="GMO-Free · Gluten-Free · Zero additives">
     <div class="ticker-track" aria-hidden="true">
-      <template x-for="i in 24"><span class="badge-item"><span class="badge-ring" x-html="badgeIcon((i-1)%3)"></span><span x-text="['Senza OGM','Senza glutine','Zero additivi'][(i-1)%3]"></span></span></template>
+      <template x-for="i in 24"><span class="badge-item"><span class="badge-ring" x-html="badgeIcon((i-1)%3)"></span><span x-text="['GMO-Free','Gluten-Free','Zero additives'][(i-1)%3]"></span></span></template>
     </div>
   </div>
 </section>
@@ -317,11 +335,11 @@
 <section class="sec">
   <div class="wrap journey" x-ref="journey">
     <div class="journey-left">
-      <div class="journey-banner"><span class="ph-tag">[Foto: coppia felice 50+ a casa]</span><div class="journey-overlay"><span>JUST·JENNY</span></div></div>
-      <h2 class="h2-xl"><span class="accent">Il tuo percorso</span><br>di benessere con Just Jenny</h2>
-      <p class="lead dark">Just Jenny è formulato per accompagnarti nel tempo nella tua routine quotidiana di benessere. Assumi la tua capsula molle con costanza, segui il tuo programma di attività fisica gratuito e sviluppa abitudini più sane, settimana dopo settimana.</p>
-      <a href="#offerta" class="btn btn-wide">Inizia la mia routine</a>
-      <div class="guar-line dark"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
+      <div class="journey-banner"><span class="ph-tag">[Photo: happy couple 50+ at home]</span><div class="journey-overlay"><span>JUST·JENNY</span></div></div>
+      <h2 class="h2-xl"><span class="accent">Your Wellness</span><br>Journey with Just Jenny</h2>
+      <p class="lead dark">The changes that come with age don't just affect your body. They start taking pieces of your life with them. Your sleep. Your confidence. Your freedom to leave the house without thinking about a toilet. Your hair. Your peace of mind about what might be happening silently inside. Just Jenny is built to help you fight back before "just getting older" becomes your new normal.</p>
+      <a href="#offerta" class="btn btn-wide">Start My Routine</a>
+      <div class="guar-line dark"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
     </div>
     <div class="timeline" x-ref="timeline">
       <div class="tl-line"><div class="tl-fill" :style="'height:' + (tlP * 100).toFixed(2) + '%'"></div></div>
@@ -340,30 +358,31 @@
   </div>
 </section>
 
+
 <!-- 5 reasons -->
 <section class="sec bg-blush reasons-sec">
   <div class="wrap-980 center-col">
-    <span class="eyebrow-tag">5 MOTIVI PER CUI</span>
-    <h2 class="h2-md">La cannella di Ceylon Just Jenny è diversa da tutto ciò che hai provato finora</h2>
+    <span class="eyebrow-tag">5 REASONS WHY</span>
+    <h2 class="h2-md">Just Jenny™ is Different From Everything You've Tried</h2>
     <div class="carousel">
       <div class="carousel-track" :style="trackStyle">
         <template x-for="(rc, i) in reasons" :key="i">
           <article class="reason" :style="'width:' + cardW" :class="i === rStartC && 'is-first'">
-            <div class="ph-img" x-text="'[Foto: ' + rc.photo + ']'"></div>
-            <div class="reason-body"><span class="reason-tag" x-text="'MOTIVO ' + (i+1)"></span><h3 x-text="rc.t"></h3><p x-text="rc.body"></p></div>
+            <div class="ph-img" x-text="'[Photo: ' + rc.photo + ']'"></div>
+            <div class="reason-body"><span class="reason-tag" x-text="'REASON ' + (i+1)"></span><h3 x-text="rc.t"></h3><p x-text="rc.body"></p></div>
           </article>
         </template>
       </div>
     </div>
     <div class="dots">
-      <template x-for="d in (reasons.length - per + 1)"><button type="button" class="dot-btn" @click="rStart = d - 1" :aria-label="'Mostra i motivi dal ' + d"><span class="dash" :class="rStartC === d - 1 && 'is-active'"></span></button></template>
+      <template x-for="d in (reasons.length - per + 1)"><button type="button" class="dot-btn" @click="rStart = d - 1" :aria-label="'Show reasons from ' + d"><span class="dash" :class="rStartC === d - 1 && 'is-active'"></span></button></template>
     </div>
     <div class="arrows">
-      <button type="button" class="arrow" :disabled="rStartC === 0" @click="rStart = Math.max(0, rStartC - 1)" aria-label="Motivi precedenti"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-      <button type="button" class="arrow" :disabled="rStartC >= reasons.length - per" @click="rStart = Math.min(reasons.length - per, rStartC + 1)" aria-label="Motivi successivi"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+      <button type="button" class="arrow" :disabled="rStartC === 0" @click="rStart = Math.max(0, rStartC - 1)" aria-label="Previous reasons"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button type="button" class="arrow" :disabled="rStartC >= reasons.length - per" @click="rStart = Math.min(reasons.length - per, rStartC + 1)" aria-label="Next reasons"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
-    <a href="#offerta" class="btn">Provalo oggi senza rischi</a>
-    <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
+    <a href="#offerta" class="btn">Try Risk-Free Today</a>
+    <div class="guar-line"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
   </div>
 </section>
 
@@ -372,24 +391,24 @@
   <div class="wrap compare-grid">
     <div class="cmp-table">
       <div class="cmp-col us">
-        <div class="cmp-head"><div class="cmp-pouch"><span>JUST JENNY</span><b>Ceylon<br>Cinnamon</b></div><span class="cmp-title">Just Jenny</span></div>
+        <div class="cmp-head"><div class="cmp-pouch"><span>JUST JENNY</span><b>Pumpkin<br>Seed Oil</b></div><span class="cmp-title">Just Jenny</span></div>
         <template x-for="row in compare"><div class="cmp-cell"><span x-html="row.icon"></span><span x-text="row.us"></span></div></template>
       </div>
       <div class="cmp-col them">
-        <div class="cmp-head"><div class="cmp-photo">[Foto: capsule]</div><span class="cmp-title">Altre marche</span></div>
+        <div class="cmp-head"><div class="cmp-photo">[Photo: capsules]</div><span class="cmp-title">Other Brands</span></div>
         <template x-for="row in compare"><div class="cmp-cell"><span class="x-dot">✕</span><span x-text="row.them"></span></div></template>
       </div>
     </div>
     <div class="cmp-copy">
-      <h2>Just Jenny a confronto con le altre marche</h2>
+      <h2>Just Jenny vs. Other Brands</h2>
       <ul>
-        <li><span class="ck"></span><span><strong>Ingredienti clinicamente studiati</strong> – ingredienti di comprovata efficacia</span></li>
-        <li><span class="ck"></span><span><strong>Benefici percepibili nel giro di poche settimane</strong> – senti la differenza in poche settimane</span></li>
-        <li><span class="ck"></span><span><strong>Formulato per un uso a lungo termine</strong> – non si limita ad alleviare i sintomi</span></li>
-        <li><span class="ck"></span><span><strong>Ingredienti puri e di qualità</strong> – senza riempitivi, OGM o additivi superflui</span></li>
+        <li><span class="ck"></span><span><strong>Clinically Studied Ingredients</strong> – Ingredients proven to work</span></li>
+        <li><span class="ck"></span><span><strong>Noticeable Support Within Weeks</strong> – Feel a difference in weeks</span></li>
+        <li><span class="ck"></span><span><strong>Built for Long-Term Use, Not Quick Fixes</strong> – Not just symptom relief</span></li>
+        <li><span class="ck"></span><span><strong>Clean &amp; Pure Ingredients</strong> – No fillers, GMOs, or unnecessary additives</span></li>
       </ul>
-      <a href="#offerta" class="btn btn-white">Provalo oggi senza rischi</a>
-      <div class="guar-line light center"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia soddisfatti o rimborsati di 90 giorni</div>
+      <a href="#offerta" class="btn btn-white">Try Risk-Free Today</a>
+      <div class="guar-line light center"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-day money back guarantee</div>
     </div>
   </div>
 </section>
@@ -398,28 +417,28 @@
 <section class="riskfree bg-blush clip">
   <div class="wrap riskfree-grid">
     <div class="riskfree-copy">
-      <svg width="190" height="190" viewBox="0 0 200 200" role="img" aria-label="Garanzia 90 giorni senza rischi"><defs><path id="seal-top" d="M 30 100 A 70 70 0 0 1 170 100"/><path id="seal-bot" d="M 30 100 A 70 70 0 0 0 170 100"/></defs><circle cx="100" cy="100" r="96" fill="#A85F3C"/><circle cx="100" cy="100" r="56" fill="#fff"/><circle cx="100" cy="100" r="50" fill="none" stroke="#A85F3C" stroke-width=".8" opacity=".6"/><text font-family="Jost, sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="6"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">SENZA RISCHI</textPath></text><text font-family="Jost, sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="6" dominant-baseline="hanging"><textPath href="#seal-bot" startOffset="50%" text-anchor="middle">GARANZIA</textPath></text><circle cx="26" cy="100" r="2.2" fill="#fff"/><circle cx="174" cy="100" r="2.2" fill="#fff"/><text x="100" y="108" text-anchor="middle" font-family="Jost, sans-serif" font-size="46" fill="#A85F3C">90</text><line x1="84" y1="118" x2="116" y2="118" stroke="#A85F3C" opacity=".8"/><text x="100" y="134" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#A85F3C" letter-spacing="4">GIORNI</text></svg>
-      <div class="eyebrow">SENTI LA DIFFERENZA</div>
-      <h2 class="h2-xl light-w">Prova senza rischi per 90 giorni</h2>
-      <p class="lead">Se non sei completamente soddisfatto entro i primi 90 giorni, ti basta restituire il tuo ordine per ricevere un rimborso completo, senza dover fornire alcuna spiegazione.</p>
-      <a href="#offerta" class="btn btn-shadow">Provalo oggi senza rischi</a>
+      <svg width="190" height="190" viewBox="0 0 200 200" role="img" aria-label="90-day risk-free guarantee"><defs><path id="seal-top" d="M 30 100 A 70 70 0 0 1 170 100"/><path id="seal-bot" d="M 30 100 A 70 70 0 0 0 170 100"/></defs><circle cx="100" cy="100" r="96" fill="#A85F3C"/><circle cx="100" cy="100" r="56" fill="#fff"/><circle cx="100" cy="100" r="50" fill="none" stroke="#A85F3C" stroke-width=".8" opacity=".6"/><text font-family="Jost, sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="6"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">RISK FREE</textPath></text><text font-family="Jost, sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="6" dominant-baseline="hanging"><textPath href="#seal-bot" startOffset="50%" text-anchor="middle">GUARANTEE</textPath></text><circle cx="26" cy="100" r="2.2" fill="#fff"/><circle cx="174" cy="100" r="2.2" fill="#fff"/><text x="100" y="108" text-anchor="middle" font-family="Jost, sans-serif" font-size="46" fill="#A85F3C">90</text><line x1="84" y1="118" x2="116" y2="118" stroke="#A85F3C" opacity=".8"/><text x="100" y="134" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#A85F3C" letter-spacing="4">DAYS</text></svg>
+      <div class="eyebrow">FEEL THE DIFFERENCE</div>
+      <h2 class="h2-xl light-w">90-Day Risk-Free Trial</h2>
+      <p class="lead">If you're not completely satisfied in your first 90 days, simply return your order for a full refund — no questions asked.</p>
+      <a href="#offerta" class="btn btn-shadow">Try Risk-Free Today</a>
     </div>
-    <div class="riskfree-photo"><div>[Foto: donna sorridente 50+ con stecche di cannella – scontornata, senza sfondo]</div></div>
+    <div class="riskfree-photo"><div>[Photo: smiling woman 50+ holding a softgel – cut out, no background]</div></div>
   </div>
 </section>
 
 <!-- Real people video stories -->
 <section class="sec">
   <div class="center-col">
-    <h2 class="h2-md">Persone vere. Risultati reali.</h2>
-    <p class="muted">Ascolta le loro esperienze raccontate in prima persona.</p>
+    <h2 class="h2-md">Real People. Real Results.</h2>
+    <p class="muted">Hear their experiences in their own words.</p>
     <div class="scroll-x stories-wrap" x-ref="vidTrack" @scroll.passive="vidScroll()">
       <div class="video-grid">
-        <template x-for="n in 4"><div class="story-video"><span class="ph-tag dark" x-text="'[Video storia ' + n + ']'"></span><span class="play-light"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></template>
+        <template x-for="n in 3"><div class="story-video jj-vid" @click="playVid($event)"><video :src="'assets/video/expert-' + n + '.mp4'" :poster="'assets/video/expert-' + n + '.jpg'" playsinline preload="metadata"></video><span class="play-light"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></template>
       </div>
     </div>
-    <div class="vid-dots" aria-label="Scorri per altri video">
-      <template x-for="n in 4"><button type="button" class="vid-dot" :class="{on: vidIdx===n-1}" @click="vidGo(n-1)" :aria-label="'Video ' + n"></button></template>
+    <div class="vid-dots" aria-label="Swipe for more videos">
+      <template x-for="n in 3"><button type="button" class="vid-dot" :class="{on: vidIdx===n-1}" @click="vidGo(n-1)" :aria-label="'Video ' + n"></button></template>
     </div>
   </div>
 </section>
@@ -427,19 +446,19 @@
 <!-- Offers -->
 <section id="offers" class="sec bg-blush">
   <div class="wrap-1000 center-col">
-    <h2 class="h2 center"><span class="accent">Condividi i benefici.</span><br>Fai scorta. Risparmia di più.</h2>
-    <p class="muted center narrow">Concentriamo la vera cannella di Ceylon con un rapporto di 12:1 in olio MCT per garantire il massimo assorbimento e zero fastidi allo stomaco. Sicuro per l'uso quotidiano.</p>
+    <h2 class="h2 center"><span class="accent">Share the Benefits.</span><br>Stock Up. Save More.</h2>
+    <p class="muted center narrow">Cold-pressed 1,000mg pumpkin seed oil + saw palmetto in one smooth, odorless softgel. Made for everyday use.</p>
     <div class="scroll-x w100 pt14 offer-d">
       <div class="offer-grid">
         <template x-for="b in bundles" :key="b.id">
           <div class="offer" :class="b.id === 2 && 'is-popular'">
             <span class="offer-badge" x-show="b.badge" x-text="b.badge"></span>
             <span class="offer-img">
-              <template x-for="(pk, k) in packs(b.qty)"><span class="mini-pouch" :style="pk"><span>JUST JENNY</span><b>Ceylon<br>Cinnamon</b></span></template>
+              <template x-for="(pk, k) in packs(b.qty)"><span class="mini-pouch" :style="pk"><span>JUST JENNY</span><b>Pumpkin<br>Seed Oil</b></span></template>
             </span>
             <span class="offer-price"><strong x-text="b.price"></strong><s x-text="b.was"></s></span>
-            <span class="save-tag" x-text="'RISPARMI IL ' + b.save"></span>
-            <button type="button" class="offer-atc" @click="addToCart(b.id)">AGGIUNGI AL CARRELLO</button>
+            <span class="save-tag" x-text="'SAVE ' + b.save"></span>
+            <button type="button" class="offer-atc" @click="addToCart(b.id)">ADD TO CART</button>
           </div>
         </template>
       </div>
@@ -450,20 +469,20 @@
         <button type="button" class="offer-row" :class="bundle === b.id && 'is-active'" @click="bundle = b.id" :aria-pressed="bundle === b.id">
           <span class="offer-row-badge" x-show="b.badge" x-text="b.badge"></span>
           <span class="offer-row-img">
-            <template x-for="(pk, k) in packs(b.qty)"><span class="mini-pouch" :style="pk"><span>JUST JENNY</span><b>Ceylon<br>Cinnamon</b></span></template>
+            <template x-for="(pk, k) in packs(b.qty)"><span class="mini-pouch" :style="pk"><span>JUST JENNY</span><b>Pumpkin<br>Seed Oil</b></span></template>
           </span>
-          <span class="offer-row-info"><strong x-text="b.title"></strong><small x-text="'Risparmi il ' + b.save"></small></span>
+          <span class="offer-row-info"><strong x-text="b.title"></strong><small x-text="'You save ' + b.save"></small></span>
           <span class="offer-row-price"><strong x-text="b.price"></strong><s x-text="b.was"></s></span>
         </button>
       </template>
       <button type="button" class="offer-m-atc" @click="addToCart(bundle)">
-        <span class="l1">Aggiungi al carrello <i>|</i> <b x-text="cur.price"></b> <s x-text="cur.was"></s></span>
-        <span class="l2">Garanzia soddisfatti o rimborsati di 90 giorni</span>
+        <span class="l1">Add to cart <i>|</i> <b x-text="cur.price"></b> <s x-text="cur.was"></s></span>
+        <span class="l2">90-Day Money-Back Guarantee</span>
       </button>
     </div>
     <div class="guarantees offer-guar-d">
-      <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Garanzia di 90 giorni</span>
-      <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Spedizione rapida</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>90-Day Guarantee</span>
+      <span><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Fast Shipping</span>
     </div>
   </div>
 </section>
@@ -471,14 +490,14 @@
 <!-- Customer reviews feed -->
 <section class="sec" x-show="showReviews">
   <div class="wrap-1000 center-col">
-    <h2 class="h2-md">Recensioni dei clienti</h2>
+    <h2 class="h2-md">Customer Reviews</h2>
     <div class="rv-summary">
-      <div class="rv-avg"><span class="rv-num" x-text="revAvgTxt"></span><span x-html="stars(revAvg, 120)"></span><span class="tp-muted" x-text="'basata su ' + revTotalTxt + ' recensioni'"></span></div>
+      <div class="rv-avg"><span class="rv-num" x-text="revAvgTxt"></span><span x-html="stars(revAvg, 120)"></span><span class="tp-muted" x-text="'based on ' + revTotalTxt + ' reviews'"></span></div>
       <div class="rv-bars">
-        <template x-for="(c, i) in revDist"><div class="rv-bar"><span x-text="(5-i) + (i === 4 ? ' stella' : ' stelle')"></span><span class="bar"><span :style="'width:' + (revCount ? c / revCount * 100 : 0) + '%'"></span></span><span class="tp-muted" x-text="revPct(c) + '%'"></span></div></template>
+        <template x-for="(c, i) in revDist"><div class="rv-bar"><span x-text="(5-i) + (i === 4 ? ' star' : ' stars')"></span><span class="bar"><span :style="'width:' + (revCount ? c / revCount * 100 : 0) + '%'"></span></span><span class="tp-muted" x-text="revPct(c) + '%'"></span></div></template>
       </div>
       <div class="rv-photos">
-        <span class="tp-muted">Foto e video dei clienti</span>
+        <span class="tp-muted">Customer photos &amp; videos</span>
         <div><template x-for="n in 6"><span class="rv-thumb" :class="n % 2 && 'alt'"></span></template></div>
       </div>
     </div>
@@ -490,23 +509,23 @@
           <div class="tp-row"><span x-html="stars(fr.r, 100)"></span><span class="tp-muted" x-text="revAgo(fr.date)"></span></div>
           <h3 x-text="fr.title"></h3>
           <p x-text="fr.text"></p>
-          <img class="tp-photo-img" x-show="fr.photo" :src="fr.photo || ''" :alt="'Foto di ' + fr.name" loading="lazy">
-          <div class="chips"><span class="chip-g" x-text="'Esperienza: ' + revDate(fr.date)"></span><span class="chip-g">Acquisto verificato</span></div>
+          <img class="tp-photo-img" x-show="fr.photo" :src="fr.photo || ''" :alt="'Photo by ' + fr.name" loading="lazy">
+          <div class="chips"><span class="chip-g" x-text="'Date of experience: ' + revDate(fr.date)"></span><span class="chip-g">Verified purchase</span></div>
           <div class="tp-sep"></div>
           <div class="tp-actions">
-            <button type="button"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Utile</button>
+            <button type="button" :class="fr.liked && 'on'" @click="fr.liked = !fr.liked" :aria-pressed="!!fr.liked"><svg viewBox="0 0 24 24"><path d="M7 10v11H3V10z"/><path d="M7 10l4-7a2.5 2.5 0 0 1 3 2.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 21H7"/></svg>Useful<span class="tp-like" x-show="fr.liked" x-text="1"></span></button>
           </div>
         </article>
       </template>
     </div>
-    <button type="button" class="btn-outline rv-more" x-show="feedShown < feed.length" @click="feedShown += 3">Vedi altre recensioni</button>
+    <button type="button" class="btn-outline rv-more" x-show="feedShown < feed.length" @click="feedShown += 3">See more reviews</button>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="sec bg-blush">
   <div class="wrap-760">
-    <h2 class="faq-title">DOMANDE FREQUENTI</h2>
+    <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
     <template x-for="(a, i) in faqs" :key="i">
       <div class="acc">
         <button type="button" class="acc-head" @click="faq = faq === i ? -1 : i" :aria-expanded="faq === i"><span x-text="a.t"></span><span class="acc-sign" x-text="faq === i ? '−' : '+'"></span></button>
@@ -521,25 +540,26 @@
   <div class="wrap">
     <div class="footer-cols">
       <div class="f-links">
-        <div class="f-head">LINK RAPIDI</div>
-        <a href="https://www.getjustjenny.com/">Home</a><a href="https://www.getjustjenny.com/pages/contact">Contatti</a><a href="https://www.getjustjenny.com/pages/faq">Domande frequenti</a><a href="#footer">Traccia il mio ordine</a>
+        <div class="f-head">QUICK LINKS</div>
+        <a href="https://www.getjustjenny.com/">Home</a><a href="https://www.getjustjenny.com/pages/contact">Contact</a><a href="https://www.getjustjenny.com/pages/faq">FAQ</a><a href="#footer">Track My Order</a>
       </div>
       <div class="f-links">
-        <div class="f-head">INFORMAZIONI LEGALI</div>
-        <a href="https://www.getjustjenny.com/pages/privacy-policy">Informativa sulla privacy</a><a href="https://www.getjustjenny.com/pages/terms-of-service">Termini e condizioni</a><a href="https://www.getjustjenny.com/pages/refund-policy">Politica di rimborso</a><a href="#footer">Politica di spedizione</a>
+        <div class="f-head">POLICIES</div>
+        <a href="https://www.getjustjenny.com/pages/privacy-policy">Privacy Policy</a><a href="https://www.getjustjenny.com/pages/terms-of-service">Terms and Conditions</a><a href="https://www.getjustjenny.com/pages/refund-policy">Refund Policy</a><a href="#footer">Shipping Policy</a>
       </div>
       <div class="f-news">
-        <div class="f-head">ISCRIVITI ALLA NEWSLETTER</div>
-        <div>Avvisi sulle promozioni, offerte e semplici consigli per avere un'energia più stabile. Nient'altro.</div>
+        <div class="f-head">JOIN OUR EMAIL LIST</div>
+        <div>Get our sale alerts, special offers, and simple tips for everyday wellness. Nothing else.</div>
         <form x-show="!subscribed" @submit.prevent="subscribed = true" class="news-form">
-          <label for="jj-email" class="sr-only">Indirizzo email</label>
-          <input id="jj-email" type="email" required placeholder="Indirizzo email">
-          <button type="submit">Iscriviti</button>
+          <label for="jj-email" class="sr-only">Email address</label>
+          <input id="jj-email" type="email" required placeholder="Email address">
+          <button type="submit">Sign Up</button>
         </form>
-        <div x-show="subscribed" class="news-ok" role="status">Grazie, sei iscritto.</div>
-        <small>Disiscriviti con un clic.</small>
+        <div x-show="subscribed" class="news-ok" role="status">Thanks, you're subscribed.</div>
+        <small>Unsubscribe anytime, no hard feelings.</small>
       </div>
     </div>
+    <div class="f-disclaimer"><strong>Disclosure:</strong> <em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></div>
     <div class="f-bottom">
       <div>© 2026, Just Jenny</div>
     </div>
@@ -547,14 +567,14 @@
 </footer>
 
 <!-- Sticky add to cart -->
-<div class="sticky-atc" :class="sticky && 'show'" aria-hidden="true" :aria-hidden="!sticky">
-  <div class="wrap sticky-inner">
-    <div class="sticky-pouch">JUST JENNY<span>Ceylon Cinnamon</span></div>
+<div class="sticky-atc sticky-v2" :class="sticky && 'show'" aria-hidden="true" :aria-hidden="!sticky">
+  <div class="sticky-inner">
+    <div class="sticky-pouch">JUST JENNY<span>Pumpkin Seed Oil</span></div>
     <div class="sticky-text">
-      <div class="sticky-name"><span class="sn-full">Cannella di Ceylon 7200mg con olio MCT</span><span class="sn-short">Cannella di Ceylon 7200mg</span></div>
-      <div class="sticky-rating" x-show="showReviews"><span x-html="stars(revAvg, 72)"></span><span><span x-text="revAvgTxt + '/5 · ' + revTotalTxt"></span><span class="sr-rec"> recensioni</span></span></div>
+      <div class="sticky-name">Just Jenny™ Pumpkin Seed Oil Softgels</div>
+      <div class="sticky-price"><strong x-text="cur.price"></strong> <s x-text="cur.was"></s></div>
     </div>
-    <button type="button" class="sticky-btn" @click="addToCart(bundle)">AGGIUNGI AL CARRELLO</button>
+    <button type="button" class="sticky-btn" @click="addToCart(bundle)">ADD TO CART</button>
   </div>
 </div>
 
