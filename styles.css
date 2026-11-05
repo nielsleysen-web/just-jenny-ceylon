@@ -965,3 +965,4 @@ svg{flex:none}
 .report-cta .guar-line{font-size:16px;justify-content:center}
 .report-cta .guar-line svg{width:20px;height:20px}
 @media (max-width:600px){.report-cta h2{font-size:30px}.report-cta .guar-line{font-size:15px}}
+.stat p{font-size:16.5px;max-width:300px;line-height:1.5}@media (max-width:600px){.stat p{font-size:16.5px;max-width:none}}
