@@ -129,8 +129,8 @@ function page() {
     revTotal: 11419,
     // Store-wide Trustpilot rating above the product title (all Just Jenny products).
     // Fill in exactly what trustpilot.com/review/justjenny.com shows; while null the line stays hidden.
-    storeRating: null,   // e.g. '4.4'
-    storeReviews: null,  // e.g. '1,200+'
+    storeRating: '4.7',  // trustpilot.com/review/justjenny.com (5 Nov 2026)
+    storeReviews: '11,014',
     get revTotalTxt() { return (this.revTotal || this.feed.length).toLocaleString('en-US'); },
     revPct(c) { return this.revCount ? Math.round(c / this.revCount * 100) : 0; },
     get revAvg() { return this.feed.length ? this.feed.reduce((t, x) => t + x.r, 0) / this.feed.length : 0; },
