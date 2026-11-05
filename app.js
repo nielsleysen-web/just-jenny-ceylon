@@ -111,12 +111,30 @@ function page() {
       { us: 'Smooth Odorless Softgels', them: 'Hard-to-Swallow Capsules', icon: ICF('<path d="M7.8 4.2a4.5 4.5 0 0 1 6.4 0l5.6 5.6a4.5 4.5 0 1 1-6.4 6.4L7.8 10.6a4.5 4.5 0 0 1 0-6.4zm1.4 1.4a2.5 2.5 0 0 0 0 3.6l2.8 2.8 3.6-3.6-2.8-2.8a2.5 2.5 0 0 0-3.6 0z"/>') }
     ],
     faqs: [
-      { t: 'How many softgels should I take daily?', body: 'Take one to two softgels a day with a glass of water, ideally with a meal. One pouch contains 30 softgels.' },
-      { t: 'When\'s the best time to take it?', body: 'Any time that fits your routine. Many people take it with breakfast or dinner, because the oil is best absorbed with food. Consistency matters more than the exact time.' },
-      { t: 'Is this safe for my kidneys, or if I already have kidney concerns?', body: 'Pumpkin seed oil is a food-based ingredient and is generally well tolerated. If you have a diagnosed kidney condition or are under a doctor\'s care, talk to your doctor before starting any new supplement.' },
-      { t: 'Can I take this with my current blood pressure, blood sugar, or kidney medication?', body: 'If you take prescription medication, including blood pressure, blood sugar, blood thinners or hormone-related medication, check with your doctor or pharmacist before you start. It\'s a quick call that gives you peace of mind.' },
-      { t: 'How is cold-pressed different, and why does it matter?', body: 'Heat and chemical extraction damage the delicate plant sterols in pumpkin seed oil, like beta-sitosterol and delta-7 sterols. Cold pressing keeps those compounds intact, so you get the oil the way nature made it.' },
-      { t: 'How do I know these are high quality and third-party tested?', body: 'Every batch is third-party tested for purity and potency, including heavy-metal screening. Our softgels are non-GMO and free from gluten, soy, dairy, added sugar, artificial colors and preservatives.' }
+     {
+      "t": "How many softgels should I take daily?",
+      "body": "We recommend taking one softgel daily as your regular maintenance dose. For those looking for optimal support, two softgels daily provide the full recommended serving. Each softgel contains 1,000mg of pure cold-pressed pumpkin seed oil, along with saw palmetto. Because the oil is cold-pressed and concentrated, you get the full delta-7 sterol and beta-sitosterol profile in every softgel. Two softgels daily deliver the highest level of support, unlike many cheaper blends that are significantly underdosed."
+     },
+     {
+      "t": "When's the best time to take it?",
+      "body": "You can take Just Jenny™ Pumpkin Seed Oil any time of day, but most people take it with their largest meal. Pumpkin seed oil is fat-soluble, so taking it alongside food helps your body absorb the sterols and fatty acids more completely. Consistent daily use is what builds results over time, so pick a time you'll remember and stick with it."
+     },
+     {
+      "t": "Is this safe for my kidneys, or if I already have kidney concerns?",
+      "body": "Just Jenny's Pumpkin Seed Oil is made from food-grade cold-pressed pumpkin seed oil and saw palmetto, the same seeds people have eaten safely for centuries, with no fillers, heavy metals, or synthetic additives. It's formulated to support your body's natural filtration rather than strain it. That said, if you have a diagnosed kidney condition or are under a doctor's care, we always recommend checking with your healthcare provider before starting any new supplement."
+     },
+     {
+      "t": "Can I take this with my current blood pressure, blood sugar, or kidney medication?",
+      "body": "Many of our customers take Just Jenny's Pumpkin Seed Oil alongside their daily medications, since it's simply concentrated pumpkin seed oil and saw palmetto rather than a synthetic drug. But because these compounds are biologically active and everyone's situation is different, if you're on prescription medication, especially for blood pressure, blood sugar, or kidney health, we recommend speaking with your healthcare provider first. It's the smart move, and it gives you peace of mind."
+     },
+     {
+      "t": "How is cold-pressed different, and why does it matter?",
+      "body": "This is the single biggest difference between Just Jenny's Pumpkin Seed Oil and everything else on the shelf. Most pumpkin seed oil is heat-processed or chemically extracted, which destroys the fragile delta-7 sterols and degrades the beta-sitosterol, the exact compounds doing the work. The result is a cheap, nearly dead oil. We cold-press ours so those compounds arrive in your body intact and active. When you see bargain pumpkin seed oil online, this is what you're not getting."
+     },
+     {
+      "t": "How do I know these are high quality and third-party tested?",
+      "body": "Every batch of Just Jenny's Pumpkin Seed Oil is manufactured in a certified facility and undergoes independent third-party testing for purity and potency. We verify there are no heavy metals, no filler oils cut in, and that you're getting the full cold-pressed Cucurbita pepo oil at the dose on the label. Vegan, non-GMO, and free from gluten, dairy, soy, sugar, and unnecessary additives."
+     }
     ],
     feed: REV.feed.map((x, i) => Object.assign({}, x, {
       initials: x.name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
