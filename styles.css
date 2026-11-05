@@ -1036,3 +1036,12 @@ svg{flex:none}
 @media (max-width:600px){.feel-benefits svg.solid{width:52px;height:52px}}
 .feel-benefits div{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700}
 .feel-benefits div{align-items:center;text-align:center}
+
+/* benefit-kaarten (vervangen de reviewkaarten): geen sterren, geen namen */
+.sp-label{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange)}
+.sp-label svg{width:18px;height:18px;fill:var(--orange)}
+.sp-benefit h3{font-size:17px;margin:14px 0 10px}
+.sp-tags span{min-width:0;height:auto;padding:5px 12px;border-style:solid;border-color:#E8CDBB;background:#FBF4EF;color:#9A5530}
+.sp-card-img{height:170px;margin:-22px -20px 18px;border-radius:11px 11px 0 0;background:#EFE5DC center/cover no-repeat}
+.sp-benefit{padding-top:22px;overflow:hidden}
+@media (max-width:760px){.sp-card-img{height:150px}}
