@@ -924,3 +924,5 @@ svg{flex:none}
 .sale-tag{font-size:10px;padding:4px 8px;border-radius:5px}
 .low-stock{font-size:13px}
 @media (max-width:600px){.price{font-size:19px}.was{font-size:14px}.sold-card span{font-size:13px}.low-stock{font-size:13px}}
+.delivery-line{display:flex;align-items:center;justify-content:center;gap:9px;font-size:14px;color:var(--ink);padding:2px 0}
+.dl-dot{width:9px;height:9px;border-radius:50%;background:#43A047;flex:none;box-shadow:0 0 0 3px rgba(67,160,71,.18)}

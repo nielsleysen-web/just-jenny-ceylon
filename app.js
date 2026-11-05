@@ -109,6 +109,10 @@ function page() {
     })),
 
     // derived
+    get deliveryRange() {
+      const f = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }); };
+      return f(3) + ' - ' + f(4);
+    },
     get cur() { return BUNDLES.find((b) => b.id === this.bundle) || BUNDLES[1]; },
     get secs() { return Math.max(0, Math.floor((this.end - this.now) / 1000)); },
     get hh() { return String(Math.floor(this.secs / 3600)).padStart(2, '0'); },
