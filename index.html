@@ -38,11 +38,11 @@
 
 <!-- Announcement bar -->
 <div class="announce">
-  <span class="announce-text"><span class="announce-sale">SALDI D'AUTUNNO</span><span class="announce-sub">Acquista ora e risparmia fino al 70%</span></span>
-  <span class="countdown" aria-label="L'offerta termina tra">
-    <span class="cd-unit"><span class="cd" x-text="hh">01</span><small>Ore</small></span>
-    <span class="cd-unit"><span class="cd" x-text="mm">52</span><small>Min</small></span>
-    <span class="cd-unit"><span class="cd" x-text="ss">33</span><small>Sec</small></span>
+  <span class="announce-text"><span class="announce-sale">FALL SALE</span><span class="announce-sub">Shop Now and Get Up To 70% Off</span></span>
+  <span class="countdown" aria-label="Offer ends in">
+    <span class="cd-unit"><span class="cd" x-text="hh">01</span><small>Hrs</small></span><span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd" x-text="mm">52</span><small>Mins</small></span><span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd" x-text="ss">33</span><small>Secs</small></span>
   </span>
 </div>
 
@@ -51,9 +51,9 @@
   <div class="logo-row">
     <a href="#top" aria-label="Just Jenny – pagina iniziale"><img src="assets/logo.webp" width="215" height="19" alt="Just Jenny" class="logo"></a>
   </div>
-  <div class="ticker ticker-orange" aria-label="Garanzia di 90 giorni · 2+1 GRATIS · Fino al 70% di sconto">
+  <div class="ticker ticker-orange" aria-label="90-Day Guarantee · Up To 70% Off · Subscribe & Save · Buy 2 Get 1 Free">
     <div class="ticker-track" aria-hidden="true">
-      <template x-for="i in 24"><span class="ticker-item"><span class="ti-ico" x-html="tickerIcon((i-1)%3)"></span><span x-text="['Garanzia di 90 giorni','2+1 GRATIS','Fino al 70% di sconto'][(i-1)%3]"></span></span></template>
+      <template x-for="i in 24"><span class="ticker-item"><span class="ti-ico" x-html="tickerIcon((i-1)%4)"></span><span x-text="['90-Day Guarantee','Up To 70% Off','Subscribe & Save','Buy 2 Get 1 Free'][(i-1)%4]"></span></span></template>
     </div>
   </div>
 </header>

@@ -71,12 +71,12 @@ svg{flex:none}
 
 /* tickers (infinite CSS marquee) */
 .ticker{width:100%;overflow:hidden}
-.ticker-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
+.ticker-track{display:flex;width:max-content;animation:marquee 60s linear infinite}
 .ticker-track.slow{animation-duration:55s}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 .ticker-orange{background:var(--orange);color:#fff}
-.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:8px 44px;font-size:12.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;padding:14px 56px;font-size:15px;font-weight:500;letter-spacing:.01em;white-space:nowrap}
 .review-img{width:180px;aspect-ratio:1/1;margin-right:12px;border-radius:12px;background:var(--ph);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--muted)}
 .review-img svg{width:36px;height:36px;fill:none;stroke:var(--orange);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .badge-ticker{background:#F7E1D1;border-top:1px solid #EAC4AD;border-bottom:1px solid #EAC4AD;margin:28px -20px 0;width:auto;padding:2px 0}
@@ -438,23 +438,25 @@ svg{flex:none}
 .riskfree .btn{font-size:15px;padding:15px 40px}
 .riskfree-photo div{max-width:340px}
 
-/* announcement bar layout */
-.announce-text{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;justify-content:center}
-.cd-unit{display:inline-flex;align-items:center;gap:6px}
+/* announcement bar layout (FALL SALE style) */
+.announce{flex-wrap:nowrap;justify-content:center;gap:12px 56px;padding:12px 18px}
+.announce-text{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}
+.announce-sale{font-family:Jost,Futura,sans-serif;font-size:30px;font-weight:700;letter-spacing:.02em;line-height:1.05;text-transform:uppercase}
+.announce-sub{font-size:16px;line-height:1.2}
+.countdown{display:inline-flex;align-items:flex-start;gap:10px}
+.cd-unit{display:inline-flex;flex-direction:column;align-items:center;gap:0;line-height:1}
+.cd{background:none;color:#fff;padding:0;font-family:Jost,Futura,sans-serif;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.cd-sep{font-family:Jost,Futura,sans-serif;font-size:30px;font-weight:700;line-height:1;padding:0 4px}
+.cd-unit small{font-size:13px;margin-top:4px}
 @media (max-width:600px){
-  .announce{flex-wrap:nowrap;justify-content:space-between;gap:12px;padding:10px 18px}
-  .announce-text{flex-direction:column;gap:2px;text-align:center}
-  .announce-sale{font-family:Jost,Futura,sans-serif;font-size:21px;font-weight:700;letter-spacing:.02em;line-height:1.1}
-  .announce-sub{font-size:12.5px;line-height:1.2}
-  .countdown{gap:14px}
-  .cd-unit{flex-direction:column;gap:0;line-height:1}
-  .cd{background:none;color:#fff;padding:0;font-family:Jost,Futura,sans-serif;font-size:24px;font-weight:700}
-  .cd-unit small{font-size:11px;margin-top:3px}
+  .announce{justify-content:space-between;gap:12px;padding:10px 16px}
+  .announce-sale{font-size:21px}.announce-sub{font-size:12.5px}
+  .cd,.cd-sep{font-size:24px}.cd-sep{padding:0 2px}.countdown{gap:6px}.cd-unit small{font-size:11px;margin-top:3px}
 }
 
 
 .ti-ico{display:inline-flex;line-height:0}
-@media (max-width:600px){.ticker-orange .ticker-track{animation-duration:80s}}
+@media (max-width:600px){.ticker-orange .ticker-track{animation-duration:110s}.ticker-item{padding:12px 36px;font-size:13.5px}}
 
 /* mobile hero order */
 @media (max-width:600px){

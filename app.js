@@ -153,11 +153,12 @@ function page() {
       return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 98 18" role="img" aria-label="Valutazione ' + r.toFixed(1) + ' su 5" style="display:block">' + boxes + pts + '</svg>';
     },
     tickerIcon(i) {
-      const s = (d) => '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+      const s = (d) => '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
       return [
         s('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>'),
-        s('<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>'),
-        s('<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/>')
+        s('<path d="M12 2.5l2 1.6 2.5-.4.9 2.4 2.4.9-.4 2.5 1.6 2-1.6 2 .4 2.5-2.4.9-.9 2.4-2.5-.4-2 1.6-2-1.6-2.5.4-.9-2.4-2.4-.9.4-2.5-1.6-2 1.6-2-.4-2.5 2.4-.9.9-2.4 2.5.4z"/><path d="m9 15 6-6"/><circle cx="9.5" cy="9.5" r="1"/><circle cx="14.5" cy="14.5" r="1"/>'),
+        s('<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/>'),
+        s('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 11h4"/><path d="M19 9v4"/>')
       ][i];
     },
     badgeIcon(i) {
