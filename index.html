@@ -18,7 +18,7 @@
 <meta property="og:description" content="Cold-pressed 1,000mg pumpkin seed oil + saw palmetto in one daily softgel. 90-day money back guarantee.">
 <meta property="og:image" content="https://cannella.getjustjenny.com/assets/shop/pouch-1.jpg">
 <meta property="og:url" content="https://cannella.getjustjenny.com/">
-<link rel="stylesheet" href="styles.css?v=en6">
+<link rel="stylesheet" href="styles.css?v=en7">
 <!-- Meta Pixel: ID invullen in app.js (META_PIXEL_ID); PageView + ViewContent hier, InitiateCheckout bij de koopknop, Purchase op de checkout -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -91,23 +91,6 @@
         </template>
       </div>
 
-      <div class="acc-list">
-        <template x-for="(a, i) in productAcc" :key="i">
-          <div class="acc">
-            <button type="button" class="acc-head" @click="acc = acc === i ? -1 : i" :aria-expanded="acc === i">
-              <span x-text="a.t"></span><span class="acc-sign" x-text="acc === i ? '−' : '+'"></span>
-            </button>
-            <div class="acc-body" x-show="acc === i" x-text="a.body"></div>
-          </div>
-        </template>
-      </div>
-
-      <div class="experts">
-        <h3>Hear it from our customers</h3>
-        <div class="expert-grid">
-          <template x-for="n in 3"><div class="expert-video jj-vid" @click="playVid($event)"><video :src="'assets/video/expert-' + n + '.mp4'" :poster="'assets/video/expert-' + n + '.jpg'" playsinline preload="metadata"></video><span class="play-dark"></span></div></template>
-        </div>
-      </div>
     </div>
 
     <!-- Buy box -->
@@ -163,6 +146,16 @@
       </div>
 
       <div class="ph-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg><div>[Image: guarantees]</div></div>
+      <div class="acc-list">
+        <template x-for="(a, i) in productAcc" :key="i">
+          <div class="acc">
+            <button type="button" class="acc-head" @click="acc = acc === i ? -1 : i" :aria-expanded="acc === i">
+              <span x-text="a.t"></span><span class="acc-sign" x-text="acc === i ? '−' : '+'"></span>
+            </button>
+            <div class="acc-body" x-show="acc === i" x-text="a.body"></div>
+          </div>
+        </template>
+      </div>
     </div>
   </div>
 </section>
