@@ -18,7 +18,7 @@
 <meta property="og:description" content="Cold-pressed 1,000mg pumpkin seed oil + saw palmetto in one daily softgel. 90-day money back guarantee.">
 <meta property="og:image" content="https://cannella.getjustjenny.com/assets/shop/pouch-1.jpg">
 <meta property="og:url" content="https://cannella.getjustjenny.com/">
-<link rel="stylesheet" href="styles.css?v=en10">
+<link rel="stylesheet" href="styles.css?v=en11">
 <!-- Meta Pixel: ID invullen in app.js (META_PIXEL_ID); PageView + ViewContent hier, InitiateCheckout bij de koopknop, Purchase op de checkout -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -27,7 +27,7 @@
 <script src="https://jjb-profit-dashboard.vercel.app/jjb-track.js" async></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 <script src="reviews.js"></script>
-<script src="app.js?v=en6"></script>
+<script src="app.js?v=en7"></script>
 <script defer src="apply-content.js"></script>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -152,7 +152,7 @@
             <button type="button" class="acc-head" @click="acc = acc === i ? -1 : i" :aria-expanded="acc === i">
               <span x-text="a.t"></span><span class="acc-sign" x-text="acc === i ? '−' : '+'"></span>
             </button>
-            <div class="acc-body" x-show="acc === i" x-text="a.body"></div>
+            <div class="acc-body acc-rich" x-show="acc === i" x-html="a.html"></div>
           </div>
         </template>
       </div>

@@ -952,3 +952,10 @@ svg{flex:none}
 .rl-store strong{font-weight:700}
 .rl-stars{display:inline-flex;gap:0}
 @media (min-width:601px){.hero .wrap.hero-grid{max-width:1110px;gap:48px}.col-gallery{flex:0 0 50%}}
+.acc-rich{white-space:normal;color:var(--ink);font-size:14.5px}
+.acc-rich p{margin:0 0 10px}
+.acc-rich h4{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:15px;font-weight:700;margin:14px 0 6px}
+.acc-rich h4:first-child{margin-top:4px}
+.acc-rich ul{margin:0 0 10px;padding-left:20px}
+.acc-rich li{margin:3px 0}
+.acc-rich a{color:var(--orange)}
