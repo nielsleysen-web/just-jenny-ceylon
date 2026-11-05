@@ -980,3 +980,34 @@ svg{flex:none}
 .why-body h3{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;font-size:18px;line-height:1.3;margin-bottom:12px;color:#111}
 .why-body p{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:15px;line-height:1.6;color:#444}
 @media (max-width:600px){.why-body{padding:20px 18px 24px}}
+
+/* social proof section (photos marquee + review cards) */
+.sp{background:#F7F3EF;padding:56px 0 64px;overflow:hidden;font-family:"Plus Jakarta Sans",Inter,sans-serif}
+.sp-head-stars{display:flex;justify-content:center;gap:2px}
+.sp-head-stars svg,.sp-stars svg{width:22px;height:22px;fill:#BC7650}
+.sp-title{text-align:center;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:500;font-size:40px;color:#2E3550;margin:10px 0 8px}
+.sp-title .accent{color:var(--orange)}
+.sp-sub{text-align:center;font-size:17px;color:#333;margin:0}
+.sp-marquee{margin:30px 0 34px;overflow:hidden}
+.sp-track{display:flex;gap:12px;width:max-content;animation:spScroll 45s linear infinite}
+.sp-marquee:hover .sp-track{animation-play-state:paused}
+@keyframes spScroll{to{transform:translateX(calc(-50% - 6px))}}
+.sp-photo{width:134px;height:134px;flex:none;border-radius:12px;background:#E9DDD3 center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:#9A7B66;padding:8px}
+.sp-photo.has-img span{display:none}
+.sp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:940px;margin:0 auto}
+.sp-card{background:#fff;border:1.5px solid #E6DED6;border-radius:12px;padding:22px 20px 26px;min-height:200px}
+.sp-rate{display:flex;align-items:center;gap:8px;font-size:15px}
+.sp-stars{display:inline-flex;gap:1px}
+.sp-stars svg{width:17px;height:17px}
+.sp-quote{margin-left:auto;font-size:44px;line-height:.6;color:#E8D3C4;font-family:Georgia,serif;height:20px}
+.sp-card h3{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;font-size:15px;margin:16px 0 10px;color:#111}
+.sp-card p{font-size:15px;line-height:1.6;color:#222;margin:0}
+@media (min-width:1000px){.sp-photo{width:134px;height:134px}}
+@media (max-width:760px){
+  .sp{padding:40px 0 44px}
+  .sp-title{font-size:28px}.sp-sub{font-size:15px;padding:0 20px}
+  .sp-photo{width:110px;height:110px}
+  .sp-cards{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 4px 6px;scrollbar-width:none}
+  .sp-cards::-webkit-scrollbar{display:none}
+  .sp-card{scroll-snap-align:center}
+}
