@@ -1011,3 +1011,14 @@ svg{flex:none}
   .sp-cards::-webkit-scrollbar{display:none}
   .sp-card{scroll-snap-align:center}
 }
+.sp-person{display:flex;align-items:center;gap:12px}
+.sp-avatar{width:48px;height:48px;border-radius:50%;background:#EADFD6 center/cover no-repeat;flex:none;display:flex;align-items:center;justify-content:center;font-size:10px;color:#9A7B66}
+.sp-avatar.has-img span{display:none}
+.sp-name{font-weight:700;font-size:15px;margin-bottom:3px}
+.sp-person .sp-rate{font-size:13px;gap:6px}
+.sp-person .sp-quote{margin-left:auto;align-self:flex-start}
+.sp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.sp-chips span{border:1.5px solid var(--orange);color:var(--orange);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:600}
+.sp-card{display:flex;flex-direction:column}
+.sp-card p{flex:1}
+@media (min-width:761px){.sp-cards{max-width:1000px}}
