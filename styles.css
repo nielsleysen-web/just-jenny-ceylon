@@ -947,3 +947,7 @@ svg{flex:none}
   .bundle-badge{font-size:11px}
   .delivery-line{font-size:14.5px}
 }
+.product-title{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;letter-spacing:-.01em}
+.rl-store{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:14px;color:var(--ink);gap:8px}
+.rl-store strong{font-weight:700}
+.rl-stars{display:inline-flex;gap:0}
