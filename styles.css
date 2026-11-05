@@ -928,3 +928,22 @@ svg{flex:none}
 .dl-dot{width:9px;height:9px;border-radius:50%;background:#43A047;flex:none;box-shadow:0 0 0 3px rgba(67,160,71,.18)}
 @media (min-width:601px){.col-gallery{position:sticky;top:16px;align-self:flex-start}}
 @media (max-width:600px){.ph-box{order:15}.acc-list{order:16}}
+/* desktop: matched to reference at 1288px */
+@media (min-width:601px){
+  .hero .wrap.hero-grid{max-width:970px;gap:52px}
+  .col-gallery{flex:0 0 53%}
+  .product-title{font-size:27px}
+  .hero-bullets{font-size:16px;gap:6px}
+  .hb-ico{width:25px;height:25px}.hb-ico svg{width:16px;height:16px}
+  .sold-card span{font-size:14px}.sold-bar{height:7px}
+  .price{font-size:20px}.was{font-size:15px}
+  .sale-tag{font-size:11px;padding:5px 9px}
+  .low-stock{font-size:14px}
+  .bundle-list{gap:10px}
+  .bundle{padding:15px 18px;gap:16px}.bundle.is-active{padding:14px 17px}
+  .bundle-info strong{font-size:15.5px}.bundle-info small{font-size:12.5px}
+  .bundle-price strong{font-size:15.5px}.bundle-price s{font-size:12.5px}
+  .bundle-qty.has-img{width:44px;height:44px}
+  .bundle-badge{font-size:11px}
+  .delivery-line{font-size:14.5px}
+}
