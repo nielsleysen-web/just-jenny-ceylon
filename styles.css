@@ -989,8 +989,7 @@ svg{flex:none}
 .sp-title .accent{color:var(--orange)}
 .sp-sub{text-align:center;font-size:17px;color:#333;margin:0}
 .sp-marquee{margin:30px 0 34px;overflow:hidden}
-.sp-track{display:flex;gap:12px;width:max-content;animation:spScroll 45s linear infinite}
-.sp-marquee:hover .sp-track{animation-play-state:paused}
+.sp-track{display:flex;gap:12px;width:max-content;animation:spScroll 30s linear infinite;will-change:transform}
 @keyframes spScroll{to{transform:translateX(calc(-50% - 6px))}}
 .sp-photo{width:134px;height:134px;flex:none;border-radius:12px;background:#E9DDD3 center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:#9A7B66;padding:8px}
 .sp-photo.has-img span{display:none}
