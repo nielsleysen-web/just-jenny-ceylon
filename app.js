@@ -89,10 +89,10 @@ function page() {
       { t: 'Cholesterol & Arterial Support', sub: 'Healthier cholesterol. Stronger arterial support.', img: 'heart & arteries', short: 'Plant sterols in pumpkin seed oil support healthy cholesterol and arterial function.', deep: 'Phytosterols like beta-sitosterol support healthy cholesterol levels, and the healthy fats in pumpkin seed oil support arterial function and healthy blood pressure as part of a balanced lifestyle.' }
     ],
     weeks: [
-      { t: 'Week 1-2: Take Back Control', items: ['Fewer urges deciding where you can go', 'Longer sleep without constant bathroom trips', 'Less waking up puffy, foggy and drained', 'Start trusting your body again'] },
-      { t: 'Week 3-4: Stop Living Around the Problem', items: ['Less hair left behind in the shower', 'Less panic about finding the nearest loo', 'Easier flow with less waiting and stopping', 'Wake up clearer and more like yourself'] },
-      { t: 'Week 5-6: Start Feeling Normal Again', items: ['Stronger, more complete urinary flow', 'Fewer broken nights ruining the next day', 'Fuller-looking hair with less visible shedding', 'Continued support for healthy kidney filtration'] },
-      { t: 'Week 7-8+: Protect What You\'re Not Willing to Lose', items: ['Support healthier cholesterol and arterial function', 'Ongoing bladder, prostate and DHT support', 'More confidence in what\'s happening beneath the surface', 'Stop waiting for things to get worse before you act'] }
+      { t: 'Day 1-3: Take Back Control', items: ['Fewer urges to constantly go to the toilet', 'Sleep with waking up less for bathroom visits', 'Feel more energetic in the morning', 'Trust your body again'] },
+      { t: 'Day 3-6: Stop the Symptoms', items: ['No more hair left in the shower drain', 'No more hairs that accumulate on your brush', 'Easier urine flow, less waiting', 'Wake up confident'] },
+      { t: 'Day 6-9: Start Feeling Like Yourself Again', items: ['Stronger, consistent urinary flow', 'Sleep through the entire night', 'Fuller-looking hair, no more scalp visible', 'Medical improvement of the renal kidney filtration'] },
+      { t: 'Day 9-12+: Protected For Good', items: ['No more cholesterol peaks, arterial functions are stabilized', 'Prostate shrunk, and DHT production decreased by 85-93%', 'Shorter toilet visits', 'You took on the root cause of the problems'] }
     ],
     reasons: [
       { t: 'Cold-Pressed at a Real 1,000mg Dose', photo: 'softgel with pumpkin seeds', body: 'Most "pumpkin seed oil" on the market is a dead oil. Heat and chemical extraction destroy the delta-7 sterols and beta-sitosterol that do the actual work. Just Jenny is cold-pressed so those fragile compounds arrive intact, at a full 1,000mg dose with no underdosed fairy-dusting.' },
