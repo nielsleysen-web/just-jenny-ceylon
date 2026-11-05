@@ -951,3 +951,4 @@ svg{flex:none}
 .rl-store{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:14px;color:var(--ink);gap:8px}
 .rl-store strong{font-weight:700}
 .rl-stars{display:inline-flex;gap:0}
+@media (min-width:601px){.hero .wrap.hero-grid{max-width:1110px;gap:48px}.col-gallery{flex:0 0 50%}}
