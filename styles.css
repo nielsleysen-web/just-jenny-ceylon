@@ -917,3 +917,4 @@ svg{flex:none}
 .cd,.cd-sep{font-size:21px}.cd-unit small{font-size:11px}
 .ticker-orange .ticker-item{font-size:12px}
 @media (max-width:600px){.announce-sale{font-size:17px}.announce-sub{font-size:11.5px}.cd,.cd-sep{font-size:18px}.ticker-orange .ticker-item{font-size:11.5px}}
+.hb-ico{width:25px;height:25px}.hb-ico svg{width:16px;height:16px;stroke-width:1.9}
