@@ -471,22 +471,6 @@
   </div>
 </section>
 
-<!-- Real people video stories -->
-<section class="sec">
-  <div class="center-col">
-    <h2 class="h2-md">Real People. Real Results.</h2>
-    <p class="muted">Hear their experiences in their own words.</p>
-    <div class="scroll-x stories-wrap" x-ref="vidTrack" @scroll.passive="vidScroll()">
-      <div class="video-grid">
-        <template x-for="n in 3"><div class="story-video jj-vid" @click="playVid($event)"><video :src="'assets/video/expert-' + n + '.mp4'" :poster="'assets/video/expert-' + n + '.jpg'" playsinline preload="metadata"></video><span class="play-light"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></template>
-      </div>
-    </div>
-    <div class="vid-dots" aria-label="Swipe for more videos">
-      <template x-for="n in 3"><button type="button" class="vid-dot" :class="{on: vidIdx===n-1}" @click="vidGo(n-1)" :aria-label="'Video ' + n"></button></template>
-    </div>
-  </div>
-</section>
-
 <!-- Offers -->
 <section id="offers" class="sec bg-blush">
   <div class="wrap-1000 center-col">
