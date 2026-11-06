@@ -54,19 +54,19 @@
   {
    "key": ".bundle-qty#1",
    "label": "×1",
-   "src": "assets/opt/bundle-qty-1.webp?v=mvzy54ki",
+   "src": "assets/offer/zakje-1x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".bundle-qty#2",
    "label": "×3",
-   "src": "assets/opt/bundle-qty-2.webp?v=mvzy55vv",
+   "src": "assets/offer/zakjes-3x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".bundle-qty#3",
    "label": "×5",
-   "src": "assets/opt/bundle-qty-3.webp?v=mvzy5793",
+   "src": "assets/offer/zakjes-5x.webp?v=o1",
    "type": "image/webp"
   },
   {
@@ -264,7 +264,7 @@
   {
    "key": ".riskfree-photo > div#1",
    "label": "DIV",
-   "src": "assets/opt/riskfree-photo-div-1.webp?v=mw005ksu",
+   "src": "assets/opt/riskfree-vrouw-met-zakje.webp?v=f1",
    "type": "image/webp"
   },
   {
@@ -312,7 +312,7 @@
   {
    "key": ".sticky-pouch#1",
    "label": "Sticky balk",
-   "src": "assets/opt/bundle-qty-1.webp?v=s1",
+   "src": "assets/offer/zakje-1x.webp?v=o1",
    "type": "image/webp"
   },
   {
@@ -324,37 +324,37 @@
   {
    "key": ".offer-img#1",
    "label": "offer 1",
-   "src": "assets/opt/offer-img-1.webp?v=6aea5229",
+   "src": "assets/offer/zakje-1x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".offer-row-img#1",
    "label": "offer 1",
-   "src": "assets/opt/offer-img-1.webp?v=6aea5229",
+   "src": "assets/offer/zakje-1x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".offer-img#2",
    "label": "offer 2",
-   "src": "assets/opt/offer-img-2.webp?v=6aea5229",
+   "src": "assets/offer/zakjes-3x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".offer-row-img#2",
    "label": "offer 2",
-   "src": "assets/opt/offer-img-2.webp?v=6aea5229",
+   "src": "assets/offer/zakjes-3x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".offer-img#3",
    "label": "offer 3",
-   "src": "assets/opt/offer-img-3.webp?v=6aea5229",
+   "src": "assets/offer/zakjes-5x.webp?v=o1",
    "type": "image/webp"
   },
   {
    "key": ".offer-row-img#3",
    "label": "offer 3",
-   "src": "assets/opt/offer-img-3.webp?v=6aea5229",
+   "src": "assets/offer/zakjes-5x.webp?v=o1",
    "type": "image/webp"
   }
  ]
