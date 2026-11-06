@@ -1038,5 +1038,5 @@ svg{flex:none}
 .feel-benefits div{align-items:center;text-align:center}
 
 /* sp-reviews: tags gecentreerd, gekleurde achtergrond */
-.sp-chips{justify-content:center}
+.sp-chips{justify-content:flex-start}
 .sp-chips span{min-width:0;height:auto;padding:6px 14px;border:0;background:#B87450;color:#fff;font-size:13px;font-weight:600}
