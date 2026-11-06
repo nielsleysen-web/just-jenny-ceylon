@@ -1074,3 +1074,10 @@ svg{flex:none}
 @media (max-width:600px){.cmp-pouch.has-img{width:112px;height:148px;top:-62px}}
 /* risk-free sectie: witte achtergrond */
 .riskfree.bg-blush{background:#fff}
+
+/* kleiner: comparison-zakje, risk-free foto en offer-foto's */
+.cmp-pouch.has-img{width:108px;height:144px;top:-62px}
+@media (max-width:600px){.cmp-pouch.has-img{width:92px;height:122px;top:-50px}}
+.riskfree-photo > div.has-img{max-width:420px}
+@media (max-width:600px){.riskfree-photo > div.has-img{max-width:300px}}
+.offer-img.has-img{height:118px}
