@@ -2,9 +2,9 @@
 function page() {
   // Checkout: elke "Aggiungi al carrello"-knop stuurt direct door naar deze URL,
   // met ?bundle=<id>&qty=<aantal>. Pas dit pad aan zodra de custom checkout klaar is.
-  const CHECKOUT_URL = 'https://checkout.getjustjenny.com/ceylon'; // Stripe/PayPal-checkout (jjb-profit-dashboard, product 'ceylon')
+  const CHECKOUT_URL = 'https://checkout.getjustjenny.com/en/pumpkinoil'; // Engelse USD-checkout (jjb-profit-dashboard, product 'pumpkinoil')
   const META_PIXEL_ID = '1514819433466204'; // Meta Pixel-ID (zelfde als META_PIXEL_ID op de checkout). Leeg = geen pixel-events vanaf deze pagina.
-  const PRODUCT_ID = '10700016156938'; // Shopify-product "Cannella di Ceylon" (content_ids, zelfde als op de checkout)
+  const PRODUCT_ID = '10704578609418'; // Shopify-product "Just Jenny™ Pumpkin Seed Oil Softgels" (content_ids, zelfde als op de checkout)
   // Tracking-parameters (fbclid, ad_id, utm's…) die jjb-track.js in localStorage bewaart, meesturen naar de checkout
   function trackedCheckoutUrl(qty) {
     const url = new URL(CHECKOUT_URL); url.searchParams.set('b', qty);
@@ -16,7 +16,7 @@ function page() {
     } catch (e) { }
     return url.toString();
   }
-  if (META_PIXEL_ID && window.fbq) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'EUR' }); }
+  if (META_PIXEL_ID && window.fbq) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'USD' }); }
   const BUNDLES = [
     { id: 1, qty: 1, title: 'Buy One', save: '50%', price: '$29.95', was: '$59.95', badge: '' },
     { id: 2, qty: 3, title: 'Buy 2, Get 1 FREE', save: '50%', price: '$59.95', was: '$119.95', badge: 'Most Popular' },
@@ -232,7 +232,7 @@ function page() {
       const b = BUNDLES.find((x) => x.id === id) || BUNDLES[1];
       this.bundle = b.id;
       const price = parseFloat(String(b.price).replace(/[^0-9.]/g, '')) || 0;
-      if (META_PIXEL_ID && window.fbq) fbq('track', 'InitiateCheckout', { content_ids: [PRODUCT_ID], content_type: 'product', num_items: b.qty, value: price, currency: 'EUR' });
+      if (META_PIXEL_ID && window.fbq) fbq('track', 'InitiateCheckout', { content_ids: [PRODUCT_ID], content_type: 'product', num_items: b.qty, value: price, currency: 'USD' });
       const go = () => { window.location.href = trackedCheckoutUrl(b.qty); };
       setTimeout(go, META_PIXEL_ID && window.fbq ? 250 : 0);
     },
