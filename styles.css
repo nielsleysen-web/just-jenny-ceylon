@@ -1045,3 +1045,18 @@ svg{flex:none}
 .sp-avatar.sp-av-init{background:#B87450;color:#fff;font-size:16px;font-weight:700}
 .sp-avatar.sp-av-img{background-color:#EFE5DC}
 .sp-name.sp-name-ph{width:auto;height:auto;background:none;border-radius:0;margin:0;font-size:15px;font-weight:500;color:#666;text-transform:uppercase}
+
+/* sp-reviews: verified, slepen, bullets en voortgangsbalk */
+.sp-person{flex-wrap:wrap;row-gap:6px;column-gap:8px}
+.sp-name.sp-name-ph{font-size:13px}
+.sp-verified{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:0;text-transform:uppercase;color:#B87450;white-space:nowrap}
+.sp-verified svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.sp-cards{cursor:grab}
+.sp-cards.is-drag{cursor:grabbing;scroll-snap-type:none;user-select:none;-webkit-user-select:none;scroll-behavior:auto}
+.sp-dots{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:24px;min-height:12px}
+.sp-dots button{width:12px;height:12px;padding:0;border:0;border-radius:999px;background:#CFCAC6;cursor:pointer;transition:width .25s,background-color .25s}
+.sp-dots button.is-active{width:40px;background:#B87450}
+.sp-progress{max-width:440px;height:3px;margin:18px auto 0;background:#E3DED9;border-radius:3px;overflow:hidden}
+.sp-progress span{display:block;height:100%;width:0;background:#B87450;transition:width .2s}
+.sp-nav button{border:0;background:#EAE7E3;width:44px;height:44px}
+@media (max-width:760px){.sp-progress{margin:16px 20px 0}}
