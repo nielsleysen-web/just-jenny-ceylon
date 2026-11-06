@@ -1036,3 +1036,7 @@ svg{flex:none}
 @media (max-width:600px){.feel-benefits svg.solid{width:52px;height:52px}}
 .feel-benefits div{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700}
 .feel-benefits div{align-items:center;text-align:center}
+
+/* sp-reviews: tags gecentreerd, gekleurde achtergrond */
+.sp-chips{justify-content:center}
+.sp-chips span{min-width:0;height:auto;padding:6px 14px;border:0;background:#B87450;color:#fff;font-size:13px;font-weight:600}
