@@ -227,26 +227,26 @@
   },
   {
    "key": ".ph-img#5",
-   "label": "[Foto: capsule molli su polvere di cannella]",
-   "src": "assets/opt/ph-img-5.webp?v=mvzzzkvh",
+   "label": "[Photo: softgel with pumpkin seeds]",
+   "src": "assets/reasons/reason-01-softgel-schaaltje.webp?v=r1",
    "type": "image/webp"
   },
   {
    "key": ".ph-img#6",
-   "label": "[Foto: goccia di olio MCT]",
-   "src": "assets/opt/ph-img-6.webp?v=mvzzzng0",
+   "label": "[Photo: hands holding glowing kidneys]",
+   "src": "assets/reasons/reason-02-handen-nieren.webp?v=r1",
    "type": "image/webp"
   },
   {
    "key": ".ph-img#7",
-   "label": "[Foto: stecche di Ceylon e Cassia a confronto]",
-   "src": "assets/opt/ph-img-7.webp?v=mvzzzpgf",
+   "label": "[Photo: pumpkin seed oil flat lay]",
+   "src": "assets/reasons/reason-03-flatlay-olie-pitten.webp?v=r1",
    "type": "image/webp"
   },
   {
    "key": ".ph-img#8",
-   "label": "[Foto: una capsula molle nel palmo della mano]",
-   "src": "assets/opt/ph-img-8.webp?v=mvzzzrga",
+   "label": "[Photo: belly with heart-shaped hands]",
+   "src": "assets/reasons/reason-04-buik-hartje.webp?v=r1",
    "type": "image/webp"
   },
   {
@@ -317,8 +317,8 @@
   },
   {
    "key": ".ph-img#9",
-   "label": "[Foto: test di laboratorio]",
-   "src": "assets/opt/ph-img-9.webp?v=6ae9f32e",
+   "label": "[Photo: lab testing]",
+   "src": "assets/reasons/reason-05-labo-wetenschapper.webp?v=r1",
    "type": "image/webp"
   },
   {
