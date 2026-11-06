@@ -1068,3 +1068,9 @@ svg{flex:none}
 /* feel-sectie: liggende foto met 3 zakjes pompoenpitolie */
 .feel-pouches.has-img{max-width:600px;border-radius:16px;overflow:hidden}
 @media (max-width:600px){.feel-pouches.has-img{max-width:100%}}
+
+/* comparison: zakje pompoenpitolie, iets kleiner */
+.cmp-pouch.has-img{width:132px;height:176px;top:-80px}
+@media (max-width:600px){.cmp-pouch.has-img{width:112px;height:148px;top:-62px}}
+/* risk-free sectie: witte achtergrond */
+.riskfree.bg-blush{background:#fff}
