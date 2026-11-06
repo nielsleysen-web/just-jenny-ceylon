@@ -197,26 +197,26 @@
   },
   {
    "key": ".flip-img#1",
-   "label": "[Foto: glicemia / glucosio]",
-   "src": "assets/opt/flip-img-1.webp?v=mvzzrwk2",
+   "label": "[Photo: kidney / filtration]",
+   "src": "assets/benefits/benefit-01-nieren.webp?v=b1",
    "type": "image/webp"
   },
   {
    "key": ".flip-img#2",
-   "label": "[Foto: donna con stomaco sereno]",
-   "src": "assets/opt/flip-img-2.webp?v=mvzzrz06",
+   "label": "[Photo: relaxed woman, bladder]",
+   "src": "assets/benefits/benefit-02-blaas-vrouw.webp?v=b1",
    "type": "image/webp"
   },
   {
    "key": ".flip-img#3",
-   "label": "[Foto: fegato sano / Ceylon vs Cassia]",
-   "src": "assets/opt/flip-img-3.webp?v=mvzzs1g5",
+   "label": "[Photo: hair]",
+   "src": "assets/benefits/benefit-03-haar.webp?v=b1",
    "type": "image/webp"
   },
   {
    "key": ".flip-img#4",
-   "label": "[Foto: capsula molle con olio MCT]",
-   "src": "assets/opt/flip-img-4.webp?v=mvzzs3s6",
+   "label": "[Photo: heart & arteries]",
+   "src": "assets/benefits/benefit-04-slagader-cholesterol.webp?v=b1",
    "type": "image/webp"
   },
   {
