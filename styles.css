@@ -1064,3 +1064,7 @@ svg{flex:none}
 /* why-kaarten: staande foto's (4:5), op mobiel vierkant */
 .why-card .ph-img{aspect-ratio:4/5}
 @media (max-width:760px){.why-card .ph-img{aspect-ratio:1/1}}
+
+/* feel-sectie: liggende foto met 3 zakjes pompoenpitolie */
+.feel-pouches.has-img{max-width:600px;border-radius:16px;overflow:hidden}
+@media (max-width:600px){.feel-pouches.has-img{max-width:100%}}
