@@ -1040,3 +1040,8 @@ svg{flex:none}
 /* sp-reviews: tags gecentreerd, gekleurde achtergrond */
 .sp-chips{justify-content:flex-start}
 .sp-chips span{min-width:0;height:auto;padding:6px 14px;border:0;background:#B87450;color:#fff;font-size:13px;font-weight:600}
+
+/* sp-reviews: placeholder-avatar (initiaal of productfoto) en placeholder-naam */
+.sp-avatar.sp-av-init{background:#B87450;color:#fff;font-size:16px;font-weight:700}
+.sp-avatar.sp-av-img{background-color:#EFE5DC}
+.sp-name.sp-name-ph{width:auto;height:auto;background:none;border-radius:0;margin:0;font-size:15px;font-weight:500;color:#666;text-transform:uppercase}
