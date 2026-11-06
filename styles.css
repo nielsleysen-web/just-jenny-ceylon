@@ -1060,3 +1060,7 @@ svg{flex:none}
 .sp-progress span{display:block;height:100%;width:0;background:#B87450;transition:width .2s}
 .sp-nav button{border:0;background:#EAE7E3;width:44px;height:44px}
 @media (max-width:760px){.sp-progress{margin:16px 20px 0}}
+
+/* why-kaarten: staande foto's (4:5), op mobiel vierkant */
+.why-card .ph-img{aspect-ratio:4/5}
+@media (max-width:760px){.why-card .ph-img{aspect-ratio:1/1}}
