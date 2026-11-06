@@ -18,7 +18,7 @@ function page() {
   }
   if (META_PIXEL_ID && window.fbq) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'EUR' }); }
   const BUNDLES = [
-    { id: 1, qty: 1, title: 'Buy One', save: '62%', price: '$22.95', was: '$59.95', badge: '' },
+    { id: 1, qty: 1, title: 'Buy One', save: '50%', price: '$29.95', was: '$59.95', badge: '' },
     { id: 2, qty: 3, title: 'Buy 2, Get 1 FREE', save: '50%', price: '$59.95', was: '$119.95', badge: 'Most Popular' },
     { id: 3, qty: 5, title: 'Buy 3, Get 2 FREE', save: '50%', price: '$89.95', was: '$179.95', badge: 'Best Value' }
   ];
