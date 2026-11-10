@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T05:50:42.424Z",
+ "saved": "2026-11-10T05:53:07.595Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -16,14 +16,20 @@
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>p:nth-of-type(1)",
-   "original": "Just Jenny is made to breaks down the inflammatory substances in the synovial membrane, the hidden root cause of waking up with stiff joints and achy muscles we're told is \"just a part of aging.\"",
-   "new": "Just Jenny is made to break down the inflammatory substances in the synovial membrane, the hidden root cause of waking up with stiff joints and achy muscles we're told is \"just a part of aging.\""
+   "original": "Just Jenny is made to break down the inflammatory substances in the synovial membrane, the hidden root cause of waking up with stiff joints and achy muscles we're told is \"just a part of aging.\"",
+   "new": "Made to break down the inflammatory substances in the synovial membrane, the hidden root cause of waking up with stiff joints and achy muscles."
   },
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>p:nth-of-type(2)",
    "original": "Just one daily softgel delivers cellular lung protection, naturally supporting your airways and respiratory energy from the inside out.",
    "new": "Just one daily capsule delivers the right active substances to naturally make the synovial membrane around your cartilage supple"
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(1)>span:nth-of-type(2)",
+   "original": "Remember Names, Dates And Everyday Details",
+   "new": "Wake up wit Names, Dates And Everyday Details"
   }
  ],
  "images": []
