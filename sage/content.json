@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T12:00:08.371Z",
+ "saved": "2026-11-10T12:16:10.002Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -949,6 +949,60 @@
    "key": ".ed-pic#11",
    "label": "Productfoto met ingrediënten",
    "src": "assets/uploads/ed-pic-11.webp?v=mwan1i8c",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#9",
+   "label": "Foto 1",
+   "src": "assets/uploads/ed-img-9.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#10",
+   "label": "Foto 2",
+   "src": "assets/uploads/ed-img-10.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#11",
+   "label": "Foto 3",
+   "src": "assets/uploads/ed-img-11.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#12",
+   "label": "Foto 4",
+   "src": "assets/uploads/ed-img-12.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#13",
+   "label": "Foto 5",
+   "src": "assets/uploads/ed-img-13.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#14",
+   "label": "Foto 6",
+   "src": "assets/uploads/ed-img-14.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#15",
+   "label": "Foto 7",
+   "src": "assets/uploads/ed-img-15.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#16",
+   "label": "Foto 8",
+   "src": "assets/uploads/ed-img-16.webp?v=mwanm3dl",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#17",
+   "label": "Foto 9",
+   "src": "assets/uploads/ed-img-17.webp?v=mwanm3dl",
    "type": "image/webp"
   }
  ]
