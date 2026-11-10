@@ -65,6 +65,11 @@
   const sticky = $('.sticky'), heroBtn = $('.hero .buy-btn');
   if (sticky && heroBtn && 'IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroBtn);
-    sticky.querySelector('a').addEventListener('click', (e) => { e.preventDefault(); $('#top').scrollIntoView({ behavior: 'smooth' }); });
+    sticky.querySelector('a').addEventListener('click', (e) => {
+      e.preventDefault(); e.stopPropagation();
+      // naar de bundels (offers) bovenaan, met wat ruimte erboven
+      const t = $('.hero .batch') || $('.hero .bundles');
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
+    });
   }
 })();
