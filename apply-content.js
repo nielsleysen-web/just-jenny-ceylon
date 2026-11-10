@@ -1,12 +1,12 @@
 /* Just Jenny – past content.json (teksten + foto's uit de bewerkmodus) toe op de pagina.
    content.json wordt door de bewerkpagina naar GitHub gepusht; Vercel zet het live. */
 (function () {
-  const IMG_SEL = [
+  const IMG_SEL = window.JJ_IMG_SEL || [
     '.gallery-main', '.thumb', '.expert-video', '.ph-box', '.ph-img', '.review-img', '.flip-img',
     '.journey-banner', '.cmp-photo', '.cmp-pouch', '.riskfree-photo > div', '.story-video',
     '.feel-pouches', '.offer-img', '.offer-row-img', '.bundle-qty', '.rv-thumb', '.tp-photo', '.sticky-pouch'
   ].join(',');
-  const BG_SEL = '.report';
+  const BG_SEL = window.JJ_BG_SEL || '.report';
   const DROP_SEL = IMG_SEL + ',' + BG_SEL;
   const OVERLAY = 'linear-gradient(rgba(120,52,24,.84),rgba(98,40,16,.88))';
 
@@ -33,7 +33,7 @@
       el.style.background = OVERLAY + ', url(' + src + ') center/cover no-repeat';
     } else {
       el.style.backgroundImage = 'url(' + src + ')';
-      el.style.backgroundSize = el.matches('.bundle-qty, .offer-row-img, .offer-img, .sticky-pouch, .cmp-pouch') ? 'contain' : 'cover';
+      el.style.backgroundSize = el.matches('.bundle-qty, .offer-row-img, .offer-img, .sticky-pouch, .cmp-pouch, .ed-pic') ? 'contain' : 'cover';
       el.style.backgroundPosition = 'center'; el.style.backgroundRepeat = 'no-repeat';
       if (el.matches('.ph-box, .feel-pouches, .riskfree-photo > div')) { const im = new Image(); im.onload = () => { el.style.aspectRatio = im.naturalWidth + '/' + im.naturalHeight; }; im.src = src; }
     }
@@ -73,7 +73,8 @@
   api.ready = fetch((window.JJ_CONTENT_URL || 'content.json') + (window.JJ_CONTENT_URL ? '?t=' + Date.now() : ''), { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null).then(c => { api.data = c || { texts: [], images: [] }; return api.data; });
   function run() { api.ready.then(c => { applyData(c); setTimeout(() => applyData(c), 900); }); }
   if (!window.JJ_NO_APPLY) {
-    if (window.Alpine) run(); else document.addEventListener('alpine:initialized', run);
+    if (window.JJ_NO_ALPINE) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run(); }
+    else if (window.Alpine) run(); else document.addEventListener('alpine:initialized', run);
   }
   window.JJ_CONTENT = api;
 

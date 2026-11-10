@@ -1,0 +1,272 @@
+# Genereert sage/index.html + sage/editor/index.html
+CK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
+XX='<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+def ic(d): return f'<span class="bi"><svg viewBox="0 0 24 24">{d}</svg></span>'
+def slot(cls, label, extra=''):
+    return f'<div class="{cls}"{extra}><span class="slot-label">{label}</span></div>'
+
+def bundles(box):
+    rows=[(1,'Buy 1','$1.20 / day','$26.99','$27.95','',False),
+          (3,'Buy 2 Get 1 Free','$0.54 / day','$18.00','$27.95','Most Popular',True),
+          (5,'Buy 3 Get 2 Free','$0.47 / day','$16.20','$27.95','',False)]
+    out=['<div class="bundles">']
+    for q,name,day,price,was,tag,sel in rows:
+        perks=''
+        if sel:
+            perks='''<ul class="b-perks"><li>Covers the full 12-week clinical window</li><li>Most users see meaningful results by week 8</li><li>Free Shipping</li><li>60-day money-back guarantee</li></ul>'''
+        else:
+            perks='''<ul class="b-perks"><li>Free Shipping</li><li>60-day money-back guarantee</li></ul>'''
+        t=f'<span class="b-tag">{tag}</span>' if tag else ''
+        out.append(f'''<div class="bundle{' sel' if sel else ''}" data-qty="{q}">{t}
+        <div class="b-row">{slot('b-img ed-pic','Foto '+str(q)+'x')}<span class="b-name">{name}</span><span class="b-day">{day}</span>
+          <span class="b-price"><span class="per">{price}</span> <small>/Bottle</small><s class="was">{was}</s></span></div>
+        {perks}</div>''')
+    out.append('</div>')
+    return '\n'.join(out)
+
+def buybox(btn_text):
+    return f'''<div class="batch">CURRENT BATCH — LIMITED SUPPLY</div>
+      {bundles(0)}
+      <a class="buy-btn" href="#">{btn_text}</a>'''
+
+help_cards=[('Remember Names','Greet every friend by name.'),('Stay Focused','Finish your thought, every time.'),('Find Your Things','Keys, glasses, phone – right where you left them.'),('Be Fully Present','Enjoy every moment with the people you love.')]
+left=[('Sage leaf at the core:','A herb used for memory for centuries, and now studied in small human trials.'),('Vitamin B12 for your brain:','B12 supports normal brain and nerve function. It matters more after 50.'),('Zinc for clear thinking:','Zinc supports normal cognitive function – your ability to think and learn.')]
+right=[('Magnesium for less tiredness:','Magnesium helps reduce tiredness, so you feel clearer through the day.'),('Third-party tested:','Every batch is checked by an independent lab.'),('Gentle and hormone-free:','Plant-based, with no hormones and no harsh stimulants. Just one easy routine.')]
+vs_rows=[('Sage Leaf for Memory',1),('Vitamin B12 for Brain Function',1),('Zinc for Clear Thinking',1),('Magnesium for Less Tiredness',1),('Simple 4-Ingredient Formula',1),('Hormone-Free &amp; Plant-Based',1),('Third-Party Tested',1),('60-Day Money-Back Guarantee',1),('Artificial Colours &amp; Fillers',0),('Harsh Stimulants',0),('Crowded 20+ Ingredient Blends',0)]
+faqs=[
+('Can I buy Just Jenny in stores or on Amazon?','No. Just Jenny Sage Leaf Memory Support is only sold on this website. That way we can guarantee every bottle is fresh, genuine and covered by our 60-day money-back guarantee.'),
+('What is in Just Jenny?','Four simple ingredients: sage leaf extract, vitamin B12, zinc and magnesium. No hormones, no harsh stimulants and no crowded blends. See the label for exact amounts.'),
+('Is Just Jenny safe with my current medications?','If you take prescription medication, are pregnant or nursing, or have a medical condition, check with your doctor or pharmacist before you start any new supplement.'),
+('How should I store it?','Keep the bottle closed in a cool, dry place, away from direct sunlight and out of reach of children.'),
+('Will Just Jenny help me remember names and everyday things?','Just Jenny is made to support your memory every day as part of a simple routine. Everyone is different and individual results vary.'),
+('How soon will I notice a difference?','Take it every day. Many people give it 8 to 12 weeks to see how it works for them. Individual results vary.'),
+('How do I take it?','Take [X] capsules a day with water, ideally with a meal.'),
+('How many capsules are in each bottle?','Each bottle contains 90 capsules.'),
+('Are there any allergens or dietary restrictions?','Just Jenny is plant-based and hormone-free. Always check the label if you have an allergy.'),
+("What if it doesn't work for me?","You're covered by our 60-day money-back guarantee. If you're not happy, email us and we'll make it right."),
+('When should I see a doctor about my memory?','If memory problems come on suddenly, get worse quickly or start to affect your daily life, talk to your doctor. A supplement is not a replacement for medical advice.'),
+]
+
+ICON={
+ 'user':'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',
+ 'target':'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8"/>',
+ 'chat':'<path d="M4 5h16v11H9l-5 4z"/>',
+ 'bulb':'<path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0012 3z"/>',
+ 'heart':'<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/>',
+}
+def benefit(k,t): return f'<li>{ic(ICON[k])}<span>{t}</span></li>'
+
+trust_items=['GMP CERTIFIED','MADE IN THE USA','PLANT-BASED','HORMONE-FREE','GLUTEN-FREE','3RD-PARTY TESTED']
+CKW=CK.replace('<svg','<svg style="stroke:#fff;fill:none;stroke-width:2.4"')
+trust=''.join('<span>'+CKW+t+'</span>' for t in trust_items*4)
+ticker=''.join('<span>-30% TODAY ONLY</span>' for _ in range(16))
+
+seals=[('3RD-PARTY<br>TESTED','<path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/>'),('HORMONE<br>FREE','<circle cx="12" cy="5" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><path d="M12 7v4M12 11l-6 5M12 11l6 5"/>'),('NO ARTIFICIAL<br>INGREDIENTS','<circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/>'),('NON-GMO','<circle cx="12" cy="12" r="9"/><path d="M6 6l12 12M12 18V9M12 13c-2 0-3-1.5-3-3.5 2 0 3 1.5 3 3.5zM12 11c2 0 3-1.5 3-3.5-2 0-3 1.5-3 3.5z"/>')]
+
+HELPS=''.join('<div class="help"><h3>'+t+'</h3>'+slot('ed-img','Foto: '+t)+'<p>'+p+'</p></div>' for t,p in help_cards)
+html=f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just Jenny Sage Leaf Memory Support</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/sage/sage.css?v=1">
+<!--HEAD-EXTRA-->
+</head>
+<body>
+
+<div class="ticker"><div class="ticker-track">{ticker}</div></div>
+
+<header class="hdr"><div class="wrap-w">
+  <svg class="burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  <a class="logo" href="#">Just Jenny</a>
+  <nav class="nav"><a href="#">Home</a><a href="#">Contact</a><a href="#">Track Your Order</a><a href="#">Manage Subscription</a></nav>
+  <div class="hdr-ic"><svg class="hide-m" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><svg class="hide-m" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></div>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap-w"><div class="hero-grid">
+  <div class="gallery">
+    <div class="g-main"><span class="slot-label">Productfoto 1</span>
+      <button class="g-arrow g-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="g-arrow g-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="thumbs">{''.join(slot('ed-pic'+(' active' if i==1 else ''),'Foto '+str(i)) for i in range(1,8))}</div>
+  </div>
+  <div class="buy">
+    <div class="rec">{slot('ed-img','')}<span>Recommended By <b>[Expert name], M.D.</b> | [Expert title]</span></div>
+    <h1 class="h-title">Just Jenny Sage Leaf Memory Support – Sharper Recall, Clearer Focus &amp; Everyday Brain Health</h1>
+    <div class="stars-line"><span class="stars">★★★★★</span><span>Rated 4.7</span><span>•</span><span>11,014 Reviews</span></div>
+    <p class="lead"><b>Just Jenny is made to support your memory every day</b> – so you can remember names, keep your train of thought and stop losing your keys.</p>
+    <p class="p14">One simple daily routine with sage leaf, vitamin B12, zinc and magnesium. Plant-based, hormone-free and easy to take.</p>
+    <ul class="benefits">
+      {benefit('user','Remember Names, Dates And Everyday Details')}
+      {benefit('target','Stay Focused And Keep Your Train Of Thought')}
+      {benefit('chat','Find Your Words More Easily')}
+      {benefit('bulb','Feel Sharp, Clear And Confident')}
+      {benefit('heart','Supports Long-Term Brain Health')}
+    </ul>
+    <div class="buybox">{buybox('Add To Cart <span>—</span> <span class="now" x-text="calc"></span> <s x-text="calc"></s>')}
+      <div class="sub-note"><span><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0115-6.7L21 8M21 3v5h-5"/></svg>New Bottle Ship Every 30 Days</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Skip or Cancel Anytime</span></div>
+    </div>
+  </div>
+</div></div></section>
+
+<section class="mint"><div class="wrap">
+  <div class="wave"></div>
+  <div class="split">
+    <div>
+      <h2>Why You Walk Into a Room… and Forget Why</h2>
+      <p>You know the feeling. A name on the tip of your tongue. Keys gone again. A thought that slips away mid-sentence.</p>
+      <p>For most of us, it comes down to three everyday things:</p>
+      <ul>
+        <li><b>Low vitamin B12:</b> After 50, your body absorbs less B12 from food. B12 helps your nerves and brain work normally.</li>
+        <li><b>Stress and poor sleep:</b> Busy days and restless nights leave your brain tired. A tired brain forgets more.</li>
+        <li><b>Natural aging:</b> Over the years, your body's natural defences slow down. Your brain needs more daily support.</li>
+      </ul>
+    </div>
+    <div class="brain">{slot('ed-img','Afbeelding: gezond brein vs. moe brein')}<div class="brain-tabs"><span>SUPPORTED BRAIN</span><span>TIRED BRAIN</span></div></div>
+  </div>
+  <div class="wave up"></div>
+  <div class="wave"></div>
+  <div class="split">
+    <div>
+      <h2>Sticky Notes Don't Fix the Real Problem</h2>
+      <p>Your brain works hard all day. It needs the right nutrients to keep up.</p>
+      <p>But reminders and quick fixes only cover the problem. They don't feed your brain.</p>
+      <p class="x-item"><i>✕</i><b>Sticky notes and phone alarms:</b> They help you remember today. They don't help your brain do the remembering.</p>
+      <p class="x-item"><i>✕</i><b>Extra coffee:</b> It gives a quick buzz, then a crash. It doesn't support your memory.</p>
+      <p class="x-item"><i>✕</i><b>Crowded "brain" blends:</b> Many pack in 20+ ingredients at tiny amounts. More isn't better – the right ones are.</p>
+    </div>
+    <div class="split-img">{slot('ed-img photo-tall','Foto: oudere man die iets vergeten is')}</div>
+  </div>
+  <div class="wave"></div>
+  <div class="split rev">
+    <div class="split-img">{slot('ed-img photo-tall','Foto: hand met het product')}</div>
+    <div>
+      <h2>Simple Daily Support for a Sharper Mind</h2>
+      <p>Sage has been used for memory for centuries. Today, small human studies show sage leaf may support memory and attention.</p>
+      <p><b>Just Jenny pairs sage leaf with three key nutrients.</b> Vitamin B12 and zinc support normal brain function. Magnesium helps reduce tiredness.</p>
+      <p>Together, they give your brain simple daily support – so you can stay sharp, present and independent.</p>
+    </div>
+  </div>
+</div>
+<div class="ticker trust"><div class="ticker-track">{trust}</div></div>
+</section>
+
+<section class="helps"><div class="wrap">
+  <h2>Just Jenny Helps You…</h2>
+  <div class="help-grid">{HELPS}</div>
+</div></section>
+
+<section class="six"><div class="wrap">
+  <div class="eyebrow">BEFORE YOU BUY ANY MEMORY SUPPLEMENT</div>
+  <h2>Check These 6 Things First.</h2>
+  <p class="sub">A memory supplement only helps if it's simple, gentle and made with care. Here's what we built Just Jenny to pass.</p>
+  <div class="six-grid">
+    <div class="six-col">{''.join(f'<div class="thing"><span class="n">{i+1}</span><b>{a}</b>{b}</div>' for i,(a,b) in enumerate(left))}</div>
+    <div class="six-mid">{slot('ed-pic','Productfoto met ingrediënten')}</div>
+    <div class="six-col">{''.join(f'<div class="thing"><span class="n">{i+4}</span><b>{a}</b>{b}</div>' for i,(a,b) in enumerate(right))}</div>
+  </div>
+  <div class="badges-row"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Plant-based</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Hormone-free</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Made in the USA · GMP</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Non-GMO</span></div>
+</div></section>
+
+<section class="people"><div class="wrap">
+  <h2>[X]+ People Are Remembering More and Worrying Less with Just Jenny</h2>
+  <p class="sub">See how they're keeping their minds sharp, staying independent and enjoying time with family – without sticky notes everywhere.</p>
+  <div class="mission">
+    <div class="collage">{''.join(slot('ed-img','Foto '+str(i)) for i in range(1,10))}</div>
+    <div class="mission-txt">
+      <h3>Our Mission: Help 1,000,000 People Feel Sharp and Like Themselves Again</h3>
+      <h4>Here's where we are right now:</h4>
+      <div class="stats">
+        <div class="stat"><span class="pct">[XX]%</span><span class="lbl">said they feel more confident in their memory</span></div>
+        <div class="stat"><span class="pct">[XX]%</span><span class="lbl">said they feel more focused through the day</span></div>
+      </div>
+      <p class="foot-note">*Based on a [X]-week customer survey of [X] Just Jenny users. Individual results vary.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="wrap"><div class="expert">
+  <div class="expert-txt">
+    <div class="date">[Date]</div>
+    <h2>Expert Advice from [Expert name], MD</h2>
+    <p class="quote">"[Your expert's own words, with their permission, go here.]"</p>
+    <a class="cta-pill buy-btn" href="#offer" style="width:280px;border-radius:999px;height:44px;font-weight:500;font-size:14px;margin:0">Try Just Jenny Today</a>
+    <div class="mini-trust"><span>🛡 60-Day Money-Back Guarantee</span><span>🇺🇸 Free Shipping From USA</span></div>
+  </div>
+  {slot('ed-img','Foto: expert met het product')}
+</div></section>
+
+<section class="promise"><div class="wrap">
+  <h2>Expect More From Your Supplements</h2>
+  <div class="sub">The Just Jenny Promise</div>
+  <div class="seals">{''.join(f'<div class="seal"><svg viewBox="0 0 24 24">{d}</svg><span>{t}</span></div>' for t,d in seals)}</div>
+</div></section>
+
+<section class="vs"><div class="wrap">
+  <div class="wave" style="margin:0 0 0"></div>
+  <h2>Why Just Jenny Beats Generic Memory Pills</h2>
+  <div class="vs-heads">{slot('ed-pic','Ons product')}<div><div class="vs-badge">VS</div></div>{slot('ed-pic','Generiek potje')}</div>
+  <div class="vs-table">
+    <div class="vs-col l"><div class="vh">Just Jenny<br>Memory Support</div>{''.join(f'<div class="vs-cell"><span class="{"ck" if g else "xx"}">{CK if g else XX}</span></div>' for _,g in vs_rows)}</div>
+    <div class="vs-col m"><div class="vh">What Really<br>Matters</div>{''.join(f'<div class="vs-cell">{t}</div>' for t,_ in vs_rows)}</div>
+    <div class="vs-col r"><div class="vh">Generic Memory<br>Pills</div>{''.join(f'<div class="vs-cell"><span class="{"xx" if g else "ck"}">{XX if g else CK}</span></div>' for _,g in vs_rows)}</div>
+  </div>
+  <a class="btn-wide buy-btn" href="#offer" style="width:400px;border-radius:999px;height:42px;font-size:13px;font-weight:800;margin:34px auto 0">BUY NOW &amp; SAVE</a>
+  <div class="mg">🛡 60-Day Money-Back Guarantee</div>
+</div></section>
+
+<section class="offer" id="offer"><div class="wrap">
+  <div class="offer-grid">
+    {slot('ed-pic','Productfoto aanbieding')}
+    <div>
+      <h2>Special Offer On Now!</h2>
+      <p class="t1">Try Just Jenny Memory Support Today</p>
+      <p class="t1"><b>Risk-Free</b> with our First Time Buyer's Offer!</p>
+      <h4>Act Now and You'll Get:</h4>
+      <ul class="get"><li><span class="ck sm">{CK}</span>Up to 70% OFF Your First Order</li><li><span class="ck sm">{CK}</span>FREE Shipping</li></ul>
+      <div class="today">TODAY ONLY: $18.00</div>
+      <div class="buybox">{buybox('Buy Now And Save Up To 60%')}</div>
+      <div class="pay-ic"><span>PayPal</span><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span><span>G Pay</span><span> Pay</span></div>
+      <div class="secure"><i></i>All transactions are secure and encrypted</div>
+      <p class="note"><b>Note:</b> Not available on Amazon or eBay</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">{''.join(f'<details><summary>{q}</summary><div class="a">{a}</div></details>' for q,a in faqs)}</div>
+  <div class="faq-cta"><a class="btn-wide buy-btn" href="#offer" style="width:400px;border-radius:999px;height:42px;font-size:13px;font-weight:800;margin:0 auto">BUY NOW &amp; SAVE</a><div class="mg">🛡 Feel Sharper Or It's Free!</div></div>
+</div></section>
+
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-grid">
+    <div><h4>Sign up for new stories and personal offers</h4><form onsubmit="return false"><input type="email" placeholder="E-mail"><button type="submit">Subscribe</button></form></div>
+    <div><h4>Policies</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Subscription Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Legal Notice</a></li><li><a href="#">Manage Subscription</a></li></ul></div>
+  </div>
+  <p class="disclaimer">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+  <p class="copy">© 2026, Just Jenny.</p>
+</div></footer>
+
+<div class="sticky"><a class="buy-btn" href="#offer">Add To Cart</a></div>
+
+<script src="/sage/sage.js?v=1"></script>
+<!--BODY-EXTRA-->
+</body>
+</html>
+'''
+LIVE_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_IMG_SEL=".ed-img,.ed-pic";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";</script>\n<script defer src="/apply-content.js?v=sg1"></script>'
+ED_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_NO_APPLY=true;window.JJ_IMG_SEL=".ed-img,.ed-pic";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";window.JJ_REPO_PREFIX="sage/";window.JJ_LIVE_URL=location.origin+"/sage";window.JJ_READY_SEL=".bundle";window.JJ_EDITOR=true;</script>\n<script defer src="/apply-content.js?v=sg1"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg1"></script>'
+import os
+import os.path; base=os.path.dirname(os.path.abspath(__file__))+'/'
+open(base+'index.html','w').write(html.replace('<!--HEAD-EXTRA-->',LIVE_HEAD).replace('<!--BODY-EXTRA-->',''))
+os.makedirs(base+'editor',exist_ok=True)
+open(base+'editor/index.html','w').write(html.replace('<title>Just Jenny Sage Leaf Memory Support</title>','<title>Sage – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">','<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->',ED_HEAD).replace('<!--BODY-EXTRA-->',''))
+if not os.path.exists(base+'content.json'): open(base+'content.json','w').write('{"texts":[],"images":[]}\n')
+print('ok')

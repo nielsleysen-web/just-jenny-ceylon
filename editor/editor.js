@@ -4,10 +4,12 @@
 
 (function () {
   const REPO = { owner: 'nielsleysen-web', repo: 'just-jenny-ceylon', branch: 'main' };
-  const LIVE = location.origin;
-  const TOKEN_KEY = 'jj-gh-token', DRAFT_KEY = 'jj-editor-draft-v2';
+  // Meerdere pagina's in deze repo: een pagina in een submap (bv. /sage/) zet JJ_REPO_PREFIX = 'sage/' en JJ_LIVE_URL
+  const PREFIX = window.JJ_REPO_PREFIX || '';
+  const LIVE = window.JJ_LIVE_URL || location.origin;
+  const TOKEN_KEY = 'jj-gh-token', DRAFT_KEY = 'jj-editor-draft-v2' + (PREFIX ? '-' + PREFIX.replace(/\W+/g, '') : '');
   const SKIP = '.ticker, .countdown, .mini-pouch, .pouch, .pouch-lg, .pouch-side, .pouch-mid, .feel-pouches, .cmp-pouch, .sticky-pouch, .ed-ui, svg, script, style';
-  const BUY_SEL = '.atc-main, .offer-atc, .offer-m-atc, .sticky-btn';
+  const BUY_SEL = '.atc-main, .offer-atc, .offer-m-atc, .sticky-btn, .buy-btn';
   const images = new Map(); // key -> {key,label,blob,type,objectURL}
   let C = null;             // window.JJ_CONTENT
   let baseline = { texts: [], images: [] };
@@ -186,7 +188,7 @@
       }
     }
   }
-  const MAXW = { '.gallery-main': 1400, '.thumb': 1400, '.report': 2000, '.review-img': 800, '.rv-thumb': 1000, '.avatar-ph': 200, '.bundle-qty': 300, '.offer-row-img': 300, '.sticky-pouch': 200, '.offer-img': 700, '.cmp-photo': 400, '.cmp-pouch': 400, '.flip-img': 500, '.journey-banner': 1400, '.ph-box': 1200, '.ph-img': 900, '.feel-pouches': 1000 };
+  const MAXW = { '.ed-img': 1400, '.ed-pic': 1400, '.gallery-main': 1400, '.thumb': 1400, '.report': 2000, '.review-img': 800, '.rv-thumb': 1000, '.avatar-ph': 200, '.bundle-qty': 300, '.offer-row-img': 300, '.sticky-pouch': 200, '.offer-img': 700, '.cmp-photo': 400, '.cmp-pouch': 400, '.flip-img': 500, '.journey-banner': 1400, '.ph-box': 1200, '.ph-img': 900, '.feel-pouches': 1000 };
   // Foto's verkleinen + omzetten naar WebP vóór upload, zodat de site snel blijft.
   async function optimize(im) {
     if (!/^image\/(png|jpe?g|webp|avif|bmp)$/i.test(im.type)) return { blob: im.blob, type: im.type, ext: extOf(im.type, im.name) };
@@ -234,11 +236,11 @@
         const o = await optimize(im);
         if (o.blob.size > 25 * 1024 * 1024) throw new Error(im.label + ': bestand groter dan 25 MB');
         const path = 'assets/uploads/' + safeName(im.key) + '.' + o.ext;
-        files.push({ path, base64: await blobToBase64(o.blob) });
+        files.push({ path: PREFIX + path, base64: await blobToBase64(o.blob) });
         imgs.set(im.key, { key: im.key, label: im.label, src: path + '?v=' + v, type: o.type });
       }
       const content = { saved: new Date().toISOString(), texts: mergedTexts(), images: Array.from(imgs.values()) };
-      files.push({ path: 'content.json', base64: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 1)))) });
+      files.push({ path: PREFIX + 'content.json', base64: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 1)))) });
       btn.textContent = 'Publiceren…';
       await commitFiles(files, 'Update content (' + changedTexts().length + ' teksten, ' + list.length + ' nieuwe foto\'s)');
       baseline = content;
@@ -298,7 +300,7 @@
     let tries = 0;
     const t = setInterval(() => {
       tries++;
-      const ready = window.JJ_CONTENT && document.querySelector('.why-card, .offer-row') && document.body.innerText.length > 2000;
+      const ready = window.JJ_CONTENT && document.querySelector(window.JJ_READY_SEL || '.why-card, .offer-row') && document.body.innerText.length > 2000;
       if (ready || tries > 40) {
         clearInterval(t);
         C = window.JJ_CONTENT;
