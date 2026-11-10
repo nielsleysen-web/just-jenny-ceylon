@@ -20,6 +20,7 @@
     const src = bgOf(thumbs[cur]);
     main.style.backgroundImage = src ? 'url(' + src + ')' : '';
     main.classList.toggle('filled', !!src);
+    main.classList.toggle('first', cur === 0); // badge alleen op de 1e foto
   }
   thumbs.forEach((t, i) => t.addEventListener('click', () => { if (!window.JJ_EDITOR) show(i); }));
   // in de editor: na een upload het grote beeld bijwerken

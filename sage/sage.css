@@ -368,3 +368,16 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
   .hero .rec .ed-img{width:46px;height:46px;border-width:2px}
   .rec-ic{width:18px;height:18px;vertical-align:-4px}
 }
+
+/* badge op de 1e productfoto */
+.g-badge{position:absolute;top:12px;left:12px;z-index:2;display:none;align-items:center;gap:6px;background:#2F5A45;color:#fff;font-size:12px;font-weight:700;padding:7px 11px 7px 9px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);line-height:1}
+.g-main.first .g-badge{display:inline-flex}
+.g-badge svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+@media (max-width:820px){
+  .g-badge{font-size:11px;top:10px;left:10px;padding:6px 9px 6px 7px}
+  /* mobiel: geen review onder de foto's, sterren boven de titel */
+  .hero .g-review{display:none}
+  .hero .buy > .h-title, .hero .buy > .h-title ~ *{order:2}
+  .hero .buy > .stars-line{order:1;margin:0 0 8px}
+}
+.lead b{color:#2F5A45;font-weight:700}
