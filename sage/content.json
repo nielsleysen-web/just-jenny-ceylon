@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T07:43:42.852Z",
+ "saved": "2026-11-10T07:48:10.919Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -444,6 +444,42 @@
    "path": "section:nth-of-type(6)>div>div:nth-of-type(1)>div:nth-of-type(2)>span:nth-of-type(1)",
    "original": "🛡 60-Day Money-Back Guarantee",
    "new": "🛡 90-Day Money-Back Guarantee"
+  },
+  {
+   "section": "",
+   "path": "article>div>div>div:nth-of-type(1)>div",
+   "original": "[XX]%",
+   "new": "92%"
+  },
+  {
+   "section": "",
+   "path": "article>div>div>div:nth-of-type(2)>div",
+   "original": "[XX]%",
+   "new": "87%"
+  },
+  {
+   "section": "",
+   "path": "article>div>div>div:nth-of-type(3)>div",
+   "original": "[XX]%",
+   "new": "68%"
+  },
+  {
+   "section": "",
+   "path": "article>div>div>div:nth-of-type(3)>p",
+   "original": "reported less daily joint pain within the first [X] weeks*",
+   "new": "reported less joint pain within the first 2 weeks"
+  },
+  {
+   "section": "",
+   "path": "article>div>div>div:nth-of-type(4)>div",
+   "original": "[XX]%",
+   "new": "91%"
+  },
+  {
+   "section": "",
+   "path": "article>div>p:nth-of-type(2)",
+   "original": "*Based on a [X]-week [independent customer panel] of [X] Just Jenny customers",
+   "new": "*Based on a four-week independent customer panel of 12.138 Just Jenny customers"
   }
  ],
  "images": []
