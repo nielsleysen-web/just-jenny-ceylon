@@ -346,3 +346,8 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 /* galerij: 5 thumbnails (foto 6 & 7 verborgen, blijven bestaan zodat de foto-volgorde in de editor klopt) */
 .thumbs{grid-template-columns:repeat(5,1fr);gap:7px;margin-top:8px}
 .thumbs .ed-pic:nth-child(n+6){display:none}
+/* vergelijking: productfoto's boven de kolommen */
+.vs-heads{align-items:end;margin-bottom:-6px}
+.vs-heads .ed-pic{height:190px;background-color:transparent}
+.vs-heads .ed-pic.has-img .slot-label{display:none}
+@media (max-width:820px){.vs-heads .ed-pic{height:120px}}

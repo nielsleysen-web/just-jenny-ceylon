@@ -932,6 +932,18 @@
    "label": "Foto: Be Fully Present",
    "src": "assets/uploads/ed-img-8.webp?v=mwamuw35",
    "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#12",
+   "label": "Ons product",
+   "src": "assets/uploads/ed-pic-12.webp?v=vs311840",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#13",
+   "label": "Generiek potje",
+   "src": "assets/uploads/ed-pic-13.webp?v=vs311840",
+   "type": "image/webp"
   }
  ]
 }
