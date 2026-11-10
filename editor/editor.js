@@ -41,6 +41,7 @@
       el.setAttribute('contenteditable', 'true');
       el.classList.add('ed-text');
       el.dataset.edOrig = el.innerText.trim();
+      el.dataset.edOrigHtml = C.hasFormat && C.hasFormat(el) ? C.sanitize(el.innerHTML) : '';
       el.dataset.edPath = C.cssPath(el);
       el.addEventListener('input', saveDraft);
       el.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !['P', 'LI', 'DIV'].includes(el.tagName)) { e.preventDefault(); el.blur(); } });
@@ -91,7 +92,8 @@
     const out = [];
     document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => {
       const now = el.innerText.trim();
-      if (now !== el.dataset.edOrig) out.push({ section: sectionOf(el), path: el.dataset.edPath, original: el.dataset.edOrig, new: now });
+      const html = C.hasFormat && C.hasFormat(el) ? C.sanitize(el.innerHTML) : '';
+      if (now !== el.dataset.edOrig || html !== (el.dataset.edOrigHtml || '')) out.push(Object.assign({ section: sectionOf(el), path: el.dataset.edPath, original: el.dataset.edOrig, new: now }, html ? { html } : {}));
     });
     return out;
   }
@@ -102,13 +104,13 @@
   }
   function saveDraft() {
     updateCount();
-    try { const d = {}; changedTexts().forEach(t => { d[t.path] = t.new; }); localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); localStorage.setItem(DRAFT_KEY + '-data', JSON.stringify(Object.fromEntries(dataEdits))); } catch (e) { }
+    try { const d = {}; changedTexts().forEach(t => { d[t.path] = t.html ? { html: t.html } : t.new; }); localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); localStorage.setItem(DRAFT_KEY + '-data', JSON.stringify(Object.fromEntries(dataEdits))); } catch (e) { }
   }
   let draftDataLoaded = false;
   function loadDraft() {
     try {
       const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || '{}');
-      document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => { const v = d[el.dataset.edPath]; if (v != null && el.innerText.trim() !== v) el.innerText = v; });
+      document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => { const v = d[el.dataset.edPath]; if (v == null) return; if (typeof v === 'object' && v.html) el.innerHTML = C.sanitize(v.html); else if (el.innerText.trim() !== v) el.innerText = v; });
       if (!draftDataLoaded) { draftDataLoaded = true; const dd = JSON.parse(localStorage.getItem(DRAFT_KEY + '-data') || '{}'); Object.entries(dd).forEach(([a, v]) => dataEdits.set(a, v)); applyDataEdits(); }
     } catch (e) { }
   }
@@ -244,7 +246,7 @@
       btn.textContent = 'Publiceren…';
       await commitFiles(files, 'Update content (' + changedTexts().length + ' teksten, ' + list.length + ' nieuwe foto\'s)');
       baseline = content;
-      document.querySelectorAll('.ed-text').forEach(el => { el.dataset.edOrig = el.innerText.trim(); });
+      document.querySelectorAll('.ed-text').forEach(el => { el.dataset.edOrig = el.innerText.trim(); el.dataset.edOrigHtml = C.hasFormat(el) ? C.sanitize(el.innerHTML) : ''; });
       images.clear();
       try { localStorage.removeItem(DRAFT_KEY); } catch (e) { }
       updateCount();
@@ -267,7 +269,7 @@
       '<em id="ed-saved"></em><button type="button" id="ed-help">Uitleg</button><button type="button" id="ed-live">Bekijk live</button><button type="button" id="ed-save" class="ed-primary">🚀 Opslaan & publiceren</button><button type="button" id="ed-token">Token</button><button type="button" id="ed-reset">Reset</button>';
     document.body.appendChild(bar);
     const help = document.createElement('div'); help.className = 'ed-ui ed-help';
-    help.innerHTML = '<b>Zo werkt het</b><ol><li>Klik op een tekst en typ erover (oranje stippellijn = bewerkbaar; grijs = berekend, zoals prijzen en scores).</li><li>Klik op een foto-/videovak (groen gestreept) of sleep er een bestand in. Grote foto = foto 1; vakjes 2–9 zijn de andere productfoto\'s. De sectie "Cosa riferiscono i clienti" krijgt een achtergrondfoto met overlay.</li><li>Klik op <b>Opslaan & publiceren</b>: alles gaat naar GitHub en Vercel zet het binnen ±1 minuut live. De eerste keer vraagt de pagina je GitHub-token.</li></ol><p>Niet-gepubliceerde teksten blijven in deze browser staan; foto\'s alleen tot je de pagina herlaadt. Koopknoppen sturen hier niet door naar de checkout.</p><button type="button" id="ed-close">Sluiten</button>';
+    help.innerHTML = '<b>Zo werkt het</b><ol><li>Klik op een tekst en typ erover (oranje stippellijn = bewerkbaar; grijs = berekend, zoals prijzen en scores). Selecteer woorden en druk Cmd+B (Mac) of Ctrl+B voor vet.</li><li>Klik op een foto-/videovak (groen gestreept) of sleep er een bestand in. Grote foto = foto 1; vakjes 2–9 zijn de andere productfoto\'s. De sectie "Cosa riferiscono i clienti" krijgt een achtergrondfoto met overlay.</li><li>Klik op <b>Opslaan & publiceren</b>: alles gaat naar GitHub en Vercel zet het binnen ±1 minuut live. De eerste keer vraagt de pagina je GitHub-token.</li></ol><p>Niet-gepubliceerde teksten blijven in deze browser staan; foto\'s alleen tot je de pagina herlaadt. Koopknoppen sturen hier niet door naar de checkout.</p><button type="button" id="ed-close">Sluiten</button>';
     help.style.display = 'none'; document.body.appendChild(help);
     document.getElementById('ed-save').onclick = publish;
     document.getElementById('ed-live').onclick = () => window.open(LIVE + '?v=' + Date.now(), '_blank');

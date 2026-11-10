@@ -418,3 +418,10 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
   .split > div > *:not(h2){order:3}
 }
 @media (max-width:820px){.split.rev > .split-img{order:2}}
+/* tekstblokken: iets groter, vet = donkergroen */
+.split p,.split .x-item{font-size:15px;line-height:1.6}
+.split p b{color:#2F5A45;font-weight:700}
+@media (max-width:820px){
+  .hero .rec{font-size:12px;letter-spacing:-.1px}
+  .rec-ic{width:16px;height:16px;vertical-align:-3px;margin-left:3px}
+}

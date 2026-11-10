@@ -53,10 +53,26 @@
     if (key === '.gallery-main#1') return 0;
     const m = /^\.thumb#(\d+)$/.exec(key); return m ? parseInt(m[1], 10) - 1 : -1;
   }
+  // Opgemaakte tekst (vet/cursief): alleen b, strong, i, em en br blijven over, de rest wordt platte tekst
+  function sanitize(html) {
+    const box = document.createElement('div'); box.innerHTML = String(html || '');
+    const walk = (n) => Array.from(n.childNodes).map((c) => {
+      if (c.nodeType === 3) return c.textContent.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      if (c.nodeType !== 1) return '';
+      const tag = c.tagName.toLowerCase(), inner = walk(c);
+      if (tag === 'br') return '<br>';
+      if (['b', 'strong'].includes(tag) || (tag === 'span' && /bold|[6-9]00/.test(c.style.fontWeight))) return inner ? '<b>' + inner + '</b>' : '';
+      if (['i', 'em'].includes(tag)) return inner ? '<i>' + inner + '</i>' : '';
+      if (['div', 'p'].includes(tag)) return '<br>' + inner;
+      return inner;
+    }).join('');
+    return walk(box).replace(/^(<br>)+/, '');
+  }
+  function hasFormat(el) { return !!el.querySelector('b,strong,i,em'); }
   function applyData(c) {
     const data = window.Alpine && Alpine.$data ? Alpine.$data(document.body) : null;
     (c.texts || []).forEach(t => {
-      try { const el = document.querySelector(t.path); if (el && !el.closest('[x-text],[x-html]')) el.innerText = t.new; } catch (e) { }
+      try { const el = document.querySelector(t.path); if (el && !el.closest('[x-text],[x-html]')) { if (t.html) el.innerHTML = sanitize(t.html); else el.innerText = t.new; } } catch (e) { }
     });
     if (data && c.data) Object.entries(c.data).forEach(([a, v]) => { try { const t = a.match(/[^.\[\]]+/g); let o = data; for (let i = 0; i < t.length - 1; i++) o = o[t[i]]; if (o) o[t[t.length - 1]] = v; } catch (e) { } });
     const map = keyElements();
@@ -67,7 +83,7 @@
       const el = map.get(im.key); if (el) paint(el, src, im.type);
     });
   }
-  const api = { IMG_SEL, BG_SEL, DROP_SEL, OVERLAY, keyElements, paint, cssPath, applyData, galleryIndex, data: null, ready: null };
+  const api = { IMG_SEL, BG_SEL, DROP_SEL, OVERLAY, keyElements, paint, cssPath, applyData, galleryIndex, sanitize, hasFormat, data: null, ready: null };
   const BASE = window.JJ_ASSET_BASE || '';
   const srcOf = (src) => (/^(https?:|data:|blob:|\/)/.test(src) ? src : BASE + src);
   api.ready = fetch((window.JJ_CONTENT_URL || 'content.json') + (window.JJ_CONTENT_URL ? '?t=' + Date.now() : ''), { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null).then(c => { api.data = c || { texts: [], images: [] }; return api.data; });
