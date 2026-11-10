@@ -20,7 +20,7 @@ def bundles(box):
         out.append(f'''<div class="bundle{' sel' if sel else ''}" data-qty="{q}">{t}
         <div class="b-row">{slot('b-img ed-pic','Foto '+str(q)+'x')}<span class="b-name">{name}</span><span class="b-day">{day}</span>
           <span class="b-price"><span class="per">{price}</span> <small>/Bottle</small><s class="was">{was}</s></span></div>
-        {perks}</div>''')
+        </div>''')
     out.append('</div>')
     return '\n'.join(out)
 
