@@ -1,6 +1,12 @@
 {
- "saved": "2026-11-10T10:02:36.788Z",
+ "saved": "2026-11-10T10:21:06.237Z",
  "texts": [
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>div:nth-of-type(1)>span",
+   "original": "Recommended By Rheumatologist, M.D. | Dr. Norman B. Gaylis",
+   "new": "Recommended By Dr. Norman B. Gaylis | Rheumatologist, M.D."
+  },
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>h1",
@@ -768,6 +774,18 @@
    "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(11)>div",
    "original": "If memory problems come on suddenly, get worse quickly or start to affect your daily life, talk to your doctor. A supplement is not a replacement for medical advice.",
    "new": "Made in a USA based GMP-certified facility and tested batch by batch for purity and strength. You know exactly what you’re taking, every single capsule."
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(1)",
+   "original": "Just Jenny\nMemory Support",
+   "new": "Just Jenny\nSage Leaf"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(3)>div:nth-of-type(1)",
+   "original": "Generic Memory\nPills",
+   "new": "Generic Supplements"
   }
  ],
  "images": [
@@ -775,6 +793,60 @@
    "key": ".ed-img#1",
    "label": "ed-img",
    "src": "assets/uploads/ed-img-1.webp?v=mwaiudd6",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#18",
+   "label": "Foto: expert met het product",
+   "src": "assets/uploads/ed-img-18.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#1",
+   "label": "Foto 1",
+   "src": "assets/uploads/ed-pic-1.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#2",
+   "label": "Foto 2",
+   "src": "assets/uploads/ed-pic-2.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#3",
+   "label": "Foto 3",
+   "src": "assets/uploads/ed-pic-3.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#4",
+   "label": "Foto 4",
+   "src": "assets/uploads/ed-pic-4.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#5",
+   "label": "Foto 5",
+   "src": "assets/uploads/ed-pic-5.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#8",
+   "label": "Foto 1x",
+   "src": "assets/uploads/ed-pic-8.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#9",
+   "label": "Foto 3x",
+   "src": "assets/uploads/ed-pic-9.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#10",
+   "label": "Foto 5x",
+   "src": "assets/uploads/ed-pic-10.webp?v=mwaji53a",
    "type": "image/webp"
   }
  ]
