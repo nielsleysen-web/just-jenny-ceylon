@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T07:05:20.817Z",
+ "saved": "2026-11-10T07:11:31.208Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -244,8 +244,8 @@
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
    "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(7)>div:nth-of-type(2)>p:nth-of-type(1)",
-   "original": "Often referred to as nature's most powerful ingredient, Sage Leaf has been studied for decades for its role in stabilizing inflammatory substances in the synovial membrane; (1,000+ clinical studies).\n\n\nIt's about protecting your lung cells, clearing your airways, and restoring your energy, not accepting \"this is just what happens after smoking.\"\n\n\nClarityMD Astaxanthin works deep inside your respiratory system, helping protect alveoli from destruction, support the cilia cells that keep your airways clear, shield the mitochondria that power every breath, and calm the chronic inflammation that keeps your chest tight.\n\n\nWhile most lung supplements dissolve in your stomach and never reach your lungs, Astaxanthin's unique molecular structure allows it to penetrate directly into lung tissue, airway cells, and cell membranes where the oxidative damage from decades of smoking still lives.",
-   "new": "Often referred to as nature's most powerful ingredient, Sage Leaf has been studied for decades for its role in stabilizing inflammatory substances in the synovial membrane; (1,000+ clinical studies).\n\n\nIt's about protecting the joints in your hands, knees and hips, so you can wake up without the stiff pain and not accepting \"this is just a part of aging.\"\n\n\n\nJust Jenny Sage Leaf capsules works deep inside your synovial membrane to break down the high amount of inflammatory substances.\n\n\n\nWhile most joint supplements are dissolved by the breakdown of stomach acid before it is absorbed by our intestines and never reaches your synovial membrane.\n\nSage Leaf's is made with 1,000mg of sage leaf extract, so the ingredients are not broken down by the stomach acid and are absorbed by the cells of the small intestine, traveling directly to our synovial membrane."
+   "original": "Often referred to as nature's most powerful ingredient, Sage Leaf has been studied for decades for its role in stabilizing inflammatory substances in the synovial membrane; (1,000+ clinical studies).\n\n\nIt's about protecting the joints in your hands, knees and hips, so you can wake up without the stiff pain and not accepting \"this is just a part of aging.\"\n\n\n\nJust Jenny Sage Leaf capsules works deep inside your synovial membrane to break down the high amount of inflammatory substances.\n\n\n\nWhile most joint supplements are dissolved by the breakdown of stomach acid before it is absorbed by our intestines and never reaches your synovial membrane.\n\nSage Leaf's is made with 1,000mg of sage leaf extract, so the ingredients are not broken down by the stomach acid and are absorbed by the cells of the small intestine, traveling directly to our synovial membrane.",
+   "new": "Often referred to as nature’s most powerful ingredient, Sage Leaf has been studied for decades for its role in stabilizing inflammatory substances in the synovial membrane (1,000+ clinical studies).\n\nIt’s about protecting the joints in your hands, knees and hips, so you can wake up without the stiff pain, and not accepting “this is just a part of aging.”\n\nJust Jenny Sage Leaf capsules works deep inside your synovial membrane to break down the high amount of inflammatory substances.\n\nWhile most joint supplements are dissolved by the breakdown of stomach acid before it is absorbed by our intestines and never reaches your synovial membrane.\n\nSage Leaf’s is made with 1,000mg of sage leaf extract, so the ingredients are not broken down by the stomach acid and are absorbed by the cells of the small intestine, traveling directly to our synovial membrane."
   },
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
@@ -258,6 +258,60 @@
    "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(7)>div:nth-of-type(2)>p:nth-of-type(3)",
    "original": "Together, they give your brain simple daily support – so you can stay sharp, present and independent.",
    "new": ""
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>h2",
+   "original": "Just Jenny Helps You…",
+   "new": "Just Jenny's Sage Leaf Helps You…"
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(1)>h3",
+   "original": "Remember Names",
+   "new": "Wake Up Without Pain"
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(1)>p",
+   "original": "Greet every friend by name.",
+   "new": "Wake up without feeling 90."
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(2)>h3",
+   "original": "Stay Focused",
+   "new": "Move Again"
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(2)>p",
+   "original": "Finish your thought, every time.",
+   "new": "Walk the dog, get down the stairs and go for hikes."
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(3)>h3",
+   "original": "Find Your Things",
+   "new": "Use Your Hands"
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(3)>p",
+   "original": "Keys, glasses, phone – right where you left them.",
+   "new": "Make breakfast, get dressed, all without pain."
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(4)>h3",
+   "original": "Be Fully Present",
+   "new": "Sleep Comfortable"
+  },
+  {
+   "section": "Just Jenny's Sage Leaf Helps You…",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(4)>p",
+   "original": "Enjoy every moment with the people you love.",
+   "new": "Without waking up because of pain in your hips;"
   }
  ],
  "images": []
