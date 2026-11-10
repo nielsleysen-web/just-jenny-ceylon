@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T11:54:59.542Z",
+ "saved": "2026-11-10T12:00:08.371Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -943,6 +943,12 @@
    "key": ".ed-pic#13",
    "label": "Generiek potje",
    "src": "assets/uploads/ed-pic-13.webp?v=vs311840",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#11",
+   "label": "Productfoto met ingrediënten",
+   "src": "assets/uploads/ed-pic-11.webp?v=mwan1i8c",
    "type": "image/webp"
   }
  ]
