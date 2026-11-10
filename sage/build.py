@@ -48,11 +48,11 @@ faqs=[
 ]
 
 ICON={
- 'user':'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',
- 'target':'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8"/>',
- 'chat':'<path d="M4 5h16v11H9l-5 4z"/>',
- 'bulb':'<path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0012 3z"/>',
- 'heart':'<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/>',
+ 'user':'<path d="M3 19V7M3 15h18v4M21 15v-2.5A2.5 2.5 0 0018.5 10H11v5"/><circle cx="7" cy="12" r="2"/>',
+ 'target':'<path d="M12 3.5s5.5 6 5.5 10.2a5.5 5.5 0 01-11 0C6.5 9.5 12 3.5 12 3.5z"/><path d="M9.6 14h4.8"/>',
+ 'chat':'<path d="M13 2.5L5.5 13.5h5.5L10 21.5l8-11.5h-5.5z"/>',
+ 'bulb':'<circle cx="12" cy="12" r="2.6"/><path d="M10.2 10.2L5.5 5.5M4 7l1.5-1.5L7 4M13.8 13.8l4.7 4.7M20 17l-1.5 1.5L17 20"/>',
+ 'heart':'<path d="M12 3l7 3v5.2c0 4.4-3 8.3-7 9.8-4-1.5-7-5.4-7-9.8V6z"/><path d="M9 12l2.2 2.2L15.2 10"/>',
 }
 def benefit(k,t): return f'<li>{ic(ICON[k])}<span>{t}</span></li>'
 
@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=2">
+<link rel="stylesheet" href="/sage/sage.css?v=3">
 <!--HEAD-EXTRA-->
 </head>
 <body>

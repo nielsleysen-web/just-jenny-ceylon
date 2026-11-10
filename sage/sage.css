@@ -63,7 +63,7 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 .benefits{list-style:none;margin:14px 0 6px}
 .benefits li{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#222;padding:5px 0}
 .bi{width:20px;height:20px;border-radius:50%;background:#E2EEE7;display:flex;align-items:center;justify-content:center;flex:none}
-.bi svg{width:11px;height:11px;stroke:var(--g);fill:none;stroke-width:2}
+.bi svg{width:13px;height:13px;stroke:var(--g);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
 /* bundels */
 .batch{display:flex;align-items:center;gap:12px;margin:14px 0 12px;font-size:11px;font-weight:800;letter-spacing:.04em;color:#111}
