@@ -3,12 +3,6 @@
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
-   "path": "#top>div>div>div:nth-of-type(2)>div:nth-of-type(1)>span",
-   "original": "Recommended By Rheumatologist, M.D. | Dr. Norman B. Gaylis",
-   "new": "Recommended By Dr. Norman B. Gaylis | Rheumatologist, M.D."
-  },
-  {
-   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>h1",
    "original": "Just Jenny 1,000 mg Sage Leaf - Never wake up with stiff morning hands, achey knees, or frozen hips again",
    "new": "Just Jenny 1,000 mg Sage Leaf - Never wake up with stiff morning hands, achy knees, or frozen hips again"

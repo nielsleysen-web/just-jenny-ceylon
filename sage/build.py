@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=15">
+<link rel="stylesheet" href="/sage/sage.css?v=16">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -97,7 +97,7 @@ html=f'''<!DOCTYPE html>
     </div>
   </div>
   <div class="buy">
-    <div class="rec">{slot('ed-img','')}<span>Recommended By <b>[Expert name], M.D.</b> | [Expert title]</span></div>
+    <div class="rec">{slot('ed-img','')}<p class="rec-t">Recommended By Dr. <b>Norman B. Gaylis | Rheumatologist, M.D.</b></p></div>
     <h1 class="h-title">Just Jenny Sage Leaf Memory Support – Sharper Recall, Clearer Focus &amp; Everyday Brain Health</h1>
     <div class="stars-line"><span class="stars">★★★★★</span><span>Rated 4.7</span><span>•</span><span>11,014 Reviews</span></div>
     <p class="lead"><b>Just Jenny is made to support your memory every day</b> – so you can remember names, keep your train of thought and stop losing your keys.</p>

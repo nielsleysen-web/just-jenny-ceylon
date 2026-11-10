@@ -342,3 +342,4 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 @media (max-width:820px){.offer-grid{grid-template-columns:1fr;max-width:520px}}
 .offer .get li{align-items:flex-start}
 .offer .get .ck.sm{margin-top:2px;flex:none}
+.rec-t b{font-weight:700;color:#111}
