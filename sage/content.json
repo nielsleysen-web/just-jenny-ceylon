@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T06:36:20.566Z",
+ "saved": "2026-11-10T06:52:10.862Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -172,8 +172,8 @@
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
    "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>p:nth-of-type(1)",
-   "original": "Every day, invisible attackers called reactive oxygen species are destroying your lung cells from the inside out.\n\n\nThey come from three places you can't undo:\n\n\nYears of smoking: Every cigarette deposited thousands of toxic chemicals into your lung tissue. Those chemicals created free radicals that are still there — even years after you quit.\nPollution and environmental exposure: Secondhand smoke, workplace dust, fumes, mold, and city air have been adding to the oxidative load inside your lungs your entire life.\nNatural aging: After 40 your body's natural antioxidant defenses decline. The free radicals that your lungs used to handle on their own start winning.\nThis is the real reason so many smokers and ex-smokers still deal with chest tightness, morning cough, breathlessness, wheezing, and crushing fatigue — even after quitting, eating better, and doing everything they're supposed to.",
-   "new": "As we get older, estrogen drops, which we already know.\n\nBut estrogen is also important as an anti-inflammatory agent in the synovial membrane.\n\n\nAnd once estrogen decreases, it doesn't only disrupts the female hormones in our body.\n\nIt also stops controlling the anti-inflammatory agents in our joint lining and increases their production.\n\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night."
+   "original": "As we get older, estrogen drops, which we already know.\n\nBut estrogen is also important as an anti-inflammatory agent in the synovial membrane.\n\n\nAnd once estrogen decreases, it doesn't only disrupts the female hormones in our body.\n\nIt also stops controlling the anti-inflammatory agents in our joint lining and increases their production.\n\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night.",
+   "new": "As we get older, estrogen drops, which we already know.\nBut estrogen is also important as an anti-inflammatory substances in the synovial membrane.\n\n\nAnd once estrogen decreases, it doesn’t only disrupts the female hormones in our body.\n\n\nIt also stops controlling the anti-inflammatory substances in our joint lining and increases their production.\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night."
   },
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
@@ -197,6 +197,42 @@
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
    "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>ul>li:nth-of-type(3)",
    "original": "Natural aging: Over the years, your body's natural defences slow down. Your brain needs more daily support.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>h2",
+   "original": "Sticky Notes Don't Fix the Real Problem",
+   "new": "Nothing You've Tried Can Reach Where The Damage Lives"
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(1)",
+   "original": "Your brain works hard all day. It needs the right nutrients to keep up.",
+   "new": "Your joint lining can normally keep the anti-inflammatories in balance and control how much of them is produced.\n\nBut after years of declining estrogen in the body, the production of anti-inflammatories gets disrupted.\n\nThis makes the production go up so much that even your joint lining can’t keep it under control anymore.\n\n❌ HRT can’t fix this: It will restore your estrogen levels and it can reduce the production of anti-inflammatories. But the high amount of inflammatory substances is still stuck in your joint lining. You need to remove these first.\n\n❌ Ibuprofen or Paracetamol only work temporarily: They dull the pain for a few hours. But after those few hours, the pain just comes back. And the longer you use them, the more anti-inflammatories build up while you mask the pain.\n\n❌ Turmeric and Curcumin supplements can’t fix this: They are very poorly absorbed into the blood. They do nothing about the production of your anti-inflammatories."
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(2)",
+   "original": "But reminders and quick fixes only cover the problem. They don't feed your brain.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(3)",
+   "original": "✕Sticky notes and phone alarms: They help you remember today. They don't help your brain do the remembering.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(4)",
+   "original": "✕Extra coffee: It gives a quick buzz, then a crash. It doesn't support your memory.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(5)",
+   "original": "✕Crowded \"brain\" blends: Many pack in 20+ ingredients at tiny amounts. More isn't better – the right ones are.",
    "new": ""
   }
  ],
