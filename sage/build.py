@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=16">
+<link rel="stylesheet" href="/sage/sage.css?v=17">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -263,7 +263,7 @@ html=f'''<!DOCTYPE html>
 
 <div class="sticky"><a class="buy-btn" href="#offer">Add To Cart</a></div>
 
-<script src="/sage/sage.js?v=3"></script>
+<script src="/sage/sage.js?v=4"></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

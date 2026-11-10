@@ -10,7 +10,7 @@
 
   /* ---------- galerij: groot beeld = actieve thumbnail ---------- */
   const main = $('.g-main');
-  const thumbs = $$('.thumbs .ed-pic');
+  const thumbs = $$('.thumbs .ed-pic').filter((t) => getComputedStyle(t).display !== 'none');
   let cur = 0;
   function bgOf(el) { const m = /url\(["']?([^"')]+)["']?\)/.exec(el.style.backgroundImage || ''); return m ? m[1] : ''; }
   function show(i) {

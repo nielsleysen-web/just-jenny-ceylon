@@ -343,3 +343,6 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 .offer .get li{align-items:flex-start}
 .offer .get .ck.sm{margin-top:2px;flex:none}
 .rec-t b{font-weight:700;color:#111}
+/* galerij: 5 thumbnails (foto 6 & 7 verborgen, blijven bestaan zodat de foto-volgorde in de editor klopt) */
+.thumbs{grid-template-columns:repeat(5,1fr);gap:7px;margin-top:8px}
+.thumbs .ed-pic:nth-child(n+6){display:none}
