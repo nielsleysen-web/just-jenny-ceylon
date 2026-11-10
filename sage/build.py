@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=23">
+<link rel="stylesheet" href="/sage/sage.css?v=24">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -98,7 +98,7 @@ html=f'''<!DOCTYPE html>
     </div>
   </div>
   <div class="buy">
-    <div class="rec">{slot('ed-img','')}<p class="rec-t">Recommended By Dr. <b>Norman B. Gaylis | Rheumatologist, M.D.</b><svg class="rec-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.2s-3.4-2.2-3.4-4.6a1.9 1.9 0 013.4-1.2 1.9 1.9 0 013.4 1.2c0 2.4-3.4 4.6-3.4 4.6z"/><path d="M10.9 7.2h2.2M12 6.1v2.2"/><path d="M2.5 13.5l2.6-.9c.8-.3 1.7-.2 2.4.3l2.4 1.6h2.6c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2H9.6"/><path d="M2.5 19.5l2.7-1.6c.5-.3 1.1-.4 1.7-.2l4.3 1.3c.6.2 1.2.1 1.7-.2l6.4-4.1c.6-.4.8-1.2.4-1.8-.4-.6-1.2-.8-1.8-.4l-3.9 2.3"/></svg></p></div>
+    <div class="rec"><figure class="rec-av">{slot('ed-img','')}<svg class="rec-vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2F80ED" d="M12 1.5l2.4 1.8 3-.2.9 2.9 2.5 1.7-1 2.8 1 2.8-2.5 1.7-.9 2.9-3-.2L12 22.5l-2.4-1.8-3 .2-.9-2.9-2.5-1.7 1-2.8-1-2.8 2.5-1.7.9-2.9 3 .2z"/><path d="M8 12.2l2.7 2.7L16.2 9.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></figure><p class="rec-t">Recommended By Dr. <b>Norman B. Gaylis | Rheumatologist, M.D.</b><svg class="rec-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.2s-3.4-2.2-3.4-4.6a1.9 1.9 0 013.4-1.2 1.9 1.9 0 013.4 1.2c0 2.4-3.4 4.6-3.4 4.6z"/><path d="M10.9 7.2h2.2M12 6.1v2.2"/><path d="M2.5 13.5l2.6-.9c.8-.3 1.7-.2 2.4.3l2.4 1.6h2.6c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2H9.6"/><path d="M2.5 19.5l2.7-1.6c.5-.3 1.1-.4 1.7-.2l4.3 1.3c.6.2 1.2.1 1.7-.2l6.4-4.1c.6-.4.8-1.2.4-1.8-.4-.6-1.2-.8-1.8-.4l-3.9 2.3"/></svg></p></div>
     <h1 class="h-title">Just Jenny Sage Leaf Memory Support – Sharper Recall, Clearer Focus &amp; Everyday Brain Health</h1>
     <div class="stars-line"><span class="stars">★★★★★</span><span>Rated 4.7</span><span>•</span><span>11,014 Reviews</span></div>
     <p class="lead"><b>Made to break down the inflammatory substances in the synovial membrane,</b> the hidden root cause of waking up with stiff joints and achy muscles.</p>

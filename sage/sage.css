@@ -381,3 +381,19 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
   .hero .buy > .stars-line{order:1;margin:0 0 8px}
 }
 .lead b{color:#2F5A45;font-weight:700}
+
+/* blauw vinkje op de profielfoto */
+.rec-av{position:relative;flex:none;display:inline-flex;margin:0}
+.rec-vf{position:absolute;top:-4px;right:-5px;width:13px;height:13px}
+@media (max-width:820px){.rec-vf{width:20px;height:20px;top:-4px;right:-6px}}
+
+/* groter: benefits, sterren-regel, sale-regel (donkerrood) */
+.benefits li{font-size:15px;gap:12px;padding:6px 0}
+.bi{width:24px;height:24px}.bi svg{width:14px;height:14px}
+.stars-line{font-size:13px}.stars-line .stars{font-size:17px}
+.batch{font-size:13px;color:#8B1A1A}
+@media (max-width:820px){
+  .benefits li{font-size:15.5px}
+  .stars-line{font-size:14.5px;gap:9px}.stars-line .stars{font-size:20px}
+  .batch{font-size:14px}
+}
