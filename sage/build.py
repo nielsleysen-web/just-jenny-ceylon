@@ -193,7 +193,7 @@ html=f'''<!DOCTYPE html>
     <div class="date">[Date]</div>
     <h2>Expert Advice from [Expert name], MD</h2>
     <p class="quote">"[Your expert's own words, with their permission, go here.]"</p>
-    <a class="cta-pill buy-btn" href="#offer" style="width:280px;border-radius:999px;height:44px;font-weight:500;font-size:14px;margin:0">Try Just Jenny Today</a>
+    <a class="cta-pill buy-btn" href="#offer" style="display:flex;width:100%;box-sizing:border-box;border-radius:999px;height:48px;font-weight:800;font-size:15px;margin:0">Try Just Jenny Today</a>
     <div class="mini-trust"><span>🛡 60-Day Money-Back Guarantee</span><span>🇺🇸 Free Shipping From USA</span></div>
   </div>
   {slot('ed-img','Foto: expert met het product')}
