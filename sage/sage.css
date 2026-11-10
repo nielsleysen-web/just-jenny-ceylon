@@ -336,3 +336,7 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
   .m4-pct{font-size:28px;margin-bottom:6px}
   .m4-item p{font-size:13px}
 }
+.pay-img{display:block;width:100%;max-width:330px;height:auto;margin:14px auto 0}
+.offer-grid{grid-template-columns:420px 520px;gap:30px}
+.offer .ed-pic{aspect-ratio:1/1}
+@media (max-width:820px){.offer-grid{grid-template-columns:1fr;max-width:520px}}
