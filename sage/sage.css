@@ -397,3 +397,24 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
   .stars-line{font-size:14.5px;gap:9px}.stars-line .stars{font-size:20px}
   .batch{font-size:14px}
 }
+
+/* mobiel: koopknop gestapeld — Add To Cart boven, prijs-pil eronder */
+@media (max-width:820px){
+  .buy-btn.atc-big{flex-direction:column;height:auto;padding:12px 12px 12px;gap:8px}
+  .buy-btn.atc-big .atc-l{font-size:20px;font-weight:800}
+  .atc-pill{height:auto;padding:8px 14px;gap:10px}
+  .atc-pill s{font-size:16px}.atc-pill .now{font-size:20px}
+  .atc-g{font-size:12px;max-width:none;white-space:nowrap;gap:5px}
+  .atc-g svg{width:17px;height:17px}
+}
+@media (max-width:370px){.atc-g{font-size:10.5px}.atc-pill .now{font-size:18px}.atc-pill s{font-size:14px}}
+
+/* mobiel: in de tekstblokken staat de afbeelding direct onder de kop */
+@media (max-width:820px){
+  .split{row-gap:0}
+  .split > div:not(.brain):not(.split-img){display:contents}
+  .split h2{order:1}
+  .split > .brain,.split > .split-img{order:2;margin:0 0 18px}
+  .split > div > *:not(h2){order:3}
+}
+@media (max-width:820px){.split.rev > .split-img{order:2}}
