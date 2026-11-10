@@ -260,7 +260,7 @@ html=f'''<!DOCTYPE html>
 
 <div class="sticky"><a class="buy-btn" href="#offer">Add To Cart</a></div>
 
-<script src="/sage/sage.js?v=7"></script>
+<script src="/sage/sage.js?v=8"></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

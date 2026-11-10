@@ -1,7 +1,7 @@
 /* Just Jenny – Sage Leaf salespagina (/sage): galerij, bundelkeuze, koopknoppen, sticky knop. */
 (function () {
   // Checkout voor dit product: vul hier de link in zodra de checkout bestaat (?b=1|3|5 wordt erachter gezet)
-  const CHECKOUT_URL = '';
+  const CHECKOUT_URL = 'https://checkout.getjustjenny.com/en/sageleaf';
 
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
