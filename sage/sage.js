@@ -61,24 +61,24 @@
     });
   }
 
-  /* ---------- knop onder de FAQ → naar de bundels bovenaan ---------- */
-  const faqBtn = $('.faq-cta a');
-  if (faqBtn) faqBtn.addEventListener('click', (e) => {
+  /* ---------- elke knop (behalve Add To Cart zelf) → de offers bovenaan, volledig in beeld ---------- */
+  function toOffer() {
+    const t = $('.hero .batch') || $('.hero .bundles'), end = $('.hero .atc-wrap') || t;
+    const top = t.getBoundingClientRect().top + window.scrollY, bottom = end.getBoundingClientRect().bottom + window.scrollY;
+    const vh = window.innerHeight, h = bottom - top;
+    // past het blok in het scherm → gecentreerd; anders bovenkant bovenaan
+    const y = h + 32 <= vh ? top - (vh - h) / 2 : top - 12;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }
+  document.querySelectorAll('a[href="#offer"]').forEach((a) => a.addEventListener('click', (e) => {
     if (window.JJ_EDITOR) return;
-    e.preventDefault();
-    const t = $('.hero .batch') || $('.hero .bundles');
-    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
-  });
+    e.preventDefault(); e.stopPropagation();
+    toOffer();
+  }));
 
   /* ---------- sticky koopknop (mobiel) ---------- */
   const sticky = $('.sticky'), heroBtn = $('.hero .buy-btn');
   if (sticky && heroBtn && 'IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroBtn);
-    sticky.querySelector('a').addEventListener('click', (e) => {
-      e.preventDefault(); e.stopPropagation();
-      // naar de bundels (offers) bovenaan, met wat ruimte erboven
-      const t = $('.hero .batch') || $('.hero .bundles');
-      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
-    });
   }
 })();
