@@ -74,19 +74,14 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=1">
+<link rel="stylesheet" href="/sage/sage.css?v=2">
 <!--HEAD-EXTRA-->
 </head>
 <body>
 
 <div class="ticker"><div class="ticker-track">{ticker}</div></div>
 
-<header class="hdr"><div class="wrap-w">
-  <svg class="burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  <a class="logo" href="#">Just Jenny</a>
-  <nav class="nav"><a href="#">Home</a><a href="#">Contact</a><a href="#">Track Your Order</a><a href="#">Manage Subscription</a></nav>
-  <div class="hdr-ic"><svg class="hide-m" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><svg class="hide-m" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></div>
-</div></header>
+<header class="hdr"><div class="wrap-w"><a class="logo" href="#">Just Jenny</a></div></header>
 
 <section class="hero" id="top"><div class="wrap-w"><div class="hero-grid">
   <div class="gallery">
