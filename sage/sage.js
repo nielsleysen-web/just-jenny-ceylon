@@ -51,6 +51,15 @@
     setTimeout(update, 1500);
   });
 
+  /* ---------- FAQ: in de editor alles open zodat vragen én antwoorden te bewerken zijn ---------- */
+  if (window.JJ_EDITOR) {
+    $$('.faq details').forEach((d) => { d.open = true; });
+    $$('.faq summary').forEach((sm) => {
+      sm.addEventListener('click', (e) => e.preventDefault());
+      sm.addEventListener('keyup', (e) => { if (e.key === ' ' || e.key === 'Enter') e.preventDefault(); });
+    });
+  }
+
   /* ---------- sticky koopknop (mobiel) ---------- */
   const sticky = $('.sticky'), heroBtn = $('.hero .buy-btn');
   if (sticky && heroBtn && 'IntersectionObserver' in window) {

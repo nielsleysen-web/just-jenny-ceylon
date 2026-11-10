@@ -248,7 +248,7 @@ html=f'''<!DOCTYPE html>
 
 <section class="faq"><div class="wrap">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">{''.join(f'<details><summary>{q}</summary><div class="a">{a}</div></details>' for q,a in faqs)}</div>
+  <div class="faq-list">{''.join(f'<details><summary><span class="q">{q}</span></summary><div class="a">{a}</div></details>' for q,a in faqs)}</div>
   <div class="faq-cta"><a class="btn-wide buy-btn" href="#offer" style="width:400px;border-radius:999px;height:42px;font-size:13px;font-weight:800;margin:0 auto">BUY NOW &amp; SAVE</a><div class="mg">🛡 Feel Sharper Or It's Free!</div></div>
 </div></section>
 
@@ -263,7 +263,7 @@ html=f'''<!DOCTYPE html>
 
 <div class="sticky"><a class="buy-btn" href="#offer">Add To Cart</a></div>
 
-<script src="/sage/sage.js?v=2"></script>
+<script src="/sage/sage.js?v=3"></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
