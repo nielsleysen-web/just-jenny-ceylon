@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=32">
+<link rel="stylesheet" href="/sage/sage.css?v=35">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -164,9 +164,9 @@ html=f'''<!DOCTYPE html>
   <h2>Check These 6 Things First.</h2>
   <p class="sub">A memory supplement only helps if it's simple, gentle and made with care. Here's what we built Just Jenny to pass.</p>
   <div class="six-grid">
-    <div class="six-col">{''.join(f'<div class="thing"><span class="n">{i+1}</span><b>{a}</b>{b}</div>' for i,(a,b) in enumerate(left))}</div>
+    <div class="six-col">{''.join(f'<div class="thing"><b>{a}</b>{b}</div>' for i,(a,b) in enumerate(left))}</div>
     <div class="six-mid">{slot('ed-pic','Productfoto met ingrediënten')}</div>
-    <div class="six-col">{''.join(f'<div class="thing"><span class="n">{i+4}</span><b>{a}</b>{b}</div>' for i,(a,b) in enumerate(right))}</div>
+    <div class="six-col">{''.join(f'<div class="thing"><b>{a}</b>{b}</div>' for i,(a,b) in enumerate(right))}</div>
   </div>
   <div class="badges-row"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Plant-based</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Hormone-free</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Made in the USA · GMP</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>Non-GMO</span></div>
 </div></section>

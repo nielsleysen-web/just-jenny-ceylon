@@ -302,7 +302,7 @@
    "section": "Just Jenny's Sage Leaf Helps You…",
    "path": "section:nth-of-type(3)>div>div>div:nth-of-type(4)>p",
    "original": "Enjoy every moment with the people you love.",
-   "new": "Without waking up because of pain in your hips;"
+   "new": "Without waking up because of pain in your hips."
   },
   {
    "section": "Check These 6 Things First.",
@@ -314,37 +314,43 @@
    "section": "Check These 6 Things First.",
    "path": "section:nth-of-type(4)>div>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)",
    "original": "1\nSage leaf at the core:\nA herb used for memory for centuries, and now studied in small human trials.",
-   "new": "1\nThe full 1,000mg clinical dose\nMost brands sell 300 to 600 mg per capsule to save money. Just Jenny delivers the 1,000mg used in the studies, the amount shown to reach the synovial membrane."
+   "new": "The full 1,000mg clinical dose\nMost brands sell 300 to 600 mg per capsule to save money. Just Jenny delivers the 1,000mg used in the studies, the amount shown to reach the synovial membrane.",
+   "html": "<b>The full 1,000mg clinical dose</b>Most brands sell 300 to 600 mg per capsule to save money. Just Jenny delivers the 1,000mg used in the studies, the amount shown to reach the synovial membrane."
   },
   {
    "section": "Check These 6 Things First.",
    "path": "section:nth-of-type(4)>div>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)",
    "original": "2\nVitamin B12 for your brain:\nB12 supports normal brain and nerve function. It matters more after 50.",
-   "new": "2\nNatural, Not Synthetic\n95% of the sage leaf on the market is made with filler oil. Ours is extracted from mediterranean fields in Dalmatia, Croatia, the form used in medical research."
+   "new": "Natural, Not Synthetic\n95% of the sage leaf on the market is made with filler oil. Ours is extracted from mediterranean fields in Dalmatia, Croatia, the form used in medical research.",
+   "html": "<b>Natural, Not Synthetic</b>95% of the sage leaf on the market is made with filler oil. Ours is extracted from mediterranean fields in Dalmatia, Croatia, the form used in medical research."
   },
   {
    "section": "Check These 6 Things First.",
    "path": "section:nth-of-type(4)>div>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(3)",
    "original": "3\nZinc for clear thinking:\nZinc supports normal cognitive function – your ability to think and learn.",
-   "new": "3\nPure Mediterranean Fields\nWild-harvested on the sun-scorched limestone hills of Dalmatia, where sage grows richest in its protective compounds."
+   "new": "Pure Mediterranean Fields\nWild-harvested on the sun-scorched limestone hills of Dalmatia, where sage grows richest in its protective compounds.",
+   "html": "<b>Pure Mediterranean Fields</b>Wild-harvested on the sun-scorched limestone hills of Dalmatia, where sage grows richest in its protective compounds."
   },
   {
    "section": "Check These 6 Things First.",
    "path": "section:nth-of-type(4)>div>div:nth-of-type(2)>div:nth-of-type(3)>div:nth-of-type(1)",
    "original": "4\nMagnesium for less tiredness:\nMagnesium helps reduce tiredness, so you feel clearer through the day.",
-   "new": "4\nExtracted Capsules\nNot dried kitchen sage or tea. A concentrated extract that captures both the water-soluble and fat-soluble compounds."
+   "new": "Extracted Capsules\nNot dried kitchen sage or tea. A concentrated extract that captures both the water-soluble and fat-soluble compounds.",
+   "html": "<b>Extracted Capsules</b>Not dried kitchen sage or tea. A concentrated extract that captures both the water-soluble and fat-soluble compounds."
   },
   {
    "section": "Check These 6 Things First.",
    "path": "section:nth-of-type(4)>div>div:nth-of-type(2)>div:nth-of-type(3)>div:nth-of-type(2)",
    "original": "5\nThird-party tested:\nEvery batch is checked by an independent lab.",
-   "new": "5\nThird-party tested\nEvery batch is tested for purity and potency by an independent lab."
+   "new": "Third-party tested\nEvery batch is tested for purity and potency by an independent lab.",
+   "html": "<b>Third-party tested</b>Every batch is tested for purity and potency by an independent lab."
   },
   {
    "section": "Check These 6 Things First.",
    "path": "section:nth-of-type(4)>div>div:nth-of-type(2)>div:nth-of-type(3)>div:nth-of-type(3)",
    "original": "6\nGentle and hormone-free:\nPlant-based, with no hormones and no harsh stimulants. Just one easy routine.",
-   "new": "6\n5x more powerful than Kurkuma\nAnd unlike Kurkuma, it doesn't flush out in hours. It embeds in reaches the synovial membrane where the damage is."
+   "new": "5x more powerful than Kurkuma\nAnd unlike Kurkuma, it doesn't flush out in hours. It embeds in reaches the synovial membrane where the damage is.",
+   "html": "<b>5x more powerful than Kurkuma</b>And unlike Kurkuma, it doesn't flush out in hours. It embeds in reaches the synovial membrane where the damage is."
   },
   {
    "section": "Check These 6 Things First.",
