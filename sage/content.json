@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T07:48:10.919Z",
+ "saved": "2026-11-10T07:53:21.521Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -480,6 +480,96 @@
    "path": "article>div>p:nth-of-type(2)",
    "original": "*Based on a [X]-week [independent customer panel] of [X] Just Jenny customers",
    "new": "*Based on a four-week independent customer panel of 12.138 Just Jenny customers"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>h2",
+   "original": "Why Just Jenny Beats Generic Memory Pills",
+   "new": "Why Just Jenny Sage Leaf CRUSHES Generic Supplements"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(2)",
+   "original": "Sage Leaf for Memory",
+   "new": "Restore cartilage"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(3)",
+   "original": "Vitamin B12 for Brain Function",
+   "new": "Clinical 1,000mg"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(4)",
+   "original": "Zinc for Clear Thinking",
+   "new": "Reaches the synovial membrane"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(5)",
+   "original": "Magnesium for Less Tiredness",
+   "new": "Pure Natural Sage Leaf"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(6)",
+   "original": "Simple 4-Ingredient Formula",
+   "new": "Easy to Take Capsules"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(7)",
+   "original": "Hormone-Free & Plant-Based",
+   "new": "Rheumatologist Recommended"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(9)",
+   "original": "60-Day Money-Back Guarantee",
+   "new": "90 Day Money Back Guarantee"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(11)",
+   "original": "Harsh Stimulants",
+   "new": "Heavily Underdosed"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(12)",
+   "original": "Crowded 20+ Ingredient Blends",
+   "new": "Often Expired or Poorly Sourced"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>a",
+   "original": "BUY NOW & SAVE",
+   "new": "BUY NOW & SAVE UP TO 60%"
+  },
+  {
+   "section": "Why Just Jenny Sage Leaf CRUSHES Generic Supplemen",
+   "path": "section:nth-of-type(8)>div>div:nth-of-type(4)",
+   "original": "🛡 60-Day Money-Back Guarantee",
+   "new": "🛡 90-Day Money-Back Guarantee"
+  },
+  {
+   "section": "#offer Special Offer On Now!",
+   "path": "#offer>div>div>div:nth-of-type(2)>p:nth-of-type(1)",
+   "original": "Try Just Jenny Memory Support Today",
+   "new": "Try Just Jenny Sage Leaf Now"
+  },
+  {
+   "section": "#offer Special Offer On Now!",
+   "path": "#offer>div>div>div:nth-of-type(2)>div:nth-of-type(1)",
+   "original": "TODAY ONLY: $18.00",
+   "new": "TODAY ONLY: $29.95"
+  },
+  {
+   "section": "#offer Special Offer On Now!",
+   "path": "#offer>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(1)",
+   "original": "CURRENT BATCH — LIMITED SUPPLY",
+   "new": "LIMITED BLACK FRIDAY SALE ⏰"
   }
  ],
  "images": []
