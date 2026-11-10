@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T10:59:49.921Z",
+ "saved": "2026-11-10T11:42:18.878Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -871,6 +871,36 @@
    "key": ".ed-img#2",
    "label": "Afbeelding: gezond brein vs. moe brein",
    "src": "assets/uploads/ed-img-2.webp?v=mwakvyd7",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#4",
+   "label": "Foto: hand met het product",
+   "src": "assets/uploads/ed-img-4.webp?v=mwamekz9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#14",
+   "label": "Productfoto aanbieding",
+   "src": "assets/uploads/ed-pic-14.webp?v=mwamekz9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#15",
+   "label": "Foto 1x",
+   "src": "assets/uploads/ed-pic-15.webp?v=mwamekz9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#16",
+   "label": "Foto 3x",
+   "src": "assets/uploads/ed-pic-16.webp?v=mwamekz9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#17",
+   "label": "Foto 5x",
+   "src": "assets/uploads/ed-pic-17.webp?v=mwamekz9",
    "type": "image/webp"
   }
  ]
