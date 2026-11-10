@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T11:43:30.148Z",
+ "saved": "2026-11-10T11:49:21.259Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -870,7 +870,7 @@
   {
    "key": ".ed-img#2",
    "label": "Afbeelding: gezond brein vs. moe brein",
-   "src": "assets/uploads/ed-img-2.webp?v=mwakvyd7",
+   "src": "assets/uploads/ed-img-2.webp?v=mwamnmt9",
    "type": "image/webp"
   },
   {
@@ -902,6 +902,30 @@
    "label": "Foto 5x",
    "src": "assets/uploads/ed-pic-17.webp?v=mwamekz9",
    "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#6",
+   "label": "Foto: Stay Focused",
+   "src": "assets/uploads/ed-img-6.webp?v=mwamnmt9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#5",
+   "label": "Foto: Remember Names",
+   "src": "assets/uploads/ed-img-5.webp?v=mwamnmt9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#7",
+   "label": "Foto: Find Your Things",
+   "src": "assets/uploads/ed-img-7.webp?v=mwamnmt9",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#3",
+   "label": "Foto: oudere man die iets vergeten is",
+   "src": "assets/uploads/ed-img-3.mp4?v=mwamnmt9",
+   "type": "video/mp4"
   }
  ]
 }
