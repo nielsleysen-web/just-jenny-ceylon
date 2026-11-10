@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T11:49:21.259Z",
+ "saved": "2026-11-10T11:54:59.542Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -926,6 +926,12 @@
    "label": "Foto: oudere man die iets vergeten is",
    "src": "assets/uploads/ed-img-3.mp4?v=mwamnmt9",
    "type": "video/mp4"
+  },
+  {
+   "key": ".ed-img#8",
+   "label": "Foto: Be Fully Present",
+   "src": "assets/uploads/ed-img-8.webp?v=mwamuw35",
+   "type": "image/webp"
   }
  ]
 }
