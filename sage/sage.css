@@ -284,16 +284,15 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 .rv-av .slot-label{font-size:8px;padding:0}
 .g-rv-name{font-size:14.5px;font-weight:700;color:var(--g)}
 
-/* koopknop met prijs-pil (hero) */
-.buy-btn.atc-big{height:auto;min-height:62px;padding:9px 12px;gap:10px;font-size:18px;font-weight:800;border-radius:10px;white-space:nowrap}
-.atc-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.17);border-radius:999px;padding:7px 12px}
-.atc-pill s{font-size:14px;font-weight:600;opacity:.5;color:#fff}
-.atc-pill .now{font-size:18px;font-weight:800}
-.atc-g{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:500;white-space:normal;max-width:104px;line-height:1.2;text-align:left}
-.atc-g svg{width:17px;height:17px;flex:none;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* koopknop met prijs-pil (hero) — zoals voorbeeld */
+.buy-btn.atc-big{height:auto;min-height:64px;padding:10px 14px;gap:18px;font-size:18px;font-weight:600;border-radius:8px;white-space:nowrap;background:#2B5A49}
+.buy-btn.atc-big:hover{background:#244C3D}
+.atc-pill{display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 18px}
+.atc-pill s{font-size:16px;font-weight:500;opacity:.5;color:#fff}
+.atc-pill .now{font-size:18px;font-weight:700}
+.atc-arrow{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .b-day:empty,.b-price small:empty{display:none}
 @media (max-width:380px){
-  .buy-btn.atc-big{font-size:15px;gap:6px;padding:9px 8px}
-  .atc-pill{gap:5px;padding:6px 8px}.atc-pill .now{font-size:15px}.atc-pill s{font-size:12px}
-  .atc-g{font-size:9px;max-width:80px}
+  .buy-btn.atc-big{font-size:16px;gap:10px}
+  .atc-pill{gap:8px;padding:7px 12px}.atc-pill .now{font-size:16px}.atc-pill s{font-size:13px}
 }
