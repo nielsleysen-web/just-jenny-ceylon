@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T07:38:52.744Z",
+ "saved": "2026-11-10T07:43:42.852Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -414,6 +414,36 @@
    "path": "section:nth-of-type(5)>div>div>div:nth-of-type(2)>p",
    "original": "*Based on a [X]-week customer survey of [X] Just Jenny users. Individual results vary.",
    "new": "*Based on a four-week independent customer panel"
+  },
+  {
+   "section": "Expert Advice from Dr. Norman B. Gaylis, Rheumatol",
+   "path": "section:nth-of-type(6)>div>div:nth-of-type(1)>div:nth-of-type(1)",
+   "original": "[Date]",
+   "new": "11/10/2026"
+  },
+  {
+   "section": "Expert Advice from Dr. Norman B. Gaylis, Rheumatol",
+   "path": "section:nth-of-type(6)>div>div:nth-of-type(1)>h2",
+   "original": "Expert Advice from [Expert name], MD",
+   "new": "Expert Advice from Dr. Norman B. Gaylis, Rheumatologist, M.D."
+  },
+  {
+   "section": "Expert Advice from Dr. Norman B. Gaylis, Rheumatol",
+   "path": "section:nth-of-type(6)>div>div:nth-of-type(1)>p",
+   "original": "\"[Your expert's own words, with their permission, go here.]\"",
+   "new": "\"The symptoms we brush off - waking up with stiff joints, pain when walking down the stairs, waking up from the pain in your hips or shoulders... they don’t come out of nowhere. They start with increased production of inflammatory substances in the joint lining, quietly building up. Sage Leaf is the most powerful natural defense I’ve come across. It reaches the joint lining throughout your entire body. I recommend Just Jenny to anyone who wants to feel flexible, mobile, and like themselves again\""
+  },
+  {
+   "section": "Expert Advice from Dr. Norman B. Gaylis, Rheumatol",
+   "path": "section:nth-of-type(6)>div>div:nth-of-type(1)>a",
+   "original": "Try Just Jenny Today",
+   "new": "Try Just Jenny Sage Leaf"
+  },
+  {
+   "section": "Expert Advice from Dr. Norman B. Gaylis, Rheumatol",
+   "path": "section:nth-of-type(6)>div>div:nth-of-type(1)>div:nth-of-type(2)>span:nth-of-type(1)",
+   "original": "🛡 60-Day Money-Back Guarantee",
+   "new": "🛡 90-Day Money-Back Guarantee"
   }
  ],
  "images": []
