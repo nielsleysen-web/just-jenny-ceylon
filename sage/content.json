@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T10:21:06.237Z",
+ "saved": "2026-11-10T10:23:30.295Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -160,8 +160,8 @@
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>div:nth-of-type(3)>div:nth-of-type(4)>span:nth-of-type(1)",
-   "original": "New Bottle Ship Every 30 Days",
-   "new": "New Bottle Ship Every 28 Days"
+   "original": "New Bottle Ship Every 28 Days",
+   "new": "Ship Every 28 Days"
   },
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
@@ -847,6 +847,12 @@
    "key": ".ed-pic#10",
    "label": "Foto 5x",
    "src": "assets/uploads/ed-pic-10.webp?v=mwaji53a",
+   "type": "image/webp"
+  },
+  {
+   "key": ".rv-av#1",
+   "label": "Foto",
+   "src": "assets/uploads/rv-av-1.webp?v=mwajl8j0",
    "type": "image/webp"
   }
  ]
