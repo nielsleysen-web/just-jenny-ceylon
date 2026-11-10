@@ -61,6 +61,19 @@
     });
   }
 
+  /* ---------- "Order today for delivery by …" boven elke Add To Cart (altijd vandaag + 5 dagen) ---------- */
+  if (!window.JJ_EDITOR) {
+    const d = new Date(Date.now() + 5 * 864e5);
+    const txt = d.toLocaleDateString('en-US', { weekday: 'short' }) + ', ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    document.querySelectorAll('.atc-wrap').forEach((w) => {
+      if (w.previousElementSibling && w.previousElementSibling.classList.contains('dlv')) return;
+      const el = document.createElement('aside'); // eigen tag: verschuift geen opgeslagen tekstpaden
+      el.className = 'dlv';
+      el.innerHTML = '<i></i>Order today for delivery by <b>' + txt + '</b>';
+      w.parentNode.insertBefore(el, w);
+    });
+  }
+
   /* ---------- elke knop (behalve Add To Cart zelf) → de offers bovenaan, volledig in beeld ---------- */
   function toOffer() {
     const t = $('.hero .batch') || $('.hero .bundles'), end = $('.hero .atc-wrap') || t;
