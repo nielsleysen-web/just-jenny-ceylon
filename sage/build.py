@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=11">
+<link rel="stylesheet" href="/sage/sage.css?v=12">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -201,6 +201,13 @@ html=f'''<!DOCTYPE html>
   </div>
   {slot('ed-img','Foto: expert met het product')}
 </div></section>
+
+<article class="m4"><div class="wrap">
+  <h2>We're On A Mission To Help 10,000,000 People Finally Feel Like Themselves Again</h2>
+  <p class="m4-sub">Here's where we're at right now:</p>
+  <div class="m4-grid"><div class="m4-item"><div class="m4-pct">[XX]%</div><p>said they get out of bed more easily in the morning</p></div><div class="m4-item"><div class="m4-pct">[XX]%</div><p>reported less stiffness in their hands and knees</p></div><div class="m4-item"><div class="m4-pct">[XX]%</div><p>reported less daily joint pain within the first [X] weeks*</p></div><div class="m4-item"><div class="m4-pct">[XX]%</div><p>said they move more freely and feel more active*</p></div></div>
+  <p class="m4-note">*Based on a [X]-week [independent customer panel] of [X] Just Jenny customers</p>
+</div></article>
 
 <section class="promise"><div class="wrap">
   <h2>Expect More From Your Supplements</h2>
