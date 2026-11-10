@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=3">
+<link rel="stylesheet" href="/sage/sage.css?v=4">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -90,6 +90,11 @@ html=f'''<!DOCTYPE html>
       <button class="g-arrow g-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
     <div class="thumbs">{''.join(slot('ed-pic'+(' active' if i==1 else ''),'Foto '+str(i)) for i in range(1,8))}</div>
+    <div class="g-review">
+      <div class="stars">★★★★★</div>
+      <p class="g-rv-text">[Review text from a real customer – what they struggled with, what changed after using it.]</p>
+      <div class="g-rv-by"><div class="rv-av"><span class="slot-label">Foto</span></div><span class="g-rv-name">[First name] [Initial]., [Country]</span></div>
+    </div>
   </div>
   <div class="buy">
     <div class="rec">{slot('ed-img','')}<span>Recommended By <b>[Expert name], M.D.</b> | [Expert title]</span></div>
@@ -256,8 +261,8 @@ html=f'''<!DOCTYPE html>
 </body>
 </html>
 '''
-LIVE_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_IMG_SEL=".ed-img,.ed-pic";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";</script>\n<script defer src="/apply-content.js?v=sg1"></script>'
-ED_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_NO_APPLY=true;window.JJ_IMG_SEL=".ed-img,.ed-pic";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";window.JJ_REPO_PREFIX="sage/";window.JJ_LIVE_URL=location.origin+"/sage";window.JJ_READY_SEL=".bundle";window.JJ_EDITOR=true;</script>\n<script defer src="/apply-content.js?v=sg1"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg1"></script>'
+LIVE_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.rv-av";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";</script>\n<script defer src="/apply-content.js?v=sg1"></script>'
+ED_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_NO_APPLY=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.rv-av";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";window.JJ_REPO_PREFIX="sage/";window.JJ_LIVE_URL=location.origin+"/sage";window.JJ_READY_SEL=".bundle";window.JJ_EDITOR=true;</script>\n<script defer src="/apply-content.js?v=sg1"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg1"></script>'
 import os
 import os.path; base=os.path.dirname(os.path.abspath(__file__))+'/'
 open(base+'index.html','w').write(html.replace('<!--HEAD-EXTRA-->',LIVE_HEAD).replace('<!--BODY-EXTRA-->',''))
