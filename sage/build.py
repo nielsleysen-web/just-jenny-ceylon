@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=14">
+<link rel="stylesheet" href="/sage/sage.css?v=15">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -236,7 +236,7 @@ html=f'''<!DOCTYPE html>
       <p class="t1">Try Just Jenny Memory Support Today</p>
       <p class="t1"><b>Risk-Free</b> with our First Time Buyer's Offer!</p>
       <h4>Act Now and You'll Get:</h4>
-      <ul class="get"><li><span class="ck sm">{CK}</span>Up to 70% OFF Your First Order</li><li><span class="ck sm">{CK}</span>FREE Shipping</li></ul>
+      <ul class="get"><li><span class="ck sm">{CK}</span>Up to 70% OFF Your First Order</li><li><span class="ck sm">{CK}</span>FREE Shipping</li><li><span class="ck sm">{CK}</span><span>Bonus: "The Complete Joint Support Blueprint" ($100+ Value)</span></li><li><span class="ck sm">{CK}</span><span>10 Daily Habits To Protect Your Joints, and Stay Flexible ($30 Value)</span></li><li><span class="ck sm">{CK}</span><span>Bonus: TOP 10 Natural Ways To Fight Joint Stiffness ($20+ Value)</span></li></ul>
       <div class="today">TODAY ONLY: $18.00</div>
       <div class="buybox">{buybox('<span class="atc-l">Add To Cart</span><span class="atc-pill" x-text="calc"><s></s><span class="now"></span><span class="atc-g"><svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 01-12.9 5.2M4.5 12a7.5 7.5 0 0112.9-5.2"/><path d="M17.6 3.6v3.2h-3.2M6.4 20.4v-3.2h3.2"/><path d="M13.8 9.8c-.4-.6-1-.9-1.8-.9-1.1 0-1.8.6-1.8 1.4 0 1.9 3.6.9 3.6 2.8 0 .8-.7 1.4-1.8 1.4-.8 0-1.5-.4-1.8-.9M12 8v.9M12 15v.9"/></svg>90-Day Money Back Guarantee</span></span>')}</div>
       <img class="pay-img" src="/sage/assets/payments.png?v=1" alt="PayPal, Visa, Mastercard, American Express, Discover, Google Pay, Apple Pay" width="900" height="70">
