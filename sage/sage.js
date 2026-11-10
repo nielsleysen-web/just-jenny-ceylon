@@ -61,6 +61,15 @@
     });
   }
 
+  /* ---------- knop onder de FAQ → naar de bundels bovenaan ---------- */
+  const faqBtn = $('.faq-cta a');
+  if (faqBtn) faqBtn.addEventListener('click', (e) => {
+    if (window.JJ_EDITOR) return;
+    e.preventDefault();
+    const t = $('.hero .batch') || $('.hero .bundles');
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
+  });
+
   /* ---------- sticky koopknop (mobiel) ---------- */
   const sticky = $('.sticky'), heroBtn = $('.hero .buy-btn');
   if (sticky && heroBtn && 'IntersectionObserver' in window) {

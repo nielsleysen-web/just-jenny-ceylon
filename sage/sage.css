@@ -476,3 +476,18 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 @media (max-width:820px){.people .sub{font-size:16px}}
 @media (max-width:440px){.badges-row{font-size:13.5px;gap:12px 14px}.badges-row span{gap:6px}.badges-row span:before{width:17px;height:17px}}
 @media (max-width:370px){.badges-row{font-size:12.5px;gap:10px 10px}}
+
+/* expert: titel en citaat groter */
+.expert h2{font-size:27px}
+.quote{font-size:15px;line-height:1.6}
+@media (max-width:820px){.expert h2{font-size:24px}.quote{font-size:15.5px}}
+
+/* onderste aanbod: alle tekst groter */
+.offer h2{font-size:30px}
+.offer .t1{font-size:16px}
+.offer h4{font-size:17px}
+.offer .get li{font-size:16px;margin-bottom:10px}
+.offer .ck.sm{width:18px;height:18px}.offer .ck.sm svg{width:10px;height:10px}
+.today{font-size:25px}
+.secure{font-size:13.5px}.note{font-size:13px}
+@media (max-width:820px){.offer h2{font-size:28px}.offer .get li{font-size:15.5px}}
