@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T10:23:30.295Z",
+ "saved": "2026-11-10T10:59:49.921Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -786,6 +786,18 @@
    "path": "section:nth-of-type(8)>div>div:nth-of-type(3)>div:nth-of-type(3)>div:nth-of-type(1)",
    "original": "Generic Memory\nPills",
    "new": "Generic Supplements"
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>span:nth-of-type(1)",
+   "original": "SUPPORTED BRAIN",
+   "new": "Normal production of anti-inflammatory agents"
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>span:nth-of-type(2)",
+   "original": "TIRED BRAIN",
+   "new": "Increased production of anti-inflammatory agents"
   }
  ],
  "images": [
@@ -853,6 +865,12 @@
    "key": ".rv-av#1",
    "label": "Foto",
    "src": "assets/uploads/rv-av-1.webp?v=mwajl8j0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#2",
+   "label": "Afbeelding: gezond brein vs. moe brein",
+   "src": "assets/uploads/ed-img-2.webp?v=mwakvyd7",
    "type": "image/webp"
   }
  ]
