@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T05:53:07.595Z",
+ "saved": "2026-11-10T05:58:03.332Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -22,14 +22,32 @@
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>p:nth-of-type(2)",
-   "original": "Just one daily softgel delivers cellular lung protection, naturally supporting your airways and respiratory energy from the inside out.",
-   "new": "Just one daily capsule delivers the right active substances to naturally make the synovial membrane around your cartilage supple"
+   "original": "One daily capsule delivers the right active substances to naturally make the synovial membrane around your cartilage supple",
+   "new": "One daily capsule delivers the right active substances to restore the synovial membrane around your cartilage"
   },
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(1)>span:nth-of-type(2)",
-   "original": "Remember Names, Dates And Everyday Details",
-   "new": "Wake up wit Names, Dates And Everyday Details"
+   "original": "Wake up wit Names, Dates And Everyday Details",
+   "new": "Get Out Of Bed Without Struggle"
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(2)>span:nth-of-type(2)",
+   "original": "Stay Focused And Keep Your Train Of Thought",
+   "new": "Removes The Accumulated inflammatory Substances"
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(3)>span:nth-of-type(2)",
+   "original": "Find Your Words More Easily",
+   "new": "Fight The Stiff, Achy And Tight Feeling"
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(4)>span:nth-of-type(2)",
+   "original": "Feel Sharp, Clear And Confident",
+   "new": "Maintain Flexibility In Your Joints"
   }
  ],
  "images": []
