@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T06:26:10.718Z",
+ "saved": "2026-11-10T06:28:35.933Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -162,6 +162,42 @@
    "path": "#top>div>div>div:nth-of-type(2)>div:nth-of-type(3)>div:nth-of-type(4)>span:nth-of-type(1)",
    "original": "New Bottle Ship Every 30 Days",
    "new": "New Bottle Ship Every 28 Days"
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>h2",
+   "original": "Why You Walk Into a Room… and Forget Why",
+   "new": "What's Really Behind Your Stiff Morning Hands, Achy Knees and Creaky Hips"
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>p:nth-of-type(1)",
+   "original": "You know the feeling. A name on the tip of your tongue. Keys gone again. A thought that slips away mid-sentence.",
+   "new": "Every day, invisible attackers called reactive oxygen species are destroying your lung cells from the inside out.\n\n\nThey come from three places you can't undo:\n\n\nYears of smoking: Every cigarette deposited thousands of toxic chemicals into your lung tissue. Those chemicals created free radicals that are still there — even years after you quit.\nPollution and environmental exposure: Secondhand smoke, workplace dust, fumes, mold, and city air have been adding to the oxidative load inside your lungs your entire life.\nNatural aging: After 40 your body's natural antioxidant defenses decline. The free radicals that your lungs used to handle on their own start winning.\nThis is the real reason so many smokers and ex-smokers still deal with chest tightness, morning cough, breathlessness, wheezing, and crushing fatigue — even after quitting, eating better, and doing everything they're supposed to."
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>p:nth-of-type(2)",
+   "original": "For most of us, it comes down to three everyday things:",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>ul>li:nth-of-type(1)",
+   "original": "Low vitamin B12: After 50, your body absorbs less B12 from food. B12 helps your nerves and brain work normally.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>ul>li:nth-of-type(2)",
+   "original": "Stress and poor sleep: Busy days and restless nights leave your brain tired. A tired brain forgets more.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>ul>li:nth-of-type(3)",
+   "original": "Natural aging: Over the years, your body's natural defences slow down. Your brain needs more daily support.",
+   "new": ""
   }
  ],
  "images": []
