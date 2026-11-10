@@ -1,11 +1,11 @@
 {
- "saved": "2026-11-10T06:52:10.862Z",
+ "saved": "2026-11-10T06:55:27.047Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>div:nth-of-type(1)>span",
-   "original": "Recommended By [Expert name], M.D. | [Expert title]",
-   "new": "Recommended By Rheumatologist, M.D. | Dr. Norman B. Gaylis"
+   "original": "Recommended By Rheumatologist, M.D. | Dr. Norman B. Gaylis",
+   "new": "Recommended By Dr. Norman B. Gaylis | Rheumatologist, M.D."
   },
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -148,8 +148,8 @@
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(1)>div:nth-of-type(3)>p",
-   "original": "Smoked for 23 years. Quit 6 years ago but the cough never left. Winded on the stairs. Chest felt like concrete every morning. My wife was scared listening to me wheeze at night. Since starting with these sage leaf capsules, I stopped waking up feeling I was 90, and got off the stairs without feeling pain with every step. My dog is over the moon as we well I can walk her daily again! My husband says the house is quiet at night for the first time in years. This changed everything.",
-   "new": "I used to go hiking every summer, but for the last 4 years my joint pain made it almost impossible. I was afraid I’d need cortisone shots. Since starting these sage leaf capsules, I no longer wake up feeling 90, and I can walk down the stairs without pain. My dog is over the moon because I can walk her every day again! My husband says he hasn’t seen me get out of bed this quickly in years."
+   "original": "I used to go hiking every summer, but for the last 4 years my joint pain made it almost impossible. I was afraid I’d need cortisone shots. Since starting these sage leaf capsules, I no longer wake up feeling 90, and I can walk down the stairs without pain. My dog is over the moon because I can walk her every day again! My husband says he hasn’t seen me get out of bed this quickly in years.",
+   "new": "I used to go hiking every summer, but for the last 4 years my joint pain made me cancel every trip. I was afraid I’d need cortisone shots. Since starting these sage leaf capsules, I no longer wake up feeling 90, and I can walk down the stairs without pain. My dog is over the moon because I can walk her every day again! My husband says he hasn’t seen me get out of bed this quickly in years."
   },
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -172,8 +172,8 @@
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
    "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-of-type(1)>p:nth-of-type(1)",
-   "original": "As we get older, estrogen drops, which we already know.\n\nBut estrogen is also important as an anti-inflammatory agent in the synovial membrane.\n\n\nAnd once estrogen decreases, it doesn't only disrupts the female hormones in our body.\n\nIt also stops controlling the anti-inflammatory agents in our joint lining and increases their production.\n\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night.",
-   "new": "As we get older, estrogen drops, which we already know.\nBut estrogen is also important as an anti-inflammatory substances in the synovial membrane.\n\n\nAnd once estrogen decreases, it doesn’t only disrupts the female hormones in our body.\n\n\nIt also stops controlling the anti-inflammatory substances in our joint lining and increases their production.\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night."
+   "original": "As we get older, estrogen drops, which we already know.\nBut estrogen is also important as an anti-inflammatory substances in the synovial membrane.\n\n\nAnd once estrogen decreases, it doesn’t only disrupts the female hormones in our body.\n\n\nIt also stops controlling the anti-inflammatory substances in our joint lining and increases their production.\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night.",
+   "new": "As we get older, estrogen drops, which we already know.\nBut estrogen is also important as an anti-inflammatory substances in the synovial membrane.\n\nAnd once estrogen decreases, it doesn’t only disrupts the female hormones in our body.\n\nIt also stops controlling the anti-inflammatory substances in our joint lining and increases their production.\n\nAs a result, the joint lining starts producing more inflammatory substances, which begin to break down the cartilage in our joints.\n\nBecause of this, these anti-inflammatory agents begin to break down local cartilage, especially at night when you lie still for a long time and do not keep your joint fluid moving.\n\nAnd you wake up every morning with stiff, painful hands and knees because your joint fluid has become viscous during the night."
   },
   {
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
@@ -233,6 +233,30 @@
    "section": "What's Really Behind Your Stiff Morning Hands, Ach",
    "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(5)",
    "original": "✕Crowded \"brain\" blends: Many pack in 20+ ingredients at tiny amounts. More isn't better – the right ones are.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(7)>div:nth-of-type(2)>h2",
+   "original": "Simple Daily Support for a Sharper Mind",
+   "new": "The Only Overnight Joint Support That Reaches Where The Damage Happens"
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(7)>div:nth-of-type(2)>p:nth-of-type(1)",
+   "original": "Sage has been used for memory for centuries. Today, small human studies show sage leaf may support memory and attention.",
+   "new": "Often referred to as nature's most powerful ingredient, Sage Leaf has been studied for decades for its role in protecting the body from ; stress (1,000+ clinical studies).\n\n\nIt's about protecting your lung cells, clearing your airways, and restoring your energy, not accepting \"this is just what happens after smoking.\"\n\n\nClarityMD Astaxanthin works deep inside your respiratory system, helping protect alveoli from destruction, support the cilia cells that keep your airways clear, shield the mitochondria that power every breath, and calm the chronic inflammation that keeps your chest tight.\n\n\nWhile most lung supplements dissolve in your stomach and never reach your lungs, Astaxanthin's unique molecular structure allows it to penetrate directly into lung tissue, airway cells, and cell membranes where the oxidative damage from decades of smoking still lives."
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(7)>div:nth-of-type(2)>p:nth-of-type(2)",
+   "original": "Just Jenny pairs sage leaf with three key nutrients. Vitamin B12 and zinc support normal brain function. Magnesium helps reduce tiredness.",
+   "new": ""
+  },
+  {
+   "section": "What's Really Behind Your Stiff Morning Hands, Ach",
+   "path": "section:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(7)>div:nth-of-type(2)>p:nth-of-type(3)",
+   "original": "Together, they give your brain simple daily support – so you can stay sharp, present and independent.",
    "new": ""
   }
  ],
