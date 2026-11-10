@@ -36,8 +36,9 @@
       const sel = $('.bundle.sel', box) || rows[1] || rows[0];
       const q = parseInt(sel.dataset.qty, 10) || 1;
       const now = $('.now', btn), was = $('s', btn);
-      if (now) now.textContent = money(num($('.per', sel).textContent) * q);
-      if (was) was.textContent = money(num($('.was', sel).textContent) * q);
+      // de prijs in de bundel = het totaalbedrag voor die bundel (zoals ingevuld in de editor)
+      if (now) now.textContent = $('.per', sel).textContent.trim();
+      if (was) was.textContent = $('.was', sel).textContent.trim();
       btn.href = CHECKOUT_URL ? CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'b=' + q : '#';
     }
     rows.forEach((r) => r.addEventListener('click', (e) => {

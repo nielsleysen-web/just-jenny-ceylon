@@ -27,7 +27,7 @@ def bundles(box):
 def buybox(btn_text):
     return f'''<div class="batch">CURRENT BATCH — LIMITED SUPPLY</div>
       {bundles(0)}
-      <a class="buy-btn" href="#">{btn_text}</a>'''
+      <div class="atc-wrap"><a class="buy-btn{' atc-big' if 'atc-l' in btn_text else ''}" href="#">{btn_text}</a></div>'''
 
 help_cards=[('Remember Names','Greet every friend by name.'),('Stay Focused','Finish your thought, every time.'),('Find Your Things','Keys, glasses, phone – right where you left them.'),('Be Fully Present','Enjoy every moment with the people you love.')]
 left=[('Sage leaf at the core:','A herb used for memory for centuries, and now studied in small human trials.'),('Vitamin B12 for your brain:','B12 supports normal brain and nerve function. It matters more after 50.'),('Zinc for clear thinking:','Zinc supports normal cognitive function – your ability to think and learn.')]
@@ -74,7 +74,7 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=4">
+<link rel="stylesheet" href="/sage/sage.css?v=6">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -109,7 +109,7 @@ html=f'''<!DOCTYPE html>
       {benefit('bulb','Feel Sharp, Clear And Confident')}
       {benefit('heart','Supports Long-Term Brain Health')}
     </ul>
-    <div class="buybox">{buybox('Add To Cart <span>—</span> <span class="now" x-text="calc"></span> <s x-text="calc"></s>')}
+    <div class="buybox">{buybox('<span class="atc-l">Add To Cart</span><span class="atc-pill" x-text="calc"><s></s><span class="now"></span><span class="atc-g"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 01-13.7 5.6M4 12a8 8 0 0113.7-5.6"/><path d="M17.7 3v3.4h-3.4M6.3 21v-3.4h3.4"/><path d="M14 9.5c-.4-.6-1.1-1-2-1-1.2 0-2 .6-2 1.5 0 2 4 1 4 3 0 .9-.8 1.5-2 1.5-.9 0-1.6-.4-2-1M12 7.5v1M12 15.5v1"/></svg>90-Day Money Back Guarantee</span></span>')}
       <div class="sub-note"><span><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0115-6.7L21 8M21 3v5h-5"/></svg>New Bottle Ship Every 30 Days</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Skip or Cancel Anytime</span></div>
     </div>
   </div>
@@ -256,7 +256,7 @@ html=f'''<!DOCTYPE html>
 
 <div class="sticky"><a class="buy-btn" href="#offer">Add To Cart</a></div>
 
-<script src="/sage/sage.js?v=1"></script>
+<script src="/sage/sage.js?v=2"></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
