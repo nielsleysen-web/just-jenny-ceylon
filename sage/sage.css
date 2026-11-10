@@ -351,3 +351,13 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 .vs-heads .ed-pic{height:190px;background-color:transparent}
 .vs-heads .ed-pic.has-img .slot-label{display:none}
 @media (max-width:820px){.vs-heads .ed-pic{height:120px}}
+
+/* mobiel: autoriteit boven de foto's, groter */
+@media (max-width:820px){
+  .hero-grid{row-gap:0}
+  .hero .buy{display:contents}
+  .hero .rec{order:-1;margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #d6d6d6;gap:12px;font-size:15px;line-height:1.4;align-items:center}
+  .hero .rec .ed-img{width:58px;height:58px;border:3px solid #fff;box-shadow:0 0 0 1px #e2e2e2;flex:none}
+  .hero .gallery{order:0;margin-bottom:18px}
+  .hero .buy > *:not(.rec){order:1}
+}
