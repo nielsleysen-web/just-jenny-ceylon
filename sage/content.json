@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T05:58:03.332Z",
+ "saved": "2026-11-10T05:59:19.629Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -48,6 +48,12 @@
    "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(4)>span:nth-of-type(2)",
    "original": "Feel Sharp, Clear And Confident",
    "new": "Maintain Flexibility In Your Joints"
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>ul>li:nth-of-type(5)>span:nth-of-type(2)",
+   "original": "Supports Long-Term Brain Health",
+   "new": "Stops The Daily Pain"
   }
  ],
  "images": []
