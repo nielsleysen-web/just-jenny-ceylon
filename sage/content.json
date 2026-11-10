@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T05:36:43.437Z",
+ "saved": "2026-11-10T05:42:12.770Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -10,8 +10,20 @@
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
    "path": "#top>div>div>div:nth-of-type(2)>h1",
-   "original": "Just Jenny Sage Leaf Memory Support – Sharper Recall, Clearer Focus & Everyday Brain Health",
-   "new": "Just Jenny 1,000 mg Sage Leaf - Never wake up with stiff morning hands, achey knees, or frozen hips again"
+   "original": "Just Jenny 1,000 mg Sage Leaf - Never wake up with stiff morning hands, achey knees, or frozen hips again",
+   "new": "Just Jenny 1,000 mg Sage Leaf - Never wake up with stiff morning hands, achy knees, or frozen hips again"
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>p:nth-of-type(1)",
+   "original": "Just Jenny is made to support your memory every day – so you can remember names, keep your train of thought and stop losing your keys.",
+   "new": "Just Jenny is made to breaks down the inflammatory substances in the synovial membrane, the hidden root cause of waking up with stiff joints and achy muscles we're told is \"just a part of aging.\""
+  },
+  {
+   "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
+   "path": "#top>div>div>div:nth-of-type(2)>p:nth-of-type(2)",
+   "original": "One simple daily routine with sage leaf, vitamin B12, zinc and magnesium. Plant-based, hormone-free and easy to take.",
+   "new": "Just one daily softgel delivers cellular lung protection, naturally supporting your airways and respiratory energy from the inside out."
   }
  ],
  "images": []
