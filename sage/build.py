@@ -59,7 +59,7 @@ def benefit(k,t): return f'<li>{ic(ICON[k])}<span>{t}</span></li>'
 trust_items=['GMP CERTIFIED','MADE IN THE USA','PLANT-BASED','HORMONE-FREE','GLUTEN-FREE','3RD-PARTY TESTED']
 CKW=CK.replace('<svg','<svg style="stroke:#fff;fill:none;stroke-width:2.4"')
 trust=''.join('<span>'+CKW+t+'</span>' for t in trust_items*4)
-ticker=''.join('<span>-30% TODAY ONLY</span>' for _ in range(16))
+ticker=''.join('<span>'+t+'</span>' for t in ['Up to 70% off','Buy 2 Get 1 Free','90 Day Money Back Guarantee']*6)
 
 seals=[('3RD-PARTY<br>TESTED','<path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/>'),('HORMONE<br>FREE','<circle cx="12" cy="5" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><path d="M12 7v4M12 11l-6 5M12 11l6 5"/>'),('NO ARTIFICIAL<br>INGREDIENTS','<circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/>'),('NON-GMO','<circle cx="12" cy="12" r="9"/><path d="M6 6l12 12M12 18V9M12 13c-2 0-3-1.5-3-3.5 2 0 3 1.5 3 3.5zM12 11c2 0 3-1.5 3-3.5-2 0-3 1.5-3 3.5z"/>')]
 
