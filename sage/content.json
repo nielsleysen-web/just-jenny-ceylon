@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-10T07:53:21.521Z",
+ "saved": "2026-11-10T08:11:40.578Z",
  "texts": [
   {
    "section": "#top Just Jenny 1,000 mg Sage Leaf - Never wake up with",
@@ -642,6 +642,138 @@
    "path": "#offer>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(3)>div>span:nth-of-type(3)>s",
    "original": "$27.95",
    "new": "$299.95"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(1)>summary>span",
+   "original": "Can I buy Just Jenny in stores or on Amazon?",
+   "new": "My doctor says it’s “just aging”. Can this help?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(1)>div",
+   "original": "No. Just Jenny Sage Leaf Memory Support is only sold on this website. That way we can guarantee every bottle is fresh, genuine and covered by our 60-day money-back guarantee.",
+   "new": "Yes. Because most doctors are not aware of the root cause of your joint pain. Most of them are also not aware of how important a clinical dose is compared to low-graded sage leaf supplements. Our Sage Leaf Capsules contain 1,000 mg and keep the inflammatory substances under control at night, so they cannot build up again and your cartilage starts to break down.\n\n\nAs a result, your synovial membrane once again has a natural brake, even with a reduced amount of estrogen."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(2)>summary>span",
+   "original": "What is in Just Jenny?",
+   "new": "Does it work if I’m still in perimenopause / already past menopause?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(2)>div",
+   "original": "Four simple ingredients: sage leaf extract, vitamin B12, zinc and magnesium. No hormones, no harsh stimulants and no crowded blends. See the label for exact amounts.",
+   "new": "Yes, the capsules work in all stages. It doesn't matter what age you are, or in what stage you are right now. The Sage Leaf Capsules work regardless."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(3)>summary>span",
+   "original": "Is Just Jenny safe with my current medications?",
+   "new": "Can I take it with HRT, or if I can’t take HRT?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(3)>div",
+   "original": "If you take prescription medication, are pregnant or nursing, or have a medical condition, check with your doctor or pharmacist before you start any new supplement.",
+   "new": "Medical studies have shown that it doesn't impact your HRT usage. You can take the Sage Leaf capsules regardless if you are on HRT or on HRT."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(4)>summary>span",
+   "original": "How should I store it?",
+   "new": "I’ve tried turmeric, collagen, glucosamine and painkillers. Why would this be different?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(4)>div",
+   "original": "Keep the bottle closed in a cool, dry place, away from direct sunlight and out of reach of children.",
+   "new": "Because none of these ingredients actually take on the root cause of your joint pain.\n\n\nJust Jenny's Sage Leaf capsules contain active substances are absorbed by the cells of the small intestine and travel directly to our synovial membrane via the bloodstream.\n\n\nIt breaks down the high levels of inflammatory substances in the synovial membrane that are destroying cartilage.\n\n\nAs a result, synovial fluid is released again, and you stop experiencing a stiff and painful feeling in your hands, knees, and hips.\n\n\nIf we do not do this, the inflammatory substances continue to break down the cartilage while we sleep.\n\n\nAt the same time, rosmarinic acid acts as an anti-inflammatory agent in the synovial membrane.\n\n\nIt keeps the inflammatory substances under control at night, so that they cannot build up again and cause your cartilage to start breaking down.\n\n\nAs a result, your synovial membrane regains a natural brake, even with a reduced amount of estrogen. And your joint fluid can no longer become viscous, and you prevent getting up again with stiff, painful hands, knees, or hips."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(5)>summary>span",
+   "original": "Will Just Jenny help me remember names and everyday things?",
+   "new": "Will it help with stiff hands, knees and hips, and getting down the stairs in the morning?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(5)>div",
+   "original": "Just Jenny is made to support your memory every day as part of a simple routine. Everyone is different and individual results vary.",
+   "new": "Yes, about 91% of our customers notice the first results after 2 weeks of using the Sage Leaf capsules."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(6)>summary>span",
+   "original": "How soon will I notice a difference?",
+   "new": "How long until I notice a difference in my mornings?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(6)>div",
+   "original": "Take it every day. Many people give it 8 to 12 weeks to see how it works for them. Individual results vary.",
+   "new": "91% say they notice a difference in their stiffness and joint pain after 2 weeks of daily use."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(7)>summary>span",
+   "original": "How do I take it?",
+   "new": "Isn’t sage just a kitchen herb? What exactly is in each capsule?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(7)>div",
+   "original": "Take [X] capsules a day with water, ideally with a meal.",
+   "new": "No. Kitchen sage is dried leaves for your roast. This is 1,000mg of concentrated sage leaf extract, with the active compounds your joints actually need, at a dose your spice rack could never give you. One ingredient. No fillers. No hormones."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(8)>summary>span",
+   "original": "How many capsules are in each bottle?",
+   "new": "Is it safe with my medications (blood thinners, blood pressure, antidepressants)?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(8)>div",
+   "original": "Each bottle contains 90 capsules.",
+   "new": "It’s a plant extract, not a drug, and it’s hormone-free. So there are no side-effects and it's easy on the stomach."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(9)>summary>span",
+   "original": "Are there any allergens or dietary restrictions?",
+   "new": "How do I take it, and why at night?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(9)>div",
+   "original": "Just Jenny is plant-based and hormone-free. Always check the label if you have an allergy.",
+   "new": "2 capsules before bed, with water. Night is when the inflammation in your joint lining builds up, while you lie still for hours. So that’s exactly when you want it working. You sleep, it works, you wake up and move."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(10)>summary>span",
+   "original": "What if it doesn't work for me?",
+   "new": "Is it hormone-free? Any allergens, or who shouldn’t take it?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(10)>div",
+   "original": "You're covered by our 60-day money-back guarantee. If you're not happy, email us and we'll make it right.",
+   "new": "100% hormone-free and plant-based. No estrogen, no soy, no gluten."
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(11)>summary>span",
+   "original": "When should I see a doctor about my memory?",
+   "new": "Where is it made, and how is it tested?"
+  },
+  {
+   "section": "Frequently Asked Questions",
+   "path": "section:nth-of-type(10)>div>div:nth-of-type(1)>details:nth-of-type(11)>div",
+   "original": "If memory problems come on suddenly, get worse quickly or start to affect your daily life, talk to your doctor. A supplement is not a replacement for medical advice.",
+   "new": "Made in a USA based GMP-certified facility and tested batch by batch for purity and strength. You know exactly what you’re taking, every single capsule."
   }
  ],
  "images": []
