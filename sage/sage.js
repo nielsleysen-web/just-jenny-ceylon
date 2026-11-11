@@ -3,7 +3,7 @@
   // Checkout voor dit product: vul hier de link in zodra de checkout bestaat (?b=1|3|5 wordt erachter gezet)
   const CHECKOUT_URL = 'https://checkout.getjustjenny.com/en/sageleaf';
 
-  const META_PIXEL_ID = '1514819433466204'; // zelfde pixel als de checkout
+  const META_PIXEL_ID = '2040844393290901'; // pixel "Big 5 Just Jenny" (checkout moet dezelfde gebruiken)
   const PRODUCT_ID = '10710604906762';       // Shopify-product "Just Jenny™ Sage Leaf Extract" (content_ids, zelfde als op de checkout)
   const TRACK = !window.JJ_EDITOR && META_PIXEL_ID && window.fbq;
   if (TRACK) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'USD' }); }
