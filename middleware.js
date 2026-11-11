@@ -6,6 +6,6 @@ export default function middleware(request) {
   const url = new URL(request.url);
   const host = (request.headers.get('host') || '').toLowerCase();
   if (!host.startsWith('sageleaf.')) return; // niets doen
-  url.pathname = url.pathname.startsWith('/editor') ? '/sage/editor/index.html' : '/sage/index.html';
+  url.pathname = url.pathname.startsWith('/editor') ? '/sage/editor' : '/sage';
   return new Response(null, { headers: { 'x-middleware-rewrite': url.toString() } });
 }
