@@ -260,7 +260,7 @@ html=f'''<!DOCTYPE html>
 
 <div class="sticky"><a class="buy-btn" href="#offer">Add To Cart</a></div>
 
-<script src="/sage/sage.js?v=11"></script>
+<script src="/sage/sage.js?v=12"></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
@@ -269,7 +269,18 @@ LIVE_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.
 ED_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_NO_APPLY=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.rv-av";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";window.JJ_REPO_PREFIX="sage/";window.JJ_LIVE_URL=location.origin+"/sage";window.JJ_READY_SEL=".bundle";window.JJ_EDITOR=true;</script>\n<script defer src="/apply-content.js?v=sg2"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg2"></script>'
 import os
 import os.path; base=os.path.dirname(os.path.abspath(__file__))+'/'
-open(base+'index.html','w').write(html.replace('<!--HEAD-EXTRA-->',LIVE_HEAD).replace('<!--BODY-EXTRA-->',''))
+TRACK_HEAD = """<!-- Meta Pixel (init + events in sage.js) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+<!-- JJB Track: bewaart fbclid/ad_id/utm's en geeft ze door aan de checkout (zelfde script als de andere funnels) -->
+<script src="https://jjb-profit-dashboard.vercel.app/jjb-track.js" async></script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ukbt3fboo0");
+</script>
+"""
+open(base+'index.html','w').write(html.replace('<!--HEAD-EXTRA-->',LIVE_HEAD+TRACK_HEAD).replace('<!--BODY-EXTRA-->',''))
 os.makedirs(base+'editor',exist_ok=True)
 open(base+'editor/index.html','w').write(html.replace('<title>Just Jenny Sage Leaf Memory Support</title>','<title>Sage – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">','<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->',ED_HEAD).replace('<!--BODY-EXTRA-->',''))
 if not os.path.exists(base+'content.json'): open(base+'content.json','w').write('{"texts":[],"images":[]}\n')
