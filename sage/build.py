@@ -69,7 +69,7 @@ html=f'''<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Just Jenny Sage Leaf Memory Support</title>
+<title>Just Jenny Sage Leaf</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -282,6 +282,6 @@ TRACK_HEAD = """<!-- Meta Pixel (init + events in sage.js) -->
 """
 open(base+'index.html','w').write(html.replace('<!--HEAD-EXTRA-->',LIVE_HEAD+TRACK_HEAD).replace('<!--BODY-EXTRA-->',''))
 os.makedirs(base+'editor',exist_ok=True)
-open(base+'editor/index.html','w').write(html.replace('<title>Just Jenny Sage Leaf Memory Support</title>','<title>Sage – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">','<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->',ED_HEAD).replace('<!--BODY-EXTRA-->',''))
+open(base+'editor/index.html','w').write(html.replace('<title>Just Jenny Sage Leaf</title>','<title>Sage – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">','<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->',ED_HEAD).replace('<!--BODY-EXTRA-->',''))
 if not os.path.exists(base+'content.json'): open(base+'content.json','w').write('{"texts":[],"images":[]}\n')
 print('ok')
