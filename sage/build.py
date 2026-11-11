@@ -74,14 +74,14 @@ html=f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/sage/sage.css?v=42">
+<link rel="stylesheet" href="/sage/sage.css?v=43">
 <!--HEAD-EXTRA-->
 </head>
 <body>
 
 <div class="ticker"><div class="ticker-track">{ticker}</div></div>
 
-<header class="hdr"><div class="wrap-w"><a class="logo" href="#">Just Jenny</a></div></header>
+<header class="hdr"><div class="wrap-w"><a class="logo">Just Jenny</a></div></header>
 
 <section class="hero" id="top"><div class="wrap-w"><div class="hero-grid">
   <div class="gallery">

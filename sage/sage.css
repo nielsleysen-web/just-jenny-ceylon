@@ -510,3 +510,4 @@ h1,h2,h3{color:var(--ink);line-height:1.18;letter-spacing:-.01em}
 .dlv i{width:9px;height:9px;border-radius:50%;background:#244C3A;flex:none}
 .dlv b{color:#244C3A;font-weight:700;margin-left:2px}
 @media(max-width:640px){.dlv{font-size:14px;margin:12px 0;padding:10px 6px}}
+.hdr .logo{cursor:default;pointer-events:none}
