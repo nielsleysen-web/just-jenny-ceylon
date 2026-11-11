@@ -74,6 +74,19 @@
     });
   }
 
+  /* ---------- mobiel: de review (desktop onder de foto's) onder de Add To Cart-knop tonen ---------- */
+  (function () {
+    const src = $('.hero .g-review'), note = $('.hero .sub-note') || $('.hero .atc-wrap');
+    if (!src || !note || window.JJ_EDITOR) return;
+    const m = document.createElement('aside'); // eigen tag: verschuift geen opgeslagen tekstpaden
+    m.className = 'g-review g-review-m';
+    const sync = () => { m.innerHTML = src.innerHTML; };
+    sync();
+    note.parentNode.insertBefore(m, note.nextSibling);
+    // teksten/foto uit de editor komen later binnen → kopie bijwerken
+    new MutationObserver(sync).observe(src, { childList: true, subtree: true, characterData: true, attributes: true });
+  })();
+
   /* ---------- elke knop (behalve Add To Cart zelf) → de offers bovenaan, volledig in beeld ---------- */
   function toOffer() {
     const t = $('.hero .batch') || $('.hero .bundles'), end = $('.hero .atc-wrap') || t;
