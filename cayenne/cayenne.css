@@ -414,3 +414,11 @@ html,body{overflow-x:hidden}
   .rb-more{padding:0 14px 14px 14px;font-size:14.5px}
   .rb-tick{margin-top:24px;padding:9px 0}.rb-it{font-size:13.5px}.rb-track{gap:24px;animation-duration:30s}
 }
+
+/* beoordelingsregel in Trustpilot-opzet (tekst, geen logo) */
+.rate.tp{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:10px 0 8px;font-size:14px;color:var(--ink);text-decoration:none;font-weight:400}
+.tp-w{font-size:16px;font-weight:700}
+.tp-stars{display:inline-flex;gap:2px}.tp-stars i{font-style:normal;width:21px;height:21px;display:grid;place-items:center;background:#00B67A;color:#fff;font-size:14px;line-height:1}
+.tp-n u{text-underline-offset:2px}.tp-b{font-weight:700;font-size:15px}
+@media(max-width:900px){.rate.tp{gap:7px;font-size:13px}.tp-w{font-size:14.5px}.tp-stars i{width:19px;height:19px;font-size:12.5px}.tp-b{font-size:14px}}
+@media(max-width:900px){.rate.tp{flex-wrap:nowrap;gap:6px;font-size:12.5px;white-space:nowrap}.tp-w{font-size:14px}.tp-stars i{width:18px;height:18px;font-size:12px}.tp-b{font-size:13.5px}}
