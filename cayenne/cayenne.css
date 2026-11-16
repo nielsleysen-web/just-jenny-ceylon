@@ -511,3 +511,4 @@ html,body{overflow-x:hidden}
 .gal{grid-template-columns:minmax(0,1fr)}
 .g-main{aspect-ratio:1/1}
 @media(max-width:900px){.gal{grid-template-columns:minmax(0,1fr)}.g-main{aspect-ratio:1/1}}
+.rec-t{white-space:nowrap}@media(max-width:900px){.rec{font-size:12px;gap:7px}.rec-ph{width:30px;height:30px}.rec-ic{width:18px;height:18px}}@media(max-width:380px){.rec{font-size:11.2px}.rec-ic{display:none}}
