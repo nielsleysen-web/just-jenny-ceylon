@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Probleemsectie — 3 voorstellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#6B1A18;--wine-d:#4E110F;--wine-l:#84231F;--gold:#E0A446;--gold-l:#F3C676;--ink:#16100F;--blush:#F7ECE8;--cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.45}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.intro{padding:30px 0 26px;text-align:center;border-bottom:1px solid #eee}
+.intro h1{font:700 28px/1.1 Inter,sans-serif;margin:0 0 8px}.intro p{margin:0 auto;max-width:560px;color:#555;font-size:15px}
+.nav{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}.nav a{padding:8px 16px;border-radius:999px;border:1px solid var(--wine);color:var(--wine);text-decoration:none;font-weight:700;font-size:13.5px}
+.tag{display:block;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h2.t{font:700 46px/1.02 var(--cond);text-transform:uppercase;text-align:center;margin:0}
+.sub{text-align:center;margin:12px auto 0;font-size:17px;max-width:640px}
+.ph{background:#EFE2DD center/cover;display:grid;place-items:center;color:#9a7f7e;font-size:12.5px}
+section.v{padding:70px 0 80px}
+.sep{height:10px;background:repeating-linear-gradient(90deg,#eee 0 12px,#fff 12px 24px)}
+
+/* ===== A — genummerde kaarten ===== */
+.va{background:var(--blush)}.va h2.t{color:var(--wine)}.va .sub{color:#3d3433}
+.a-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.a-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #ead9d3;box-shadow:0 8px 24px rgba(93,23,20,.07);position:relative;opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+.a-card.on{opacity:1;transform:none}
+.a-card .ph{aspect-ratio:4/3}
+.a-n{position:absolute;left:14px;top:14px;width:40px;height:40px;border-radius:50%;background:var(--wine);color:#fff;border:2px solid var(--gold);font:700 20px var(--cond);display:grid;place-items:center}
+.a-card p{margin:0;padding:16px 16px 20px;font-size:15.5px;color:#2a2221}
+
+/* ===== B — "Herken je dit?" afvinklijst naast één foto ===== */
+.vb{background:linear-gradient(120deg,#5D1714,#7A1F1D 55%,#561412);color:#fff}
+.vb h2.t{color:var(--gold-l)}.vb .sub{color:#f1dcd6}
+.b-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:46px;margin-top:46px;align-items:center}
+.b-photo{aspect-ratio:1/1.05;border-radius:18px;background-color:#6b2a25;color:#e9c9c2;position:relative;overflow:hidden}
+.b-pic{position:absolute;inset:0;opacity:0;transition:opacity .5s}.b-pic.on{opacity:1}
+.b-list{display:grid;gap:12px}
+.b-item{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;padding:16px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);cursor:pointer;transition:background .3s,border-color .3s,transform .3s}
+.b-item p{margin:0;font-size:16.5px;color:#f6e7e2}
+.b-box{width:30px;height:30px;border-radius:8px;border:2px solid rgba(243,198,118,.7);display:grid;place-items:center;transition:background .3s}
+.b-box svg{width:18px;height:18px;stroke:#3A1200;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .35s .1s}
+.b-item.on{background:rgba(243,198,118,.12);border-color:var(--gold-l);transform:translateX(6px)}
+.b-item.on .b-box{background:var(--gold-l)}.b-item.on .b-box svg{stroke-dashoffset:0}
+.b-item.on p{color:#fff}
+.b-count{margin-top:18px;font:700 20px var(--cond);letter-spacing:.05em;text-transform:uppercase;color:var(--gold-l)}
+
+/* ===== C — grote foto-tegels met tekst erop ===== */
+.vc{background:#fff}.vc h2.t{color:var(--wine)}.vc .sub{color:#3d3433}
+.c-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.c-tile{position:relative;aspect-ratio:3/4.3;border-radius:16px;overflow:hidden;background:#6b2a25;color:#fff;display:flex;align-items:flex-end;transition:transform .35s}
+.c-tile:hover{transform:translateY(-6px)}
+.c-tile .ph{position:absolute;inset:0;background-color:#B79A93;color:#fff;align-content:start;padding-top:38%}
+.c-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,10,9,0) 30%,rgba(46,10,9,.92) 78%)}
+.c-tx{position:relative;z-index:1;padding:18px 16px 20px}
+.c-tx b{display:block;font:700 15px var(--cond);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-l);margin-bottom:6px}
+.c-tx p{margin:0;font-size:15px;line-height:1.4}
+.c-dots{display:none}
+
+@media(max-width:860px){
+  h2.t{font-size:33px}section.v{padding:46px 0 52px}.sub{font-size:15.5px}
+  .a-grid{grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.a-card p{font-size:14px;padding:12px 12px 16px}.a-n{width:34px;height:34px;font-size:17px;left:10px;top:10px}
+  .b-grid{grid-template-columns:1fr;gap:20px;margin-top:26px}.b-photo{aspect-ratio:16/10}.b-item{padding:13px 14px;gap:12px}.b-item p{font-size:15px}.b-item.on{transform:none}
+  .c-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:28px -20px 0;padding:0 20px 6px;scrollbar-width:none}.c-row::-webkit-scrollbar{display:none}
+  .c-tile{flex:0 0 76%;scroll-snap-align:center}
+  .c-dots{display:flex;justify-content:center;gap:7px;margin-top:14px}.c-dots i{width:8px;height:8px;border-radius:50%;background:#e2cfc9;transition:all .3s}.c-dots i.on{background:var(--wine);width:22px;border-radius:99px}
+}
+</style>
+</head>
+<body>
+<div class="intro"><div class="wrap">
+<h1>Probleemsectie — 3 voorstellen</h1>
+<p>Zelfde teksten, drie andere vormen. Foto's zijn invulplekken.</p>
+<div class="nav"><a href="#a">A · Genummerde kaarten</a><a href="#b">B · Afvinklijst</a><a href="#c">C · Foto-tegels</a></div>
+</div></div>
+
+<section class="v va" id="a"><div class="wrap">
+<span class="tag">Voorstel A</span>
+<h2 class="t">Diabetes Is Shutting Down Your Circulation</h2>
+<p class="sub">Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.</p>
+<div class="a-grid">
+  <div class="a-card"><div class="ph">Photo</div><span class="a-n">1</span><p>You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.</p></div>
+  <div class="a-card"><div class="ph">Photo</div><span class="a-n">2</span><p>You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.</p></div>
+  <div class="a-card"><div class="ph">Photo</div><span class="a-n">3</span><p>Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.</p></div>
+  <div class="a-card"><div class="ph">Photo</div><span class="a-n">4</span><p>You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal.</p></div>
+</div>
+</div></section>
+<div class="sep"></div>
+
+<section class="v vb" id="b"><div class="wrap">
+<span class="tag">Voorstel B</span>
+<h2 class="t">Diabetes Is Shutting Down Your Circulation</h2>
+<p class="sub">Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.</p>
+<div class="b-grid">
+  <div class="ph b-photo"><div class="ph b-pic on" style="background-color:#6b2a25;color:#e9c9c2">Photo 1</div><div class="ph b-pic" style="background-color:#7a3329;color:#e9c9c2">Photo 2</div><div class="ph b-pic" style="background-color:#86432c;color:#f0d6c4">Photo 3</div><div class="ph b-pic" style="background-color:#8f5a2e;color:#f2dcc0">Photo 4</div></div>
+  <div>
+    <div class="b-list">
+      <div class="b-item"><span class="b-box"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p>You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.</p></div>
+      <div class="b-item"><span class="b-box"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p>You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.</p></div>
+      <div class="b-item"><span class="b-box"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p>Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.</p></div>
+      <div class="b-item"><span class="b-box"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p>You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal.</p></div>
+    </div>
+    <div class="b-count"><span class="b-c">0</span> of 4 sound familiar</div>
+  </div>
+</div>
+</div></section>
+<div class="sep"></div>
+
+<section class="v vc" id="c"><div class="wrap">
+<span class="tag">Voorstel C</span>
+<h2 class="t">Diabetes Is Shutting Down Your Circulation</h2>
+<p class="sub">Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.</p>
+<div class="c-row">
+  <div class="c-tile"><div class="ph">Photo</div><div class="c-tx"><b>In the morning</b><p>You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.</p></div></div>
+  <div class="c-tile"><div class="ph">Photo</div><div class="c-tx"><b>During the day</b><p>You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.</p></div></div>
+  <div class="c-tile"><div class="ph">Photo</div><div class="c-tx"><b>After every meal</b><p>Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.</p></div></div>
+  <div class="c-tile"><div class="ph">Photo</div><div class="c-tx"><b>Over the years</b><p>You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal.</p></div></div>
+</div>
+<div class="c-dots"><i class="on"></i><i></i><i></i><i></i></div>
+</div></section>
+
+<script>
+(function () {
+  const $ = (s, r) => (r || document).querySelector(s), $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  // A: kaarten komen één voor één binnen
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { const i = $$('.a-card').indexOf(e.target); setTimeout(() => e.target.classList.add('on'), (i % 4) * 110); io.unobserve(e.target); } }), { threshold: .25 });
+  $$('.a-card').forEach((c) => io.observe(c));
+  // B: punten vinken zichzelf af bij het scrollen; klikken kan ook; foto wisselt mee
+  const items = $$('.b-item'), pics = $$('.b-pic'), cnt = $('.b-c');
+  const upd = (i) => { cnt.textContent = items.filter((x) => x.classList.contains('on')).length; if (i != null) pics.forEach((p, k) => p.classList.toggle('on', k === i)); };
+  const io2 = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { const i = items.indexOf(e.target); setTimeout(() => { e.target.classList.add('on'); upd(i); }, i * 420); io2.unobserve(e.target); } }), { threshold: .9 });
+  items.forEach((it, i) => { io2.observe(it); it.addEventListener('click', () => { it.classList.toggle('on'); upd(i); }); });
+  // C: bolletjes volgen de veegpositie op mobiel
+  const row = $('.c-row'), dots = $$('.c-dots i');
+  row.addEventListener('scroll', () => { const t = $$('.c-tile'); const mid = row.scrollLeft + row.clientWidth / 2; let b = 0, d = 1e9; t.forEach((x, i) => { const m = x.offsetLeft - row.offsetLeft + x.offsetWidth / 2, dd = Math.abs(m - mid); if (dd < d) { d = dd; b = i; } }); dots.forEach((x, i) => x.classList.toggle('on', i === b)); }, { passive: true });
+})();
+</script>
+</body>
+</html>
