@@ -92,6 +92,22 @@
     new MutationObserver(fit).observe(h, { childList: true, characterData: true, subtree: true });
   })();
 
+  /* ---------- klantfoto-strook: lijst verdubbelen zodat hij naadloos doorloopt ---------- */
+  (function () {
+    const track = $('.sp-track'); if (!track || ED) return;
+    const build = () => {
+      $$('.sp-clone', track).forEach((c) => c.remove());
+      const orig = $$('.sp-ph', track);
+      const filled = orig.filter((o) => o.classList.contains('has-img'));
+      // lege fotovakken niet tonen zodra er minstens één echte foto is
+      orig.forEach((o) => { o.style.display = filled.length && !o.classList.contains('has-img') ? 'none' : ''; });
+      const show = filled.length ? filled : orig;
+      const reps = Math.max(2, Math.ceil(24 / show.length)); // genoeg kopieën om de breedte te vullen (even aantal helften)
+      for (let r = 1; r < reps * 2; r++) show.forEach((o) => { const c = o.cloneNode(true); c.classList.add('sp-clone'); c.removeAttribute('data-jj-key'); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
+    };
+    build(); [900, 2200, 4500].forEach((t) => setTimeout(build, t));
+  })();
+
   /* ---------- leverdatum: altijd vandaag + 5 dagen ---------- */
   (function () {
     const el = $('.dlv-d'); if (!el) return;

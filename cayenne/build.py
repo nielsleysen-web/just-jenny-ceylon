@@ -96,7 +96,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=22">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=23">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -151,6 +151,16 @@ html = f'''<!DOCTYPE html>
 <div class="i-tabs">{''.join(f'<button type="button" class="i-tab{" on" if n == 0 else ""}" data-i="{n}">{x}</button>' for n, x in enumerate(ingredients))}</div>
 </div></section>
 
+<section class="sp"><div class="wrap">
+<div class="stars sp-stars">★★★★★</div>
+<h2 class="sp-h">Selected customer reviews</h2>
+<p class="sp-sub">See what our customers are saying about Just Jenny</p>
+<p class="sp-note">Individual results vary.</p>
+</div>
+<div class="sp-strip"><div class="sp-track">{''.join(slot('ed-img sp-ph', f'Customer photo {n}') for n in range(1, 9))}</div></div>
+<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span>5</span><span class="stars">★★★★★</span></div><h3>"[Review headline {n}]"</h3><p class="sp-t">[Review text from a real customer.]</p><p class="sp-n">[Customer name]</p><p class="sp-d">[Date] · Cayenne Pepper Softgels</p></div>' for n in range(1, 4))}</div></div>
+</section>
+
 <section class="weeks"><div class="wrap">
 <h2 class="h-c dark">What To Expect In Your First 8 Weeks</h2>
 <p class="lead-c dark">Two softgels a day. Here's how it tends to unfold.</p>
@@ -189,7 +199,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=5" defer></script>
+<script src="/cayenne/cayenne.js?v=6" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
