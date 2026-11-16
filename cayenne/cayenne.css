@@ -189,3 +189,8 @@ html,body{overflow-x:hidden}
 .rec-vf{position:absolute;right:-5px;top:-4px;width:16px;height:16px}.rec-vf svg{width:100%;height:100%;display:block}
 .rec-t{min-width:0}.rec-ic{width:26px;height:26px;flex:none;color:#555}
 @media(max-width:900px){.rec{font-size:12.5px;gap:8px}.rec-ph{width:32px;height:32px}.rec-ic{width:20px;height:20px}}
+
+/* inleidende alinea's onder de titel */
+.lead{font-size:16px;line-height:1.5;color:var(--ink);margin-bottom:14px}.lead b{color:#7A1B1B;font-weight:700}
+.lead+.pills{margin-top:18px}
+@media(max-width:900px){.lead{font-size:15px}}
