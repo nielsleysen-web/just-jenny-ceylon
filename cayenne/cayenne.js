@@ -92,6 +92,20 @@
     new MutationObserver(fit).observe(h, { childList: true, characterData: true, subtree: true });
   })();
 
+  /* ---------- tijdlijn: lijn vult zich en stappen lichten op bij het scrollen ---------- */
+  (function () {
+    const tl = $('.tl'); if (!tl || ED) return;
+    const fill = $('.tl-fill', tl), steps = $$('.tl-step', tl); let tick = false;
+    tl.classList.add('tl-on');
+    const frame = () => {
+      tick = false; const mid = window.innerHeight * 0.68, r = tl.getBoundingClientRect();
+      fill.style.height = (Math.max(0, Math.min(1, (mid - r.top) / r.height)) * 100) + '%';
+      steps.forEach((s) => { const d = $('.tl-dot', s).getBoundingClientRect(); if (d.top + d.height / 2 < mid + 6) s.classList.add('on'); else if (d.top > window.innerHeight) s.classList.remove('on'); });
+    };
+    const on = () => { if (!tick) { tick = true; requestAnimationFrame(frame); } };
+    window.addEventListener('scroll', on, { passive: true }); window.addEventListener('resize', on); frame();
+  })();
+
   /* ---------- klantfoto-strook: lijst verdubbelen zodat hij naadloos doorloopt ---------- */
   (function () {
     const track = $('.sp-track'); if (!track || ED) return;

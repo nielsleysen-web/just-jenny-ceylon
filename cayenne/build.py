@@ -42,6 +42,7 @@ faqs = [
 tiles = [(I_FLOW, 'Benefit<br>One'), (I_BOLT, 'Benefit<br>Two'), (I_HEART, 'Benefit<br>Three')]
 L = 'fill="none" stroke="#8b8f94" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"'
 A = 'fill="#E9B4A6" stroke="#C0563F" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"'
+STARS5 = ''.join('<i>★</i>' for _ in range(5))
 B_ICONS = [
     # bloeddruppel
     '<path d="M12 2.500c3.800 4.700 6.500 8 6.500 11.500a6.500 6.500 0 01-13 0c0-3.500 2.700-6.800 6.500-11.500z" fill="#D9413A" stroke="#A8231F" stroke-width="1.200" stroke-linejoin="round"/><path d="M8.800 14.500a3.300 3.300 0 002.400 3.200" fill="none" stroke="#fff" stroke-width="1.400" stroke-linecap="round" opacity=".85"/>',
@@ -63,7 +64,7 @@ circles = ['[Recognisable moment 1 — what the customer feels in the morning.]'
 cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
          (I_SHIELD, '[Benefit card title 3]', '[One or two sentences on the third ingredient.]'), (I_BOWL, '[Benefit card title 4]', '[One or two sentences on absorption.]')]
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
-weeks = [('Days<br>1-3', 'First<br>Step', '[What the customer can expect in the first days.]'), ('Weeks<br>1-2', 'Second<br>Step', '[What the customer can expect after one to two weeks.]'), ('Weeks<br>6-8', 'Your New<br>Baseline', '[What the customer can expect after six to eight weeks.]')]
+weeks = [('Days 1–3', 'First Step', '[What the customer can expect in the first days.]'), ('Weeks 1–2', 'Second Step', '[What the customer can expect after one to two weeks.]'), ('Weeks 6–8', 'Your New Baseline', '[What the customer can expect after six to eight weeks.]')]
 vs_rows = ['[Key ingredient + dose]', '[Feature 2]', '[Feature 3]', '[Feature 4]', '[Feature 5]', '[Feature 6]']
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
 
@@ -97,7 +98,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=26">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=28">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -153,19 +154,19 @@ html = f'''<!DOCTYPE html>
 </div></section>
 
 <section class="sp"><div class="wrap">
-<div class="stars sp-stars">★★★★★</div>
+<div class="sp-tp"><b class="tp-w">Excellent</b><span class="tp-stars">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">Based on <u>[XXX] reviews</u> on</span><span class="tp-b">Trustpilot</span></div>
 <h2 class="sp-h">Selected customer reviews</h2>
 <p class="sp-sub">See what our customers are saying about Just Jenny</p>
 <p class="sp-note">Individual results vary.</p>
 </div>
 <div class="sp-strip"><div class="sp-track">{''.join(slot('ed-img sp-ph', f'Customer photo {n}') for n in range(1, 9))}</div></div>
-<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span>5</span><span class="stars">★★★★★</span></div><h3>"[Review headline {n}]"</h3><p class="sp-t">[Review text from a real customer.]</p><p class="sp-n">[Customer name]</p><p class="sp-d">[Date] · Cayenne Pepper Softgels</p></div>' for n in range(1, 4))}</div></div>
+<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span class="tp-stars">{STARS5}</span></div><h3>"[Review headline {n}]"</h3><p class="sp-t">[Review text from a real customer.]</p><p class="sp-n">[Customer name]</p><p class="sp-d">[Date] · Cayenne Pepper Softgels</p><p class="sp-src">Review on <b>Trustpilot</b></p></div>' for n in range(1, 4))}</div></div>
 </section>
 
 <section class="weeks"><div class="wrap">
 <h2 class="h-c dark">What To Expect In Your First 8 Weeks</h2>
 <p class="lead-c dark">Two softgels a day. Here's how it tends to unfold.</p>
-<div class="w-grid">{''.join(f'<div class="wk"><div class="wk-top"><div class="wk-tile"><b>{a}</b><b>{b}</b></div>{slot("ed-img wk-img", "Photo")}</div><p>{c}</p></div>' for a, b, c in weeks)}</div>
+<div class="tl"><div class="tl-line"><div class="tl-fill"></div></div>{''.join(f'<div class="tl-step"><div class="tl-dot">{n}</div><div class="tl-card">{slot("ed-img tl-img", "Photo")}<div class="tl-txt"><div class="tl-when">{w}</div><h3>{t}</h3><p>{c}</p></div></div></div>' for n, (w, t, c) in enumerate(weeks, 1))}</div>
 </div></section>
 
 <section class="rb"><div class="wrap">
@@ -208,7 +209,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=7" defer></script>
+<script src="/cayenne/cayenne.js?v=8" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
