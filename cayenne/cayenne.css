@@ -458,3 +458,12 @@ html,body{overflow-x:hidden}
 }
 @media(prefers-reduced-motion:reduce){.tl-card,.tl-dot{transition:none}}
 .jj-editing .tl-dot{border-radius:50%!important}
+/* tijdlijn compacter op desktop: foto naast de tekst, stappen dichter op elkaar */
+@media(min-width:901px){
+  .tl{margin-top:36px;max-width:1040px}
+  .tl-step{margin-bottom:-34px}.tl-step:last-child{margin-bottom:0}
+  .tl-card{grid-template-columns:170px minmax(0,1fr);align-items:center;gap:16px;padding:14px}
+  .tl-img{aspect-ratio:1/1}
+  .tl-card h3{font-size:25px}
+  .weeks{padding:50px 0 56px}
+}
