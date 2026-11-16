@@ -98,7 +98,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=34">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=35">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -118,7 +118,7 @@ html = f'''<!DOCTYPE html>
 </div>
 <div class="h-right">
   <div class="rec"><figure class="rec-av">{slot('ed-pic rec-ph', '')}<span class="rec-vf">{svg('<circle cx="12" cy="12" r="11" fill="#2F7BEA"/><path d="M7 12.3l3.300 3.300L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.300', '.3'))}</span></figure><p class="rec-t">Recommended by <b>Dr. Wasim Hanif</b> | Certified Diabetologist</p>{svg('<path d="M12 10.500s-3.200-2-3.200-4.300A1.900 1.900 0 0112 5a1.900 1.900 0 013.200 1.200c0 2.300-3.200 4.300-3.200 4.300z" fill="none" stroke="currentColor" stroke-width="1.200"/><path d="M3 13.500c2 0 3.500 1 4.500 2.500l2.500 1.500c1 .600.500 2-.800 1.700L6 18.500M21 13.500c-2 0-3.500 1-4.500 2.500L14 17.500c-1 .600-.500 2 .800 1.700l3.200-.700M3 12.500v7M21 12.500v7" fill="none" stroke="currentColor" stroke-width="1.200" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5').replace('.200', '.2').replace('.300', '.3').replace('.900', '.9').replace('.600', '.6').replace('.800', '.8').replace('.700', '.7'), 'rec-ic')}</div>
-  <a class="rate tp" href="#" target="_blank" rel="noopener"><b class="tp-w">Excellent</b><span class="tp-stars" aria-label="5 out of 5">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n"><u>[XXX] reviews</u> on</span><span class="tp-b">Trustpilot</span></a>
+  <a class="rate tp"><b class="tp-w">Excellent</b><b class="tp-sc">4.8/5</b><span class="tp-stars" aria-label="5 out of 5">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">928 reviews on</span><span class="tp-b">Trustpilot</span></a>
   <h1>Just Jenny™ Cayenne Pepper Softgels</h1>
   <p class="lead"><b>[Product name] is designed to [main mechanism],</b> the hidden root cause of [symptom 1], [symptom 2] and [symptom 3].</p>
   <p class="lead">[One sentence on the daily dose and what it supports, from the inside out.]</p>
@@ -154,7 +154,7 @@ html = f'''<!DOCTYPE html>
 </div></section>
 
 <section class="sp"><div class="wrap">
-<div class="sp-tp"><b class="tp-w">Excellent</b><span class="tp-stars">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">Based on <u>[XXX] reviews</u> on</span><span class="tp-b">Trustpilot</span></div>
+<div class="sp-tp"><b class="tp-w">Excellent</b><b class="tp-sc">4.8/5</b><span class="tp-stars">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">928 reviews on</span><span class="tp-b">Trustpilot</span></div>
 <h2 class="sp-h">Selected customer reviews</h2>
 <p class="sp-sub">See what our customers are saying about Just Jenny</p>
 <p class="sp-note">Individual results vary.</p>

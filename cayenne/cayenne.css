@@ -512,3 +512,9 @@ html,body{overflow-x:hidden}
 .g-main{aspect-ratio:1/1}
 @media(max-width:900px){.gal{grid-template-columns:minmax(0,1fr)}.g-main{aspect-ratio:1/1}}
 .rec-t{white-space:nowrap}@media(max-width:900px){.rec{font-size:12px;gap:7px}.rec-ph{width:30px;height:30px}.rec-ic{width:18px;height:18px}}@media(max-width:380px){.rec{font-size:11.2px}.rec-ic{display:none}}
+
+/* Trustpilot-regel: score 4.8, niet klikbaar, laatste ster half zoals op Trustpilot zelf */
+.rate.tp{cursor:default;pointer-events:none}
+.tp-sc{font-weight:700;font-size:15px}.sp-tp .tp-sc{font-size:18px}
+.rate.tp .tp-stars i:last-child,.sp-tp .tp-stars i:last-child{background:linear-gradient(90deg,#00B67A 50%,#DCDCE6 50%)}
+@media(max-width:900px){.tp-sc{font-size:13.5px}.sp-tp .tp-sc{font-size:16px}.rate.tp{gap:5px;font-size:12px}}
