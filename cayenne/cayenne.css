@@ -570,3 +570,7 @@ h2.sel:before,h2.sel:after{content:"";flex:1;height:1px;background:#b9aeaa}
 .b-gift+.b-gift{border-top:0;padding-top:0}
 .gf-h{white-space:nowrap}
 @media(max-width:900px){.gf-h{letter-spacing:.06em}}
+
+.rv-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rv-top .tp-stars i{width:22px;height:22px;font-size:15px}
+.rv-on{font-size:13.5px;color:#6b6462}.rv-on b{color:var(--ink)}
