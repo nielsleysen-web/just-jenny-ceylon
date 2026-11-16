@@ -23,10 +23,10 @@ def acc(q, a):
     return f'<details class="acc"><summary><span class="q">{q}</span>{PLUS}</summary><div class="a"><p>{a}</p></div></details>'
 
 hero_faq = [
-    ('What does this formula support?', '[Short answer about what the formula supports. Edit this text.]'),
-    ('How many do I take?', '[How many softgels per day and when to take them.]'),
-    ('How long before I notice something?', '[What to expect in the first weeks.]'),
-    ('Do you offer a guarantee?', '[Explain your money-back guarantee here.]'),
+    ('What does this formula support?', "Blood flow to the feet, legs and fingers, plus steady energy and your body's inflammation response."),
+    ('How many do I take?', 'Take 1 softgel daily with a glass of water.'),
+    ('How long before I notice something?', 'Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.'),
+    ('Do you offer a guarantee?', "Yes, a 90-day money-back guarantee. If you're not satisfied, email us within 90 days for a full refund."),
     ('When can I expect delivery?', '[Dispatch and delivery times per country.]'),
 ]
 faqs = [
