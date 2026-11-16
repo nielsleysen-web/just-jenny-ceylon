@@ -96,7 +96,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=15">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=17">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -131,9 +131,7 @@ html = f'''<!DOCTYPE html>
   <div class="bundles">{BUNDLES}</div>
   {GIFTS}
   <p class="ship"><i></i><span>Order before 11:59 pm, shipped the same day from the US</span></p>
-  <div class="atc-wrap"><a class="buy-btn" href="#">Add To Cart – <span class="now">$49.95</span></a></div>
-  <p class="under"><span>{svg('<path d="M4 12a8 8 0 0114-5.300M20 12a8 8 0 01-14 5.300M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.300', '.3'))}Refills every 28 days</span><em></em><span>{svg('<circle cx="12" cy="12" r="8.500" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.500V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'.replace('.500', '.5'))}Skip, pause, or cancel anytime</span></p>
-  <p class="under g">{svg(I_SHIELD)}30 day money back guarantee</p>
+  <div class="atc-wrap"><a class="buy-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span><span class="bb-2">{svg(I_SHIELD)}<span>30 Day Money-Back Guarantee</span></span></a></div>
   <div class="rv"><div class="stars">★★★★★</div><p class="rv-t">[Review text from a real customer.]</p><div class="rv-by">{slot('ed-pic rv-av', '')}<span>[Customer name]</span></div></div>
 </div>
 </div></section>
@@ -196,7 +194,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=3" defer></script>
+<script src="/cayenne/cayenne.js?v=5" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

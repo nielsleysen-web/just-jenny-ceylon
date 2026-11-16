@@ -59,6 +59,7 @@
       const r = $('input', b); if (r) r.checked = true;
       const per = $('.per', b);
       if (now && per) now.textContent = per.textContent.trim();
+      const bw = $('.buy-btn .bb-was'), ws = $('.was', b); if (bw && ws) bw.textContent = ws.textContent.trim();
       // cadeaus: 1 zak = alleen het eerste, 2+1 = eerste twee, 3+2 = alle drie
       const lvl = { 1: 1, 3: 2, 5: 3 }[b.dataset.qty] || 1;
       $$('.gf').forEach((g) => g.classList.toggle('locked', !ED && parseInt(g.dataset.min, 10) > lvl));
@@ -75,6 +76,20 @@
     // foto's uit de editor komen iets later binnen → gekozen offer nog een paar keer toepassen (zolang de bezoeker zelf niets koos)
     if (!ED) { let n = 0, touched = false; document.addEventListener('click', () => { touched = true; }, true); const again = setInterval(() => { const sl = $('.bundle.sel'); if (sl && !touched) pick(sl); if (++n >= 5 || touched) clearInterval(again); }, 600); }
     if (btn) btn.addEventListener('click', (e) => { if (!CHECKOUT_URL || ED) e.preventDefault(); });
+  })();
+
+  /* ---------- titel: op desktop altijd op één lijn (letter wordt kleiner tot hij past) ---------- */
+  (function () {
+    const h = $('.hero h1'); if (!h) return;
+    const fit = () => {
+      h.style.fontSize = '';
+      if (window.innerWidth <= 900) return;
+      let size = 38; h.style.fontSize = size + 'px';
+      while (h.scrollWidth > h.clientWidth + 1 && size > 20) { size -= 1; h.style.fontSize = size + 'px'; }
+    };
+    fit(); window.addEventListener('resize', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    new MutationObserver(fit).observe(h, { childList: true, characterData: true, subtree: true });
   })();
 
   /* ---------- leverdatum: altijd vandaag + 5 dagen ---------- */

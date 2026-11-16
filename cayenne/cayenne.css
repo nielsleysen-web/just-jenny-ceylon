@@ -307,3 +307,27 @@ html,body{overflow-x:hidden}
 .g-nav button{border-color:#84231F;color:#84231F}
 @media(max-width:900px){.guar{background:radial-gradient(90% 38% at 50% 80%,#A8782A 0%,#5D1714 52%,#3B0D0B 100%)}}
 .wk-tile{overflow-wrap:normal;word-break:normal}@media(max-width:900px){.wk-top{grid-template-columns:118px minmax(0,1fr)}.wk-tile{font-size:19px;padding:12px}}
+
+/* voordelen 2 x 2 in een licht vak, kleiner */
+.bens{grid-template-columns:1fr 1fr;gap:10px 14px;background:#FAF7F6;border-radius:8px;padding:12px 14px;margin:14px 0 22px}
+.bens li{font-size:14.5px;gap:9px;line-height:1.25}.bens svg{width:24px;height:24px}
+/* titel op één lijn (desktop), grotere productfoto */
+.hero h1{font-size:33px;white-space:nowrap;letter-spacing:0}
+.hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:44px}
+.gal{grid-template-columns:minmax(0,2.75fr) minmax(0,1fr) minmax(0,.5fr)}
+.g-main{aspect-ratio:auto;min-height:100%}
+/* koopknop: twee regels, prijs + doorstreepte prijs, garantie eronder */
+.buy-btn{background:#8E2320;color:#fff;text-transform:none;letter-spacing:0;padding:13px 14px 12px;border-radius:6px;display:grid;gap:3px;justify-items:center}
+.buy-btn:hover{background:#761B19}
+.bb-1{font-size:25px;font-weight:600;line-height:1.15;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:center}
+.bb-1 i{font-style:normal;opacity:.75;font-weight:400}.bb-was{opacity:.7;font-weight:500}
+.bb-2{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:500;opacity:.82}.bb-2 svg{width:17px;height:17px}
+@media(max-width:900px){
+  .bens{gap:9px 10px;padding:10px 10px}.bens li{font-size:12.5px;gap:7px}.bens svg{width:21px;height:21px}
+  .hero h1{font-size:27px;white-space:normal}
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .gal{grid-template-columns:minmax(0,2.4fr) minmax(0,1fr)}
+  .g-main{min-height:0;aspect-ratio:1/1.12}
+  .bb-1{font-size:21px;gap:8px}.bb-2{font-size:13.5px}
+}
+.bb-2 svg path+path{stroke:#8E2320}
