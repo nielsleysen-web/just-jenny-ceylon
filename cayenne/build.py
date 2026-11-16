@@ -67,6 +67,11 @@ cards = [(I_VEIN, 'Opens Your Smallest Vessels', "Cayenne's capsaicin helps open
          (I_BOLT, 'Prevents Diabetic Fatigue', 'Beetroot supplies natural nitrates your body turns into nitric oxide, for steadier energy through the day.'),
          (I_SHIELD_HEART, 'Protects Heart & Arteries', 'Hawthorn berry and grape seed extract support your heart and help keep artery walls flexible.'),
          (I_BOWL, 'Boosts Absorption', 'Black pepper helps your body take up the other botanicals, so less of the formula goes to waste.')]
+reviews = [
+    ('Steadier Energy, Warmer Hands', "I thought, another wonder supplement, yea right...  but around the two-week mark I noticed that I stopped wearing socks in bed and my hands got their feeling back! And I stopped drinking cups of coffee to survive my crash after 2pm. It's easy to use, I simply take 2 each morning with my coffee.", 'Rob G.', 'Nov 11, 2026'),
+    ('No burning feeling!', "I just felt a slight warmth going down my throat, but no spicy taste or reflux. It's like getting the benefits from eating actual peppers, but the softgel keeps the ingredients off your taste buds.", 'Amanda S.', 'Nov 14, 2026'),
+    ('I Can Finally Sleep Without Wearing Socks!!', "I used to sleep with socks because my feet became so cold during the night. But over the last few weeks I stopped wearing them in bed!! My feet and also my hands feel a lot warmer, my husband doesn't say they feel like a fridge anymore. I feel like they also have more feeling compared to a month ago... It's hard to explain but it feels like I finally got something back I felt like I lost. Love that it's without any chemicals or additives.", 'Ruby F.', 'Nov 1, 2026'),
+]
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
 weeks = [('Days 1–3', 'First Step', '[What the customer can expect in the first days.]'), ('Weeks 1–2', 'Second Step', '[What the customer can expect after one to two weeks.]'), ('Weeks 6–8', 'Your New Baseline', '[What the customer can expect after six to eight weeks.]')]
 vs_rows = ['[Key ingredient + dose]', '[Feature 2]', '[Feature 3]', '[Feature 4]', '[Feature 5]', '[Feature 6]']
@@ -102,7 +107,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=49">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=50">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -166,7 +171,7 @@ html = f'''<!DOCTYPE html>
 <p class="sp-note">Individual results vary.</p>
 </div>
 <div class="sp-strip"><div class="sp-track">{''.join(slot('ed-img sp-ph', f'Customer photo {n}') for n in range(1, 9))}</div></div>
-<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span class="tp-stars">{STARS5}</span></div><h3>"[Review headline {n}]"</h3><p class="sp-t">[Review text from a real customer.]</p><p class="sp-n">[Customer name]</p><p class="sp-d">[Date] · Cayenne Pepper Softgels</p><p class="sp-src">Review on <b>Trustpilot</b></p></div>' for n in range(1, 4))}</div></div>
+<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span class="stars">★★★★★</span></div><h3>{h}</h3><p class="sp-t">"{t}"</p><p class="sp-n">{n}</p><p class="sp-d">{d} · Cayenne Pepper Softgels</p></div>' for h, t, n, d in reviews)}</div></div>
 </section>
 
 <section class="weeks"><div class="wrap">
