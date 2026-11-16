@@ -531,3 +531,5 @@ html,body{overflow-x:hidden}
 .acc .a{overflow:hidden}
 .acc.on{border-color:#84231F;box-shadow:0 4px 16px rgba(132,35,31,.10);background:#FFFBF9}
 .acc .pm{transition:transform .3s}.acc.on .pm{transform:rotate(180deg)}
+
+.rv-date{color:#8b8380;font-size:13.5px;margin-left:auto}
