@@ -152,6 +152,27 @@
     build(); [900, 2500].forEach((t) => setTimeout(build, t));
   })();
   if (ED) $$('details.rb-card').forEach((d) => { d.open = true; });
+  /* ---------- uitklapvragen: vloeiend open en dicht, nooit meer dan één open per groep ---------- */
+  if (!ED) (function () {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const run = (el, from, to, done) => {
+      if (reduce || !el.animate) { done && done(); return; }
+      const an = el.animate([{ height: from + 'px', opacity: from ? 1 : 0 }, { height: to + 'px', opacity: to ? 1 : 0 }], { duration: 260, easing: 'cubic-bezier(.3,.7,.3,1)' });
+      an.onfinish = an.oncancel = () => { done && done(); };
+    };
+    const close = (d) => { if (!d.open || d._busy) return; const a = $('.a', d); d._busy = true; d.classList.remove('on'); run(a, a.offsetHeight, 0, () => { d.open = false; d._busy = false; }); };
+    const open = (d) => { if (d.open || d._busy) return; d.open = true; d.classList.add('on'); const a = $('.a', d); d._busy = true; run(a, 0, a.offsetHeight, () => { d._busy = false; }); };
+    $$('details.acc').forEach((d) => {
+      if (d.open) d.classList.add('on');
+      $('summary', d).addEventListener('click', (e) => {
+        e.preventDefault();
+        if (d.open) { close(d); return; }
+        $$('details.acc', d.parentElement).forEach((x) => { if (x !== d) close(x); });
+        open(d);
+      });
+    });
+  })();
+
   /* ---------- Real Benefits: kaart draait om bij klik, nooit meer dan één tegelijk ---------- */
   if (!ED) (function () {
     const cards = $$('details.rb-card'); if (!cards.length) return;

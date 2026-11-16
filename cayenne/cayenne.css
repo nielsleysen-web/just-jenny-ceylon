@@ -523,3 +523,11 @@ html,body{overflow-x:hidden}
 @media(max-width:380px){.rec{font-size:11px}.rec-t{white-space:normal}}@media(max-width:345px){.rate.tp{flex-wrap:wrap;white-space:normal}}
 
 .b-u{color:var(--red-l);font-weight:600}
+
+/* uitklapvragen: vloeiend open/dicht, klein klikeffect, één tegelijk open */
+.acc{transition:border-color .25s,box-shadow .25s,background-color .25s}
+.acc summary{transition:transform .12s;-webkit-tap-highlight-color:transparent}
+.acc summary:active{transform:scale(.985)}
+.acc .a{overflow:hidden}
+.acc.on{border-color:#84231F;box-shadow:0 4px 16px rgba(132,35,31,.10);background:#FFFBF9}
+.acc .pm{transition:transform .3s}.acc.on .pm{transform:rotate(180deg)}
