@@ -121,7 +121,6 @@ html = f'''<!DOCTYPE html>
   <a class="rate tp"><b class="tp-w">Excellent</b><b class="tp-sc">4.8/5</b><span class="tp-stars" aria-label="5 out of 5">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">928 reviews on</span><span class="tp-b">Trustpilot</span></a>
   <h1>Just Jenny™ Cayenne Pepper Softgels</h1>
   <p class="lead"><b>Just Jenny Cayenne Pepper Softgels are designed to reopen your smallest blood vessels,</b> so oxygen-rich blood can flow back to your nerves.</p>
-  <p class="lead">[One sentence on the daily dose and what it supports, from the inside out.]</p>
   <ul class="bens">{''.join(f'<li>{svg(B_ICONS[n])}<span>{p}</span></li>' for n, p in enumerate(pills))}</ul>
   <h2 class="sel">Select Your Supply</h2>
   <div class="bundles">{BUNDLES}</div>
