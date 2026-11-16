@@ -353,3 +353,13 @@ html,body{overflow-x:hidden}
 .ship i{background:#22B25A;box-shadow:0 0 0 4px rgba(34,178,90,.22),0 0 10px 2px rgba(34,178,90,.55);animation:shipGlow 1.8s ease-in-out infinite}
 @keyframes shipGlow{0%,100%{box-shadow:0 0 0 3px rgba(34,178,90,.18),0 0 6px 1px rgba(34,178,90,.4)}50%{box-shadow:0 0 0 6px rgba(34,178,90,.12),0 0 14px 4px rgba(34,178,90,.7)}}
 @media(prefers-reduced-motion:reduce){.ship i{animation:none}}
+
+/* betaalmethodes onder de knop: gelijke witte kaartjes */
+.pms{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+.pc{aspect-ratio:1.5/1;background:#fff;border:1px solid #DCDCDC;border-radius:6px;display:grid;place-items:center;overflow:hidden;box-shadow:0 1px 1px rgba(0,0,0,.04)}
+.pc img{display:block;max-width:74%;max-height:62%;width:auto;height:auto}
+.pc-amex{border-color:#2557D6;background:#2557D6}.pc-amex img{max-width:none;max-height:none;width:104%;height:104%;object-fit:cover}
+.pc-mastercard img{max-height:72%}.pc-visa img{max-width:70%}.pc-applepay img{max-width:70%}.pc-googlepay img{max-width:72%}.pc-diners img{max-height:66%}
+@media(max-width:900px){.pms{gap:5px;margin-top:12px}.pc{border-radius:5px}}
+.pc-amex img{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}
+.pc-applepay img{max-width:80%;max-height:70%}.pc-discover img{max-width:84%;max-height:70%}.pc-googlepay img{max-width:78%}.pc-paypal img{max-width:80%}.pc-visa img{max-width:74%}

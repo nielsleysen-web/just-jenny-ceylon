@@ -96,7 +96,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=20">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=22">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -126,6 +126,7 @@ html = f'''<!DOCTYPE html>
   {GIFTS}
   <p class="ship"><i></i><span>Order before 11:59 pm, shipped <b>the same day</b> from the US</span></p>
   <div class="atc-wrap"><a class="buy-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span><span class="bb-2">{svg(I_SHIELD)}<span>90 Day Money-Back Guarantee</span></span></a></div>
+  <ul class="pms" aria-label="Accepted payment methods"><li class="pc pc-amex"><img src="/cayenne/assets/pay/amex.svg" alt="American Express" loading="lazy"></li><li class="pc pc-applepay"><img src="/cayenne/assets/pay/applepay.svg" alt="Apple Pay" loading="lazy"></li><li class="pc pc-googlepay"><img src="/cayenne/assets/pay/googlepay.svg" alt="Google Pay" loading="lazy"></li><li class="pc pc-diners"><img src="/cayenne/assets/pay/diners.svg" alt="Diners Club" loading="lazy"></li><li class="pc pc-discover"><img src="/cayenne/assets/pay/discover.svg" alt="Discover" loading="lazy"></li><li class="pc pc-mastercard"><img src="/cayenne/assets/pay/mastercard.svg" alt="Mastercard" loading="lazy"></li><li class="pc pc-paypal"><img src="/cayenne/assets/pay/paypal.svg" alt="PayPal" loading="lazy"></li><li class="pc pc-visa"><img src="/cayenne/assets/pay/visa.svg" alt="Visa" loading="lazy"></li></ul>
   <div class="rv"><div class="stars">★★★★★</div><p class="rv-t">[Review text from a real customer.]</p><div class="rv-by">{slot('ed-pic rv-av', '')}<span>[Customer name]</span></div></div>
 </div>
 </div></section>
