@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ingrediënten — 3 voorstellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#6B1A18;--wine-d:#4E110F;--wine-l:#84231F;--gold:#E0A446;--gold-l:#F3C676;--ink:#16100F;--blush:#F7ECE8;--cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.45}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.intro{padding:30px 0 26px;text-align:center;border-bottom:1px solid #eee}
+.intro h1{font:700 28px/1.1 Inter,sans-serif;margin:0 0 8px}.intro p{margin:0 auto;max-width:560px;color:#555;font-size:15px}
+.nav{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}.nav a{padding:8px 16px;border-radius:999px;border:1px solid var(--wine);color:var(--wine);text-decoration:none;font-weight:700;font-size:13.5px}
+.tag{display:block;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h2.t{font:700 46px/1.02 var(--cond);text-transform:uppercase;text-align:center;margin:0}
+.sub{text-align:center;margin:12px auto 0;font-size:17px;max-width:640px;color:#3d3433}
+.ph{background:#EFE2DD center/cover;display:grid;place-items:center;color:#9a7f7e;font-size:12px;text-align:center}
+section.v{padding:70px 0 80px}
+.sep{height:10px;background:repeating-linear-gradient(90deg,#eee 0 12px,#fff 12px 24px)}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* ===== A — wiel waar je op klikt ===== */
+.a-stage{position:relative;width:560px;height:560px;margin:46px auto 0}
+.a-ring{position:absolute;inset:70px;border-radius:50%;border:2px dashed #e3cfc8}
+.a-core{position:absolute;left:50%;top:50%;width:270px;height:270px;margin:-135px 0 0 -135px;border-radius:50%;background:linear-gradient(140deg,#6B1A18,#84231F);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px;box-shadow:0 14px 40px rgba(107,26,24,.3)}
+.a-core b{font:700 25px/1 var(--cond);text-transform:uppercase;color:var(--gold-l);letter-spacing:.02em}
+.a-core i{font-style:normal;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin:6px 0 8px}
+.a-core p{margin:0;font-size:13.5px;line-height:1.4}
+.a-core.sw>*{animation:fadeUp .4s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.a-node{position:absolute;width:96px;margin:-48px 0 0 -48px;background:none;border:0;padding:0;text-align:center;transition:transform .3s}
+.a-node .ph{width:84px;height:84px;border-radius:50%;margin:0 auto;border:3px solid #fff;box-shadow:0 0 0 2px #e3cfc8;transition:box-shadow .3s,transform .3s}
+.a-node span{display:block;margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.15}
+.a-node.on .ph{box-shadow:0 0 0 3px var(--gold),0 8px 20px rgba(107,26,24,.25);transform:scale(1.1)}.a-node.on span{color:var(--wine)}
+
+/* ===== B — lijst links, groot paneel rechts, loopt vanzelf door ===== */
+.vb{background:linear-gradient(120deg,#5D1714,#7A1F1D 55%,#561412);color:#fff}
+.vb h2.t{color:var(--gold-l)}.vb .sub{color:#f1dcd6}
+.b-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:34px;margin-top:44px;align-items:stretch}
+.b-list{display:grid;gap:8px;align-content:start}
+.b-tab{position:relative;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;text-align:left;padding:13px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);overflow:hidden;transition:background .3s,border-color .3s}
+.b-tab em{font:700 20px var(--cond);font-style:normal;color:var(--gold-l);opacity:.7}.b-tab b{font-size:16px;font-weight:600}.b-tab small{font-size:12.5px;opacity:.7}
+.b-tab u{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--gold-l);text-decoration:none}
+.b-tab.on{background:rgba(243,198,118,.14);border-color:var(--gold-l)}.b-tab.on em{opacity:1}
+.b-panel{position:relative;border-radius:16px;overflow:hidden;background:#3B0D0B;min-height:440px}
+.b-slide{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;opacity:0;transition:opacity .5s;pointer-events:none}
+.b-slide.on{opacity:1;pointer-events:auto}
+.b-slide .ph{background-color:#7d3a2c;color:#f0d6c4}
+.b-tx{padding:22px 24px 26px;background:#fff;color:var(--ink)}
+.b-tx h3{font:700 30px/1 var(--cond);text-transform:uppercase;color:var(--wine);margin:0 0 4px}
+.b-tx i{font-style:normal;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#C98A2B;font-weight:700}
+.b-tx p{margin:8px 0 0;font-size:15.5px;color:#3d3433}
+
+/* ===== C — kaarten die omdraaien ===== */
+.vc{background:var(--blush)}.vc h2.t{color:var(--wine)}
+.c-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.c-card{position:relative;aspect-ratio:1/1.18;background:none;border:0;padding:0;text-align:left}
+.c-f,.c-b{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .6s cubic-bezier(.4,.1,.2,1);overflow:hidden}
+.c-f{background:#fff;border:1px solid #ead9d3;box-shadow:0 8px 24px rgba(93,23,20,.07);transform:perspective(1100px) rotateY(0);display:grid;grid-template-rows:1fr auto}
+.c-f .ph{background-color:#F3E7E2}
+.c-ft{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px 14px}
+.c-ft b{font-size:16px}.c-ft small{display:block;font-size:12px;color:#C98A2B;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.c-plus{width:30px;height:30px;border-radius:50%;border:1px solid #a9a19c;flex:none;background:linear-gradient(#5a514e,#5a514e) center/12px 1.5px no-repeat,linear-gradient(#5a514e,#5a514e) center/1.5px 12px no-repeat}
+.c-b{background:linear-gradient(140deg,#6B1A18,#84231F);color:#fff;transform:perspective(1100px) rotateY(180deg);padding:18px;display:flex;flex-direction:column;justify-content:center}
+.c-b b{font:700 23px/1 var(--cond);text-transform:uppercase;color:var(--gold-l);margin-bottom:8px}.c-b p{margin:0;font-size:14.5px;line-height:1.45}
+.c-card.on .c-f{transform:perspective(1100px) rotateY(-180deg)}.c-card.on .c-b{transform:perspective(1100px) rotateY(0)}
+.c-last{background:#fff;border:2px dashed #dcc7bf;border-radius:14px;display:grid;place-items:center;text-align:center;padding:18px;font:700 22px/1.1 var(--cond);text-transform:uppercase;color:var(--wine)}
+.c-last span{display:block;font:500 13.5px/1.4 Inter,sans-serif;text-transform:none;color:#6b5a56;margin-top:8px}
+
+@media(max-width:860px){
+  h2.t{font-size:33px}section.v{padding:46px 0 52px}.sub{font-size:15.5px}
+  .a-stage{width:340px;height:340px;margin-top:30px}.a-ring{inset:44px}
+  .a-core{width:170px;height:170px;margin:-85px 0 0 -85px;padding:14px}.a-core b{font-size:17px}.a-core i{font-size:10px;margin:3px 0 4px}.a-core p{font-size:10.5px;line-height:1.3}
+  .a-node{width:64px;margin:-30px 0 0 -32px}.a-node .ph{width:52px;height:52px;font-size:0}.a-node span{font-size:10px;margin-top:4px}
+  .b-grid{grid-template-columns:1fr;gap:16px;margin-top:26px}
+  .b-list{display:flex;overflow-x:auto;gap:8px;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}.b-list::-webkit-scrollbar{display:none}
+  .b-tab{flex:none;grid-template-columns:auto auto;padding:9px 14px;gap:8px}.b-tab small{display:none}.b-tab b{font-size:14px;white-space:nowrap}.b-tab em{font-size:16px}
+  .b-panel{min-height:400px}
+  .c-grid{grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.c-ft{padding:10px 10px 12px}.c-ft b{font-size:14px}.c-ft small{font-size:10.5px}.c-plus{width:26px;height:26px}.c-b{padding:14px}.c-b b{font-size:19px}.c-b p{font-size:13px}
+  .c-last{font-size:18px;aspect-ratio:1/1.18}
+}
+</style>
+</head>
+<body>
+<div class="intro"><div class="wrap">
+<h1>Ingrediënten — 3 voorstellen</h1>
+<p>Klik op de ingrediënten. Teksten, doseringen en foto's zijn invulplekken.</p>
+<div class="nav"><a href="#a">A · Klikbaar wiel</a><a href="#b">B · Lijst met groot paneel</a><a href="#c">C · Omdraaikaarten</a></div>
+</div></div>
+
+<section class="v va" id="a"><div class="wrap">
+<span class="tag">Voorstel A</span>
+<h2 class="t">7 Botanicals. One Formula.</h2>
+<p class="sub">Tap an ingredient to see what it does.</p>
+<div class="a-stage"><div class="a-ring"></div><div class="a-core"><b></b><i></i><p></p></div></div>
+</div></section>
+<div class="sep"></div>
+
+<section class="v vb" id="b"><div class="wrap">
+<span class="tag">Voorstel B</span>
+<h2 class="t">7 Botanicals. One Formula.</h2>
+<p class="sub">Each one chosen for what it does inside your vessels.</p>
+<div class="b-grid"><div class="b-list"></div><div class="b-panel"></div></div>
+</div></section>
+<div class="sep"></div>
+
+<section class="v vc" id="c"><div class="wrap">
+<span class="tag">Voorstel C</span>
+<h2 class="t">7 Botanicals. One Formula.</h2>
+<p class="sub">Tap a card to see what it does.</p>
+<div class="c-grid"></div>
+</div></section>
+
+<script>
+(function () {
+  const $ = (s, r) => (r || document).querySelector(s), $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const ING = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
+    .map((n) => ({ n: n, d: '[XXX mg]', t: '[What ' + n + ' does in this formula — one or two sentences.]' }));
+
+  // A — wiel
+  const stage = $('.a-stage'), core = $('.a-core');
+  const setA = (i) => { $$('.a-node').forEach((x, k) => x.classList.toggle('on', k === i)); core.classList.remove('sw'); void core.offsetWidth; core.classList.add('sw');
+    $('b', core).textContent = ING[i].n; $('i', core).textContent = ING[i].d; $('p', core).textContent = ING[i].t; };
+  ING.forEach((g, i) => { const a = (i / ING.length) * Math.PI * 2 - Math.PI / 2, b = document.createElement('button');
+    b.className = 'a-node'; b.style.left = (50 + Math.cos(a) * 41) + '%'; b.style.top = (50 + Math.sin(a) * 41) + '%';
+    b.innerHTML = '<div class="ph">Photo</div><span>' + g.n + '</span>'; b.addEventListener('click', () => { setA(i); userA = true; }); stage.appendChild(b); });
+  let userA = false, ai = 0; setA(0); setInterval(() => { if (!userA) { ai = (ai + 1) % ING.length; setA(ai); } }, 2800);
+
+  // B — lijst + paneel, loopt vanzelf door met voortgangsbalkje
+  const list = $('.b-list'), panel = $('.b-panel'); let bi = 0, t0 = performance.now(), paused = false; const DUR = 4200;
+  ING.forEach((g, i) => { const b = document.createElement('button'); b.className = 'b-tab';
+    b.innerHTML = '<em>0' + (i + 1) + '</em><b>' + g.n + '</b><small>' + g.d + '</small><u></u>'; b.addEventListener('click', () => { setB(i); paused = true; }); list.appendChild(b);
+    const s = document.createElement('div'); s.className = 'b-slide'; s.innerHTML = '<div class="ph">Photo — ' + g.n + '</div><div class="b-tx"><i>' + g.d + '</i><h3>' + g.n + '</h3><p>' + g.t + '</p></div>'; panel.appendChild(s); });
+  const setB = (i) => { bi = i; t0 = performance.now(); $$('.b-tab').forEach((x, k) => { x.classList.toggle('on', k === i); $('u', x).style.width = '0'; }); $$('.b-slide').forEach((x, k) => x.classList.toggle('on', k === i)); };
+  setB(0);
+  (function loop(now) { if (!paused) { const p = Math.min(1, (now - t0) / DUR); $('u', $$('.b-tab')[bi]).style.width = (p * 100) + '%'; if (p >= 1) setB((bi + 1) % ING.length); } requestAnimationFrame(loop); })(performance.now());
+
+  // C — omdraaikaarten, één tegelijk
+  const grid = $('.c-grid');
+  ING.forEach((g) => { const b = document.createElement('button'); b.className = 'c-card';
+    b.innerHTML = '<div class="c-f"><div class="ph">Photo</div><div class="c-ft"><span><b>' + g.n + '</b><small>' + g.d + '</small></span><span class="c-plus"></span></div></div><div class="c-b"><b>' + g.n + '</b><p>' + g.t + '</p></div>';
+    b.addEventListener('click', () => { const on = !b.classList.contains('on'); $$('.c-card').forEach((x) => x.classList.remove('on')); if (on) b.classList.add('on'); }); grid.appendChild(b); });
+  const last = document.createElement('div'); last.className = 'c-last'; last.innerHTML = '<div>All 7 in one softgel<span>[One line on dose and absorption.]</span></div>'; grid.appendChild(last);
+})();
+</script>
+</body>
+</html>
