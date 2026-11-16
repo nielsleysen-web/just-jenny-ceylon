@@ -56,9 +56,9 @@ B_ICONS = [
 B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').replace('.700', '.7').replace('.300', '.3').replace('.200', '.2').replace('.400', '.4').replace('.100', '.1').replace('.900', '.9') for x in B_ICONS]
 pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
-    (1, 'Buy One', '$29.95 per bag', '$29.95', '$59.95', '', None),
-    (3, 'Buy 2 Get 1 Free', '$16.65 per bag', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
-    (5, 'Buy 3 Get 2 Free', '$17.99 per bag', '$89.95', '$299.75', 'Best Value', ('FREE Bamboo Lid Glass Jar + On-the-Go Softgel Case', 'Both gifts included with this bundle')),
+    (1, 'Buy One', 'Save 50%', '$29.95', '$59.95', '', None),
+    (3, 'Buy 2 Get 1 Free', 'Save 72%', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
+    (5, 'Buy 3 Get 2 Free', 'Save 70%', '$89.95', '$299.75', 'Best Value', ('FREE Bamboo Lid Glass Jar + On-the-Go Softgel Case', 'Both gifts included with this bundle')),
 ]
 circles = ['[Recognisable moment 1 — what the customer feels in the morning.]', '[Recognisable moment 2 — what it feels like during the day.]', '[Recognisable moment 3 — the afternoon dip.]', '[Recognisable moment 4 — how they got used to it.]']
 cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
@@ -98,7 +98,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=38">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=39">
 <!--HEAD-EXTRA-->
 </head>
 <body>
