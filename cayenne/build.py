@@ -96,7 +96,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=18">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=19">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -125,7 +125,7 @@ html = f'''<!DOCTYPE html>
   <div class="bundles">{BUNDLES}</div>
   {GIFTS}
   <p class="ship"><i></i><span>Order before 11:59 pm, shipped the same day from the US</span></p>
-  <div class="atc-wrap"><a class="buy-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span><span class="bb-2">{svg(I_SHIELD)}<span>30 Day Money-Back Guarantee</span></span></a></div>
+  <div class="atc-wrap"><a class="buy-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span><span class="bb-2">{svg(I_SHIELD)}<span>90 Day Money-Back Guarantee</span></span></a></div>
   <div class="rv"><div class="stars">★★★★★</div><p class="rv-t">[Review text from a real customer.]</p><div class="rv-by">{slot('ed-pic rv-av', '')}<span>[Customer name]</span></div></div>
 </div>
 </div></section>
@@ -175,8 +175,8 @@ html = f'''<!DOCTYPE html>
 <section class="faq"><div class="wrap">
 <h2 class="h-c dark faq-h">Our 8 Most Common Questions, Answered</h2>
 <div class="faq-grid">{''.join(acc(q, a) for q, a in faqs)}</div>
-<div class="guar"><div class="gu-l"><p class="gu-k">30 days. No questions.</p><h2>The Just Jenny <span>Guarantee</span></h2><p class="gu-p">[Explain the guarantee in two short sentences.]</p></div>
-<div class="gu-seal"><b>30-DAY</b><span>Money Back Guarantee</span></div>{slot('ed-pic gu-img', 'Product photo')}</div>
+<div class="guar"><div class="gu-l"><p class="gu-k">90 days. No questions.</p><h2>The Just Jenny <span>Guarantee</span></h2><p class="gu-p">[Explain the guarantee in two short sentences.]</p></div>
+<div class="gu-seal"><b>90-DAY</b><span>Money Back Guarantee</span></div>{slot('ed-pic gu-img', 'Product photo')}</div>
 </div></section>
 
 <footer class="ft"><div class="wrap ft-in">
