@@ -506,3 +506,8 @@ html,body{overflow-x:hidden}
 .g-over{z-index:1}
 @media(max-width:900px){.gal{grid-template-columns:minmax(0,3fr) minmax(0,1fr)}.thumbs{gap:7px}.g-main .g-nav{padding:0 8px}.g-main .g-nav button{width:44px;height:44px}}
 @media(min-width:901px){.gal{margin-bottom:20px}}
+/* benefit-tegels naast de hoofdfoto weg: foto over de volle breedte */
+.g-tiles{display:none}
+.gal{grid-template-columns:minmax(0,1fr)}
+.g-main{aspect-ratio:1/1}
+@media(max-width:900px){.gal{grid-template-columns:minmax(0,1fr)}.g-main{aspect-ratio:1/1}}
