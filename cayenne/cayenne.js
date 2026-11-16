@@ -202,12 +202,17 @@
     el.textContent = d.toLocaleDateString('en-US', { month: 'long' }) + ' ' + n + suf;
   })();
 
-  /* ---------- ingrediënten: klik op een naam → bijhorende uitleg ---------- */
-  $$('.i-tab').forEach((t) => t.addEventListener('click', () => {
-    if (ED) return;
-    $$('.i-tab').forEach((x) => x.classList.toggle('on', x === t));
-    $$('.i-p').forEach((p) => p.classList.toggle('on', p.dataset.i === t.dataset.i));
-  }));
+  /* ---------- ingrediënten: lijst + groot paneel, loopt vanzelf door tot iemand klikt ---------- */
+  (function () {
+    const tabs = $$('.ig-tab'), slides = $$('.ig-slide'), list = $('.ig-list'); if (!tabs.length || ED) return;
+    const DUR = 4200; let cur = 0, t0 = performance.now(), paused = false, seen = false;
+    const set = (i, scroll) => { cur = i; t0 = performance.now(); tabs.forEach((x, k) => { x.classList.toggle('on', k === i); $('u', x).style.width = '0'; }); slides.forEach((x, k) => x.classList.toggle('on', k === i));
+      if (scroll !== false && list.scrollWidth > list.clientWidth) list.scrollTo({ left: tabs[i].offsetLeft - list.offsetLeft - 20, behavior: 'smooth' }); };
+    tabs.forEach((x, i) => x.addEventListener('click', () => { paused = true; set(i); }));
+    if ('IntersectionObserver' in window) new IntersectionObserver((es) => { seen = es[0].isIntersecting; if (seen) t0 = performance.now() - (parseFloat($('u', tabs[cur]).style.width) || 0) / 100 * DUR; }, { threshold: 0.3 }).observe($('.ig-grid')); else seen = true;
+    const loop = (now) => { if (!paused && seen) { const p = Math.min(1, (now - t0) / DUR); $('u', tabs[cur]).style.width = (p * 100) + '%'; if (p >= 1) set((cur + 1) % tabs.length); } requestAnimationFrame(loop); };
+    requestAnimationFrame(loop);
+  })();
 
   /* ---------- editor: alle uitklappers open zodat de antwoorden bewerkbaar zijn ---------- */
   if (ED) {

@@ -107,7 +107,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=50">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=51">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -158,10 +158,10 @@ html = f'''<!DOCTYPE html>
 <section class="ingr"><div class="wrap">
 <h2 class="h-c dark">7 Botanicals. Two Daily Softgels.</h2>
 <p class="lead-c dark">[One sentence on dosing and absorption.]</p>
-{slot('ed-pic wheel', 'Ingredient wheel image')}
-<p class="click"><b>Click</b> to see how each ingredient works ↓</p>
-<div class="i-box">{''.join(f'<p class="i-p{" on" if n == 0 else ""}" data-i="{n}">[What {x} does in this formula — one or two sentences.]</p>' for n, x in enumerate(ingredients))}</div>
-<div class="i-tabs">{''.join(f'<button type="button" class="i-tab{" on" if n == 0 else ""}" data-i="{n}">{x}</button>' for n, x in enumerate(ingredients))}</div>
+<div class="ig-grid">
+  <div class="ig-list">{''.join(f'<button type="button" class="ig-tab{" on" if n == 0 else ""}" data-i="{n}"><em>0{n + 1}</em><b>{x}</b><u></u></button>' for n, x in enumerate(ingredients))}</div>
+  <div class="ig-panel">{''.join(f'<div class="ig-slide{" on" if n == 0 else ""}" data-i="{n}">{slot("ed-img ig-img", "Photo — " + x)}<div class="ig-tx"><i>[XXX mg]</i><h3>{x}</h3><p>[What {x} does in this formula — one or two sentences.]</p></div></div>' for n, x in enumerate(ingredients))}</div>
+</div>
 </div></section>
 
 <section class="sp"><div class="wrap">
@@ -229,7 +229,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=13" defer></script>
+<script src="/cayenne/cayenne.js?v=14" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

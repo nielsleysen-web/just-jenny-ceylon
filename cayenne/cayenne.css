@@ -581,3 +581,33 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 .rv-top{gap:8px}.rv-top .tp-stars i{width:17px;height:17px;font-size:11.5px}.rv-on{font-size:12px}
 
 .sp-r .stars{font-size:19px;letter-spacing:2px}.sp-card .sp-n{margin-top:auto;padding-top:18px;color:var(--red);font-weight:600}.sp-card h3{margin-top:14px}
+
+/* reviewsectie: zelfde achtergrond als de probleemsectie */
+.sp{background:var(--pink)}
+/* ingrediënten: lijst links, groot paneel rechts (lichte uitvoering) */
+.ingr{padding:64px 0 70px;background:#fff}
+.ig-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:30px;margin-top:38px;align-items:stretch;text-align:left}
+.ig-list{display:grid;gap:8px;align-content:start}
+.ig-tab{position:relative;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;text-align:left;padding:14px 16px;border-radius:10px;border:1px solid #ead9d3;background:#fff;color:var(--ink);font:inherit;cursor:pointer;overflow:hidden;transition:background .3s,border-color .3s,box-shadow .3s}
+.ig-tab em{font:700 20px var(--cond);font-style:normal;color:#C98A2B;opacity:.75}.ig-tab b{font-size:16px;font-weight:600}
+.ig-tab u{position:absolute;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--red-l),var(--gold));text-decoration:none}
+.ig-tab:hover{border-color:#d9bfb6}
+.ig-tab.on{background:var(--pink);border-color:var(--red);box-shadow:0 4px 14px rgba(107,26,24,.08)}.ig-tab.on em{opacity:1}.ig-tab.on b{color:var(--red)}
+.ig-panel{position:relative;border-radius:16px;overflow:hidden;border:1px solid #ead9d3;min-height:452px;background:#fff;box-shadow:0 10px 30px rgba(93,23,20,.08)}
+.ig-slide{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;opacity:0;transition:opacity .5s;pointer-events:none}
+.ig-slide.on{opacity:1;pointer-events:auto}
+.ig-img{border-radius:0;min-height:0}
+.ig-tx{padding:20px 24px 24px;background:var(--pink);border-top:1px solid #ead9d3}
+.ig-tx i{font-style:normal;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#C98A2B;font-weight:700}
+.ig-tx h3{font:700 30px/1 var(--cond);text-transform:uppercase;color:var(--red);margin:2px 0 0}
+.ig-tx p{margin:8px 0 0;font-size:15.5px;color:#3d3433}
+.jj-editing .ig-panel{min-height:0;display:grid;gap:14px;border:0;box-shadow:none;overflow:visible}
+.jj-editing .ig-slide{position:static;opacity:1;pointer-events:auto;border:1px solid #ead9d3;border-radius:12px;overflow:hidden}.jj-editing .ig-img{aspect-ratio:16/7}
+@media(max-width:900px){
+  .ingr{padding:42px 0 46px}
+  .ig-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:24px}
+  .ig-list{display:flex;overflow-x:auto;gap:8px;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}.ig-list::-webkit-scrollbar{display:none}
+  .ig-tab{flex:none;grid-template-columns:auto auto;padding:9px 14px;gap:8px}.ig-tab b{font-size:14px;white-space:nowrap}.ig-tab em{font-size:16px}
+  .ig-panel{min-height:400px}.ig-tx{padding:16px 18px 20px}.ig-tx h3{font-size:26px}.ig-tx p{font-size:14.5px}
+  .jj-editing .ig-list{flex-wrap:wrap;overflow:visible}
+}
