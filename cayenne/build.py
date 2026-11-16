@@ -98,7 +98,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=41">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=42">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -132,10 +132,13 @@ html = f'''<!DOCTYPE html>
 </div>
 </div></section>
 
-<section class="red"><div class="wrap">
+<section class="prob"><div class="wrap">
 <h2 class="h-c">Diabetes Is Shutting Down Your Circulation</h2>
 <p class="lead-c">Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.</p>
-<div class="circles">{''.join(f'<div class="circ">{slot("ed-img c-img", "Photo")}<p>{c}</p></div>' for c in circles)}</div>
+<div class="circles">{''.join(f'<div class="circ">{slot("ed-img c-img", "Photo")}<span class="c-n">{n}</span><p>{c}</p></div>' for n, c in enumerate(circles, 1))}</div>
+</div></section>
+
+<section class="red"><div class="wrap">
 <div class="support">
   <div class="s-l"><h2>[Solution headline]</h2><p class="s-sub">[One sentence on the formula and what each ingredient is chosen for.]</p>
   <div class="cards">{''.join(f'<div class="card">{svg(i)}<h3>{t}</h3><p>{p}</p></div>' for i, t, p in cards)}</div></div>
@@ -217,7 +220,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=12" defer></script>
+<script src="/cayenne/cayenne.js?v=13" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

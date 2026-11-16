@@ -533,3 +533,21 @@ html,body{overflow-x:hidden}
 .acc .pm{transition:transform .3s}.acc.on .pm{transform:rotate(180deg)}
 
 .rv-date{color:#8b8380;font-size:13.5px;margin-left:auto}
+
+/* probleemsectie: genummerde kaarten op lichte achtergrond */
+.prob{background:var(--pink);padding:64px 0 70px}
+.prob .h-c{color:var(--red)}.prob .lead-c{color:#3d3433}
+.prob .circles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:40px 0 0}
+.prob .circ{position:relative;text-align:left;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #ead9d3;box-shadow:0 8px 24px rgba(93,23,20,.07);display:block;transition:opacity .6s,transform .6s}
+.prob .c-img{width:100%;aspect-ratio:4/3;border-radius:0;margin:0;outline:0}
+.prob .c-n{position:absolute;left:14px;top:14px;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;border:2px solid var(--gold);font:700 20px var(--cond);display:grid;place-items:center;z-index:2}
+.prob .circ p{max-width:none;margin:0;padding:16px 16px 20px;font-size:15.5px;color:#2a2221}
+.prob.anim .circ{opacity:0;transform:translateY(28px)}.prob.anim .circ.on{opacity:1;transform:none}
+.red .support{margin-top:0}
+@media(max-width:900px){
+  .prob{padding:42px 0 46px}
+  .prob .circles{grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+  .prob .circ,.prob .circ:nth-child(even){display:block}.prob .circ:nth-child(even) .c-img{order:0}
+  .prob .circ p{font-size:14px;padding:12px 12px 16px}.prob .c-n{width:34px;height:34px;font-size:17px;left:10px;top:10px}
+}
+@media(prefers-reduced-motion:reduce){.prob.anim .circ{opacity:1;transform:none}}

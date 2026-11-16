@@ -152,6 +152,13 @@
     build(); [900, 2500].forEach((t) => setTimeout(build, t));
   })();
   if (ED) $$('details.rb-card').forEach((d) => { d.open = true; });
+  /* ---------- probleemkaarten: komen één voor één binnen ---------- */
+  if (!ED && 'IntersectionObserver' in window) (function () {
+    const sec = $('.prob'); if (!sec) return; const cs = $$('.circ', sec); sec.classList.add('anim');
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('on'), (cs.indexOf(e.target) % 4) * 110); io.unobserve(e.target); } }), { threshold: 0.2 });
+    cs.forEach((c) => io.observe(c));
+  })();
+
   /* ---------- uitklapvragen: vloeiend open en dicht, nooit meer dan één open per groep ---------- */
   if (!ED) (function () {
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
