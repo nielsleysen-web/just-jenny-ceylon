@@ -108,6 +108,14 @@
     build(); [900, 2200, 4500].forEach((t) => setTimeout(build, t));
   })();
 
+  /* ---------- voordelen-strook: lijst verdubbelen zodat hij naadloos doorloopt ---------- */
+  (function () {
+    const track = $('.rb-track'); if (!track || ED) return;
+    const build = () => { $$('.rb-clone', track).forEach((c) => c.remove()); const orig = $$('.rb-it', track); for (let r = 1; r < 8; r++) orig.forEach((o) => { const c = o.cloneNode(true); c.classList.add('rb-clone'); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); }); };
+    build(); [900, 2500].forEach((t) => setTimeout(build, t));
+  })();
+  if (ED) $$('details.rb-card').forEach((d) => { d.open = true; });
+
   /* ---------- leverdatum: altijd vandaag + 5 dagen ---------- */
   (function () {
     const el = $('.dlv-d'); if (!el) return;

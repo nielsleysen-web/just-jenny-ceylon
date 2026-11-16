@@ -9,6 +9,7 @@ def svg(d, cls=''):
     return f'<svg class="{cls}" viewBox="0 0 24 24" aria-hidden="true">{d}</svg>'
 
 I_DROP = svg('<path d="M12 3c3 4 5.500 6.800 5.500 10a5.500 5.500 0 01-11 0C6.500 9.800 9 7 12 3z" fill="currentColor"/>'.replace('.500', '.5'))
+I_DROP_RAW = '<path d="M12 3c3 4 5.5 6.8 5.5 10a5.5 5.5 0 01-11 0C6.5 9.8 9 7 12 3z" fill="currentColor"/>'
 I_FLOW = '<path d="M7 3v7a2 2 0 002 2v9M5 3v5M9 3v5M16 3c-2 2-2.500 5-1 8l1 1v9M19 6a2 2 0 110 4 2 2 0 010-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5')
 I_BOLT = '<path d="M13.500 2L5 13.500h5.500L9.500 22 19 10h-5.800z" fill="currentColor"/>'.replace('.500', '.5')
 I_HEART = '<path d="M12 21s-8-5.200-8-11a4.600 4.600 0 018-3 4.600 4.600 0 018 3c0 5.800-8 11-8 11z" fill="currentColor"/><path d="M6.500 12h3l1.500-2.500 2 5 1.500-2.500h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.600', '.6').replace('.200', '.2').replace('.500', '.5')
@@ -96,7 +97,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=23">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=24">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -167,6 +168,14 @@ html = f'''<!DOCTYPE html>
 <div class="w-grid">{''.join(f'<div class="wk"><div class="wk-top"><div class="wk-tile"><b>{a}</b><b>{b}</b></div>{slot("ed-img wk-img", "Photo")}</div><p>{c}</p></div>' for a, b, c in weeks)}</div>
 </div></section>
 
+<section class="rb"><div class="wrap">
+<h2 class="rb-h">Real Benefits.</h2>
+<p class="rb-sub">7 botanicals. Two daily softgels.</p>
+<div class="rb-grid">{''.join(f'<details class="rb-card"><summary>{slot("ed-img rb-img", "Photo")}<span class="rb-tx"><b>[Benefit {n}]</b><span>[Short line about this benefit.]</span></span><span class="rb-plus" aria-hidden="true"></span></summary><div class="rb-more"><p>[Two or three sentences that explain this benefit in more detail.]</p></div></details>' for n in range(1, 5))}</div>
+</div>
+<div class="rb-tick"><div class="rb-track">{''.join(f'<span class="rb-it">{svg(i)}<span>{t}</span></span>' for i, t in ((I_DROP_RAW, 'Blood Flow Support'), (I_BOLT, 'Daily Energy'), (I_SHIELD, 'Vessel Support'), (I_HEART, 'Heart & Arteries'), (I_BOWL, 'Better Absorption'), (I_FLOW, '7 Botanicals')))}</div></div>
+</section>
+
 <section class="red vs-sec"><div class="wrap">
 <h2 class="h-c">So What Makes The Difference?</h2>
 <p class="lead-c">[One sentence on how your formula compares to the usual alternatives.]</p>
@@ -199,7 +208,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=6" defer></script>
+<script src="/cayenne/cayenne.js?v=7" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
