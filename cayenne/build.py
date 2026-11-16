@@ -24,7 +24,7 @@ def acc(q, a):
 
 hero_faq = [
     ('What does this formula support?', "Blood flow to the feet, legs and fingers, plus steady energy and your body's inflammation response."),
-    ('How many do I take?', 'Take 1 softgel daily with a glass of water.'),
+    ('How many do I take?', 'Take 2 softgels daily with a glass of water.'),
     ('How long before I notice something?', 'Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.'),
     ('Do you offer a guarantee?', "Yes, a 90-day money-back guarantee. If you're not satisfied, email us within 90 days for a full refund."),
     ('When can I expect delivery?', 'Orders ship fast and are usually received within 4–5 business days, based on your location.'),
@@ -107,7 +107,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=52">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=53">
 <!--HEAD-EXTRA-->
 </head>
 <body>

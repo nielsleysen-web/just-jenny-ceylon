@@ -613,3 +613,11 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 }
 
 .sp-card .sp-src{margin-top:0;padding-top:12px}
+
+/* reviewkaarten: breder en minder hoog */
+@media(min-width:901px){
+  .sp-cards{gap:16px;width:min(1360px,calc(100vw - 48px));margin-left:50%;transform:translateX(-50%)}
+  .sp-card{padding:20px 22px 20px}
+  .sp-card h3{font-size:17px;margin:12px 0 6px}.sp-t{font-size:15px;line-height:1.5}
+  .sp-card .sp-n{padding-top:14px;font-size:14.5px}.sp-d{font-size:13.5px;margin-top:4px}
+}
