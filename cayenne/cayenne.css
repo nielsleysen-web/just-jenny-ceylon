@@ -645,3 +645,8 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
   .sp-dots i{background:#dcc7bf}.sp-dots i.on{background:var(--red)}
   .jj-editing .sp-cards{flex-direction:column;overflow:visible}
 }
+/* reviewkaarten op desktop: gecentreerd binnen de paginabreedte, naam direct onder de review */
+@media(min-width:901px){
+  .sp-cards{width:auto;margin-left:0;transform:none;gap:16px;align-items:start;max-width:1140px;margin:0 auto}
+}
+.sp-card .sp-n{margin-top:0;padding-top:12px}
