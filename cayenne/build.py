@@ -96,7 +96,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=19">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=20">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -124,7 +124,7 @@ html = f'''<!DOCTYPE html>
   <h2 class="sel">Select Your Supply</h2>
   <div class="bundles">{BUNDLES}</div>
   {GIFTS}
-  <p class="ship"><i></i><span>Order before 11:59 pm, shipped the same day from the US</span></p>
+  <p class="ship"><i></i><span>Order before 11:59 pm, shipped <b>the same day</b> from the US</span></p>
   <div class="atc-wrap"><a class="buy-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span><span class="bb-2">{svg(I_SHIELD)}<span>90 Day Money-Back Guarantee</span></span></a></div>
   <div class="rv"><div class="stars">★★★★★</div><p class="rv-t">[Review text from a real customer.]</p><div class="rv-by">{slot('ed-pic rv-av', '')}<span>[Customer name]</span></div></div>
 </div>

@@ -347,3 +347,9 @@ html,body{overflow-x:hidden}
   .g-main{aspect-ratio:1/1.16}
   .tile{font-size:10.5px;padding:8px 4px}.tile svg{width:26px;height:26px}
 }
+
+/* verzendregel: "the same day" vet en rood, groen gloeiend bolletje */
+.ship b{color:#B5281F;font-weight:800}
+.ship i{background:#22B25A;box-shadow:0 0 0 4px rgba(34,178,90,.22),0 0 10px 2px rgba(34,178,90,.55);animation:shipGlow 1.8s ease-in-out infinite}
+@keyframes shipGlow{0%,100%{box-shadow:0 0 0 3px rgba(34,178,90,.18),0 0 6px 1px rgba(34,178,90,.4)}50%{box-shadow:0 0 0 6px rgba(34,178,90,.12),0 0 14px 4px rgba(34,178,90,.7)}}
+@media(prefers-reduced-motion:reduce){.ship i{animation:none}}
