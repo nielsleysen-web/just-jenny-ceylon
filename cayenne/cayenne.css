@@ -553,3 +553,16 @@ html,body{overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){.prob.anim .circ{opacity:1;transform:none}}
 
 .rv-src{margin-top:12px;padding-top:12px;border-top:1px solid #efe6e2}
+
+/* actietitel boven de bundels: gecentreerd tussen twee lijnen */
+h2.sel{display:flex;align-items:center;gap:16px;font-family:Inter,system-ui,sans-serif;font-style:italic;font-weight:700;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:var(--red-l);white-space:nowrap;margin:22px 0 16px}
+h2.sel:before,h2.sel:after{content:"";flex:1;height:1px;background:#b9aeaa}
+/* mobiel: eerst titel, dan reviews, dan inleiding */
+@media(max-width:900px){
+  .h-right>h1{order:2}
+  .h-right>.rate{order:3;margin:8px 0 10px}
+  .h-right>*:not(h1):not(.rate):not(.rec){order:4}
+  .h-faq{order:5}
+  h2.sel{font-size:15.5px;gap:10px;margin:18px 0 14px}
+}
+@media(max-width:345px){h2.sel{font-size:13.5px;gap:8px}}
