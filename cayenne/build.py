@@ -55,8 +55,8 @@ B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').r
 pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
     (1, 'Buy One', '$29.95 per bag', '$29.95', '$59.95', '', None),
-    (3, 'Buy 2 Get 1 Free', '$16.65 per bag', '$49.95', '$179.85', 'Most Popular', ('FREE [Gift name] ($[XX] Value)', '[Short description of the gift]')),
-    (5, 'Buy 3 Get 2 Free', '$17.99 per bag', '$89.95', '$299.75', 'Best Value', ('FREE [Gift names] ($[XX] Value)', '[Short description of the gifts]')),
+    (3, 'Buy 2 Get 1 Free', '$16.65 per bag', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
+    (5, 'Buy 3 Get 2 Free', '$17.99 per bag', '$89.95', '$299.75', 'Best Value', ('FREE Bamboo Lid Glass Jar + On-the-Go Softgel Case', 'Both gifts included with this bundle')),
 ]
 circles = ['[Recognisable moment 1 — what the customer feels in the morning.]', '[Recognisable moment 2 — what it feels like during the day.]', '[Recognisable moment 3 — the afternoon dip.]', '[Recognisable moment 4 — how they got used to it.]']
 cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
@@ -75,6 +75,16 @@ def bundle(q, t, u, p, w, tag, gift):
             + f'<span class="b-p"><b class="per">{p}</b><s class="was">{w}</s></span></span>'
             + (f'<span class="b-gift">{GIFT_CK}<span class="b-g"><b>{gift[0]}</b><i>{gift[1]}</i></span></span>' if gift else '') + '</label>')
 BUNDLES = ''.join(bundle(*b) for b in bundles)
+LOCK = svg('<rect x="5" y="10.500" width="14" height="10" rx="2.200" fill="currentColor"/><path d="M8 10.500V8a4 4 0 018 0v2.500" fill="none" stroke="currentColor" stroke-width="2.200"/><circle cx="12" cy="15" r="1.400" fill="#fff"/>'.replace('.500', '.5').replace('.200', '.2').replace('.400', '.4'))
+TRUCK = svg('<path d="M2 6.500h12.500v10H2z" fill="currentColor"/><path d="M14.500 9.500h4l3.500 3.500v3.500h-7.500z" fill="currentColor"/><circle cx="7" cy="17.500" r="2.300" fill="currentColor" stroke="#fff" stroke-width="1.200"/><circle cx="17.500" cy="17.500" r="2.300" fill="currentColor" stroke="#fff" stroke-width="1.200"/><text x="8.200" y="12.800" text-anchor="middle" font-size="3.600" font-weight="800" fill="#fff" font-family="Arial">FREE</text>'.replace('.500', '.5').replace('.300', '.3').replace('.200', '.2').replace('.800', '.8').replace('.600', '.6'))
+def gift(level, pic, was, name):
+    return f'<div class="gf" data-min="{level}"><div class="gf-pic">{pic}</div><s class="gf-was">{was}</s><b class="gf-name">{name}</b><div class="gf-lock">{LOCK}<span>Locked</span></div></div>'
+GIFTS = ('<div class="gifts"><span class="gf-h">Gifts Unlocked</span><div class="gf-row">'
+         + gift(1, TRUCK, '$3.95', 'FREE Shipping') + '<i class="gf-plus">+</i>'
+         + gift(2, slot('ed-pic gf-img', 'Photo'), '$19.95', 'FREE Bamboo Lid Glass Jar') + '<i class="gf-plus">+</i>'
+         + gift(3, slot('ed-pic gf-img', 'Photo'), '$[X.XX]', 'FREE On-the-Go Softgel Case')
+         + '</div></div>')
+CLOCK = svg('<circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6.500V12l3.500 2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'.replace('.500', '.5'))
 BH = '<div class="bh"><p class="bh-t">Big photo per offer (shown when the visitor selects that offer)</p><div class="bh-row">' + ''.join('<div class="bh-c">' + slot('ed-pic bh-img', '', f' data-qty="{q}"') + f'<span class="bh-l">{lbl}</span></div>' for q, lbl in ((1, 'Buy One'), (3, 'Buy 2 Get 1 Free'), (5, 'Buy 3 Get 2 Free'))) + '</div></div>'
 
 html = f'''<!DOCTYPE html>
@@ -86,7 +96,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=10">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=11">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -119,7 +129,8 @@ html = f'''<!DOCTYPE html>
   <ul class="bens">{''.join(f'<li>{svg(B_ICONS[n])}<span>{p}</span></li>' for n, p in enumerate(pills))}</ul>
   <h2 class="sel">Select Your Supply</h2>
   <div class="bundles">{BUNDLES}</div>
-  <p class="disp"><i></i>Available for <u>Next Day Dispatch</u></p>
+  {GIFTS}
+  <p class="dlv">{CLOCK}<span>Order now for delivery by:</span> <b class="dlv-d"></b></p>
   <div class="atc-wrap"><a class="buy-btn" href="#">Add To Cart – <span class="now">$49.95</span></a></div>
   <p class="under"><span>{svg('<path d="M4 12a8 8 0 0114-5.300M20 12a8 8 0 01-14 5.300M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.300', '.3'))}Refills every 28 days</span><em></em><span>{svg('<circle cx="12" cy="12" r="8.500" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.500V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'.replace('.500', '.5'))}Skip, pause, or cancel anytime</span></p>
   <p class="under g">{svg(I_SHIELD)}30 day money back guarantee</p>
@@ -185,7 +196,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=2" defer></script>
+<script src="/cayenne/cayenne.js?v=3" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

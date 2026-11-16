@@ -59,6 +59,9 @@
       const r = $('input', b); if (r) r.checked = true;
       const per = $('.per', b);
       if (now && per) now.textContent = per.textContent.trim();
+      // cadeaus: 1 zak = alleen het eerste, 2+1 = eerste twee, 3+2 = alle drie
+      const lvl = { 1: 1, 3: 2, 5: 3 }[b.dataset.qty] || 1;
+      $$('.gf').forEach((g) => g.classList.toggle('locked', !ED && parseInt(g.dataset.min, 10) > lvl));
       // grote foto wisselt mee met het gekozen offer (als er voor dat offer een foto is ingesteld; anders de gewone hoofdfoto)
       showBig(bgOf($('.bh-img[data-qty="' + b.dataset.qty + '"]')));
       $$('.thumbs .th').forEach((t) => t.classList.remove('on'));
@@ -72,6 +75,14 @@
     // foto's uit de editor komen iets later binnen → gekozen offer nog een paar keer toepassen (zolang de bezoeker zelf niets koos)
     if (!ED) { let n = 0, touched = false; document.addEventListener('click', () => { touched = true; }, true); const again = setInterval(() => { const sl = $('.bundle.sel'); if (sl && !touched) pick(sl); if (++n >= 5 || touched) clearInterval(again); }, 600); }
     if (btn) btn.addEventListener('click', (e) => { if (!CHECKOUT_URL || ED) e.preventDefault(); });
+  })();
+
+  /* ---------- leverdatum: altijd vandaag + 5 dagen ---------- */
+  (function () {
+    const el = $('.dlv-d'); if (!el) return;
+    const d = new Date(Date.now() + 5 * 864e5), n = d.getDate();
+    const suf = n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !== 12 ? 'nd' : n % 10 === 3 && n !== 13 ? 'rd' : 'th';
+    el.textContent = d.toLocaleDateString('en-US', { month: 'long' }) + ' ' + n + suf;
   })();
 
   /* ---------- ingrediënten: klik op een naam → bijhorende uitleg ---------- */
