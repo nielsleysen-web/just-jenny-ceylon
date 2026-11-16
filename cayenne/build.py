@@ -102,7 +102,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=47">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=48">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -121,7 +121,7 @@ html = f'''<!DOCTYPE html>
   <div class="h-faq">{''.join(acc(q, a) for q, a in hero_faq)}</div>
 </div>
 <div class="h-right">
-  <div class="rec"><figure class="rec-av">{slot('ed-pic rec-ph', '')}<span class="rec-vf">{svg('<circle cx="12" cy="12" r="11" fill="#2F7BEA"/><path d="M7 12.3l3.300 3.300L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.300', '.3'))}</span></figure><p class="rec-t">Recommended by <b>Dr. Wasim Hanif</b> | Certified Diabetologist</p>{svg('<path d="M12 10.500s-3.200-2-3.200-4.300A1.900 1.900 0 0112 5a1.900 1.900 0 013.200 1.200c0 2.300-3.200 4.300-3.200 4.300z" fill="none" stroke="currentColor" stroke-width="1.200"/><path d="M3 13.500c2 0 3.500 1 4.500 2.500l2.500 1.500c1 .600.500 2-.800 1.700L6 18.500M21 13.500c-2 0-3.500 1-4.500 2.500L14 17.500c-1 .600-.500 2 .800 1.700l3.200-.700M3 12.500v7M21 12.500v7" fill="none" stroke="currentColor" stroke-width="1.200" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5').replace('.200', '.2').replace('.300', '.3').replace('.900', '.9').replace('.600', '.6').replace('.800', '.8').replace('.700', '.7'), 'rec-ic')}</div>
+  <div class="rec"><figure class="rec-av">{slot('ed-pic rec-ph', '')}<span class="rec-vf">{svg('<circle cx="12" cy="12" r="11" fill="#2F7BEA"/><path d="M7 12.3l3.300 3.300L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.300', '.3'))}</span></figure><p class="rec-t">Recommended by <b>Dr. Wasim Hanif</b> | Certified Diabetologist</p>{svg('<g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13.4s-4.4-2.8-4.4-5.900a2.500 2.500 0 014.4-1.600 2.500 2.500 0 014.4 1.600c0 3.100-4.400 5.900-4.400 5.900z"/><path d="M12 7.300v3M10.500 8.800h3"/><path d="M2.800 11.800v4.400l3.400 3.400h3.400v-2.300c0-1-.6-1.900-1.500-2.300l-2.700-1.300"/><path d="M21.200 11.800v4.400l-3.400 3.400h-3.400v-2.300c0-1 .6-1.900 1.500-2.300l2.700-1.300"/><path d="M6.400 19.600v2.200h3v-2.200M14.600 19.600v2.200h3v-2.200"/></g>'.replace('.900', '.9').replace('.500', '.5').replace('.600', '.6').replace('.100', '.1').replace('.400', '.4').replace('.300', '.3'), 'rec-ic')}</div>
   <a class="rate tp"><b class="tp-w">Excellent</b><b class="tp-sc">4.8/5</b><span class="tp-stars" aria-label="5 out of 5">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">928 reviews on</span><span class="tp-b">Trustpilot</span></a>
   <h1>Just Jenny™ Cayenne Pepper Softgels</h1>
   <p class="lead"><b>Just Jenny Cayenne Pepper Softgels are designed to reopen your smallest blood vessels,</b> so oxygen-rich blood can flow back to your nerves.</p>
