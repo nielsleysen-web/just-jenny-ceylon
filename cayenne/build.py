@@ -60,7 +60,7 @@ bundles = [
     (3, 'Buy 2 Get 1 Free', 'Save 72%', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
     (5, 'Buy 3 Get 2 Free', 'Save 70%', '$89.95', '$299.75', 'Best Value', ('FREE Bamboo Lid Glass Jar + On-the-Go Softgel Case', 'Both gifts included with this bundle')),
 ]
-circles = ['[Recognisable moment 1 — what the customer feels in the morning.]', '[Recognisable moment 2 — what it feels like during the day.]', '[Recognisable moment 3 — the afternoon dip.]', '[Recognisable moment 4 — how they got used to it.]']
+circles = ["You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.", "You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.", "Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.", "You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal."]
 cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
          (I_SHIELD, '[Benefit card title 3]', '[One or two sentences on the third ingredient.]'), (I_BOWL, '[Benefit card title 4]', '[One or two sentences on absorption.]')]
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
@@ -133,8 +133,8 @@ html = f'''<!DOCTYPE html>
 </div></section>
 
 <section class="red"><div class="wrap">
-<h2 class="h-c">[Problem headline — what is going wrong]</h2>
-<p class="lead-c">[One sentence that names the symptoms the customer recognises.]</p>
+<h2 class="h-c">Diabetes Is Shutting Down Your Circulation</h2>
+<p class="lead-c">Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.</p>
 <div class="circles">{''.join(f'<div class="circ">{slot("ed-img c-img", "Photo")}<p>{c}</p></div>' for c in circles)}</div>
 <div class="support">
   <div class="s-l"><h2>[Solution headline]</h2><p class="s-sub">[One sentence on the formula and what each ingredient is chosen for.]</p>
