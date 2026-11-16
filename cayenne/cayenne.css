@@ -283,3 +283,27 @@ html,body{overflow-x:hidden}
 .ship{display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px dashed #b9b2b1;border-bottom:1px dashed #b9b2b1;padding:14px 6px;margin:16px 0 14px;font-size:15.5px;color:#5c6066;text-align:center}
 .ship i{width:9px;height:9px;border-radius:50%;background:#1F4D3A;flex:none}
 @media(max-width:900px){.ship{font-size:13.5px;padding:12px 4px;gap:8px}}
+
+/* ===== Kleuren "Wine & Gold" (uit de eigen verpakking) ===== */
+:root{--red:#6B1A18;--red-d:#4E110F;--red-l:#84231F;--maroon:#2E0A09;--pink:#F7ECE8;--line:#E3C9C2;--gold:#E0A446;--gold-d:#C98C2C}
+.bar{background:#4E110F}.timer{color:#6B1A18}.timer i{color:#b99a98}
+.red{background:linear-gradient(120deg,#5D1714 0%,#7A1F1D 50%,#561412 100%)}
+.red:before{background:radial-gradient(60% 50% at 85% 60%,rgba(224,164,70,.22),transparent 70%),radial-gradient(40% 40% at 10% 20%,rgba(30,4,4,.4),transparent 70%)}
+.h-c:not(.dark),.support h2{color:#F3C676}
+.tag,.tag.dark{background:var(--gold);color:#3A1200}
+.buy-btn{background:var(--gold);color:#3A1200}.buy-btn:hover{background:var(--gold-d)}
+.stars,.rate .stars{color:var(--gold)}
+.card svg,.card h3,.gf-name,.b-p .per{color:#84231F}
+.gf-pic{color:#84231F}.gf-lock{color:#6B1A18}.gf-h{background:#FBF1DC}
+.lead b{color:#6B1A18}
+.i-tab{background:#EFE2DD}.i-tab.on{background:#5D1714}
+.prog{background:#3F0D0B}.prog i{background:var(--gold)}
+.stat b{color:#F3C676}
+.vs-row .vs-us{color:#84231F}.vs-row .vs-ot svg path+path{stroke:#84231F}
+.guar{background:radial-gradient(42% 90% at 84% 50%,#A8782A 0%,#5D1714 48%,#3B0D0B 100%)}.guar h2 span{color:#F3C676}
+.nl button{background:var(--gold);color:#3A1200}
+.ship i{background:#84231F}
+.cart b{background:#84231F}
+.g-nav button{border-color:#84231F;color:#84231F}
+@media(max-width:900px){.guar{background:radial-gradient(90% 38% at 50% 80%,#A8782A 0%,#5D1714 52%,#3B0D0B 100%)}}
+.wk-tile{overflow-wrap:normal;word-break:normal}@media(max-width:900px){.wk-top{grid-template-columns:118px minmax(0,1fr)}.wk-tile{font-size:19px;padding:12px}}
