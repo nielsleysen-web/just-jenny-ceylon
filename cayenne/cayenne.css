@@ -566,3 +566,7 @@ h2.sel:before,h2.sel:after{content:"";flex:1;height:1px;background:#b9aeaa}
   h2.sel{font-size:15.5px;gap:10px;margin:18px 0 14px}
 }
 @media(max-width:345px){h2.sel{font-size:13.5px;gap:8px}}
+
+.b-gift+.b-gift{border-top:0;padding-top:0}
+.gf-h{white-space:nowrap}
+@media(max-width:900px){.gf-h{letter-spacing:.06em}}
