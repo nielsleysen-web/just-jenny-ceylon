@@ -34,21 +34,25 @@
     over.style.backgroundImage = img || ''; over.style.display = img ? 'block' : 'none';
   };
 
-  /* ---------- galerij: klik op een kleine foto → grote foto; pijlen bladeren ---------- */
+  /* ---------- galerij: klik op een kleine foto → grote foto; pijlen op de foto en vegen met de duim bladeren ---------- */
   (function () {
-    const thumbs = $$('.thumbs .th');
+    const thumbs = $$('.thumbs .th'), nav = $('.g-nav');
     if (!mainEl || !thumbs.length || ED) return;
-    let cur = -1;
+    mainEl.appendChild(nav); mainEl.classList.add('g-has-nav');
+    let cur = -1; // -1 = de hoofdfoto zelf
     const show = (i) => {
-      const n = thumbs.length; i = ((i % n) + n) % n;
-      const img = bgOf(thumbs[i]); if (!img) return;
-      showBig(img); thumbs.forEach((t, k) => t.classList.toggle('on', k === i)); cur = i;
+      if (i === -1) { showBig(''); thumbs.forEach((x) => x.classList.remove('on')); cur = -1; return true; }
+      const img = bgOf(thumbs[i]); if (!img) return false;
+      showBig(img); thumbs.forEach((x, k) => x.classList.toggle('on', k === i)); cur = i; return true;
     };
-    thumbs.forEach((t, i) => t.addEventListener('click', () => show(i)));
-    const step = (d) => { const n = thumbs.length; for (let k = 1; k <= n; k++) { const i = (((cur + d * k) % n) + n) % n; if (bgOf(thumbs[i])) return show(i); } };
-    const p = $('.g-prev'), nx = $('.g-next');
-    if (p) p.addEventListener('click', () => step(-1));
-    if (nx) nx.addEventListener('click', () => step(1));
+    thumbs.forEach((x, i) => x.addEventListener('click', () => show(i)));
+    const step = (d) => { const n = thumbs.length + 1; let pos = cur + 1; for (let k = 0; k < n; k++) { pos = (((pos + d) % n) + n) % n; if (show(pos - 1)) return; } };
+    $('.g-prev', nav).addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+    $('.g-next', nav).addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+    // vegen: horizontale beweging van minstens 36px (en duidelijk meer horizontaal dan verticaal)
+    let sx = 0, sy = 0, down = false;
+    mainEl.addEventListener('touchstart', (e) => { const p = e.touches[0]; sx = p.clientX; sy = p.clientY; down = true; }, { passive: true });
+    mainEl.addEventListener('touchend', (e) => { if (!down) return; down = false; const p = e.changedTouches[0], dx = p.clientX - sx, dy = p.clientY - sy; if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.4) step(dx < 0 ? 1 : -1); }, { passive: true });
   })();
 
   /* ---------- bundels: keuze → knop toont de prijs en gaat naar de checkout met die bundel ---------- */
