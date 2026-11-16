@@ -39,7 +39,20 @@ faqs = [
     ('Is it suitable for long-term daily use?', '[Answer]'),
 ]
 tiles = [(I_FLOW, 'Benefit<br>One'), (I_BOLT, 'Benefit<br>Two'), (I_HEART, 'Benefit<br>Three')]
-pills = ['[Benefit 1 — short and specific]', '[Benefit 2 — short and specific]', '[Benefit 3 — short and specific]', '[Benefit 4 — dose or key ingredient]']
+L = 'fill="none" stroke="#8b8f94" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"'
+A = 'fill="#E9B4A6" stroke="#C0563F" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"'
+B_ICONS = [
+    # voet met druppel (doorbloeding)
+    f'<path {L} d="M8 2v9.5c0 1.4-.9 2.300-2.200 3C4 15.500 2.500 16.800 2.500 18.800 2.500 20.400 3.800 21.500 5.500 21.500h10c2 0 3.500-1.400 3.500-3.200 0-1.700-1.200-2.800-2.800-3.400L14 14V2"/><path {L} d="M6 18.500h.01M9 19h.01M12 19h.01"/><path {A} d="M19.500 3.500c1.500 1.900 2.300 3.200 2.300 4.500a2.300 2.300 0 01-4.600 0c0-1.300.800-2.600 2.300-4.500z"/>',
+    # batterij met bliksem (energie)
+    f'<rect {L} x="1.500" y="6" width="18.500" height="12" rx="2.500"/><path {L} d="M22.500 10v4"/><path {A} d="M12 7.500L7.500 12.500h3l-1 4 4.500-5h-3z"/>',
+    # bloedvat met rustige doorstroming
+    f'<path {L} d="M1.500 6.500c3.500 0 4.500 2 7 2s3.500-2 7-2 4 1.500 7 1.500M1.500 17.500c3.500 0 4.500-2 7-2s3.500 2 7 2 4-1.500 7-1.500"/><ellipse {A} cx="6" cy="12" rx="2.400" ry="1.800"/><ellipse {A} cx="12.500" cy="12" rx="2.400" ry="1.800"/><ellipse {A} cx="19" cy="12" rx="2.400" ry="1.800"/>',
+    # chilipeper
+    f'<path {A} d="M7.500 7c6.500-.500 12 3.500 13.500 12 .300 1.800-1.200 2.800-2.600 1.800C13 17 6.500 16.500 4.200 11.800 3.200 9.600 4.800 7.200 7.500 7z"/><path {L} d="M8 7c-.800-2.500.500-4.500 3.500-5"/>',
+]
+B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').replace('.700', '.7').replace('.300', '.3').replace('.200', '.2').replace('.400', '.4') for x in B_ICONS]
+pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
     (1, 'Buy 1', '$19.99', '$49.99', ''),
     (3, 'Buy 2 Get 1 Free', '$39.99', '$149.99', 'RECOMMENDED'),
@@ -67,7 +80,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=5">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=7">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -96,7 +109,7 @@ html = f'''<!DOCTYPE html>
   <h1>Just Jenny™ Cayenne Pepper Softgels</h1>
   <p class="lead"><b>[Product name] is designed to [main mechanism],</b> the hidden root cause of [symptom 1], [symptom 2] and [symptom 3].</p>
   <p class="lead">[One sentence on the daily dose and what it supports, from the inside out.]</p>
-  <ul class="pills">{''.join(f'<li>{I_DROP}<span>{p}</span></li>' for p in pills)}</ul>
+  <ul class="bens">{''.join(f'<li>{svg(B_ICONS[n])}<span>{p}</span></li>' for n, p in enumerate(pills))}</ul>
   <h2 class="sel">Select Your Supply</h2>
   <div class="bundles">{BUNDLES}</div>
   <p class="disp"><i></i>Available for <u>Next Day Dispatch</u></p>
