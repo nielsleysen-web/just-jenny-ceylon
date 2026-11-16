@@ -42,16 +42,16 @@ tiles = [(I_FLOW, 'Benefit<br>One'), (I_BOLT, 'Benefit<br>Two'), (I_HEART, 'Bene
 L = 'fill="none" stroke="#8b8f94" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"'
 A = 'fill="#E9B4A6" stroke="#C0563F" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"'
 B_ICONS = [
-    # voet met druppel (doorbloeding)
-    f'<path {L} d="M8 2v9.5c0 1.4-.9 2.300-2.200 3C4 15.500 2.500 16.800 2.500 18.800 2.500 20.400 3.800 21.500 5.500 21.500h10c2 0 3.500-1.400 3.500-3.200 0-1.700-1.200-2.800-2.800-3.400L14 14V2"/><path {L} d="M6 18.500h.01M9 19h.01M12 19h.01"/><path {A} d="M19.500 3.500c1.500 1.900 2.300 3.200 2.300 4.500a2.300 2.300 0 01-4.600 0c0-1.300.800-2.600 2.300-4.500z"/>',
-    # batterij met bliksem (energie)
-    f'<rect {L} x="1.500" y="6" width="18.500" height="12" rx="2.500"/><path {L} d="M22.500 10v4"/><path {A} d="M12 7.500L7.500 12.500h3l-1 4 4.500-5h-3z"/>',
-    # bloedvat met rustige doorstroming
-    f'<path {L} d="M1.500 6.500c3.500 0 4.500 2 7 2s3.500-2 7-2 4 1.500 7 1.500M1.500 17.500c3.500 0 4.500-2 7-2s3.500 2 7 2 4-1.500 7-1.500"/><ellipse {A} cx="6" cy="12" rx="2.400" ry="1.800"/><ellipse {A} cx="12.500" cy="12" rx="2.400" ry="1.800"/><ellipse {A} cx="19" cy="12" rx="2.400" ry="1.800"/>',
-    # chilipeper
-    f'<path {A} d="M7.500 7c6.500-.500 12 3.500 13.500 12 .300 1.800-1.200 2.800-2.600 1.800C13 17 6.500 16.500 4.200 11.800 3.200 9.600 4.800 7.200 7.500 7z"/><path {L} d="M8 7c-.800-2.500.500-4.500 3.500-5"/>',
+    # bloeddruppel
+    '<path d="M12 2.500c3.800 4.700 6.500 8 6.500 11.500a6.500 6.500 0 01-13 0c0-3.500 2.700-6.800 6.500-11.500z" fill="#D9413A" stroke="#A8231F" stroke-width="1.200" stroke-linejoin="round"/><path d="M8.800 14.500a3.300 3.300 0 002.400 3.200" fill="none" stroke="#fff" stroke-width="1.400" stroke-linecap="round" opacity=".85"/>',
+    # energieniveau: batterij met volle balkjes
+    f'<rect {L} x="1.500" y="6.500" width="18.500" height="11" rx="2.500"/><path {L} d="M22.500 10v4"/><rect x="4" y="9" width="3.600" height="6" rx="1" fill="#D9413A"/><rect x="9" y="9" width="3.600" height="6" rx="1" fill="#D9413A"/><rect x="14" y="9" width="3.600" height="6" rx="1" fill="#E9B4A6"/>',
+    # adertje: vertakt bloedvat
+    '<path d="M3 20c3-1 5.500-3.500 7-7 1-2.400 1.400-5.500 1-10M10 13c2.500-.500 5-2.200 6.500-5.200M13.300 10.600c2.800 1 5.200.800 7.700-.600M6.500 17c.500 1.600.400 3-.200 4.500" fill="none" stroke="#D9413A" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/>',
+    # klein vol rood pepertje
+    '<path d="M8.500 7.500c6-.800 11 3.200 12.500 10.500.400 2-1.100 3.200-2.700 2.200C13.500 17 7.500 16.800 5 12.300 3.800 10 5.300 7.900 8.500 7.500z" fill="#D9413A"/><path d="M9.500 8c-1.200-2.300-.400-4.300 2.300-5.200" fill="none" stroke="#3E8E41" stroke-width="2" stroke-linecap="round"/><path d="M6.500 8.600c1.500-1.500 4-1.800 5.500-.800" fill="none" stroke="#3E8E41" stroke-width="1.800" stroke-linecap="round"/>',
 ]
-B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').replace('.700', '.7').replace('.300', '.3').replace('.200', '.2').replace('.400', '.4') for x in B_ICONS]
+B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').replace('.700', '.7').replace('.300', '.3').replace('.200', '.2').replace('.400', '.4').replace('.100', '.1').replace('.900', '.9') for x in B_ICONS]
 pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
     (1, 'Buy 1', '$19.99', '$49.99', ''),
@@ -80,7 +80,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=7">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=8">
 <!--HEAD-EXTRA-->
 </head>
 <body>
