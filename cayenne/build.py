@@ -54,9 +54,9 @@ B_ICONS = [
 B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').replace('.700', '.7').replace('.300', '.3').replace('.200', '.2').replace('.400', '.4').replace('.100', '.1').replace('.900', '.9') for x in B_ICONS]
 pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
-    (1, 'Buy 1', '$19.99', '$49.99', ''),
-    (3, 'Buy 2 Get 1 Free', '$39.99', '$149.99', 'RECOMMENDED'),
-    (5, 'Buy 3 Get 2 Free', '$59.99', '$249.99', 'BEST VALUE'),
+    (1, 'Buy 1', '$29.95', '$59.95', ''),
+    (3, 'Buy 2 Get 1 Free', '$49.95', '$179.85', 'RECOMMENDED'),
+    (5, 'Buy 3 Get 2 Free', '$89.95', '$299.75', 'BEST VALUE'),
 ]
 circles = ['[Recognisable moment 1 — what the customer feels in the morning.]', '[Recognisable moment 2 — what it feels like during the day.]', '[Recognisable moment 3 — the afternoon dip.]', '[Recognisable moment 4 — how they got used to it.]']
 cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
@@ -113,7 +113,7 @@ html = f'''<!DOCTYPE html>
   <h2 class="sel">Select Your Supply</h2>
   <div class="bundles">{BUNDLES}</div>
   <p class="disp"><i></i>Available for <u>Next Day Dispatch</u></p>
-  <div class="atc-wrap"><a class="buy-btn" href="#">Add To Cart – <span class="now">$39.99</span></a></div>
+  <div class="atc-wrap"><a class="buy-btn" href="#">Add To Cart – <span class="now">$49.95</span></a></div>
   <p class="under"><span>{svg('<path d="M4 12a8 8 0 0114-5.300M20 12a8 8 0 01-14 5.300M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.300', '.3'))}Refills every 28 days</span><em></em><span>{svg('<circle cx="12" cy="12" r="8.500" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.500V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'.replace('.500', '.5'))}Skip, pause, or cancel anytime</span></p>
   <p class="under g">{svg(I_SHIELD)}30 day money back guarantee</p>
   <div class="rv"><div class="stars">★★★★★</div><p class="rv-t">[Review text from a real customer.]</p><div class="rv-by">{slot('ed-pic rv-av', '')}<span>[Customer name]</span></div></div>
