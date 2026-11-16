@@ -61,8 +61,12 @@ bundles = [
     (5, 'Buy 3 Get 2 Free', 'Save 70%', '$89.95', '$299.75', 'Best Value', [('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage'), ('FREE On-the-Go Softgel Case', 'Travel-size softgel carrier')]),
 ]
 circles = ["You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.", "You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.", "Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.", "You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal."]
-cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
-         (I_SHIELD, '[Benefit card title 3]', '[One or two sentences on the third ingredient.]'), (I_BOWL, '[Benefit card title 4]', '[One or two sentences on absorption.]')]
+I_VEIN = '<path d="M3 20c3-1 5.5-3.5 7-7 1-2.4 1.4-5.5 1-10M10 13c2.5-.5 5-2.2 6.5-5.200M13.3 10.6c2.8 1 5.2.8 7.700-.6M6.5 17c.5 1.6.4 3-.2 4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.200', '.2').replace('.700', '.7')
+I_SHIELD_HEART = '<path d="M12 2.5l8 3v6c0 5-3.4 8.8-8 10-4.600-1.2-8-5-8-10v-6z" fill="currentColor"/><path d="M12 16s-3.6-2.300-3.600-4.700a2 2 0 013.600-1.200 2 2 0 013.600 1.200c0 2.400-3.600 4.700-3.600 4.700z" fill="#fff"/>'.replace('.600', '.6').replace('.300', '.3')
+cards = [(I_VEIN, 'Opens Your Smallest Vessels', "Cayenne's capsaicin helps open the tiny capillaries in your feet and fingers, where blood barely gets through."),
+         (I_BOLT, 'Prevents Diabetic Fatigue', 'Beetroot supplies natural nitrates your body turns into nitric oxide, for steadier energy through the day.'),
+         (I_SHIELD_HEART, 'Protects Heart & Arteries', 'Hawthorn berry and grape seed extract support your heart and help keep artery walls flexible.'),
+         (I_BOWL, 'Boosts Absorption', 'Black pepper helps your body take up the other botanicals, so less of the formula goes to waste.')]
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
 weeks = [('Days 1–3', 'First Step', '[What the customer can expect in the first days.]'), ('Weeks 1–2', 'Second Step', '[What the customer can expect after one to two weeks.]'), ('Weeks 6–8', 'Your New Baseline', '[What the customer can expect after six to eight weeks.]')]
 vs_rows = ['[Key ingredient + dose]', '[Feature 2]', '[Feature 3]', '[Feature 4]', '[Feature 5]', '[Feature 6]']
@@ -140,7 +144,7 @@ html = f'''<!DOCTYPE html>
 
 <section class="red"><div class="wrap">
 <div class="support">
-  <div class="s-l"><h2>[Solution headline]</h2><p class="s-sub">[One sentence on the formula and what each ingredient is chosen for.]</p>
+  <div class="s-l"><h2>Support Circulation</h2><p class="s-sub">7 botanicals, each chosen for what it does inside your vessels.</p>
   <div class="cards">{''.join(f'<div class="card">{svg(i)}<h3>{t}</h3><p>{p}</p></div>' for i, t, p in cards)}</div></div>
   {slot('ed-img s-img', 'Product photo')}
 </div>
