@@ -194,3 +194,13 @@ html,body{overflow-x:hidden}
 .lead{font-size:16px;line-height:1.5;color:var(--ink);margin-bottom:14px}.lead b{color:#7A1B1B;font-weight:700}
 .lead+.pills{margin-top:18px}
 @media(max-width:900px){.lead{font-size:15px}}
+
+/* mobiel: aanbevelingsregel boven de foto's */
+@media(max-width:900px){
+  .hero-grid{gap:0}
+  .h-right{display:contents}
+  .h-right>*{order:2}
+  .h-right>.rec{order:0;margin:2px 0 10px}
+  .gal{order:1;margin-bottom:16px}
+  .h-faq{order:3;margin-top:20px}
+}
