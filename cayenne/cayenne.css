@@ -278,3 +278,8 @@ html,body{overflow-x:hidden}
   .gf-was{font-size:12px}.gf-name{font-size:12px}.gf-plus{width:16px;height:16px;font-size:11px}.gf-lock{top:8px;font-size:12.5px}.gf-lock svg{width:17px;height:17px}
   .dlv{font-size:13.5px;padding:9px 8px}
 }
+
+/* verzendregel onder de cadeaus */
+.ship{display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px dashed #b9b2b1;border-bottom:1px dashed #b9b2b1;padding:14px 6px;margin:16px 0 14px;font-size:15.5px;color:#5c6066;text-align:center}
+.ship i{width:9px;height:9px;border-radius:50%;background:#1F4D3A;flex:none}
+@media(max-width:900px){.ship{font-size:13.5px;padding:12px 4px;gap:8px}}
