@@ -24,25 +24,28 @@
     tick(); setInterval(tick, 1000);
   })();
 
+  /* ---------- grote foto: een laag bovenop de hoofdfoto toont een gekozen kleine foto of de foto van het gekozen offer ---------- */
+  const mainEl = $('.g-main');
+  let over = null;
+  const bgOf = (el) => { if (!el) return ''; const v = getComputedStyle(el).backgroundImage; return v && v !== 'none' ? v : ''; };
+  const showBig = (img) => {
+    if (!mainEl || ED) return;
+    if (!over) { over = document.createElement('div'); over.className = 'g-over'; mainEl.appendChild(over); }
+    over.style.backgroundImage = img || ''; over.style.display = img ? 'block' : 'none';
+  };
+
   /* ---------- galerij: klik op een kleine foto → grote foto; pijlen bladeren ---------- */
   (function () {
-    const main = $('.g-main'), thumbs = $$('.thumbs .th');
-    if (!main || !thumbs.length || ED) return;
+    const thumbs = $$('.thumbs .th');
+    if (!mainEl || !thumbs.length || ED) return;
     let cur = -1;
-    const bg = (el) => { const v = getComputedStyle(el).backgroundImage; return v && v !== 'none' ? v : ''; };
-    const original = () => main.dataset.orig || (main.dataset.orig = bg(main));
     const show = (i) => {
-      const n = thumbs.length;
-      i = ((i % n) + n) % n;
-      const img = bg(thumbs[i]);
-      if (!img) return;
-      original();
-      main.style.backgroundImage = img; main.classList.add('has-img');
-      thumbs.forEach((t, k) => t.classList.toggle('on', k === i));
-      cur = i;
+      const n = thumbs.length; i = ((i % n) + n) % n;
+      const img = bgOf(thumbs[i]); if (!img) return;
+      showBig(img); thumbs.forEach((t, k) => t.classList.toggle('on', k === i)); cur = i;
     };
     thumbs.forEach((t, i) => t.addEventListener('click', () => show(i)));
-    const step = (d) => { for (let k = 1; k <= thumbs.length; k++) { const i = cur + d * k; const n = thumbs.length; if (bg(thumbs[((i % n) + n) % n])) return show(i); } };
+    const step = (d) => { const n = thumbs.length; for (let k = 1; k <= n; k++) { const i = (((cur + d * k) % n) + n) % n; if (bgOf(thumbs[i])) return show(i); } };
     const p = $('.g-prev'), nx = $('.g-next');
     if (p) p.addEventListener('click', () => step(-1));
     if (nx) nx.addEventListener('click', () => step(1));
@@ -56,6 +59,9 @@
       const r = $('input', b); if (r) r.checked = true;
       const per = $('.per', b);
       if (now && per) now.textContent = per.textContent.trim();
+      // grote foto wisselt mee met het gekozen offer (als er voor dat offer een foto is ingesteld; anders de gewone hoofdfoto)
+      showBig(bgOf($('.bh-img[data-qty="' + b.dataset.qty + '"]')));
+      $$('.thumbs .th').forEach((t) => t.classList.remove('on'));
       if (btn) btn.href = CHECKOUT_URL ? CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'b=' + b.dataset.qty : '#';
     };
     $$('.bundle').forEach((b) => b.addEventListener('click', (e) => { if (ED && e.target.closest('[contenteditable]')) return; pick(b); }));
@@ -63,6 +69,8 @@
     if (first) setTimeout(() => pick(first), 0);
     // teksten uit de editor komen later binnen → prijs op de knop bijwerken
     if (!ED && first) new MutationObserver(() => { const s = $('.bundle.sel'); if (s && now) { const per = $('.per', s); if (per && now.textContent !== per.textContent.trim()) now.textContent = per.textContent.trim(); } }).observe($('.bundles'), { childList: true, subtree: true, characterData: true });
+    // foto's uit de editor komen iets later binnen → gekozen offer nog een paar keer toepassen (zolang de bezoeker zelf niets koos)
+    if (!ED) { let n = 0, touched = false; document.addEventListener('click', () => { touched = true; }, true); const again = setInterval(() => { const sl = $('.bundle.sel'); if (sl && !touched) pick(sl); if (++n >= 5 || touched) clearInterval(again); }, 600); }
     if (btn) btn.addEventListener('click', (e) => { if (!CHECKOUT_URL || ED) e.preventDefault(); });
   })();
 

@@ -210,3 +210,35 @@ html,body{overflow-x:hidden}
 .bens li{display:flex;align-items:center;gap:14px;font-size:17px;color:var(--ink)}
 .bens svg{width:34px;height:34px;flex:none}
 @media(max-width:900px){.bens{gap:11px;margin:14px 0 20px}.bens li{font-size:15.5px;gap:12px}.bens svg{width:30px;height:30px}}
+
+/* offers: afbeelding, titel + prijs per zak, prijs rechts, cadeau-regel bij de gekozen bundel */
+.bundles{gap:18px}
+.bundle{display:block;padding:0;min-height:0;border:1.5px solid #cfc6c5;border-radius:10px;background:#fff}
+.bundle.sel{background:var(--pink);border-color:var(--red)}
+.b-main{display:flex;align-items:center;gap:16px;padding:14px 16px}
+.b-img{width:92px;height:70px;flex:none;background-color:transparent}
+.b-txt{flex:1;min-width:0;display:grid;gap:4px}
+.b-t{font-size:18px;font-weight:700;color:var(--ink)}
+.b-u{font-size:15.5px;color:#3d3433}
+.b-p{display:grid;gap:3px;text-align:right;white-space:nowrap}
+.b-p .per{font-size:19px;font-weight:700;color:var(--red)}
+.b-p .was{font-size:15.5px;color:#8a6f6e;margin:0}
+.tag,.tag.dark{position:absolute;right:14px;top:-13px;background:var(--red);color:#fff;font-size:13.5px;font-weight:700;letter-spacing:0;padding:3px 16px;border-radius:999px;text-transform:none}
+.b-gift{display:none;align-items:center;gap:14px;margin:0 16px;padding:12px 0 14px;border-top:1px solid #dcb9b9}
+.bundle.sel .b-gift{display:flex}
+.b-gift svg{width:24px;height:24px;flex:none;color:#2f9e5b}
+.b-g{display:grid;gap:2px}.b-g b{font-size:16px;font-weight:700}.b-g i{font-style:normal;font-size:14.5px;color:#6a5b5a}
+/* foto per offer: alleen zichtbaar in de editor */
+.bh{display:none}
+.jj-editing .bh{display:block;border:1px dashed #c9a9a8;border-radius:8px;padding:12px;margin:0 0 20px}
+.bh-t{font-size:12.5px;color:#7a6665;margin-bottom:8px}.bh-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.bh-img{aspect-ratio:1/1}
+.jj-editing .bundle .b-gift{display:flex}
+@media(max-width:900px){
+  .b-main{gap:12px;padding:12px}.b-img{width:74px;height:60px}.b-t{font-size:16px}.b-u{font-size:14px}.b-p .per{font-size:17px}.b-p .was{font-size:14px}
+  .b-gift{margin:0 12px;gap:10px}.b-g b{font-size:14.5px}.b-g i{font-size:13.5px}
+  .bh{order:1}
+}
+
+.g-over{position:absolute;inset:0;background:#fff center/cover no-repeat;display:none}
+
+.bh-l{display:block;text-align:center;font-size:12px;font-weight:600;color:#5a4a49;margin-top:5px}

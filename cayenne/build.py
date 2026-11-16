@@ -54,9 +54,9 @@ B_ICONS = [
 B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').replace('.700', '.7').replace('.300', '.3').replace('.200', '.2').replace('.400', '.4').replace('.100', '.1').replace('.900', '.9') for x in B_ICONS]
 pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
-    (1, 'Buy 1', '$29.95', '$59.95', ''),
-    (3, 'Buy 2 Get 1 Free', '$49.95', '$179.85', 'RECOMMENDED'),
-    (5, 'Buy 3 Get 2 Free', '$89.95', '$299.75', 'BEST VALUE'),
+    (1, 'Buy One', '$29.95 per bag', '$29.95', '$59.95', '', None),
+    (3, 'Buy 2 Get 1 Free', '$16.65 per bag', '$49.95', '$179.85', 'Most Popular', ('FREE [Gift name] ($[XX] Value)', '[Short description of the gift]')),
+    (5, 'Buy 3 Get 2 Free', '$17.99 per bag', '$89.95', '$299.75', 'Best Value', ('FREE [Gift names] ($[XX] Value)', '[Short description of the gifts]')),
 ]
 circles = ['[Recognisable moment 1 — what the customer feels in the morning.]', '[Recognisable moment 2 — what it feels like during the day.]', '[Recognisable moment 3 — the afternoon dip.]', '[Recognisable moment 4 — how they got used to it.]']
 cards = [(I_FLOW, '[Benefit card title 1]', '[One or two sentences on how the main ingredient works.]'), (I_BOLT, '[Benefit card title 2]', '[One or two sentences on the second ingredient.]'),
@@ -66,10 +66,16 @@ weeks = [('Days<br>1-3', 'First<br>Step', '[What the customer can expect in the 
 vs_rows = ['[Key ingredient + dose]', '[Feature 2]', '[Feature 3]', '[Feature 4]', '[Feature 5]', '[Feature 6]']
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
 
-BUNDLES = ''.join(
-    f'<label class="bundle{" sel" if q == 3 else ""}" data-qty="{q}">{f"<span class={chr(34)}tag{" dark" if tag == "BEST VALUE" else ""}{chr(34)}>{tag}</span>" if tag else ""}'
-    f'<input type="radio" name="bundle" value="{q}"{" checked" if q == 3 else ""}>{slot("ed-pic b-img", "Photo")}'
-    f'<span class="b-t">{t}</span><span class="b-p"><b class="per">{p}</b> <s class="was">{w}</s></span></label>' for q, t, p, w, tag in bundles)
+GIFT_CK = svg('<path d="M4.500 12.500l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5').replace('.600', '.6'))
+def bundle(q, t, u, p, w, tag, gift):
+    on = q == 3
+    return (f'<label class="bundle{" sel" if on else ""}" data-qty="{q}">' + (f'<span class="tag">{tag}</span>' if tag else '')
+            + f'<input type="radio" name="bundle" value="{q}"{" checked" if on else ""}>'
+            + f'<span class="b-main">{slot("ed-pic b-img", "Photo")}<span class="b-txt"><b class="b-t">{t}</b><span class="b-u">{u}</span></span>'
+            + f'<span class="b-p"><b class="per">{p}</b><s class="was">{w}</s></span></span>'
+            + (f'<span class="b-gift">{GIFT_CK}<span class="b-g"><b>{gift[0]}</b><i>{gift[1]}</i></span></span>' if gift else '') + '</label>')
+BUNDLES = ''.join(bundle(*b) for b in bundles)
+BH = '<div class="bh"><p class="bh-t">Big photo per offer (shown when the visitor selects that offer)</p><div class="bh-row">' + ''.join('<div class="bh-c">' + slot('ed-pic bh-img', '', f' data-qty="{q}"') + f'<span class="bh-l">{lbl}</span></div>' for q, lbl in ((1, 'Buy One'), (3, 'Buy 2 Get 1 Free'), (5, 'Buy 3 Get 2 Free'))) + '</div></div>'
 
 html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -80,7 +86,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=8">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=10">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -101,6 +107,7 @@ html = f'''<!DOCTYPE html>
     <div class="thumbs">{''.join(slot('ed-pic th', f'Photo {n}') for n in range(1, 6))}</div>
   </div>
   <div class="g-nav"><button type="button" class="g-prev" aria-label="Previous photo">{svg('<path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>')}</button><button type="button" class="g-next" aria-label="Next photo">{svg('<path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>')}</button></div>
+  {BH}
   <div class="h-faq">{''.join(acc(q, a) for q, a in hero_faq)}</div>
 </div>
 <div class="h-right">
@@ -178,7 +185,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=1" defer></script>
+<script src="/cayenne/cayenne.js?v=2" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
