@@ -467,3 +467,30 @@ html,body{overflow-x:hidden}
   .tl-card h3{font-size:25px}
   .weeks{padding:50px 0 56px}
 }
+
+/* herhaling van het offer boven de FAQ */
+.offer2{background:#F5F1EC;padding:60px 0 64px;text-align:center}
+.o2-h{font-family:Inter,system-ui,sans-serif;text-transform:none;font-size:32px;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin:0}
+.o2-h span{color:var(--red-l)}
+.o2-sub{font-size:17px;color:#3d3433;margin:10px 0 0}
+.o2-box{max-width:700px;margin:34px auto 0;text-align:left}
+.o2-price{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 0;border-top:1px solid #ddd3cc;border-bottom:1px solid #ddd3cc;margin-bottom:16px}
+.o2-now{font-size:22px;font-weight:700;color:var(--red-l)}.o2-was{font-size:19px;color:#3d3433}
+.o2-save{background:var(--red-l);color:#fff;font-weight:700;font-size:14.5px;letter-spacing:.03em;text-transform:uppercase;border-radius:4px;padding:5px 12px}
+.o2-note{border:1px dashed #c9b9b2;border-radius:8px;padding:22px;text-align:center;color:#7a6a66;font-size:14px}
+.o2-body .ship{justify-content:center}
+@media(max-width:900px){.offer2{padding:40px 0 44px}.o2-h{font-size:25px}.o2-sub{font-size:15px}.o2-box{margin-top:22px}.o2-now{font-size:19px}.o2-was{font-size:16px}.o2-save{font-size:12.5px;padding:4px 9px}}
+
+/* Real Benefits: omdraaiende kaarten */
+.rb-flip{position:relative;cursor:pointer;background:transparent;border-color:transparent;transition:min-height .35s}
+.rb-flip summary,.rb-flip .rb-more{backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .6s cubic-bezier(.4,.1,.2,1);border-radius:10px}
+.rb-flip summary{background:#fff;border:1px solid #d9d2cc;transform:perspective(1200px) rotateX(0);height:100%;min-height:inherit}
+.rb-flip .rb-more{position:absolute;inset:0;margin:0;padding:18px 58px 18px 22px;background:linear-gradient(120deg,#6B1A18,#84231F);color:#fff;font-size:15.5px;line-height:1.45;display:flex;align-items:center;transform:perspective(1200px) rotateX(-180deg);box-sizing:border-box}
+.rb-flip .rb-more p{color:#fff;margin:0}
+.rb-flip .rb-more:after{content:"";position:absolute;right:18px;top:50%;width:34px;height:34px;margin-top:-17px;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:linear-gradient(#F3C676,#F3C676) center/12px 1.5px no-repeat}
+.rb-flip.flipped summary{transform:perspective(1200px) rotateX(180deg)}
+.rb-flip.flipped .rb-more{transform:perspective(1200px) rotateX(0)}
+.rb-flip:not(.flipped) .rb-more{pointer-events:none}
+.rb-flip .rb-plus:after{transform:translate(-50%,-50%) rotate(90deg)!important}
+@media(max-width:900px){.rb-flip .rb-more{padding:12px 48px 12px 16px;font-size:14px}.rb-flip .rb-more:after{right:12px;width:28px;height:28px;margin-top:-14px}}
+@media(prefers-reduced-motion:reduce){.rb-flip summary,.rb-flip .rb-more{transition:none}}

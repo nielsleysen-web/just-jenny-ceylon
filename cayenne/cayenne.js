@@ -53,29 +53,48 @@
 
   /* ---------- bundels: keuze → knop toont de prijs en gaat naar de checkout met die bundel ---------- */
   (function () {
-    const btn = $('.buy-btn'), now = $('.buy-btn .now');
-    const pick = (b) => {
-      $$('.bundle').forEach((x) => x.classList.toggle('sel', x === b));
-      const r = $('input', b); if (r) r.checked = true;
-      const per = $('.per', b);
-      if (now && per) now.textContent = per.textContent.trim();
-      const bw = $('.buy-btn .bb-was'), ws = $('.was', b); if (bw && ws) bw.textContent = ws.textContent.trim();
+    const money = (s) => parseFloat(String(s).replace(/[^0-9.]/g, '')) || 0;
+    let cur = null;
+    const pick = (q) => {
+      cur = q; const b = $('.bundles .bundle[data-qty="' + q + '"]'); if (!b) return;
+      $$('.bundle').forEach((x) => { const on = x.dataset.qty === q; x.classList.toggle('sel', on); const r = $('input', x); if (r) r.checked = on; });
+      const per = $('.per', b), ws = $('.was', b), pt = per ? per.textContent.trim() : '', wt = ws ? ws.textContent.trim() : '';
+      $$('.buy-btn .now').forEach((n) => { if (pt) n.textContent = pt; });
+      $$('.buy-btn .bb-was').forEach((n) => { if (wt) n.textContent = wt; });
+      // prijsregel van de herhaling onderaan
+      const on2 = $('.o2-now'), ow2 = $('.o2-was'), os2 = $('.o2-save');
+      if (on2 && pt) on2.textContent = pt; if (ow2 && wt) ow2.textContent = wt;
+      if (os2) { const d = money(wt) - money(pt); os2.textContent = 'Save $' + d.toFixed(2); os2.style.display = d > 0 ? '' : 'none'; }
       // cadeaus: 1 zak = alleen het eerste, 2+1 = eerste twee, 3+2 = alle drie
-      const lvl = { 1: 1, 3: 2, 5: 3 }[b.dataset.qty] || 1;
+      const lvl = { 1: 1, 3: 2, 5: 3 }[q] || 1;
       $$('.gf').forEach((g) => g.classList.toggle('locked', !ED && parseInt(g.dataset.min, 10) > lvl));
       // grote foto wisselt mee met het gekozen offer (als er voor dat offer een foto is ingesteld; anders de gewone hoofdfoto)
-      showBig(bgOf($('.bh-img[data-qty="' + b.dataset.qty + '"]')));
-      $$('.thumbs .th').forEach((t) => t.classList.remove('on'));
-      if (btn) btn.href = CHECKOUT_URL ? CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'b=' + b.dataset.qty : '#';
+      showBig(bgOf($('.bh-img[data-qty="' + q + '"]')));
+      $$('.thumbs .th').forEach((x) => x.classList.remove('on'));
+      $$('.buy-btn').forEach((x) => { x.href = CHECKOUT_URL ? CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'b=' + q : '#'; });
     };
-    $$('.bundle').forEach((b) => b.addEventListener('click', (e) => { if (ED && e.target.closest('[contenteditable]')) return; pick(b); }));
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest('.bundle');
+      if (b) { if (ED && e.target.closest('[contenteditable]')) return; pick(b.dataset.qty); return; }
+      if (e.target.closest('.buy-btn') && (!CHECKOUT_URL || ED)) e.preventDefault();
+    });
+    // herhaling boven de FAQ: kopie van het offer bovenaan, zodat teksten en foto's maar op één plek beheerd worden
+    const body = $('.o2-body'), src = $('.h-right');
+    const mirror = () => {
+      if (!body || !src || ED) return;
+      body.innerHTML = '';
+      ['.bundles', '.gifts', '.ship', '.atc-wrap'].forEach((sel) => { const el = $(sel, src); if (!el) return; const c = el.cloneNode(true);
+        $$('[data-jj-key]', c).forEach((x) => x.removeAttribute('data-jj-key')); $$('input', c).forEach((x) => { x.name = 'bundle2'; });
+        body.appendChild(c); });
+      if (cur) pick(cur);
+    };
     const first = $('.bundle.sel') || $('.bundle');
-    if (first) setTimeout(() => pick(first), 0);
-    // teksten uit de editor komen later binnen → prijs op de knop bijwerken
-    if (!ED && first) new MutationObserver(() => { const s = $('.bundle.sel'); if (s && now) { const per = $('.per', s); if (per && now.textContent !== per.textContent.trim()) now.textContent = per.textContent.trim(); } }).observe($('.bundles'), { childList: true, subtree: true, characterData: true });
-    // foto's uit de editor komen iets later binnen → gekozen offer nog een paar keer toepassen (zolang de bezoeker zelf niets koos)
-    if (!ED) { let n = 0, touched = false; document.addEventListener('click', () => { touched = true; }, true); const again = setInterval(() => { const sl = $('.bundle.sel'); if (sl && !touched) pick(sl); if (++n >= 5 || touched) clearInterval(again); }, 600); }
-    if (btn) btn.addEventListener('click', (e) => { if (!CHECKOUT_URL || ED) e.preventDefault(); });
+    if (first) setTimeout(() => { pick(first.dataset.qty); mirror(); }, 0);
+    // teksten en foto's uit de editor komen later binnen → prijs en kopie bijwerken; grote foto nog een paar keer toepassen zolang de bezoeker zelf niets koos
+    if (!ED && first) {
+      let touched = false; document.addEventListener('click', () => { touched = true; }, true);
+      [700, 1500, 2600, 4500].forEach((ms) => setTimeout(() => { if (touched) { const keep = cur; mirror(); if (keep) pick(keep); } else { mirror(); } }, ms));
+    }
   })();
 
   /* ---------- titel: op desktop altijd op één lijn (letter wordt kleiner tot hij past) ---------- */
@@ -129,6 +148,19 @@
     build(); [900, 2500].forEach((t) => setTimeout(build, t));
   })();
   if (ED) $$('details.rb-card').forEach((d) => { d.open = true; });
+  /* ---------- Real Benefits: kaart draait om bij klik, nooit meer dan één tegelijk ---------- */
+  if (!ED) (function () {
+    const cards = $$('details.rb-card'); if (!cards.length) return;
+    const set = (c, on) => {
+      c.classList.toggle('flipped', on);
+      const m = $('.rb-more', c), s = $('summary', c);
+      c.style.minHeight = on && m ? Math.max(s.offsetHeight, m.scrollHeight) + 'px' : '';
+      if (s) s.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+    cards.forEach((c) => { c.open = true; c.classList.add('rb-flip'); set(c, false);
+      c.addEventListener('click', (e) => { e.preventDefault(); const on = !c.classList.contains('flipped'); cards.forEach((x) => set(x, x === c && on)); });
+    });
+  })();
 
   /* ---------- leverdatum: altijd vandaag + 5 dagen ---------- */
   (function () {
