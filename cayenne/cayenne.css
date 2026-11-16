@@ -518,3 +518,6 @@ html,body{overflow-x:hidden}
 .tp-sc{font-weight:700;font-size:15px}.sp-tp .tp-sc{font-size:18px}
 .rate.tp .tp-stars i:last-child,.sp-tp .tp-stars i:last-child{background:linear-gradient(90deg,#00B67A 50%,#DCDCE6 50%)}
 @media(max-width:900px){.tp-sc{font-size:13.5px}.sp-tp .tp-sc{font-size:16px}.rate.tp{gap:5px;font-size:12px}}
+@media(max-width:900px){.rec{max-width:100%;min-width:0;font-size:11.5px;gap:6px}.rec-t{overflow:hidden;text-overflow:ellipsis}.rec-ic{display:none}}
+@media(max-width:380px){.rate.tp{font-size:11px;gap:4px}.rate.tp .tp-w,.rate.tp .tp-sc{font-size:12.5px}.rate.tp .tp-stars i{width:16px;height:16px;font-size:10.5px}.rate.tp .tp-b{font-size:12.5px}.rec{font-size:10.6px}}
+@media(max-width:380px){.rec{font-size:11px}.rec-t{white-space:normal}}@media(max-width:345px){.rate.tp{flex-wrap:wrap;white-space:normal}}
