@@ -621,3 +621,27 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
   .sp-card h3{font-size:17px;margin:12px 0 6px}.sp-t{font-size:15px;line-height:1.5}
   .sp-card .sp-n{padding-top:14px;font-size:14.5px}.sp-d{font-size:13.5px;margin-top:4px}
 }
+
+/* oplossingssectie op mobiel: productfoto bovenaan, kaarten als veegbare rij */
+.cd-dots{display:none}
+@media(max-width:900px){
+  .support{display:flex;flex-direction:column;gap:0}
+  .s-l{display:contents}
+  .support h2{order:1}.s-sub{order:2;margin:10px 0 18px}
+  .s-img{order:3;aspect-ratio:4/3;border-radius:10px;margin-bottom:16px}
+  .cards{order:4;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 82%;scroll-snap-align:center;border-radius:10px}
+  .cd-dots{order:5;display:flex;justify-content:center;gap:7px;margin-top:14px}
+  .cd-dots i{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.35);transition:all .3s}.cd-dots i.on{background:#F3C676;width:22px}
+  .jj-editing .cards{flex-direction:column;overflow:visible}.jj-editing .cd-dots{display:none}
+}
+
+/* reviewkaarten op mobiel: veegbare rij */
+@media(max-width:900px){
+  .sp-cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:stretch}
+  .sp-cards::-webkit-scrollbar{display:none}
+  .sp-card{flex:0 0 86%;scroll-snap-align:center}
+  .sp-dots i{background:#dcc7bf}.sp-dots i.on{background:var(--red)}
+  .jj-editing .sp-cards{flex-direction:column;overflow:visible}
+}

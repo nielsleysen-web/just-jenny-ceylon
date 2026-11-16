@@ -152,6 +152,15 @@
     build(); [900, 2500].forEach((t) => setTimeout(build, t));
   })();
   if (ED) $$('details.rb-card').forEach((d) => { d.open = true; });
+  /* ---------- veegbare rijen op mobiel (oplossingskaarten, reviews): bolletjes volgen de veegpositie ---------- */
+  [['.support .cards', '.card', '.support .cd-dots i'], ['.sp-cards', '.sp-card', '.sp-dots i']].forEach(([rs, is, ds]) => {
+    const row = $(rs), dots = $$(ds); if (!row || !dots.length || ED) return;
+    const cs = $$(is, row);
+    const upd = () => { const mid = row.scrollLeft + row.clientWidth / 2; let b = 0, d = 1e9; cs.forEach((c, i) => { const m = c.offsetLeft - row.offsetLeft + c.offsetWidth / 2, dd = Math.abs(m - mid); if (dd < d) { d = dd; b = i; } }); dots.forEach((x, i) => x.classList.toggle('on', i === b)); };
+    row.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); upd();
+    dots.forEach((x, i) => x.addEventListener('click', () => row.scrollTo({ left: cs[i].offsetLeft - row.offsetLeft - (row.clientWidth - cs[i].offsetWidth) / 2, behavior: 'smooth' })));
+  });
+
   /* ---------- probleemkaarten: komen één voor één binnen ---------- */
   if (!ED && 'IntersectionObserver' in window) (function () {
     const sec = $('.prob'); if (!sec) return; const cs = $$('.circ', sec); sec.classList.add('anim');

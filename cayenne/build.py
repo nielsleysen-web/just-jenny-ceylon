@@ -107,7 +107,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=53">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=55">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -152,6 +152,7 @@ html = f'''<!DOCTYPE html>
   <div class="s-l"><h2>Support Circulation</h2><p class="s-sub">7 botanicals, each chosen for what it does inside your vessels.</p>
   <div class="cards">{''.join(f'<div class="card">{svg(i)}<h3>{t}</h3><p>{p}</p></div>' for i, t, p in cards)}</div></div>
   {slot('ed-img s-img', 'Product photo')}
+  <div class="cd-dots">{'<i></i>' * len(cards)}</div>
 </div>
 </div></section>
 
@@ -171,7 +172,7 @@ html = f'''<!DOCTYPE html>
 <p class="sp-note">Individual results vary.</p>
 </div>
 <div class="sp-strip"><div class="sp-track">{''.join(slot('ed-img sp-ph', f'Customer photo {n}') for n in range(1, 9))}</div></div>
-<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span class="tp-stars">{STARS5}</span></div><h3>{h}</h3><p class="sp-t">"{t}"</p><p class="sp-n">{n}</p><p class="sp-d">{d} · Cayenne Pepper Softgels</p><p class="sp-src">Review on <b>Trustpilot</b></p></div>' for h, t, n, d in reviews)}</div></div>
+<div class="wrap"><div class="sp-cards">{''.join(f'<div class="sp-card"><div class="sp-r"><span class="tp-stars">{STARS5}</span></div><h3>{h}</h3><p class="sp-t">"{t}"</p><p class="sp-n">{n}</p><p class="sp-d">{d} · Cayenne Pepper Softgels</p><p class="sp-src">Review on <b>Trustpilot</b></p></div>' for h, t, n, d in reviews)}</div><div class="cd-dots sp-dots">{'<i></i>' * len(reviews)}</div></div>
 </section>
 
 <section class="weeks"><div class="wrap">
@@ -229,7 +230,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=14" defer></script>
+<script src="/cayenne/cayenne.js?v=16" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
