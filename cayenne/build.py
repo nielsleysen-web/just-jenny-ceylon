@@ -96,18 +96,12 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=17">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=18">
 <!--HEAD-EXTRA-->
 </head>
 <body>
 <div class="bar"><div class="bar-in"><div class="bar-t"><b>Early Black Friday</b><span>Up to 70% off + free product</span></div>
 <div class="timer" aria-label="Offer countdown"><div><b id="t-h">01</b><i>HRS</i></div><em>:</em><div><b id="t-m">30</b><i>MIN</i></div><em>:</em><div><b id="t-s">00</b><i>SEC</i></div></div></div></div>
-
-<header class="hdr"><div class="wrap hdr-in">
-<span class="hb" aria-hidden="true"><i></i><i></i><i></i></span>
-<a class="logo">Just Jenny</a>
-<span class="cart" aria-hidden="true">{svg('<path d="M6 8h12l-1 12H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.500a3 3 0 016 0V8" fill="none" stroke="currentColor" stroke-width="1.6"/>'.replace('.500', '.5'))}<b>1</b></span>
-</div></header>
 
 <section class="hero" id="top"><div class="wrap hero-grid">
 <div class="h-left">

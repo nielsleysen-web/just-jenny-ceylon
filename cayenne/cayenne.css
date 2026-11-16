@@ -331,3 +331,5 @@ html,body{overflow-x:hidden}
   .bb-1{font-size:21px;gap:8px}.bb-2{font-size:13.5px}
 }
 .bb-2 svg path+path{stroke:#8E2320}
+
+.hero{padding-top:22px}@media(max-width:900px){.hero{padding-top:12px}}
