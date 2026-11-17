@@ -36,6 +36,10 @@
     tick(); setInterval(tick, 1000);
   })();
 
+  // lege alinea's verbergen (ook na het inladen van de teksten uit de editor)
+  const hideEmpty = () => { if (ED) return; $$('.ls-item p').forEach((p) => p.classList.toggle('is-empty', !p.textContent.trim())); };
+  hideEmpty(); addEventListener('load', hideEmpty); setTimeout(hideEmpty, 1200); setTimeout(hideEmpty, 3000);
+
   /* sticky knop: na de vergelijkingstabel, verborgen bij het offer onderaan */
   const satc = $('#satc'), cmp = $('.cmp'), off = $('.offer');
   if (satc && !ED) {

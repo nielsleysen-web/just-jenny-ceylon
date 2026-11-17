@@ -66,9 +66,9 @@ N = len(items)
 def item_html(i, it):
     h, img, pos, cap, ps = it
     return (f'<article class="ls-item"><h2><span class="ls-n">{i}.</span> {h}</h2>'
-            f'<figure class="ls-fig">{pic("ls-img", img, f"Photo reason {i}", pos)}<figcaption>{cap}</figcaption></figure>'
-            + ''.join(f'<p>{p}</p>' for p in ps) +
-            f'<a class="ls-btn" href="/cayenne/">{CTA} <span aria-hidden="true">→</span></a></article>')
+            f'<figure class="ls-fig">{pic("ls-img", img, f"Photo reason {i}", pos)}<p class="ls-cap">{cap}</p></figure>'
+            + ''.join(f'<p>{p}</p>' for p in ps) + '</article>')
+MID_BTN = f'<div class="ls-mid"><a class="ls-btn" href="/cayenne/">{CTA} <span aria-hidden="true">→</span></a></div>'
 
 html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -79,7 +79,7 @@ html = f'''<!DOCTYPE html>
 <title>{N} Reasons Why Diabetics Over 55 Are Switching To Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/listicle/listicle.css?v=5">
+<link rel="stylesheet" href="/cayenne/listicle/listicle.css?v=6">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -97,7 +97,7 @@ html = f'''<!DOCTYPE html>
 </table></div>
 <p class="tldr"><b>TL;DR:</b> Two Just Jenny softgels a day bring {N} life-changing benefits for diabetics with cold, numb feet 👇</p>
 
-{''.join(item_html(i + 1, it) for i, it in enumerate(items))}
+{''.join(item_html(i + 1, it) + (MID_BTN if i + 1 == (len(items) + 1) // 2 else '') for i, it in enumerate(items))}
 </main>
 
 <section class="end"><div class="wrap">
@@ -125,7 +125,7 @@ html = f'''<!DOCTYPE html>
 
 <div class="satc" id="satc"><a class="ls-btn" href="/cayenne/">{CTA} <span aria-hidden="true">→</span></a><p>🛡️ 90-Day Money-Back Guarantee</p></div>
 <!--BODY-EXTRA-->
-<script src="/cayenne/listicle/listicle.js?v=1"></script>
+<script src="/cayenne/listicle/listicle.js?v=2"></script>
 </body>
 </html>
 '''
