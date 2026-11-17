@@ -2,47 +2,10 @@
  "saved": "2026-11-17T01:31:49.904Z",
  "texts": [
   {
-   "section": "",
-   "path": "#t-m",
-   "original": "29",
-   "new": "25"
-  },
-  {
-   "section": "",
-   "path": "#t-s",
-   "original": "50",
-   "new": "36"
-  },
-  {
    "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
    "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(2)>label:nth-of-type(3)>span:nth-of-type(2)>span:nth-of-type(1)>span",
    "original": "Save 70%",
    "new": "Save 77%"
-  },
-  {
-   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-   "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(4)>a>span:nth-of-type(1)",
-   "original": "Add To Cart\n·\n$49.95\n$179.85",
-   "new": "Add To Cart\n·\n$89.95 $299.75",
-   "html": "Add To Cart <i>·</i> $89.95 $299.75"
-  },
-  {
-   "section": "#offer2 Stock up. Save more.",
-   "path": "#offer2>div>div>div:nth-of-type(1)>b",
-   "original": "$49.95",
-   "new": "$89.95"
-  },
-  {
-   "section": "#offer2 Stock up. Save more.",
-   "path": "#offer2>div>div>div:nth-of-type(1)>s",
-   "original": "$179.85",
-   "new": "$299.75"
-  },
-  {
-   "section": "#offer2 Stock up. Save more.",
-   "path": "#offer2>div>div>div:nth-of-type(1)>span",
-   "original": "SAVE $129.90",
-   "new": "SAVE $209.80"
   }
  ],
  "images": [

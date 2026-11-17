@@ -21,6 +21,7 @@
       const t = Math.floor(left / 1000);
       h.textContent = pad(Math.floor(t / 3600)); m.textContent = pad(Math.floor((t % 3600) / 60)); s.textContent = pad(t % 60);
     };
+    if (ED) return; // in de editor staat de teller stil, anders slaat de editor de cijfers op als bewerking
     tick(); setInterval(tick, 1000);
   })();
 
@@ -61,14 +62,17 @@
     let cur = null;
     const pick = (q) => {
       cur = q; const b = $('.bundles .bundle[data-qty="' + q + '"]'); if (!b) return;
+      $$('.o2-card').forEach((x) => x.classList.toggle('sel', x.dataset.qty === q));
       $$('.bundle').forEach((x) => { const on = x.dataset.qty === q; x.classList.toggle('sel', on); const r = $('input', x); if (r) r.checked = on; });
       const per = $('.per', b), ws = $('.was', b), pt = per ? per.textContent.trim() : '', wt = ws ? ws.textContent.trim() : '';
+      if (!ED) { // in de editor geen teksten aanpassen: de editor zou dat als een bewerking opslaan
       $$('.buy-btn .now').forEach((n) => { if (pt) n.textContent = pt; });
       $$('.buy-btn .bb-was').forEach((n) => { if (wt) n.textContent = wt; });
       // prijsregel van de herhaling onderaan
       const on2 = $('.o2-now'), ow2 = $('.o2-was'), os2 = $('.o2-save');
       if (on2 && pt) on2.textContent = pt; if (ow2 && wt) ow2.textContent = wt;
       if (os2) { const d = money(wt) - money(pt); os2.textContent = 'Save $' + d.toFixed(2); os2.style.display = d > 0 ? '' : 'none'; }
+      }
       // cadeaus: 1 zak = alleen het eerste, 2+1 = eerste twee, 3+2 = alle drie
       const lvl = { 1: 1, 3: 2, 5: 3 }[q] || 1;
       $$('.gf').forEach((g) => g.classList.toggle('locked', !ED && parseInt(g.dataset.min, 10) > lvl));
@@ -90,8 +94,24 @@
       ['.bundles', '.gifts', '.ship', '.atc-wrap'].forEach((sel) => { const el = $(sel, src); if (!el) return; const c = el.cloneNode(true);
         $$('[data-jj-key]', c).forEach((x) => x.removeAttribute('data-jj-key')); $$('input', c).forEach((x) => { x.name = 'bundle2'; });
         body.appendChild(c); });
+      cards();
       if (cur) pick(cur);
     };
+    // desktop: dezelfde bundels als drie kaarten naast elkaar, opgebouwd uit het offer bovenaan
+    const cbox = $('.o2-cards'), esc = (x) => String(x).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const cards = () => {
+      if (!cbox || !src || ED) return;
+      cbox.innerHTML = $$('.bundles .bundle', src).map((b) => {
+        const tx = (sel) => { const e = $(sel, b); return e ? e.textContent.trim() : ''; };
+        const img = bgOf($('.b-img', b)), tag = tx('.tag'), gifts = $$('.b-gift b', b).map((g) => '<li>' + esc(g.textContent.trim()) + '</li>').join('');
+        return '<div class="o2-card' + (tag ? ' has-tag' : '') + '" data-qty="' + b.dataset.qty + '">' + (tag ? '<span class="o2-tag">' + esc(tag) + '</span>' : '') +
+          '<span class="o2-img"' + (img ? ' style="background-image:' + img.replace(/"/g, "'") + '"' : '') + '></span>' +
+          '<b class="o2-t">' + esc(tx('.b-t')) + '</b><span class="o2-pr"><b>' + esc(tx('.per')) + '</b><s>' + esc(tx('.was')) + '</s></span>' +
+          '<span class="o2-pill">' + esc(tx('.b-u')) + '</span>' + (gifts ? '<ul class="o2-g">' + gifts + '</ul>' : '<ul class="o2-g"><li>Free shipping</li></ul>') +
+          '<a class="buy-btn o2-btn" href="#">Add to Cart</a></div>';
+      }).join('');
+    };
+    document.addEventListener('click', (e) => { const c = e.target.closest('.o2-card'); if (c) pick(c.dataset.qty); }, true);
     const first = $('.bundle.sel') || $('.bundle');
     if (first) setTimeout(() => { pick(first.dataset.qty); mirror(); }, 0);
     // teksten en foto's uit de editor komen later binnen → prijs en kopie bijwerken; grote foto nog een paar keer toepassen zolang de bezoeker zelf niets koos

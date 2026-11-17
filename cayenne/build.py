@@ -124,7 +124,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=76">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=77">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -220,6 +220,7 @@ html = f'''<!DOCTYPE html>
 <p class="o2-sub">Pick the bundle that fits you best.</p>
 <div class="o2-box">
   <div class="o2-price"><b class="o2-now">$49.95</b><s class="o2-was">$179.85</s><span class="o2-save">Save $129.90</span></div>
+  <div class="o2-cards"></div>
   <div class="o2-body"><p class="o2-note">The offer from the top of the page is repeated here automatically (bundles, gifts, shipping line and button).</p></div>
 </div>
 </div></section>
@@ -241,7 +242,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=18" defer></script>
+<script src="/cayenne/cayenne.js?v=19" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>
