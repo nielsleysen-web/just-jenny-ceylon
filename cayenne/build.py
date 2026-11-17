@@ -76,6 +76,15 @@ reviews = [
 rb_cards = [('Boost blood flow', 'Restores the blood flow in the veins', 'Cayenne Pepper is studied for supporting healthy glucose metabolism. Just Jenny uses a concentrated 12:1 extract with MCT oil to help your body actually absorb and use it.'), ('Nerve Health Support', 'Returns the feeling in the hands & feet', 'The Cayenne Pepper softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.'), ('Gentle on the Stomach', 'No burning feeling or reflux', 'Just Jenny uses a liquid cayenne pepper extract suspended in MCT oil. No harsh powder. No stomach irritation. No burps hours later, no burning feeling.'), ('Enhanced Absorption', 'Easily absorbed by the stomach lining', 'Cayenne Pepper compounds are fat soluble. MCT oil acts as a carrier, helping the 3,000 mg equivalent Cayenne Pepper extract absorb efficiently instead of passing through unused.')]
 CMP_CK = '<span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>'
 CMP_NO = '<span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span>'
+ING_TX = {
+    'Cayenne Pepper': "Capsaicin from high-Scoville cayenne helps blood get through to the small capillaries in your feet and fingers.",
+    'Beetroot': "A natural source of nitrates, which your body turns into nitric oxide to help vessels relax and carry oxygen further.",
+    'Hawthorn Berry': "Traditionally used for the heart, and included here to support flexible arteries.",
+    'Turmeric': "Supports your body's response to the vessel inflammation that often comes with high blood sugar.",
+    'Panax Ginseng': "Included for steadier energy, to take the edge off the afternoon crash.",
+    'Black Pepper': "Piperine helps your body absorb the other botanicals, so more of the formula is put to use.",
+    'Grape Seed Extract': "Rich in antioxidants that help protect vessel walls from oxidative stress.",
+}
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
 vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
@@ -166,7 +175,7 @@ html = f'''<!DOCTYPE html>
 <p class="lead-c dark">[One sentence on dosing and absorption.]</p>
 <div class="ig-grid">
   <div class="ig-list">{''.join(f'<button type="button" class="ig-tab{" on" if n == 0 else ""}" data-i="{n}"><em>0{n + 1}</em><b>{x}</b><u></u></button>' for n, x in enumerate(ingredients))}</div>
-  <div class="ig-panel">{''.join(f'<div class="ig-slide{" on" if n == 0 else ""}" data-i="{n}">{slot("ed-img ig-img", "Photo — " + x)}<div class="ig-tx"><i>[XXX mg]</i><h3>{x}</h3><p>[What {x} does in this formula — one or two sentences.]</p></div></div>' for n, x in enumerate(ingredients))}</div>
+  <div class="ig-panel">{''.join(f'<div class="ig-slide{" on" if n == 0 else ""}" data-i="{n}">{slot("ed-img ig-img", "Photo — " + x)}<div class="ig-tx"><i>[XXX mg]</i><h3>{x}</h3><p>{ING_TX[x]}</p></div></div>' for n, x in enumerate(ingredients))}</div>
 </div>
 </div></section>
 
