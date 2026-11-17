@@ -73,6 +73,8 @@ reviews = [
     ('I Can Finally Sleep Without Wearing Socks!!', "I used to sleep with socks because my feet became so cold during the night. But over the last few weeks I stopped wearing them in bed!! My feet and also my hands feel a lot warmer, my husband doesn't say they feel like a fridge anymore. I feel like they also have more feeling compared to a month ago... It's hard to explain but it feels like I finally got something back I felt like I lost. Love that it's without any chemicals or additives.", 'Ruby F.', 'Nov 1, 2026'),
 ]
 rb_cards = [('Boost blood flow', 'Restores the blood flow in the veins', 'Cayenne Pepper is studied for supporting healthy glucose metabolism. Just Jenny uses a concentrated 12:1 extract with MCT oil to help your body actually absorb and use it.'), ('Nerve Health Support', 'Returns the feeling in the hands & feet', 'The Cayenne Pepper softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.'), ('Gentle on the Stomach', 'No burning feeling or reflux', 'Just Jenny uses a liquid cayenne pepper extract suspended in MCT oil. No harsh powder. No stomach irritation. No burps hours later, no burning feeling.'), ('Enhanced Absorption', 'Easily absorbed by the stomach lining', 'Cayenne Pepper compounds are fat soluble. MCT oil acts as a carrier, helping the 3,000 mg equivalent Cayenne Pepper extract absorb efficiently instead of passing through unused.')]
+CMP_CK = '<span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>'
+CMP_NO = '<span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span>'
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
 vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
@@ -108,7 +110,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=57">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=58">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -190,12 +192,12 @@ html = f'''<!DOCTYPE html>
 <div class="rb-tick"><div class="rb-track">{''.join(f'<span class="rb-it">{svg(i)}<span>{t}</span></span>' for i, t in ((I_DROP_RAW, 'Boosts blood flow'), (I_BOLT, 'Prevents diabetic fatigue'), (I_VEIN, 'Calms vessel inflammation'), (I_HEART, 'Protects Heart & Arteries')))}</div></div>
 </section>
 
-<section class="red vs-sec"><div class="wrap">
+<section class="cmp-sec vs-sec"><div class="wrap">
 <h2 class="h-c">So What Makes The Difference?</h2>
 <p class="lead-c">[One sentence on how your formula compares to the usual alternatives.]</p>
-<div class="vs">
-  <div class="vs-head"><span></span><span class="vs-us">{slot('ed-pic vs-img', 'Product')}</span><span class="vs-ot">Others</span></div>
-  {''.join(f'<div class="vs-row"><span class="vs-f">{r}</span><span class="vs-us">{I_CHECK}</span><span class="vs-ot">{I_CHECK if n == 0 else I_NO}</span></div>' for n, r in enumerate(vs_rows))}
+<div class="cmp"><div class="cmp-col"></div>
+  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img', 'Photo')}<b>Just Jenny</b></span></span><span>Others</span></div>
+  <div class="cmp-body">{''.join(f'<div class="cmp-row"><span>{r}</span><span class="cmp-us">{CMP_CK.replace("<span class=", "<span style=" + chr(34) + "transition-delay:" + str(n * 90) + "ms" + chr(34) + " class=")}</span><span>{CMP_CK if n == 0 else CMP_NO}</span></div>' for n, r in enumerate(vs_rows))}</div>
 </div>
 </div></section>
 
@@ -224,7 +226,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=17" defer></script>
+<script src="/cayenne/cayenne.js?v=18" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

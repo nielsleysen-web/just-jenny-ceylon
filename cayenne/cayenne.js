@@ -161,6 +161,10 @@
     dots.forEach((x, i) => x.addEventListener('click', () => row.scrollTo({ left: cs[i].offsetLeft - row.offsetLeft - (row.clientWidth - cs[i].offsetWidth) / 2, behavior: 'smooth' })));
   });
 
+  /* ---------- vergelijking: vinkjes ploppen erin zodra de tabel in beeld komt ---------- */
+  if (!ED && 'IntersectionObserver' in window) (function () { const c = $('.cmp'); if (!c) return; c.classList.add('anim');
+    new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { c.classList.add('on'); o.disconnect(); } }, { threshold: 0.3 }).observe(c); })();
+
   /* ---------- probleemkaarten: komen één voor één binnen ---------- */
   if (!ED && 'IntersectionObserver' in window) (function () {
     const sec = $('.prob'); if (!sec) return; const cs = $$('.circ', sec); sec.classList.add('anim');

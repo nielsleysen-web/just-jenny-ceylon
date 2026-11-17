@@ -652,3 +652,31 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 .sp-card .sp-n{margin-top:0;padding-top:12px}
 
 .vs-sec{padding-bottom:64px}.vs-sec .vs{margin-bottom:0}
+
+/* vergelijking: lichte tabel met uitgelichte Just Jenny-kolom */
+.cmp-sec{background:#fff;padding:64px 0 76px}
+.cmp-sec .h-c{color:var(--red)}.cmp-sec .lead-c{color:#3d3433}
+.cmp{max-width:820px;margin:78px auto 0;position:relative;text-align:left}
+.cmp-row{display:grid;grid-template-columns:1fr 170px 130px;align-items:center;position:relative;z-index:1}
+.cmp-row>span{padding:17px 18px;font-size:15.5px}
+.cmp-row>span:nth-child(n+2){text-align:center;display:grid;place-items:center}
+.cmp-head>span{padding:0 18px 14px;font-weight:700;font-size:14.5px;color:#6b5f5c;align-self:end}
+.cmp-body{border:1px solid #ead9d3;border-radius:14px;background:#fff}
+.cmp-body .cmp-row+.cmp-row>span{border-top:1px solid #f0e5e1}
+.cmp-body .cmp-row .cmp-us{border-top-color:rgba(255,255,255,.14)!important}
+.cmp-col{position:absolute;top:-58px;bottom:-14px;right:130px;width:170px;border-radius:16px;background:linear-gradient(180deg,#84231F,#6B1A18);box-shadow:0 16px 40px rgba(107,26,24,.3);border:2px solid var(--gold)}
+.cmp-head .cmp-us{color:#fff}.cmp-img{width:58px;height:58px;border-radius:10px;margin:0 auto 8px;font-size:10px}
+.cmp-head .cmp-us b{display:block;font:700 18px var(--cond);text-transform:uppercase;letter-spacing:.03em;color:#F3C676}
+.cmp .ck,.cmp .no{width:26px;height:26px;border-radius:50%;display:inline-grid;place-items:center}
+.cmp .ck{background:#1E9E61}.cmp .ck svg{width:14px;height:14px;stroke:#fff;stroke-width:3.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cmp .no{background:#E9E2DF}.cmp .no svg{width:12px;height:12px;stroke:#9a8d89;stroke-width:3;fill:none;stroke-linecap:round}
+.cmp-us .ck{background:#F3C676}.cmp-us .ck svg{stroke:#3A1200}
+.cmp.anim .cmp-us .ck{transform:scale(0);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}.cmp.anim.on .cmp-us .ck{transform:scale(1)}
+@media(max-width:900px){
+  .cmp-sec{padding:42px 0 52px}.cmp{margin-top:70px}
+  .cmp-row{grid-template-columns:1fr 84px 68px}.cmp-row>span{padding:14px 10px;font-size:13.5px}
+  .cmp-col{right:68px;width:84px;top:-56px;bottom:-10px;border-radius:12px}
+  .cmp-img{width:40px;height:40px}.cmp-head .cmp-us b{font-size:13px}.cmp-head>span{font-size:12.5px;padding:0 6px 12px}
+  .cmp .ck,.cmp .no{width:22px;height:22px}.cmp .ck svg{width:12px;height:12px}.cmp .no svg{width:10px;height:10px}
+}
+.cmp-img{background-color:#EFE2DD;color:#9a7f7e;display:grid;place-items:center}
