@@ -58,7 +58,7 @@ pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue
 bundles = [
     (1, 'Buy One', 'Save 50%', '$29.95', '$59.95', '', None),
     (3, 'Buy 2 Get 1 Free Gift', 'Save 72%', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
-    (5, 'Buy 3 Get 2 Free Gifts', 'Save 70%', '$89.95', '$299.75', 'Best Value', [('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage'), ('FREE On-the-Go Softgel Case ($4.95 Value)', 'Travel-size softgel carrier')]),
+    (5, 'Buy 3 Get 2 Free Gifts', 'Save 70%', '$89.95', '$299.75', 'Best Value', [('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage'), ('FREE On-the-Go Softgel Case ($11.99 Value)', 'Travel-size softgel carrier')]),
 ]
 circles = ["You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.", "You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.", "Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.", "You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal."]
 I_VEIN = '<path d="M3 20c3-1 5.5-3.5 7-7 1-2.4 1.4-5.5 1-10M10 13c2.5-.5 5-2.2 6.5-5.200M13.3 10.6c2.8 1 5.2.8 7.700-.6M6.5 17c.5 1.6.4 3-.2 4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.200', '.2').replace('.700', '.7')
@@ -97,7 +97,7 @@ def gift(level, pic, was, name):
 GIFTS = ('<div class="gifts"><span class="gf-h">Early Black Friday Gifts Unlocked 🎁</span><div class="gf-row">'
          + gift(1, TRUCK, '$3.95', 'FREE Shipping') + '<i class="gf-plus">+</i>'
          + gift(2, slot('ed-pic gf-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/jar.webp)"'), '$19.95', 'FREE Bamboo Lid Glass Jar') + '<i class="gf-plus">+</i>'
-         + gift(3, slot('ed-pic gf-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/softgel-case.webp)"'), '$4.95', 'FREE On-the-Go Softgel Case')
+         + gift(3, slot('ed-pic gf-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/softgel-case.webp)"'), '$11.99', 'FREE On-the-Go Softgel Case')
          + '</div></div>')
 CLOCK = svg('<circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6.500V12l3.500 2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'.replace('.500', '.5'))
 BH = '<div class="bh"><p class="bh-t">Big photo per offer (shown when the visitor selects that offer)</p><div class="bh-row">' + ''.join('<div class="bh-c">' + slot('ed-pic bh-img', '', f' data-qty="{q}"') + f'<span class="bh-l">{lbl}</span></div>' for q, lbl in ((1, 'Buy One'), (3, 'Buy 2 Get 1 Free'), (5, 'Buy 3 Get 2 Free'))) + '</div></div>'
