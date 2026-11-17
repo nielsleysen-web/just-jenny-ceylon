@@ -89,7 +89,7 @@ ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Pana
 TL_PHOTOS = {1: 'timeline-1.webp', 2: 'timeline-2.webp', 3: 'timeline-3.webp'}
 TL_POS = {1: 'center 62%', 2: 'center 33%', 3: '50% 30%'}
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
-vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
+vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches Capillaries', 'Black Pepper For Better Absorption', 'Supports Heart and Arteries', 'Manages Arterial Calcium', 'Active Ingredients']
 POLICY_URL = {'Terms of Service': 'https://www.getjustjenny.com/pages/terms-of-service', 'Refund Policy': 'https://www.getjustjenny.com/pages/refund-policy', 'Privacy Policy': 'https://www.getjustjenny.com/pages/privacy-policy', 'Contact Information': 'https://www.getjustjenny.com/pages/contact'}
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
 
