@@ -680,3 +680,27 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
   .cmp .ck,.cmp .no{width:22px;height:22px}.cmp .ck svg{width:12px;height:12px}.cmp .no svg{width:10px;height:10px}
 }
 .cmp-img{background-color:#EFE2DD;color:#9a7f7e;display:grid;place-items:center}
+
+/* garantie: volle breedte, foto loopt tot de rand */
+.faq{padding-bottom:64px}
+.gar{background:linear-gradient(110deg,#2E0A09 0%,#4E110F 45%,#6B1A18 100%);color:#fff;overflow:hidden}
+.gar-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:stretch;min-height:440px}
+.gar-l{padding:64px 110px 64px max(20px,calc((100vw - 1140px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+.gar-k{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#F3C676;font-weight:700;margin:0 0 10px}
+.gar h2{font-family:var(--cond);font-size:58px;line-height:.98;text-transform:uppercase;margin:0;color:#fff}.gar h2 span{color:#F3C676}
+.gar-p{margin:16px 0 0;font-size:17.5px;color:#f1dcd6;max-width:460px}
+.gar-r{position:relative;min-height:300px}
+.gar-img{position:absolute;inset:0;border-radius:0;background-color:#7d3a2c;color:#f0d6c4;min-height:0;background-position:center 30%}
+.gar .gu-seal{position:absolute;left:-73px;top:50%;margin:-73px 0 0;z-index:2}
+@media(max-width:900px){
+  .faq{padding-bottom:44px}
+  .gar-in{grid-template-columns:minmax(0,1fr);min-height:0}
+  .gar-l{padding:42px 20px 64px}.gar h2{font-size:42px}.gar-p{font-size:15.5px;margin-top:12px}
+  .gar-r{height:300px;min-height:0}
+  .gar .gu-seal{left:auto;right:16px;top:-58px;margin:0;width:116px;height:116px}.gar .gu-seal b{font-size:30px}.gar .gu-seal span{font-size:7.5px}
+}
+
+.b-img{background-size:contain;background-position:center;background-repeat:no-repeat}
+/* garantiefoto: vult de rechterhelft, ook in de editor */
+.gar-img{position:relative;inset:auto;width:100%;height:100%;min-height:440px}
+@media(max-width:900px){.gar-img{min-height:300px}}

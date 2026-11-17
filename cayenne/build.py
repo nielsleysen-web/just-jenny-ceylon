@@ -85,7 +85,7 @@ def bundle(q, t, u, p, w, tag, gift):
     on = q == 3
     return (f'<label class="bundle{" sel" if on else ""}" data-qty="{q}">' + (f'<span class="tag">{tag}</span>' if tag else '')
             + f'<input type="radio" name="bundle" value="{q}"{" checked" if on else ""}>'
-            + f'<span class="b-main">{slot("ed-pic b-img", "Photo")}<span class="b-txt"><b class="b-t">{t}</b><span class="b-u">{u}</span></span>'
+            + f'<span class="b-main">{slot("ed-pic b-img" + (" has-img" if q == 1 else ""), "Photo", (' style="background-image:url(/cayenne/assets/pouch.webp)"' if q == 1 else ""))}<span class="b-txt"><b class="b-t">{t}</b><span class="b-u">{u}</span></span>'
             + f'<span class="b-p"><b class="per">{p}</b><s class="was">{w}</s></span></span>'
             + ''.join(f'<span class="b-gift">{GIFT_CK}<span class="b-g"><b>{g[0]}</b><i>{g[1]}</i></span></span>' for g in ([gift] if isinstance(gift, tuple) else gift or [])) + '</label>')
 BUNDLES = ''.join(bundle(*b) for b in bundles)
@@ -110,7 +110,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=58">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=60">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -213,8 +213,11 @@ html = f'''<!DOCTYPE html>
 <section class="faq"><div class="wrap">
 <h2 class="h-c dark faq-h">Our 8 Most Common Questions, Answered</h2>
 <div class="faq-grid">{''.join(acc(q, a) for q, a in faqs)}</div>
-<div class="guar"><div class="gu-l"><p class="gu-k">90 days. No questions.</p><h2>The Just Jenny <span>Guarantee</span></h2><p class="gu-p">[Explain the guarantee in two short sentences.]</p></div>
-<div class="gu-seal"><b>90-DAY</b><span>Money Back Guarantee</span></div>{slot('ed-pic gu-img', 'Product photo')}</div>
+</div></section>
+
+<section class="gar"><div class="gar-in">
+  <div class="gar-l"><p class="gar-k">90 days. No questions.</p><h2>The Just Jenny <span>Guarantee</span></h2><p class="gar-p">Try it for 90 days. If you're not satisfied, email us for a full refund.</p></div>
+  <div class="gar-r">{slot('ed-img gar-img', 'Photo — person holding the pouch')}<div class="gu-seal"><b>90-DAY</b><span>Money Back Guarantee</span></div></div>
 </div></section>
 
 <footer class="ft"><div class="wrap ft-in">
