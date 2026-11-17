@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:46:56.304Z",
+ "saved": "2026-11-17T09:07:23.747Z",
  "texts": [
   {
    "section": "",
@@ -78,8 +78,8 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(1)>figure>p",
-   "original": "🩸 Circulation, Not Just The Number.",
-   "new": "Cold Feet And Hands Solved At the Root"
+   "original": "Cold Feet And Hands Solved At the Root",
+   "new": "Cold Feet And Hands Fixed At the Root Cause"
   },
   {
    "section": "",
@@ -208,6 +208,86 @@
    "section": "",
    "path": "main>article:nth-of-type(4)>p:nth-of-type(4)",
    "original": "No burning. No reflux. No spicy burps hours later.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(4)>figure>p",
+   "original": "💧 Oil, Not Powder.",
+   "new": "No More Chemical Pills"
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(5)>h2",
+   "original": "5. It's not your fault, and it's not too late.",
+   "new": "5. Designed to fit into your existing routine."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(5)>figure>p",
+   "original": "🙏 Not Your Fault. Not Too Late.",
+   "new": "✅ Safe With Your Medications."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(5)>p:nth-of-type(1)",
+   "original": "Maybe you were told it runs in the family. Maybe you blame yourself for years of eating the wrong things.",
+   "new": "Already taking diabetes pills? Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. \n\n\nNo stimulants. No synthetic compounds. Just whole-food ingredients in a softgel.",
+   "html": "Already taking diabetes pills? <b>Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. </b><br><br><br>No stimulants. No synthetic compounds. Just whole-food ingredients in a softgel."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(5)>p:nth-of-type(2)",
+   "original": "Here's what nobody told you: you could do everything right with your sugar and still lose circulation in your feet, because nobody was looking after the small vessels.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(5)>p:nth-of-type(3)",
+   "original": "That's not a failure on your part. It's a gap in how diabetes gets managed.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(5)>p:nth-of-type(4)",
+   "original": "And whether you're 55 or 75, it's never too late to start giving your circulation the support it's been missing.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(6)>h2",
+   "original": "6. Designed to fit right into your daily routine.",
+   "new": "6. Costs a fraction of what you're spending on pills that barely work."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(6)>figure>p",
+   "original": "✅ Two Softgels A Day.",
+   "new": "💰Save Over $100 Every Month."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(6)>p:nth-of-type(1)",
+   "original": "Already taking a handful of pills every morning? Just Jenny isn't another prescription. It's a food-based supplement made from cayenne pepper extract and 6 natural botanicals.",
+   "new": "The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.\n\nIt might feel good in the moment, but it doesn't fix the actual problem.\n\nJust Jenny costs a fraction of that. And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet and hands in the first place.\n\nThat's not just saving money. That's investing it in something that actually works.",
+   "html": "<b>The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.<br><br></b>It might feel good in the moment, but it doesn't fix the actual problem.<br><br><b>Just Jenny costs a fraction of that.</b> And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet and hands in the first place.<br><br>That's not just saving money. That's investing it in something that actually works."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(6)>p:nth-of-type(2)",
+   "original": "Cayenne, beetroot, hawthorn berry, turmeric, Panax ginseng, black pepper and grape seed extract. No stimulants. No harsh powders.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(6)>p:nth-of-type(3)",
+   "original": "Just two softgels a day with a glass of water.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(6)>p:nth-of-type(4)",
+   "original": "As always, check with your doctor before starting any new supplement, especially if you take medication for diabetes, blood pressure or blood thinning. Just Jenny does not replace your medication.",
    "new": ""
   }
  ],
