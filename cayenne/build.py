@@ -136,7 +136,7 @@ html = f'''<!DOCTYPE html>
 <section class="hero" id="top"><div class="wrap hero-grid">
 <div class="h-left">
   <div class="gal">
-    {slot('ed-img g-main has-img', 'Main product photo', ' style="background-image:url(/cayenne/assets/gallery-product.webp)"')}
+    {slot('ed-img g-main has-img', 'Main product photo', ' style="background-image:url(/cayenne/assets/gallery-product-2.webp)"')}
     <div class="g-tiles">{''.join(f'<div class="tile">{svg(i)}<span>{t}</span></div>' for i, t in tiles)}</div>
     <div class="thumbs">{''.join(slot('ed-pic th' + (' has-img' if n in TH_PHOTOS else ''), f'Photo {n}', (f' style="background-image:url(/cayenne/assets/{TH_PHOTOS[n]})"' if n in TH_PHOTOS else '')) for n in range(1, 6))}</div>
   </div>
