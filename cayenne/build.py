@@ -244,7 +244,7 @@ html = f'''<!DOCTYPE html>
 </footer>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=20" defer></script>
+<script src="/cayenne/cayenne.js?v=21" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

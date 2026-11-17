@@ -45,13 +45,14 @@
     if (!mainEl || !thumbs.length || ED) return;
     mainEl.appendChild(nav); mainEl.classList.add('g-has-nav');
     let cur = -1; // -1 = de hoofdfoto zelf
+    window.__galReset = () => { cur = -1; thumbs.forEach((x) => x.classList.remove('on')); };
     const show = (i) => {
       if (i === -1) { showBig(''); thumbs.forEach((x) => x.classList.remove('on')); cur = -1; return true; }
       const img = bgOf(thumbs[i]); if (!img) return false;
       showBig(img); thumbs.forEach((x, k) => x.classList.toggle('on', k === i)); cur = i; return true;
     };
-    thumbs.forEach((x, i) => x.addEventListener('click', () => show(i)));
-    const step = (d) => { const n = thumbs.length + 1; let pos = cur + 1; for (let k = 0; k < n; k++) { pos = (((pos + d) % n) + n) % n; showBig.dir = d; if (show(pos - 1)) { if (pos === 0 && mainEl.animate) mainEl.animate([{ opacity: 0.6 }, { opacity: 1 }], { duration: 200 }); return; } } };
+    thumbs.forEach((x, i) => x.addEventListener('click', () => { window.__galNav = true; show(i); }));
+    const step = (d) => { const n = thumbs.length + 1; let pos = cur + 1; for (let k = 0; k < n; k++) { pos = (((pos + d) % n) + n) % n; showBig.dir = d; window.__galNav = true; if (show(pos - 1)) { if (pos === 0 && mainEl.animate) mainEl.animate([{ opacity: 0.6 }, { opacity: 1 }], { duration: 200 }); return; } } };
     $('.g-prev', nav).addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
     $('.g-next', nav).addEventListener('click', (e) => { e.stopPropagation(); step(1); });
     // vegen: horizontale beweging van minstens 36px (en duidelijk meer horizontaal dan verticaal)
@@ -66,7 +67,7 @@
   (function () {
     const money = (s) => parseFloat(String(s).replace(/[^0-9.]/g, '')) || 0;
     let cur = null;
-    const pick = (q) => {
+    const pick = (q, user) => {
       cur = q; const b = $('.bundles .bundle[data-qty="' + q + '"]'); if (!b) return;
       $$('.o2-card').forEach((x) => x.classList.toggle('sel', x.dataset.qty === q));
       $$('.bundle').forEach((x) => { const on = x.dataset.qty === q; x.classList.toggle('sel', on); const r = $('input', x); if (r) r.checked = on; });
@@ -83,13 +84,12 @@
       const lvl = { 1: 1, 3: 2, 5: 3 }[q] || 1;
       $$('.gf').forEach((g) => g.classList.toggle('locked', !ED && parseInt(g.dataset.min, 10) > lvl));
       // grote foto wisselt mee met het gekozen offer (als er voor dat offer een foto is ingesteld; anders de gewone hoofdfoto)
-      showBig(bgOf($('.bh-img[data-qty="' + q + '"]')));
-      $$('.thumbs .th').forEach((x) => x.classList.remove('on'));
+      if (user || !window.__galNav) { showBig(bgOf($('.bh-img[data-qty="' + q + '"]'))); if (window.__galReset) window.__galReset(); if (user) window.__galNav = false; }
       $$('.buy-btn').forEach((x) => { x.href = CHECKOUT_URL ? CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'b=' + q : '#'; });
     };
     document.addEventListener('click', (e) => {
       const b = e.target.closest('.bundle');
-      if (b) { if (ED && e.target.closest('[contenteditable]')) return; pick(b.dataset.qty); return; }
+      if (b) { if (ED && e.target.closest('[contenteditable]')) return; pick(b.dataset.qty, true); return; }
       if (e.target.closest('.buy-btn') && (!CHECKOUT_URL || ED)) e.preventDefault();
     });
     // herhaling boven de FAQ: kopie van het offer bovenaan, zodat teksten en foto's maar op één plek beheerd worden
@@ -117,7 +117,7 @@
           '<a class="buy-btn o2-btn" href="#">Add to Cart</a></div>';
       }).join('');
     };
-    document.addEventListener('click', (e) => { const c = e.target.closest('.o2-card'); if (c) pick(c.dataset.qty); }, true);
+    document.addEventListener('click', (e) => { const c = e.target.closest('.o2-card'); if (c) pick(c.dataset.qty, true); }, true);
     const first = $('.bundle.sel') || $('.bundle');
     if (first) setTimeout(() => { pick(first.dataset.qty); mirror(); }, 0);
     // teksten en foto's uit de editor komen later binnen → prijs en kopie bijwerken; grote foto nog een paar keer toepassen zolang de bezoeker zelf niets koos
