@@ -843,3 +843,5 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
   .h-right>.bens{order:5}
 }
 @media(max-width:900px){.h-right>.rate{margin:8px 0 12px}}
+
+@media(min-width:901px){.thumbs{grid-template-columns:repeat(5,minmax(0,1fr))}}
