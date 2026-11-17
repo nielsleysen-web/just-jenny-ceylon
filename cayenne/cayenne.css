@@ -845,3 +845,14 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 @media(max-width:900px){.h-right>.rate{margin:8px 0 12px}}
 
 @media(min-width:901px){.thumbs{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+/* sticky add to cart */
+.satc{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#F7EFEE;border-top:1px solid #EBC5C6;box-shadow:0 -6px 18px rgba(58,5,7,.10);padding:9px 12px calc(10px + env(safe-area-inset-bottom));transform:translateY(115%);transition:transform .32s ease;pointer-events:none}
+.satc.on{transform:none;pointer-events:auto}
+.satc-in{max-width:620px;margin:0 auto}
+.satc-note{margin:0 0 8px;text-align:center;font-size:14.5px;line-height:1.3;color:#3A0507}
+.satc-note b{color:#4E7A1F;font-weight:600}
+.satc-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#7DB043;box-shadow:0 0 0 4px rgba(125,176,67,.22);margin-right:8px;vertical-align:0;animation:satcP 1.8s ease-in-out infinite}
+@keyframes satcP{50%{box-shadow:0 0 0 7px rgba(125,176,67,.08)}}
+.satc .buy-btn{font-size:19px;padding:13px 12px}
+@media(max-width:400px){.satc-note{font-size:12.5px}.satc .buy-btn{font-size:17px}}

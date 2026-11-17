@@ -1,6 +1,23 @@
 /* Cayenne-salespagina: timer, galerij, bundels, ingrediënt-tabs */
 (function () {
-  const CHECKOUT_URL = ''; // nog geen checkout voor dit product — invullen zodra die bestaat
+  const CHECKOUT_URL = 'https://checkout.getjustjenny.com/en/cayenne'; // ?b=1/3/5 = 1/2/3 zakken
+  const META_PIXEL_ID = '2040844393290901'; // pixel "Big 5 Just Jenny" (zelfde als de checkout)
+  const PRODUCT_ID = '10722937110794';       // Shopify-product "Just Jenny™ Cayenne Pepper Softgels" (content_ids, zelfde als op de checkout)
+  const TRACK = !window.JJ_EDITOR && META_PIXEL_ID && window.fbq;
+  if (TRACK) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); fbq('track', 'ViewContent', { content_ids: [PRODUCT_ID], content_type: 'product', currency: 'USD' }); }
+  // Tracking-parameters (fbclid, ad_id, utm's…) van jjb-track.js meesturen naar de checkout (ander domein)
+  function trackedCheckoutUrl(qty) {
+    const url = new URL(CHECKOUT_URL); url.searchParams.set('b', qty);
+    try {
+      const d = JSON.parse(localStorage.getItem('jjb_track') || '{}');
+      ['ad_id', 'adset_id', 'campaign_id', 'fbclid', 'fbc', 'fbp', 'vid', 'utm_source', 'utm_campaign', 'utm_content', 'first_touch', 'host', 'path', 'pgs'].forEach((k) => { if (d[k]) url.searchParams.set(k, d[k]); });
+      const q = new URLSearchParams(location.search);
+      ['fbclid', 'ad_id', 'adset_id', 'campaign_id', 'utm_source', 'utm_campaign', 'utm_content'].forEach((k) => { if (q.get(k) && !url.searchParams.get(k)) url.searchParams.set(k, q.get(k)); });
+      const ck = (n) => (document.cookie.match('(?:^|; )' + n + '=([^;]*)') || [])[1];
+      ['fbp', 'fbc'].forEach((k) => { const v = ck('_' + k); if (v && !url.searchParams.get(k)) url.searchParams.set(k, decodeURIComponent(v)); });
+    } catch (e) { }
+    return url.toString();
+  }
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
   const ED = !!window.JJ_EDITOR;
@@ -85,12 +102,28 @@
       $$('.gf').forEach((g) => g.classList.toggle('locked', !ED && parseInt(g.dataset.min, 10) > lvl));
       // grote foto wisselt mee met het gekozen offer (als er voor dat offer een foto is ingesteld; anders de gewone hoofdfoto)
       if (user || !window.__galNav) { showBig(bgOf($('.bh-img[data-qty="' + q + '"]'))); if (window.__galReset) window.__galReset(); if (user) window.__galNav = false; }
-      $$('.buy-btn').forEach((x) => { x.href = CHECKOUT_URL ? CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'b=' + q : '#'; });
+      $$('.buy-btn').forEach((x) => { x.href = CHECKOUT_URL ? trackedCheckoutUrl(q) : '#'; });
     };
+    // sticky add to cart: zichtbaar zodra de knop bovenaan uit beeld is, verborgen bij het offer onderaan en in de editor
+    const satc = $('#satc'), topBtn = $('.atc-wrap'), o2 = $('.offer2');
+    if (satc && !ED) {
+      const upd = () => { const t = topBtn ? topBtn.getBoundingClientRect() : null, r = o2 ? o2.getBoundingClientRect() : null;
+        const past = t && t.bottom < 0, atO2 = r && r.top < innerHeight && r.bottom > 0;
+        satc.classList.toggle('on', !!past && !atO2); };
+      addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+    }
     document.addEventListener('click', (e) => {
       const b = e.target.closest('.bundle');
       if (b) { if (ED && e.target.closest('[contenteditable]')) return; pick(b.dataset.qty, true); return; }
       if (e.target.closest('.buy-btn') && (!CHECKOUT_URL || ED)) e.preventDefault();
+      // Add To Cart: InitiateCheckout + doorsturen met de tracking-parameters van dat moment
+      else if (e.target.closest('.buy-btn')) {
+        e.preventDefault();
+        const pb = $('.bundles .bundle[data-qty="' + cur + '"] .per'), value = pb ? parseFloat(pb.textContent.replace(/[^\d.]/g, '')) || 0 : 0;
+        const bags = { 1: 1, 3: 2, 5: 3 }[cur] || 1;
+        if (TRACK) fbq('track', 'InitiateCheckout', { content_ids: [PRODUCT_ID], content_type: 'product', num_items: bags, value: value, currency: 'USD' });
+        setTimeout(() => { location.href = trackedCheckoutUrl(cur); }, TRACK ? 250 : 0);
+      }
     });
     // herhaling boven de FAQ: kopie van het offer bovenaan, zodat teksten en foto's maar op één plek beheerd worden
     const body = $('.o2-body'), src = $('.h-right');
