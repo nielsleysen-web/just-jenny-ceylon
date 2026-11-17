@@ -819,3 +819,6 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 @media(min-width:901px){.thumbs{grid-template-columns:repeat(6,minmax(0,1fr))}}
 
 @media(min-width:901px){.thumbs{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+@media(min-width:901px){.thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.g-main{background-size:cover;background-position:center}
