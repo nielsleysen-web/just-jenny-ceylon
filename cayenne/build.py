@@ -96,8 +96,8 @@ def gift(level, pic, was, name):
     return f'<div class="gf" data-min="{level}"><div class="gf-pic">{pic}</div><s class="gf-was">{was}</s><b class="gf-name">{name}</b><div class="gf-lock">{LOCK}<span>Locked</span></div></div>'
 GIFTS = ('<div class="gifts"><span class="gf-h">Early Black Friday Gifts Unlocked 🎁</span><div class="gf-row">'
          + gift(1, TRUCK, '$3.95', 'FREE Shipping') + '<i class="gf-plus">+</i>'
-         + gift(2, slot('ed-pic gf-img', 'Photo'), '$19.95', 'FREE Bamboo Lid Glass Jar') + '<i class="gf-plus">+</i>'
-         + gift(3, slot('ed-pic gf-img', 'Photo'), '$[X.XX]', 'FREE On-the-Go Softgel Case')
+         + gift(2, slot('ed-pic gf-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/jar.webp)"'), '$19.95', 'FREE Bamboo Lid Glass Jar') + '<i class="gf-plus">+</i>'
+         + gift(3, slot('ed-pic gf-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/softgel-case.webp)"'), '$[X.XX]', 'FREE On-the-Go Softgel Case')
          + '</div></div>')
 CLOCK = svg('<circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6.500V12l3.500 2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'.replace('.500', '.5'))
 BH = '<div class="bh"><p class="bh-t">Big photo per offer (shown when the visitor selects that offer)</p><div class="bh-row">' + ''.join('<div class="bh-c">' + slot('ed-pic bh-img', '', f' data-qty="{q}"') + f'<span class="bh-l">{lbl}</span></div>' for q, lbl in ((1, 'Buy One'), (3, 'Buy 2 Get 1 Free'), (5, 'Buy 3 Get 2 Free'))) + '</div></div>'
@@ -111,7 +111,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=62">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=63">
 <!--HEAD-EXTRA-->
 </head>
 <body>
