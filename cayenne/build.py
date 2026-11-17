@@ -90,6 +90,7 @@ TL_PHOTOS = {1: 'timeline-1.webp', 2: 'timeline-2.webp', 3: 'timeline-3.webp'}
 TL_POS = {1: 'center 62%', 2: 'center 33%', 3: '50% 30%'}
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
 vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
+POLICY_URL = {'Terms of Service': 'https://www.getjustjenny.com/pages/terms-of-service', 'Refund Policy': 'https://www.getjustjenny.com/pages/refund-policy', 'Privacy Policy': 'https://www.getjustjenny.com/pages/privacy-policy', 'Contact Information': 'https://www.getjustjenny.com/pages/contact'}
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
 
 GIFT_CK = svg('<path d="M4.500 12.500l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5').replace('.600', '.6'))
@@ -123,7 +124,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=74">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=75">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -234,9 +235,7 @@ html = f'''<!DOCTYPE html>
 </div></section>
 
 <footer class="ft"><div class="wrap ft-in">
-<div class="ft-l"><a class="logo ft-logo">Just Jenny</a><hr><h3>[Footer headline]</h3><p>Be the first to hear about offers, tips &amp; product drops.</p>
-<form class="nl" onsubmit="return false"><input type="email" placeholder="Enter your email..." aria-label="Email"><button type="submit">Submit</button></form><hr></div>
-<ul class="ft-links">{''.join(f'<li><a href="#">{p}</a></li>' for p in policies)}</ul>
+<ul class="ft-links">{''.join((f'<li><a href="{POLICY_URL[p]}" target="_blank" rel="noopener">{p}</a></li>' if p in POLICY_URL else f'<li><span>{p}</span></li>') for p in policies)}</ul>
 </div>
 <div class="wrap pay"><img src="/sage/assets/payments.png" alt="Accepted payment methods" loading="lazy"></div>
 </footer>
