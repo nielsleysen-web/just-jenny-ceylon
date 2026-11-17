@@ -1,1 +1,25 @@
-{"texts":[],"images":[]}
+{
+ "saved": "2026-11-17T01:27:35.390Z",
+ "texts": [
+  {
+   "section": "",
+   "path": "#t-m",
+   "original": "30",
+   "new": "29"
+  },
+  {
+   "section": "",
+   "path": "#t-s",
+   "original": "00",
+   "new": "50"
+  }
+ ],
+ "images": [
+  {
+   "key": ".ed-pic#9",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
+   "type": "image/webp"
+  }
+ ]
+}
