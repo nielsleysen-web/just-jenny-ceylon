@@ -81,7 +81,7 @@ vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Bla
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
 
 GIFT_CK = svg('<path d="M4.500 12.500l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5').replace('.600', '.6'))
-B_PHOTOS = {1: 'pouch.webp', 3: 'bundle-2-jar.webp'}
+B_PHOTOS = {1: 'pouch.webp', 3: 'bundle-2-jar.webp', 5: 'bundle-3-gifts.webp'}
 def bundle(q, t, u, p, w, tag, gift):
     on = q == 3
     return (f'<label class="bundle{" sel" if on else ""}" data-qty="{q}">' + (f'<span class="tag">{tag}</span>' if tag else '')
