@@ -126,7 +126,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=83">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=84">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -149,7 +149,7 @@ html = f'''<!DOCTYPE html>
   <a class="rate tp"><b class="tp-w">Excellent</b><b class="tp-sc">4.8/5</b><span class="tp-stars" aria-label="5 out of 5">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">928 reviews on</span><span class="tp-b">Trustpilot</span></a>
   <h1>Just Jenny™ Cayenne Pepper Softgels</h1>
   <p class="lead"><b>Just Jenny Cayenne Pepper Softgels are designed to reopen your smallest blood vessels,</b> so oxygen-rich blood can flow back to your nerves.</p>
-  <ul class="bens">{''.join(f'<li>{svg(B_ICONS[n])}<span>{p}</span></li>' for n, p in enumerate(pills))}</ul>
+  <ul class="bens bens-ck">{''.join(f'<li><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{p}</span></li>' for p in pills)}</ul>
   <h2 class="sel">Early Black Friday Sale Live</h2>
   <div class="bundles">{BUNDLES}</div>
   {GIFTS}
