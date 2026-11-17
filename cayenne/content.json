@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T05:49:48.601Z",
+ "saved": "2026-11-17T05:54:22.320Z",
  "texts": [
   {
    "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
@@ -61,6 +61,12 @@
    "key": ".ed-img#20",
    "label": "Customer photo 7",
    "src": "assets/uploads/ed-img-20.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#21",
+   "label": "Customer photo 8",
+   "src": "assets/uploads/ed-img-21.webp?v=mwka23c3",
    "type": "image/webp"
   }
  ]
