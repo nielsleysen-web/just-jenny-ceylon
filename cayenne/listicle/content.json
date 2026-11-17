@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T09:14:40.270Z",
+ "saved": "2026-11-17T10:40:03.761Z",
  "texts": [
   {
    "section": "",
@@ -78,8 +78,8 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(1)>figure>p",
-   "original": "Cold Feet And Hands Solved At the Root",
-   "new": "Cold Feet And Hands Fixed At the Root Cause"
+   "original": "Cold Feet And Hands Fixed At the Root Cause",
+   "new": "🦶 Cold Feet And Hands Fixed At the Root Cause"
   },
   {
    "section": "",
@@ -231,9 +231,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(5)>p:nth-of-type(1)",
-   "original": "Maybe you were told it runs in the family. Maybe you blame yourself for years of eating the wrong things.",
-   "new": "Already taking diabetes pills? Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. \n\n\nNo stimulants. No synthetic compounds. Just whole-food ingredients in a softgel.",
-   "html": "Already taking diabetes pills? <b>Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. </b><br><br><br>No stimulants. No synthetic compounds. Just whole-food ingredients in a softgel."
+   "original": "Already taking diabetes pills? Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. \n\n\nNo stimulants. No synthetic compounds. Just whole-food ingredients in a softgel.",
+   "new": "Already taking diabetes pills? Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. \n\nNo stimulants. No synthetic compounds. Just whole-food ingredients in a softgel.",
+   "html": "Already taking diabetes pills? <b>Just Jenny's Cayenne Pepper Capsules are a food-based supplement made from cayenne pepper extract and natural ingredients. </b><br><br>No stimulants. No synthetic compounds. Just whole-food ingredients in a softgel."
   },
   {
    "section": "",
@@ -299,8 +299,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(7)>p:nth-of-type(1)",
-   "original": "Walking the dog. Standing through Sunday service. Chasing the grandkids round the garden.",
-   "new": "Not years. Not months. 4 weeks.\n\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n\n82% of Just Jenny users experience this progression.\n\n\nEven person with diabetes in their late 50s who have struggled with cold feet and hands for years."
+   "original": "Not years. Not months. 4 weeks.\n\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n\n82% of Just Jenny users experience this progression.\n\n\nEven person with diabetes in their late 50s who have struggled with cold feet and hands for years.",
+   "new": "Not years. Not months. 4 weeks.\n\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n\n82% of Just Jenny users experience this progression.\n\n\nEven person with diabetes in their late 50s who have struggled with cold feet and hands for years.",
+   "html": "Not years. Not months. 4 weeks.<br><br><br><b>Week 1:</b> Start to notice warmth in your hands and feet.<br><b>Week 3:</b> The numb spots begin to ease.<br><b>Week 5:</b> The feeling is completely restored.<br><br><br>82% of Just Jenny users experience this progression.<br><br><br>Even person with diabetes in their late 50s who have struggled with cold feet and hands for years."
   },
   {
    "section": "",
