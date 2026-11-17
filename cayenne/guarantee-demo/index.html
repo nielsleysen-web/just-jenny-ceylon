@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Garantie — 3 voorstellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#6B1A18;--wine-d:#4E110F;--wine-l:#84231F;--maroon:#2E0A09;--gold:#E0A446;--gold-l:#F3C676;--ink:#16100F;--blush:#F7ECE8;--cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.45}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.intro{padding:30px 0 26px;text-align:center;border-bottom:1px solid #eee}
+.intro h1{font:700 28px/1.1 Inter,sans-serif;margin:0 0 8px}.intro p{margin:0 auto;max-width:560px;color:#555;font-size:15px}
+.nav{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}.nav a{padding:8px 16px;border-radius:999px;border:1px solid var(--wine);color:var(--wine);text-decoration:none;font-weight:700;font-size:13.5px}
+.lbl{padding:26px 0 12px;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b9832d}
+.ph{background:#EFE2DD center/cover;display:grid;place-items:center;color:#9a7f7e;font-size:12px;text-align:center}
+.seal{width:150px;height:150px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#F6E3A6,#E0A446 60%,#B9832D);box-shadow:0 0 0 5px rgba(224,164,70,.35),0 14px 30px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);color:#3A1200;text-align:center}
+.seal b{font:700 40px/0.9 var(--cond)}.seal i{font-style:normal;font:700 15px/1 var(--cond);letter-spacing:.12em;margin-top:2px}.seal small{font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+.btn{display:inline-block;background:var(--gold-l);color:#3A1200;font-weight:700;font-size:15.5px;padding:15px 30px;border-radius:8px;text-decoration:none}
+
+/* ===== A — volle breedte, foto loopt tot de rand ===== */
+.ga{background:linear-gradient(110deg,#2E0A09 0%,#4E110F 45%,#6B1A18 100%);color:#fff;overflow:hidden}
+.ga-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:stretch;min-height:420px}
+.ga-l{padding:64px 40px 64px max(20px,calc((100vw - 1140px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+.ga-k{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-l);font-weight:700;margin:0 0 10px}
+.ga h2{font:700 58px/0.98 var(--cond);text-transform:uppercase;margin:0}.ga h2 span{color:var(--gold-l)}
+.ga-p{margin:16px 0 26px;font-size:17px;color:#f1dcd6;max-width:460px}
+.ga-r{position:relative}.ga-r .ph{position:absolute;inset:0;background-color:#7d3a2c;color:#f0d6c4}
+.ga-r .seal{position:absolute;left:-75px;top:50%;margin-top:-75px}
+
+/* ===== B — gecentreerd, met drie stappen ===== */
+.gb{background:var(--blush);padding:70px 0 74px;text-align:center}
+.gb .seal{margin:0 auto 22px;transform:rotate(-8deg)}
+.gb h2{font:700 54px/1 var(--cond);text-transform:uppercase;margin:0;color:var(--wine)}.gb h2 span{color:#C98A2B}
+.gb-p{margin:14px auto 0;font-size:17px;color:#3d3433;max-width:560px}
+.gb-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px auto 30px;max-width:980px;text-align:left}
+.gb-step{background:#fff;border:1px solid #ead9d3;border-radius:14px;padding:22px 22px 24px;box-shadow:0 8px 24px rgba(93,23,20,.06);opacity:0;transform:translateY(22px);transition:opacity .55s,transform .55s}
+.gb-step.on{opacity:1;transform:none}
+.gb-step em{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--wine);color:#fff;border:2px solid var(--gold);font:700 20px var(--cond);font-style:normal;margin-bottom:12px}
+.gb-step b{display:block;font-size:17px;margin-bottom:4px}.gb-step p{margin:0;font-size:15px;color:#4a3f3d}
+.gb .btn{background:var(--wine-l);color:#fff}
+
+/* ===== C — brede balk met groot cijfer ===== */
+.gc{background:#2E0A09;color:#fff;position:relative;overflow:hidden;padding:64px 0}
+.gc:before{content:"90";position:absolute;right:-20px;top:50%;transform:translateY(-52%);font:700 460px/1 var(--cond);color:transparent;-webkit-text-stroke:2px rgba(243,198,118,.16);letter-spacing:-.02em;pointer-events:none}
+.gc-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:44px;align-items:center;position:relative}
+.gc-n{font:700 190px/0.8 var(--cond);color:var(--gold-l);display:flex;align-items:flex-start;gap:8px}
+.gc-n small{font:700 30px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-top:14px;writing-mode:vertical-rl;transform:rotate(180deg)}
+.gc h2{font:700 46px/1 var(--cond);text-transform:uppercase;margin:0}.gc h2 span{color:var(--gold-l)}
+.gc-p{margin:12px 0 0;font-size:17px;color:#f1dcd6;max-width:480px}
+.gc-list{list-style:none;margin:16px 0 0;padding:0;display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px;color:#f6e7e2}
+.gc-list li{display:flex;align-items:center;gap:7px}.gc-list li:before{content:"";width:18px;height:18px;border-radius:50%;background:var(--gold-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233A1200' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.500 4.500L19 7.500'/%3E%3C/svg%3E") center/11px no-repeat}
+.gc .ph{width:230px;height:230px;border-radius:16px;background-color:#6b2a25;color:#e9c9c2}
+
+@media(max-width:860px){
+  .ga-in{grid-template-columns:1fr;min-height:0}.ga-l{padding:44px 20px 38px}.ga h2{font-size:42px}.ga-p{font-size:15.5px;margin:12px 0 22px}
+  .ga-r{height:260px}.ga-r .seal{left:auto;right:16px;top:-58px;margin:0;width:116px;height:116px}.ga-r .seal b{font-size:31px}.ga-r .seal i{font-size:12px}.ga-r .seal small{font-size:7px}
+  .gb{padding:44px 0 48px}.gb .seal{width:120px;height:120px}.gb .seal b{font-size:32px}.gb .seal i{font-size:12px}.gb .seal small{font-size:7px}
+  .gb h2{font-size:38px}.gb-p{font-size:15.5px}.gb-steps{grid-template-columns:1fr;gap:10px;margin:26px 0 24px}.gb-step{display:grid;grid-template-columns:40px 1fr;gap:4px 14px;padding:16px}.gb-step em{grid-row:1/3;margin:0}.gb-step p{grid-column:2;font-size:14.5px}
+  .gc{padding:44px 0}.gc:before{font-size:300px;right:-30px;top:30%}
+  .gc-in{grid-template-columns:1fr;gap:18px}.gc-n{font-size:130px}.gc-n small{font-size:22px;margin-top:10px}.gc h2{font-size:36px}.gc-p{font-size:15.5px}.gc-list{gap:10px 16px;font-size:13.5px}.gc .ph{width:100%;height:200px}
+}
+</style>
+</head>
+<body>
+<div class="intro"><div class="wrap">
+<h1>Garantie — 3 voorstellen</h1>
+<p>Alle drie lopen over de volle breedte van het scherm. Foto's en uitlegtekst zijn invulplekken.</p>
+<div class="nav"><a href="#a">A · Foto tot de rand</a><a href="#b">B · Drie stappen</a><a href="#c">C · Groot cijfer</a></div>
+</div></div>
+
+<div class="lbl" id="a">Voorstel A</div>
+<section class="ga"><div class="ga-in">
+  <div class="ga-l"><p class="ga-k">90 days. No questions.</p><h2>The Just Jenny <span>Guarantee</span></h2><p class="ga-p">[Explain the guarantee in two short sentences.]</p><div><a class="btn" href="#">Try It Risk-Free</a></div></div>
+  <div class="ga-r"><div class="ph">Product photo</div><div class="seal"><b>90</b><i>DAY</i><small>Money back guarantee</small></div></div>
+</div></section>
+
+<div class="lbl" id="b">Voorstel B</div>
+<section class="gb"><div class="wrap">
+  <div class="seal"><b>90</b><i>DAY</i><small>Money back guarantee</small></div>
+  <h2>The Just Jenny <span>Guarantee</span></h2>
+  <p class="gb-p">[Explain the guarantee in two short sentences.]</p>
+  <div class="gb-steps">
+    <div class="gb-step"><em>1</em><b>Order today</b><p>[What happens after ordering.]</p></div>
+    <div class="gb-step"><em>2</em><b>Use it for 90 days</b><p>[How long they can try it.]</p></div>
+    <div class="gb-step"><em>3</em><b>Not satisfied? Email us</b><p>[How the refund works.]</p></div>
+  </div>
+  <a class="btn" href="#">Try It Risk-Free</a>
+</div></section>
+
+<div class="lbl" id="c">Voorstel C</div>
+<section class="gc"><div class="wrap gc-in">
+  <div class="gc-n">90<small>days</small></div>
+  <div><h2>The Just Jenny <span>Guarantee</span></h2><p class="gc-p">[Explain the guarantee in two short sentences.]</p><ul class="gc-list"><li>Full refund</li><li>No questions asked</li><li>Just email us</li></ul></div>
+  <div class="ph">Product photo</div>
+</div></section>
+
+<script>
+(function () {
+  const steps = Array.from(document.querySelectorAll('.gb-step'));
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('on'), steps.indexOf(e.target) * 130); io.unobserve(e.target); } }), { threshold: .3 });
+  steps.forEach((s) => io.observe(s));
+})();
+</script>
+</body>
+</html>
