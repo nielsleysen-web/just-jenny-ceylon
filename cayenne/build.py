@@ -81,11 +81,12 @@ vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Bla
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
 
 GIFT_CK = svg('<path d="M4.500 12.500l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.500', '.5').replace('.600', '.6'))
+B_PHOTOS = {1: 'pouch.webp', 3: 'bundle-2-jar.webp'}
 def bundle(q, t, u, p, w, tag, gift):
     on = q == 3
     return (f'<label class="bundle{" sel" if on else ""}" data-qty="{q}">' + (f'<span class="tag">{tag}</span>' if tag else '')
             + f'<input type="radio" name="bundle" value="{q}"{" checked" if on else ""}>'
-            + f'<span class="b-main">{slot("ed-pic b-img" + (" has-img" if q == 1 else ""), "Photo", (' style="background-image:url(/cayenne/assets/pouch.webp)"' if q == 1 else ""))}<span class="b-txt"><b class="b-t">{t}</b><span class="b-u">{u}</span></span>'
+            + f'<span class="b-main">{slot("ed-pic b-img" + (" has-img" if q in B_PHOTOS else ""), "Photo", (f' style="background-image:url(/cayenne/assets/{B_PHOTOS[q]})"' if q in B_PHOTOS else ""))}<span class="b-txt"><b class="b-t">{t}</b><span class="b-u">{u}</span></span>'
             + f'<span class="b-p"><b class="per">{p}</b><s class="was">{w}</s></span></span>'
             + ''.join(f'<span class="b-gift">{GIFT_CK}<span class="b-g"><b>{g[0]}</b><i>{g[1]}</i></span></span>' for g in ([gift] if isinstance(gift, tuple) else gift or [])) + '</label>')
 BUNDLES = ''.join(bundle(*b) for b in bundles)
@@ -110,7 +111,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=60">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=62">
 <!--HEAD-EXTRA-->
 </head>
 <body>
