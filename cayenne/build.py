@@ -112,7 +112,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=65">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=66">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -156,7 +156,7 @@ html = f'''<!DOCTYPE html>
 <div class="support">
   <div class="s-l"><h2>Support Circulation</h2><p class="s-sub">7 botanicals, each chosen for what it does inside your vessels.</p>
   <div class="cards">{''.join(f'<div class="card">{svg(i)}<h3>{t}</h3><p>{p}</p></div>' for i, t, p in cards)}</div></div>
-  {slot('ed-img s-img', 'Product photo')}
+  {slot('ed-img s-img has-img', 'Product photo', ' style="background-image:url(/cayenne/assets/support.webp)"')}
   <div class="cd-dots">{'<i></i>' * len(cards)}</div>
 </div>
 </div></section>
