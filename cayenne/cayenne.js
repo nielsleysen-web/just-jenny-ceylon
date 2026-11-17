@@ -195,7 +195,7 @@
     const set = (c, on) => {
       c.classList.toggle('flipped', on);
       const m = $('.rb-more', c), s = $('summary', c);
-      c.style.minHeight = on && m ? Math.max(s.offsetHeight, m.scrollHeight) + 'px' : '';
+      const pp = m && $('p', m); c.style.minHeight = on && pp ? Math.max(s.offsetHeight, pp.offsetHeight + 32) + 'px' : '';
       if (s) s.setAttribute('aria-expanded', on ? 'true' : 'false');
     };
     cards.forEach((c) => { c.open = true; c.classList.add('rb-flip'); set(c, false);
