@@ -9,49 +9,57 @@ def pic(cls, img, label, pos='center'):
     st = f' style="background-image:url({A}{img});background-position:{pos}"' if img else ''
     return f'<div class="ed-pic {cls}{" has-img" if img else ""}"{st}><span class="slot-label">{label}</span></div>'
 
-YES = '<span class="t-y">✅ Yes</span>'; NO = '<span class="t-n">❌ No</span>'; MAY = '<span class="t-m">⚠️ Sometimes</span>'
+YES = '<span class="t-y">✅ Yes</span>'; NO = '<span class="t-n">❌ No</span>'; MAY = '<span class="t-m">⚠️ Maybe</span>'
 table = [
-    ('Warms cold hands & feet', YES, '<span class="t-m">⚠️ While worn</span>', MAY),
-    ('Reaches the smallest blood vessels', YES, NO, MAY),
-    ('Gentle on the stomach', YES, YES, '<span class="t-n">❌ Often burns</span>'),
-    ('Supports feeling in the feet', YES, NO, MAY),
-    ('Results', '<b>Build up over weeks</b>', 'Gone when you take them off', 'Hard to tell'),
+    ('Brings blood back to your feet', YES, '<span class="t-m">⚠️ While worn</span>', NO),
+    ('Targets circulation, not just sugar', YES, NO, NO),
+    ('Helps the feeling return', YES, NO, MAY),
+    ('Gentle on the stomach', YES, YES, MAY),
+    ('Results', '<b>Build week by week</b>', 'Gone when you take them off', 'Little to nothing'),
 ]
+TABLE_HEAD = ('Socks &amp; Heating Pads', 'Cinnamon, Berberine &amp; ALA')
 
 items = [
-  ('Reaches the smallest blood vessels in your feet and hands.', 'benefit-1.webp', 'center', '🩸 Circulation Down To Your Toes.',
-   ['High blood sugar is hard on your smallest blood vessels. Over the years they get narrower and stiffer, and the first places to notice are the ones furthest from your heart: <b>your toes and your fingertips.</b>',
-    '<b>Capsaicin from high-Scoville cayenne</b> helps blood get through to those tiny capillaries again.',
-    'Just Jenny packs a 3,000 mg equivalent of cayenne extract into two softgels a day, together with beetroot, a natural source of nitrates your body turns into nitric oxide.']),
-  ('Warm feet in bed again. No more sleeping in socks.', 'timeline-2.webp', 'center 40%', '🔥 Warmth Comes Back.',
-   ['Ice-cold feet that stay cold no matter how many blankets you pile on…',
+  ('The first formula that goes after the real reason your feet go numb: <span class="hl">circulation, not sugar.</span>', 'benefit-1.webp', 'center', '🩸 Circulation, Not Just The Number.',
+   ['Your doctor checks your A1C, nods, and tells you you\'re doing fine.',
+    'So why are your feet still cold, numb and burning at night?',
+    'Because <b>years of high blood sugar stiffen and narrow the tiny blood vessels that feed your feet.</b> Your number can look perfect while those vessels stay half closed, and the nerves in your toes slowly starve for oxygen.',
+    '<b>Capsaicin from high-Scoville cayenne</b> helps those small vessels relax and open again, and beetroot gives your body the nitrates it turns into nitric oxide. So blood can travel all the way down to your toes again.']),
+  ('Wakes up numb toes and helps bring the feeling back.', 'benefit-2.webp', 'center', '✨ Feeling Returns.',
+   ['If you can\'t feel the floor under your feet anymore…',
+    'If you check your socks for blood because you wouldn\'t notice a cut…',
+    'That\'s not your age. <b>That\'s nerves starved of blood.</b>',
+    'Your nerves need a steady supply of oxygen-rich blood to work. When circulation reaches your feet again, many customers notice a light tingling around weeks 2 to 4, as the feeling starts to return.']),
+  ('Warm feet in bed again. No more sleeping in socks.', 'timeline-2.webp', 'center 40%', '🔥 No More Ice-Cold Feet At Night.',
+   ['Two pairs of socks, a hot-water bottle, the heating on full… and your feet are still ice cold at 2 am.',
     'That isn\'t the temperature in your bedroom. <b>That\'s blood not making it all the way down.</b>',
-    'Most people notice a gentle warmth in their hands and feet within the first few days of taking two softgels in the morning.',
-    'Ruby F. put it simply: <i>"I used to sleep with socks because my feet became so cold during the night. Over the last few weeks I stopped wearing them in bed."</i>']),
-  ('Helps the feeling return to numb toes and fingertips.', 'benefit-2.webp', 'center', '✨ Feeling Restored.',
-   ['Your nerves need oxygen-rich blood to work. When the small vessels that feed them narrow, the signal fades: first a tingle, then a numb spot that slowly gets bigger.',
-    'Just Jenny is designed to reopen those small vessels, <b>so blood can flow back to your nerves.</b>',
-    'Around weeks 2 to 4, many customers describe a light tingling as feeling starts to come back.']),
-  ('No burning, no reflux, no spicy burps hours later.', 'benefit-3.webp', 'center', '🌿 Gentle On The Stomach.',
-   ['Tried cayenne capsules before and gave up because of the heartburn? You\'re not alone.',
-    'Most cayenne capsules are dry powder that hits your stomach lining all at once.',
-    '<b>Just Jenny uses a liquid cayenne extract suspended in MCT oil.</b> No harsh powder, no burning feeling. Amanda S. noticed <i>"just a slight warmth going down"</i> and nothing else.',
-    'The MCT oil also acts as a carrier, so the fat-soluble cayenne compounds are absorbed instead of passing through unused.']),
-  ('Steadier energy, without the 2pm crash.', 'timeline-3.webp', 'center 35%', '⚡ Energy That Lasts All Day.',
-   ['Brain fog after every meal. Running on empty by early afternoon. Another cup of coffee just to get through the day.',
-    'When blood doesn\'t get to where it\'s needed, your whole body runs slower.',
-    'Better circulation plus <b>Panax ginseng</b> for steadier energy means you get your afternoons back.',
-    'Rob G.: <i>"I stopped drinking cups of coffee to survive my crash after 2pm."</i>']),
-  ('7 botanicals in 2 softgels. Fits right into your morning.', 'support.webp', 'center', '💊 Easy To Fit Into Your Routine.',
-   ['Cayenne, beetroot, hawthorn berry, turmeric, Panax ginseng, black pepper and grape seed extract. Each one chosen for what it does inside your vessels.',
-    'No shelf full of separate bottles. <b>Just two softgels a day with a glass of water.</b>',
-    'No stimulants, no harsh powders.',
-    '<b>As always, check with your doctor before starting any new supplement,</b> especially if you take medication for diabetes, blood pressure or blood thinning.']),
+    'Most people feel a gentle warmth in their hands and feet within the first few days.',
+    'Ruby F.: <i>"I used to sleep with socks because my feet became so cold during the night. Over the last few weeks I stopped wearing them in bed."</i>']),
+  ('Liquid cayenne in oil, not powder. Here\'s why the cayenne you tried before did nothing.', 'benefit-3.webp', 'center', '💧 Oil, Not Powder.',
+   ['Most cayenne capsules are dry powder. <b>Capsaicin dissolves in fat, not water.</b> So most of that powder passes straight through you, and the rest burns your stomach on the way.',
+    'Just Jenny uses a <b>concentrated 12:1 liquid cayenne extract suspended in MCT oil</b>, a 3,000 mg cayenne equivalent in every serving.',
+    'Then we add <b>black pepper</b>, which helps your body absorb the other botanicals, so more of every softgel is actually put to work.',
+    'No burning. No reflux. No spicy burps hours later.']),
+  ('It\'s not your fault, and it\'s not too late.', 'problem-2.webp', 'center 45%', '🙏 Not Your Fault. Not Too Late.',
+   ['Maybe you were told it runs in the family. Maybe you blame yourself for years of eating the wrong things.',
+    'Here\'s what nobody told you: <b>you could do everything right with your sugar and still lose circulation in your feet</b>, because nobody was looking after the small vessels.',
+    'That\'s not a failure on your part. It\'s a gap in how diabetes gets managed.',
+    'And whether you\'re 55 or 75, <b>it\'s never too late to start giving your circulation the support it\'s been missing.</b>']),
+  ('Designed to fit right into your daily routine.', 'support.webp', 'center', '✅ Two Softgels A Day.',
+   ['Already taking a handful of pills every morning? Just Jenny isn\'t another prescription. <b>It\'s a food-based supplement made from cayenne pepper extract and 6 natural botanicals.</b>',
+    'Cayenne, beetroot, hawthorn berry, turmeric, Panax ginseng, black pepper and grape seed extract. No stimulants. No harsh powders.',
+    'Just two softgels a day with a glass of water.',
+    '<b>As always, check with your doctor before starting any new supplement</b>, especially if you take medication for diabetes, blood pressure or blood thinning. Just Jenny does not replace your medication.']),
+  ('Stay on your own two feet, and off your family\'s worry list.', 'timeline-3.webp', 'center 35%', '👣 Keep Walking. Stay Independent.',
+   ['Walking the dog. Standing through Sunday service. Chasing the grandkids round the garden.',
+    'What you really want isn\'t a better number. <b>It\'s to keep doing all of it on your own, for as long as you can.</b>',
+    'Warm feet that you can feel make every step more sure. And you can stop worrying about becoming a burden to the people you love.',
+    'Rob G.: <i>"Around the two-week mark I noticed that I stopped wearing socks in bed and my hands got their feeling back."</i>']),
   ('Try it for 90 days, or get every penny back.', 'guarantee.webp', 'center 30%', '🔒 Completely Risk Free.',
-   ['We know you\'ve tried things before that promised a lot and changed nothing.',
-    'That\'s why every order comes with our <b>90-Day Money-Back Guarantee.</b>',
-    'If your feet aren\'t warmer, your hands aren\'t tingling back to life, or you\'re simply not happy for any reason, email us and you get a full refund.',
-    '<b>No risk. No hassle.</b>']),
+   ['We know you\'ve been burned before. Cinnamon. Berberine. Foot creams. Thermal socks. Lots of promises, same cold feet.',
+    'That\'s why every order comes with our unbreakable <b>90-Day Money-Back Guarantee.</b>',
+    'If your feet aren\'t warmer… if the feeling isn\'t coming back… if you\'re not completely happy for any reason…',
+    '<b>You get every penny back.</b> No questions asked.']),
 ]
 N = len(items)
 
@@ -68,10 +76,10 @@ html = f'''<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>{N} Reasons People With Diabetes Are Switching To Just Jenny Cayenne Pepper Softgels</title>
+<title>{N} Reasons Why Diabetics Over 55 Are Switching To Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/listicle/listicle.css?v=4">
+<link rel="stylesheet" href="/cayenne/listicle/listicle.css?v=5">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -79,22 +87,22 @@ html = f'''<!DOCTYPE html>
 <div class="timer" aria-label="Offer countdown"><div><b id="t-h">01</b><i>HRS</i></div><div><b id="t-m">30</b><i>MINS</i></div><div><b id="t-s">00</b><i>SEC</i></div></div></div></div>
 
 <main class="wrap">
-<h1>{N} Reasons Why People With Diabetes Are Switching To Just Jenny Cayenne Pepper Softgels In 2026</h1>
+<h1>{N} Reasons Why Diabetics Over 55 Are Switching To Just Jenny Cayenne Pepper Softgels In 2026</h1>
 <div class="by"><span class="by-av" aria-hidden="true">JJ</span><div><b>By the Just Jenny Team</b><span>Last updated Nov 17, 2026</span></div></div>
-<p class="callout"><b>Read this BEFORE</b> you buy another pair of thermal socks.</p>
+<p class="callout"><b>Read this BEFORE</b> you blame another numb toe on "just your sugar".</p>
 
 <div class="cmp"><table>
-<thead><tr><th></th><th class="us">Just Jenny</th><th>Socks &amp; Heating Pads</th><th>Regular Cayenne Capsules</th></tr></thead>
+<thead><tr><th></th><th class="us">Just Jenny</th><th>{TABLE_HEAD[0]}</th><th>{TABLE_HEAD[1]}</th></tr></thead>
 <tbody>{''.join(f'<tr><td class="lb">{r[0]}</td><td class="us">{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td></tr>' for r in table)}</tbody>
 </table></div>
-<p class="tldr"><b>TL;DR:</b> Two Just Jenny softgels a day bring {N} real changes for people with diabetes 👇</p>
+<p class="tldr"><b>TL;DR:</b> Two Just Jenny softgels a day bring {N} life-changing benefits for diabetics with cold, numb feet 👇</p>
 
 {''.join(item_html(i + 1, it) for i, it in enumerate(items))}
 </main>
 
 <section class="end"><div class="wrap">
-<h2>More people are getting warm feet and their feeling back every single day.</h2>
-<p>From people who were told cold feet just come with diabetes, to people who tried every sock and cream out there. <b>Just Jenny is the one they wish they had found sooner.</b></p>
+<h2>Over 20,000 people already trust Just Jenny, and more diabetics are getting warm feet and their feeling back every single day.</h2>
+<p>From diabetics who were told numb feet just come with the disease, to those who tried every cream, cinnamon pill and pair of thermal socks out there. <b>Just Jenny is the one they wish they\'d found sooner.</b></p>
 <div class="offer">
   <span class="of-tag">🔥 Early Black Friday Sale 🔥</span>
   {pic("of-img", "hero-offer-3.webp", "Offer photo")}

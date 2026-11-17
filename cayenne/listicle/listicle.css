@@ -95,3 +95,4 @@ html.jj-editing .satc{display:none}
   .bar-t b{font-size:17px}.bar-t span{font-size:15px}.timer b{font-size:24px}.timer i{font-size:10px}.bar-in{max-width:none;padding:10px 12px}
   .satc .ls-btn{font-size:19px;padding:13px 30px;display:inline-flex;max-width:none}.satc p{font-size:14px}
 }
+.ls-item h2 .hl{color:var(--red)}
