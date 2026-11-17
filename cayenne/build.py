@@ -209,7 +209,7 @@ html = f'''<!DOCTYPE html>
 <h2 class="h-c">So What Makes The Difference?</h2>
 <p class="lead-c">Not all cayenne supplements are made the same. Here's how Just Jenny compares.</p>
 <div class="cmp"><div class="cmp-col"></div>
-  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/pouch.webp)"')}<b>Just Jenny</b></span></span><span>Others</span></div>
+  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/pouch.webp)"')}<b>Just Jenny</b></span></span><span>Competitors</span></div>
   <div class="cmp-body">{''.join(f'<div class="cmp-row"><span>{r}</span><span class="cmp-us">{CMP_CK.replace("<span class=", "<span style=" + chr(34) + "transition-delay:" + str(n * 90) + "ms" + chr(34) + " class=")}</span><span>{CMP_CK if n == 0 else CMP_NO}</span></div>' for n, r in enumerate(vs_rows))}</div>
 </div>
 </div></section>
