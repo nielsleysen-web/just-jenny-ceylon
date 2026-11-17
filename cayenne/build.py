@@ -123,7 +123,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=70">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=71">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -230,7 +230,7 @@ html = f'''<!DOCTYPE html>
 
 <section class="gar"><div class="gar-in">
   <div class="gar-l"><p class="gar-k">90 days. No questions.</p><h2>The Just Jenny <span>Guarantee</span></h2><p class="gar-p">Try it for 90 days. If you're not satisfied, email us for a full refund.</p></div>
-  <div class="gar-r">{slot('ed-img gar-img has-img', 'Photo — person holding the pouch', ' style="background-image:url(/cayenne/assets/guarantee.webp)"')}<div class="gu-seal"><b>90-DAY</b><span>Money Back Guarantee</span></div></div>
+  <div class="gar-r">{slot('ed-img gar-img has-img', 'Photo — person holding the pouch', ' style="background-image:url(/cayenne/assets/guarantee.webp?v=2)"')}<div class="gu-seal"><b>90-DAY</b><span>Money Back Guarantee</span></div></div>
 </div></section>
 
 <footer class="ft"><div class="wrap ft-in">
