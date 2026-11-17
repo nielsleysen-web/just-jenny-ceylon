@@ -1,6 +1,6 @@
 // sageleaf.justjenny.com → de Sage Leaf-salespagina (map /sage) op de root van dat domein.
 // Alle andere domeinen (cannella.getjustjenny.com …) blijven ongewijzigd.
-export const config = { matcher: ['/', '/editor', '/editor/'] };
+export const config = { matcher: ['/', '/editor', '/editor/', '/listicle', '/listicle/', '/listicle/editor', '/listicle/editor/'] };
 
 export default function middleware(request) {
   const url = new URL(request.url);
@@ -8,6 +8,8 @@ export default function middleware(request) {
   // cayenne.getjustjenny.com → /cayenne (zelfde patroon voor elk nieuw product: <product>.getjustjenny.com)
   const dir = host.startsWith('sageleaf.') ? '/sage' : host.startsWith('cayenne.') ? '/cayenne' : null;
   if (!dir) return; // niets doen
-  url.pathname = url.pathname.startsWith('/editor') ? dir + '/editor' : dir;
+  // /listicle (en /listicle/editor) → de listicle van dat product (cayenne/listicle)
+  const p = url.pathname.replace(/\/$/, '');
+  url.pathname = p.startsWith('/listicle') ? dir + p : p.startsWith('/editor') ? dir + '/editor' : dir;
   return new Response(null, { headers: { 'x-middleware-rewrite': url.toString() } });
 }

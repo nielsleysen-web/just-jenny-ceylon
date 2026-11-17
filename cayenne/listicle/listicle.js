@@ -1,0 +1,46 @@
+/* Cayenne-listicle: aftelklok, knoppen → salespagina (met tracking-parameters), sticky knop, Meta Pixel */
+(function () {
+  const ED = !!window.JJ_EDITOR;
+  const $ = (s, r) => (r || document).querySelector(s), $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  if (ED) document.documentElement.classList.add('jj-editing');
+
+  const META_PIXEL_ID = '2040844393290901'; // pixel "Big 5 Just Jenny" (zelfde als salespagina en checkout)
+  const TRACK = !ED && META_PIXEL_ID && window.fbq;
+  if (TRACK) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); }
+
+  // Salespagina: op cayenne.getjustjenny.com de root, anders /cayenne/. Tracking-parameters (fbclid, utm's, ad_id…) gaan mee.
+  function salesUrl() {
+    const u = new URL(/^cayenne\./i.test(location.hostname) ? '/' : '/cayenne/', location.origin);
+    const q = new URLSearchParams(location.search);
+    q.forEach((v, k) => u.searchParams.set(k, v));
+    u.searchParams.set('src', 'listicle');
+    return u.toString();
+  }
+  if (!ED) $$('.ls-btn').forEach((a) => { a.href = salesUrl(); });
+  document.addEventListener('click', (e) => { if (ED && e.target.closest('.ls-btn')) e.preventDefault(); });
+
+  /* aftelklok: zelfde teller als de salespagina (90 min per bezoek) */
+  (function () {
+    const LEN = 90 * 60 * 1000, K = 'jj_cay_timer';
+    let end = 0;
+    try { end = parseInt(sessionStorage.getItem(K), 10) || 0; } catch (e) {}
+    if (!end || end <= Date.now()) { end = Date.now() + LEN; try { sessionStorage.setItem(K, end); } catch (e) {} }
+    const pad = (n) => String(n).padStart(2, '0');
+    const tick = () => {
+      let left = end - Date.now();
+      if (left <= 0) { end = Date.now() + LEN; left = LEN; try { sessionStorage.setItem(K, end); } catch (e) {} }
+      const t = Math.floor(left / 1000), v = [pad(Math.floor(t / 3600)), pad(Math.floor((t % 3600) / 60)), pad(t % 60)];
+      ['h', 'm', 's'].forEach((k, i) => { const a = $('#t-' + k); if (a) a.textContent = v[i]; $$('.t2 .t-' + k).forEach((b) => { b.textContent = v[i]; }); });
+    };
+    if (ED) return;
+    tick(); setInterval(tick, 1000);
+  })();
+
+  /* sticky knop: na de vergelijkingstabel, verborgen bij het offer onderaan */
+  const satc = $('#satc'), cmp = $('.cmp'), off = $('.offer');
+  if (satc && !ED) {
+    const upd = () => { const a = cmp && cmp.getBoundingClientRect(), r = off && off.getBoundingClientRect();
+      satc.classList.toggle('on', !!(a && a.bottom < 0) && !(r && r.top < innerHeight && r.bottom > 0)); };
+    addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  }
+})();
