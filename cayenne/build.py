@@ -113,7 +113,8 @@ GIFTS = ('<div class="gifts"><span class="gf-h">Early Black Friday Gifts Unlocke
          + gift(3, slot('ed-pic gf-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/softgel-case.webp)"'), '$11.99', 'FREE On-the-Go Softgel Case')
          + '</div></div>')
 CLOCK = svg('<circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6.500V12l3.500 2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'.replace('.500', '.5'))
-BH_PHOTOS = {1: 'hero-buy-one.webp'}
+TH_PHOTOS = {1: 'hero-buy-one.webp'}
+BH_PHOTOS = {}
 BH = '<div class="bh"><p class="bh-t">Big photo per offer (shown when the visitor selects that offer)</p><div class="bh-row">' + ''.join('<div class="bh-c">' + slot('ed-pic bh-img' + (' has-img' if q in BH_PHOTOS else ''), '', f' data-qty="{q}"' + (f' style="background-image:url(/cayenne/assets/{BH_PHOTOS[q]})"' if q in BH_PHOTOS else '')) + f'<span class="bh-l">{lbl}</span></div>' for q, lbl in ((1, 'Buy One'), (3, 'Buy 2 Get 1 Free'), (5, 'Buy 3 Get 2 Free'))) + '</div></div>'
 
 html = f'''<!DOCTYPE html>
@@ -125,7 +126,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=79">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=80">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -137,7 +138,7 @@ html = f'''<!DOCTYPE html>
   <div class="gal">
     {slot('ed-img g-main', 'Main product photo')}
     <div class="g-tiles">{''.join(f'<div class="tile">{svg(i)}<span>{t}</span></div>' for i, t in tiles)}</div>
-    <div class="thumbs">{''.join(slot('ed-pic th', f'Photo {n}') for n in range(1, 6))}</div>
+    <div class="thumbs">{''.join(slot('ed-pic th' + (' has-img' if n in TH_PHOTOS else ''), f'Photo {n}', (f' style="background-image:url(/cayenne/assets/{TH_PHOTOS[n]})"' if n in TH_PHOTOS else '')) for n in range(1, 6))}</div>
   </div>
   <div class="g-nav"><button type="button" class="g-prev" aria-label="Previous photo">{svg('<path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>')}</button><button type="button" class="g-next" aria-label="Next photo">{svg('<path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>')}</button></div>
   {BH}
