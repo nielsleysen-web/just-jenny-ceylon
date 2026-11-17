@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T09:09:27.913Z",
+ "saved": "2026-11-17T09:13:08.204Z",
  "texts": [
   {
    "section": "",
@@ -318,6 +318,69 @@
    "section": "",
    "path": "main>article:nth-of-type(7)>p:nth-of-type(4)",
    "original": "Rob G.: \"Around the two-week mark I noticed that I stopped wearing socks in bed and my hands got their feeling back.\"",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(8)>h2",
+   "original": "8. Try it for 90 days, or get every penny back.",
+   "new": "8. 90 Day Money Back Guarantee — the numbness gone or every dollar back."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(8)>p:nth-of-type(1)",
+   "original": "We know you've been burned before. Cinnamon. Berberine. Foot creams. Thermal socks. Lots of promises, same cold feet.",
+   "new": "We know you've been burned before.\n\nWe know you've spent money on supplements that promised everything and delivered nothing.\n\nThat's why Just Jenny comes with an unbreakable 90 Day Results or Refund Guarantee.\n\nIf the feeling in your feet and hands hasn't returned… If they don't feel warm again… If you're not completely satisfied for any reason…\n\nYou get every penny back. No questions asked.",
+   "html": "We know you've been burned before.<br><br>We know you've spent money on supplements that promised everything and delivered nothing.<br><br>That's why Just Jenny comes with an unbreakable 90 Day Results or Refund Guarantee.<br><br>If the feeling in your feet and hands hasn't returned… If they don't feel warm again… If you're not completely satisfied for any reason…<br><br><b>You get every penny back</b>. No questions asked."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(8)>p:nth-of-type(2)",
+   "original": "That's why every order comes with our unbreakable 90-Day Money-Back Guarantee.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(8)>p:nth-of-type(3)",
+   "original": "If your feet aren't warmer… if the feeling isn't coming back… if you're not completely happy for any reason…",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(8)>p:nth-of-type(4)",
+   "original": "You get every penny back. No questions asked.",
+   "new": ""
+  },
+  {
+   "section": "Over 20,000 people with diabetes are already retur",
+   "path": "section>div>h2",
+   "original": "Over 20,000 people already trust Just Jenny, and more diabetics are getting warm feet and their feeling back every single day.",
+   "new": "Over 20,000 people with diabetes are already returning the feeling and heat in their hands and feet, and it's growing every single day."
+  },
+  {
+   "section": "Over 20,000 people with diabetes are already retur",
+   "path": "section>div>p",
+   "original": "From diabetics who were told numb feet just come with the disease, to those who tried every cream, cinnamon pill and pair of thermal socks out there. Just Jenny is the one they wish they'd found sooner.",
+   "new": "From men who were told by their doctors nothing could be done, to men who tried everything and gave up hope — Aurivita is the formula they all wish they found sooner. \nJoin the fastest growing community of men over 40 who are getting their hardness and sensitivity back naturally.",
+   "html": "From men who were told by their doctors nothing could be done, to men who tried everything and gave up hope —<b> Aurivita is the formula they all wish they found sooner. </b><br>Join the fastest growing community of men over 40 who are getting their hardness and sensitivity back naturally. "
+  },
+  {
+   "section": "Over 20,000 people with diabetes are already retur",
+   "path": "section>div>div>div:nth-of-type(2)>h3",
+   "original": "CHECK AVAILABILITY FOR UP TO 70% OFF + FREE GIFTS.\nWHILE STOCK LASTS.",
+   "new": "CHECK AVAILABILITY FOR UP TO 70% OFF + FREE GIFTS. FOR NEW CUSTOMERS ONLY.",
+   "html": "Check availability for up to 70% off + free gifts. <i>FOR NEW CUSTOMERS ONLY.<br></i>"
+  },
+  {
+   "section": "ft",
+   "path": "footer>div>p:nth-of-type(1)",
+   "original": "The information on this page is not medical advice and should not replace a consultation with a qualified healthcare provider. Always talk to your doctor before starting any new supplement, especially if you have a medical condition or take prescription medication.",
+   "new": ""
+  },
+  {
+   "section": "ft",
+   "path": "footer>div>p:nth-of-type(2)",
+   "original": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.",
    "new": ""
   }
  ],
