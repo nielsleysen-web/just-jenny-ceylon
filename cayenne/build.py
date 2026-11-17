@@ -86,7 +86,8 @@ ING_TX = {
     'Grape Seed Extract': "Rich in antioxidants that help protect vessel walls from oxidative stress.",
 }
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
-TL_PHOTOS = {1: 'timeline-1.webp'}
+TL_PHOTOS = {1: 'timeline-1.webp', 2: 'timeline-2.webp'}
+TL_POS = {1: 'center 62%', 2: 'center 33%'}
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
 vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
@@ -193,7 +194,7 @@ html = f'''<!DOCTYPE html>
 <section class="weeks"><div class="wrap">
 <h2 class="h-c dark">What To Expect In Your First 8 Weeks</h2>
 <p class="lead-c dark">Two softgels a day. Here's how it tends to unfold.</p>
-<div class="tl"><div class="tl-line"><div class="tl-fill"></div></div>{''.join(f'<div class="tl-step"><div class="tl-dot">{n}</div><div class="tl-card">{slot("ed-img tl-img" + (" has-img" if n in TL_PHOTOS else ""), "Photo", (f' style="background-image:url(/cayenne/assets/{TL_PHOTOS[n]})"' if n in TL_PHOTOS else ""))}<div class="tl-txt"><div class="tl-when">{w}</div><h3>{t}</h3><p>{c}</p></div></div></div>' for n, (w, t, c) in enumerate(weeks, 1))}</div>
+<div class="tl"><div class="tl-line"><div class="tl-fill"></div></div>{''.join(f'<div class="tl-step"><div class="tl-dot">{n}</div><div class="tl-card">{slot("ed-img tl-img" + (" has-img" if n in TL_PHOTOS else ""), "Photo", (f' style="background-image:url(/cayenne/assets/{TL_PHOTOS[n]});background-position:{TL_POS.get(n, "center")}"' if n in TL_PHOTOS else ""))}<div class="tl-txt"><div class="tl-when">{w}</div><h3>{t}</h3><p>{c}</p></div></div></div>' for n, (w, t, c) in enumerate(weeks, 1))}</div>
 </div></section>
 
 <section class="rb"><div class="wrap">
