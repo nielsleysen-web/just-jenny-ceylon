@@ -57,8 +57,8 @@ B_ICONS = [x.replace('.500', '.5').replace('.800', '.8').replace('.600', '.6').r
 pills = ['Boost blood flow to numb feet and fingers', 'Prevents diabetic fatigue', 'Calms vessel inflammation', '3,000mg of high-scoville cayenne']
 bundles = [
     (1, 'Buy One', 'Save 50%', '$29.95', '$59.95', '', None),
-    (3, 'Buy 2 Get 1 Free', 'Save 72%', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
-    (5, 'Buy 3 Get 2 Free', 'Save 70%', '$89.95', '$299.75', 'Best Value', [('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage'), ('FREE On-the-Go Softgel Case', 'Travel-size softgel carrier')]),
+    (3, 'Buy 2 Get 1 Free Gift', 'Save 72%', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
+    (5, 'Buy 3 Get 2 Free Gifts', 'Save 70%', '$89.95', '$299.75', 'Best Value', [('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage'), ('FREE On-the-Go Softgel Case', 'Travel-size softgel carrier')]),
 ]
 circles = ["You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.", "You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.", "Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.", "You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal."]
 I_VEIN = '<path d="M3 20c3-1 5.5-3.5 7-7 1-2.4 1.4-5.5 1-10M10 13c2.5-.5 5-2.2 6.5-5.200M13.3 10.6c2.8 1 5.2.8 7.700-.6M6.5 17c.5 1.6.4 3-.2 4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.200', '.2').replace('.700', '.7')
