@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:21:00.174Z",
+ "saved": "2026-11-17T08:33:53.292Z",
  "texts": [
   {
    "section": "",
@@ -72,8 +72,99 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(1)>h2",
-   "original": "1. The first formula that goes after the real reason your feet go numb: circulation, not sugar.",
-   "new": "1. The FIRST and ONLY Diabetes formula that Opens Your Smallest Vessels."
+   "original": "1. The FIRST and ONLY Diabetes formula that Opens Your Smallest Vessels.",
+   "new": "1. The FIRST and ONLY formula that Opens Your Smallest Vessels"
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(1)>figure>p",
+   "original": "🩸 Circulation, Not Just The Number.",
+   "new": "Cold Feet And Hands Solved At the Root"
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(1)>p:nth-of-type(1)",
+   "original": "Your doctor checks your A1C, nods, and tells you you're doing fine.",
+   "new": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.\n\nThe capsaicin in cayenne helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the warmth and feeling start to return.",
+   "html": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.<br><br>The <b>capsaicin in cayenne</b> helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the warmth and feeling start to return."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(1)>p:nth-of-type(2)",
+   "original": "So why are your feet still cold, numb and burning at night?",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(1)>p:nth-of-type(3)",
+   "original": "Because years of high blood sugar stiffen and narrow the tiny blood vessels that feed your feet. Your number can look perfect while those vessels stay half closed, and the nerves in your toes slowly starve for oxygen.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(1)>p:nth-of-type(4)",
+   "original": "Capsaicin from high-Scoville cayenne helps those small vessels relax and open again, and beetroot gives your body the nitrates it turns into nitric oxide. So blood can travel all the way down to your toes again.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(2)>h2",
+   "original": "2. Wakes up numb toes and helps bring the feeling back.",
+   "new": "2. Wakes up the dead nerves in your feet and hands and restores every sensation from the toes to the ankles"
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(2)>p:nth-of-type(1)",
+   "original": "If you can't feel the floor under your feet anymore…",
+   "new": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\n\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\n\nJust Jenny's pharmaceutical grade capsaicin opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\n\nMost people start feeling the difference within the first 7 days."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(2)>p:nth-of-type(2)",
+   "original": "If you check your socks for blood because you wouldn't notice a cut…",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(2)>p:nth-of-type(3)",
+   "original": "That's not your age. That's nerves starved of blood.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(2)>p:nth-of-type(4)",
+   "original": "Your nerves need a steady supply of oxygen-rich blood to work. When circulation reaches your feet again, many customers notice a light tingling around weeks 2 to 4, as the feeling starts to return.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(3)>h2",
+   "original": "3. Warm feet in bed again. No more sleeping in socks.",
+   "new": "3. Returns the feeling in your feet, and keeps it like that"
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(3)>p:nth-of-type(1)",
+   "original": "Two pairs of socks, a hot-water bottle, the heating on full… and your feet are still ice cold at 2 am.",
+   "new": "Blue pills and other ED supplements only force blood flow for 4 hours then wear off.\n\n\nAurivita restores your body's natural ability to get hard on its own.\n\n\nNo planning ahead. No pills 30 minutes before intimacy.\n\n\nJust your Johnny showing up and doing its job."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(3)>p:nth-of-type(2)",
+   "original": "That isn't the temperature in your bedroom. That's blood not making it all the way down.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(3)>p:nth-of-type(3)",
+   "original": "Most people feel a gentle warmth in their hands and feet within the first few days.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(3)>p:nth-of-type(4)",
+   "original": "Ruby F.: \"I used to sleep with socks because my feet became so cold during the night. Over the last few weeks I stopped wearing them in bed.\"",
+   "new": ""
   }
  ],
  "images": []
