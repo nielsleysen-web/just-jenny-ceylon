@@ -186,7 +186,7 @@ html = f'''<!DOCTYPE html>
 
 <section class="sp"><div class="wrap">
 <div class="sp-tp"><b class="tp-w">Excellent</b><b class="tp-sc">4.8/5</b><span class="tp-stars">{''.join('<i>★</i>' for _ in range(5))}</span><span class="tp-n">928 reviews on</span><span class="tp-b">Trustpilot</span></div>
-<h2 class="sp-h">Selected customer reviews</h2>
+<h2 class="sp-h">Verified customer reviews</h2>
 <p class="sp-sub">See what our customers are saying about Just Jenny</p>
 <p class="sp-note">Individual results vary.</p>
 </div>
