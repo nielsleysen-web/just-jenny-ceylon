@@ -123,7 +123,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=73">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=74">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -209,7 +209,7 @@ html = f'''<!DOCTYPE html>
 <h2 class="h-c">So What Makes The Difference?</h2>
 <p class="lead-c">Not all cayenne supplements are made the same. Here's how Just Jenny compares.</p>
 <div class="cmp"><div class="cmp-col"></div>
-  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/pouch.webp)"')}<b>Just Jenny</b></span></span><span class="cmp-ot"><span><svg class="cmp-gen" viewBox="0 0 60 78" aria-hidden="true"><path d="M8 4h44l3 7v58a5 5 0 01-5 5H10a5 5 0 01-5-5V11z" fill="#DAD5D2"/><path d="M6 13h48" stroke="#C4BEBA" stroke-width="1.6"/><path d="M6 17h48" stroke="#C4BEBA" stroke-width="1"/><rect x="16" y="30" width="28" height="5" rx="2.5" fill="#C4BEBA"/><rect x="20" y="39" width="20" height="4" rx="2" fill="#CFC9C5"/><circle cx="30" cy="56" r="7" fill="#CFC9C5"/></svg><b>Competitors</b></span></span></div>
+  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/pouch.webp)"')}<b>Just Jenny</b></span></span><span class="cmp-ot"><span><span class="cmp-gen cmp-gen-ph"></span><b>Competitors</b></span></span></div>
   <div class="cmp-body">{''.join(f'<div class="cmp-row"><span>{r}</span><span class="cmp-us">{CMP_CK.replace("<span class=", "<span style=" + chr(34) + "transition-delay:" + str(n * 90) + "ms" + chr(34) + " class=")}</span><span>{CMP_CK if n == 0 else CMP_NO}</span></div>' for n, r in enumerate(vs_rows))}</div>
 </div>
 </div></section>
