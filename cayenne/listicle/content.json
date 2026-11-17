@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:17:29.254Z",
+ "saved": "2026-11-17T08:19:56.301Z",
  "texts": [
   {
    "section": "",
@@ -16,9 +16,51 @@
   {
    "section": "",
    "path": "main>p:nth-of-type(1)",
-   "original": "inRead this BEFORE incerasi  buy another pair of thermal socks.",
-   "new": "Read this BEFORE wearing socks to be tonight.",
-   "html": "<b>Read this BEFORE</b> wearing socks to be tonight.<br>"
+   "original": "Read this BEFORE wearing socks to be tonight.",
+   "new": "Read this BEFORE wearing sweaty socks to be tonight or swallowing chemical pain-killers.",
+   "html": "<b>Read this BEFORE</b> wearing sweaty socks to be tonight or swallowing chemical pain-killers.<br>"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>thead>tr>th:nth-of-type(4)",
+   "original": "Cinnamon, Berberine & ALA",
+   "new": "Pain-Killers"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>tbody>tr:nth-of-type(1)>td:nth-of-type(1)",
+   "original": "Brings blood back to your feet",
+   "new": "Boost blood flow to numb feet and fingers"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>tbody>tr:nth-of-type(1)>td:nth-of-type(3)>span",
+   "original": "⚠️ While worn",
+   "new": "❌ No"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>tbody>tr:nth-of-type(3)>td:nth-of-type(1)",
+   "original": "Helps the feeling return",
+   "new": "Prevents diabetic fatigue"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>tbody>tr:nth-of-type(4)>td:nth-of-type(4)>span",
+   "original": "⚠️ Maybe",
+   "new": "❌ No"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>tbody>tr:nth-of-type(5)>td:nth-of-type(2)>b",
+   "original": "Build week by week",
+   "new": "Permanent"
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>tbody>tr:nth-of-type(5)>td:nth-of-type(4)",
+   "original": "Little to nothing",
+   "new": "Temporary"
   }
  ],
  "images": []
