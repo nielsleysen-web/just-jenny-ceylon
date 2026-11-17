@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:15:41.818Z",
+ "saved": "2026-11-17T08:17:29.254Z",
  "texts": [
   {
    "section": "",
@@ -16,9 +16,9 @@
   {
    "section": "",
    "path": "main>p:nth-of-type(1)",
-   "original": "Read this BEFORE incresin  buy another pair of thermal socks.",
-   "new": "inRead this BEFORE incerasi  buy another pair of thermal socks.",
-   "html": "<b>inRead this BEFORE</b> incerasi  buy another pair of thermal socks."
+   "original": "inRead this BEFORE incerasi  buy another pair of thermal socks.",
+   "new": "Read this BEFORE wearing socks to be tonight.",
+   "html": "<b>Read this BEFORE</b> wearing socks to be tonight.<br>"
   }
  ],
  "images": []
