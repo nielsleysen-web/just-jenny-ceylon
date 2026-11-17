@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T11:54:41.675Z",
+ "saved": "2026-11-17T12:07:57.740Z",
  "texts": [
   {
    "section": "",
@@ -391,5 +391,42 @@
    "new": "⚡Results In Days, Not Months."
   }
  ],
- "images": []
+ "images": [
+  {
+   "key": ".ed-pic#2",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-2.mp4?v=mwknej9l",
+   "type": "video/mp4"
+  },
+  {
+   "key": ".ed-pic#4",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-4.mp4?v=mwknej9l",
+   "type": "video/mp4"
+  },
+  {
+   "key": ".ed-pic#5",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-5.mp4?v=mwknej9l",
+   "type": "video/mp4"
+  },
+  {
+   "key": ".ed-pic#6",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-6.mp4?v=mwknej9l",
+   "type": "video/mp4"
+  },
+  {
+   "key": ".ed-pic#7",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-7.mp4?v=mwknej9l",
+   "type": "video/mp4"
+  },
+  {
+   "key": ".ed-pic#8",
+   "label": "ed-pic",
+   "src": "assets/uploads/ed-pic-8.mp4?v=mwknej9l",
+   "type": "video/mp4"
+  }
+ ]
 }
