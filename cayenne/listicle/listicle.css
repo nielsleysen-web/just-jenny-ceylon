@@ -107,3 +107,8 @@ html:not(.jj-editing) .ls-item p:empty,.ls-item p.is-empty{display:none}
 .by-img{width:100%;height:100%;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
 .by-vf{position:absolute;right:-4px;top:-3px;width:17px;height:17px}.by-vf svg{width:100%;height:100%;display:block}
 @media(min-width:900px){.by-av{width:54px;height:54px}.by-vf{width:19px;height:19px}}
+/* video's/creatives altijd vierkant (video vult het vak) */
+.ls-img .jj-video,.of-img .jj-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ls-img,.of-img{overflow:hidden}
+/* mobiel: kleiner en gecentreerd */
+@media(max-width:899px){.ls-fig{max-width:290px;margin:0 auto 18px}}
