@@ -114,7 +114,7 @@ GIFTS = ('<div class="gifts"><span class="gf-h">Early Black Friday Gifts Unlocke
          + '</div></div>')
 CLOCK = svg('<circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6.500V12l3.500 2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'.replace('.500', '.5'))
 TH_PHOTOS = {1: 'hero-buy-one.webp'}
-BH_PHOTOS = {}
+BH_PHOTOS = {3: 'hero-offer-2.webp'}
 BH = '<div class="bh"><p class="bh-t">Big photo per offer (shown when the visitor selects that offer)</p><div class="bh-row">' + ''.join('<div class="bh-c">' + slot('ed-pic bh-img' + (' has-img' if q in BH_PHOTOS else ''), '', f' data-qty="{q}"' + (f' style="background-image:url(/cayenne/assets/{BH_PHOTOS[q]})"' if q in BH_PHOTOS else '')) + f'<span class="bh-l">{lbl}</span></div>' for q, lbl in ((1, 'Buy One'), (3, 'Buy 2 Get 1 Free'), (5, 'Buy 3 Get 2 Free'))) + '</div></div>'
 
 html = f'''<!DOCTYPE html>
