@@ -200,7 +200,7 @@ html = f'''<!DOCTYPE html>
 <section class="rb"><div class="wrap">
 <h2 class="rb-h">Real Benefits.</h2>
 <p class="rb-sub">7 botanicals. Two daily softgels.</p>
-<div class="rb-grid">{''.join(f'<details class="rb-card"><summary>{slot("ed-img rb-img has-img", "Photo", f' style="background-image:url(/cayenne/assets/benefit-{'3b' if n == 3 else n}.webp)"')}<span class="rb-tx"><b>{h}</b><span>{t}</span></span><span class="rb-plus" aria-hidden="true"></span></summary><div class="rb-more"><p>{m}</p></div></details>' for n, (h, t, m) in enumerate(rb_cards, 1))}</div>
+<div class="rb-grid">{''.join(f'<details class="rb-card"><summary>{slot("ed-img rb-img has-img", "Photo", f' style="background-image:url(/cayenne/assets/benefit-{ {1: '1b', 3: '3b'}.get(n, n) }.webp)"')}<span class="rb-tx"><b>{h}</b><span>{t}</span></span><span class="rb-plus" aria-hidden="true"></span></summary><div class="rb-more"><p>{m}</p></div></details>' for n, (h, t, m) in enumerate(rb_cards, 1))}</div>
 </div>
 <div class="rb-tick"><div class="rb-track">{''.join(f'<span class="rb-it">{svg(i)}<span>{t}</span></span>' for i, t in ((I_DROP_RAW, 'Boosts blood flow'), (I_BOLT, 'Prevents diabetic fatigue'), (I_VEIN, 'Calms vessel inflammation'), (I_HEART, 'Protects Heart & Arteries')))}</div></div>
 </section>
