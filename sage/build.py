@@ -266,7 +266,7 @@ html=f'''<!DOCTYPE html>
 </html>
 '''
 LIVE_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.rv-av";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";</script>\n<script defer src="/apply-content.js?v=sg2"></script>'
-ED_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_NO_APPLY=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.rv-av";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";window.JJ_REPO_PREFIX="sage/";window.JJ_LIVE_URL=location.origin+"/sage";window.JJ_READY_SEL=".bundle";window.JJ_EDITOR=true;</script>\n<script defer src="/apply-content.js?v=sg2"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg3"></script>'
+ED_HEAD='<script>window.JJ_NO_ALPINE=true;window.JJ_NO_APPLY=true;window.JJ_IMG_SEL=".ed-img,.ed-pic,.rv-av";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/sage/content.json";window.JJ_ASSET_BASE="/sage/";window.JJ_REPO_PREFIX="sage/";window.JJ_LIVE_URL=location.origin+"/sage";window.JJ_READY_SEL=".bundle";window.JJ_EDITOR=true;</script>\n<script defer src="/apply-content.js?v=sg2"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg4"></script>'
 import os
 import os.path; base=os.path.dirname(os.path.abspath(__file__))+'/'
 TRACK_HEAD = """<!-- Meta Pixel (init + events in sage.js) -->

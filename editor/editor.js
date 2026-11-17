@@ -167,7 +167,7 @@
   }
   async function gh(method, path, body) {
     const r = await fetch('https://api.github.com/repos/' + REPO.owner + '/' + REPO.repo + '/' + path, {
-      method, headers: { Authorization: 'Bearer ' + token(), Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
+      method, cache: 'no-store', headers: { Authorization: 'Bearer ' + token(), Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
       body: body ? JSON.stringify(body) : undefined
     });
     if (r.status === 401 || r.status === 403) { localStorage.removeItem(TOKEN_KEY); throw new Error('GitHub-token geweigerd (' + r.status + '). Klik opnieuw op Opslaan en plak een geldig token.'); }
@@ -208,8 +208,15 @@
   function extOf(type, name) { const m = /\.([a-z0-9]{2,5})$/i.exec(name || ''); if (m) return m[1].toLowerCase(); return ({ 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'video/mp4': 'mp4', 'video/webm': 'webm', 'video/quicktime': 'mov' })[type] || 'bin'; }
 
   // Alles in ÉÉN commit (Git Data API), zodat Vercel maar één keer bouwt per Opslaan.
+  // Opnieuw proberen als de branch net veranderd is ("Update is not a fast forward"): GitHub geeft de laatste commit soms even met vertraging terug
   async function commitFiles(files, message) {
-    const ref = await gh('GET', 'git/ref/heads/' + REPO.branch);
+    for (let i = 0; ; i++) {
+      try { return await commitOnce(files, message); }
+      catch (e) { if (i >= 4 || !/fast forward|422/.test(e.message)) throw e; await new Promise(r => setTimeout(r, 4000 * (i + 1))); }
+    }
+  }
+  async function commitOnce(files, message) {
+    const ref = await gh('GET', 'git/ref/heads/' + REPO.branch + '?t=' + Date.now());
     const parentSha = ref.object.sha;
     const parent = await gh('GET', 'git/commits/' + parentSha);
     const tree = [];
