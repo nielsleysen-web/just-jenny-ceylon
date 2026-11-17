@@ -833,3 +833,13 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
   .h-right>*:not(h1):not(.rate):not(.rec):not(.lead):not(.bens){order:7}
   .h-faq{order:8}
 }
+/* mobiel: aanbeveling boven de foto, Trustpilot onder de titel */
+@media(max-width:900px){
+  .h-right>.rec{order:0;margin:0 0 10px}
+  .gal{order:1}
+  .h-right>h1{order:2}
+  .h-right>.rate{order:3;margin:6px 0 4px}
+  .h-right>.lead{order:4}
+  .h-right>.bens{order:5}
+}
+@media(max-width:900px){.h-right>.rate{margin:8px 0 12px}}
