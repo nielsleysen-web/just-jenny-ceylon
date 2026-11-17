@@ -822,3 +822,14 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 
 @media(min-width:901px){.thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .g-main{background-size:cover;background-position:center}
+/* mobiel: fotoslider, titel, inleiding, benefits, daarna aanbeveling en Trustpilot */
+@media(max-width:900px){
+  .gal{order:1}
+  .h-right>h1{order:2;margin-top:16px}
+  .h-right>.lead{order:3}
+  .h-right>.bens{order:4}
+  .h-right>.rec{order:5;margin:4px 0 6px}
+  .h-right>.rate{order:6;margin:0 0 6px}
+  .h-right>*:not(h1):not(.rate):not(.rec):not(.lead):not(.bens){order:7}
+  .h-faq{order:8}
+}
