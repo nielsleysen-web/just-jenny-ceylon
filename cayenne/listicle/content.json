@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:13:30.563Z",
+ "saved": "2026-11-17T08:14:39.936Z",
  "texts": [
   {
    "section": "",
@@ -12,6 +12,13 @@
    "path": "main>div:nth-of-type(1)>div>b",
    "original": "By the Just Jenny Team",
    "new": "Dr. Wasim Hanif | Diabetologist"
+  },
+  {
+   "section": "",
+   "path": "main>p:nth-of-type(1)",
+   "original": "Read this BEFORE you buy another pair of thermal socks.",
+   "new": "Read this BEFORE incresin  buy another pair of thermal socks.",
+   "html": "<b>Read this BEFORE</b> incresin  buy another pair of thermal socks."
   }
  ],
  "images": []
