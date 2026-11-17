@@ -72,6 +72,7 @@ reviews = [
     ('No burning feeling!', "I just felt a slight warmth going down my throat, but no spicy taste or reflux. It's like getting the benefits from eating actual peppers, but the softgel keeps the ingredients off your taste buds.", 'Amanda S.', 'Nov 14, 2026'),
     ('I Can Finally Sleep Without Wearing Socks!!', "I used to sleep with socks because my feet became so cold during the night. But over the last few weeks I stopped wearing them in bed!! My feet and also my hands feel a lot warmer, my husband doesn't say they feel like a fridge anymore. I feel like they also have more feeling compared to a month ago... It's hard to explain but it feels like I finally got something back I felt like I lost. Love that it's without any chemicals or additives.", 'Ruby F.', 'Nov 1, 2026'),
 ]
+rb_cards = [('Boost blood flow', 'Restores the blood flow in the veins'), ('Nerve Health Support', 'Returns the feeling in the hands & feet'), ('Gentle on the Stomach', 'No burning feeling or reflux'), ('Enhanced Absorption', 'Easily absorbed by the stomach lining')]
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
 vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
@@ -184,7 +185,7 @@ html = f'''<!DOCTYPE html>
 <section class="rb"><div class="wrap">
 <h2 class="rb-h">Real Benefits.</h2>
 <p class="rb-sub">7 botanicals. Two daily softgels.</p>
-<div class="rb-grid">{''.join(f'<details class="rb-card"><summary>{slot("ed-img rb-img", "Photo")}<span class="rb-tx"><b>[Benefit {n}]</b><span>[Short line about this benefit.]</span></span><span class="rb-plus" aria-hidden="true"></span></summary><div class="rb-more"><p>[Two or three sentences that explain this benefit in more detail.]</p></div></details>' for n in range(1, 5))}</div>
+<div class="rb-grid">{''.join(f'<details class="rb-card"><summary>{slot("ed-img rb-img", "Photo")}<span class="rb-tx"><b>{h}</b><span>{t}</span></span><span class="rb-plus" aria-hidden="true"></span></summary><div class="rb-more"><p>[Two or three sentences that explain this benefit in more detail.]</p></div></details>' for h, t in rb_cards)}</div>
 </div>
 <div class="rb-tick"><div class="rb-track">{''.join(f'<span class="rb-it">{svg(i)}<span>{t}</span></span>' for i, t in ((I_DROP_RAW, 'Boosts blood flow'), (I_BOLT, 'Prevents diabetic fatigue'), (I_VEIN, 'Calms vessel inflammation'), (I_HEART, 'Protects Heart & Arteries')))}</div></div>
 </section>
