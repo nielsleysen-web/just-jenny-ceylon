@@ -121,7 +121,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=66">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=67">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -175,7 +175,7 @@ html = f'''<!DOCTYPE html>
 <p class="lead-c dark">[One sentence on dosing and absorption.]</p>
 <div class="ig-grid">
   <div class="ig-list">{''.join(f'<button type="button" class="ig-tab{" on" if n == 0 else ""}" data-i="{n}"><em>0{n + 1}</em><b>{x}</b><u></u></button>' for n, x in enumerate(ingredients))}</div>
-  <div class="ig-panel">{''.join(f'<div class="ig-slide{" on" if n == 0 else ""}" data-i="{n}">{slot("ed-img ig-img", "Photo — " + x)}<div class="ig-tx"><h3>{x}</h3><p>{ING_TX[x]}</p></div></div>' for n, x in enumerate(ingredients))}</div>
+  <div class="ig-panel">{''.join(f'<div class="ig-slide{" on" if n == 0 else ""}" data-i="{n}">{slot("ed-img ig-img has-img", "Photo — " + x, f' style="background-image:url(/cayenne/assets/ingredient-{n + 1}.webp)"')}<div class="ig-tx"><h3>{x}</h3><p>{ING_TX[x]}</p></div></div>' for n, x in enumerate(ingredients))}</div>
 </div>
 </div></section>
 
