@@ -86,8 +86,8 @@ ING_TX = {
     'Grape Seed Extract': "Rich in antioxidants that help protect vessel walls from oxidative stress.",
 }
 ingredients = ['Cayenne Pepper', 'Beetroot', 'Hawthorn Berry', 'Turmeric', 'Panax Ginseng', 'Black Pepper', 'Grape Seed Extract']
-TL_PHOTOS = {1: 'timeline-1.webp', 2: 'timeline-2.webp'}
-TL_POS = {1: 'center 62%', 2: 'center 33%'}
+TL_PHOTOS = {1: 'timeline-1.webp', 2: 'timeline-2.webp', 3: 'timeline-3.webp'}
+TL_POS = {1: 'center 62%', 2: 'center 33%', 3: '50% 30%'}
 weeks = [('Days 1–3', 'First Warmth', 'Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.'), ('Weeks 1–2', 'Feeling Comes Back', 'A light tingling means blood is reaching your toes again. The numb spots begin to ease.'), ('Weeks 6–8', 'Your New Baseline', 'Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.')]
 vs_rows = ['3,000mg High-Scoville Cayenne', 'Reaches the Smallest Vessels', 'Black Pepper for Absorption', 'Supports Heart & Arteries', 'Beetroot for Nitric Oxide', '7 Active Botanicals']
 policies = ['Terms of Service', 'Subscription Policy', 'Refund Policy', 'Privacy Policy', 'Contact Information', 'Legal Notice', 'Shipping Policy']
@@ -123,7 +123,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=68">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=69">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -207,9 +207,9 @@ html = f'''<!DOCTYPE html>
 
 <section class="cmp-sec vs-sec"><div class="wrap">
 <h2 class="h-c">So What Makes The Difference?</h2>
-<p class="lead-c">[One sentence on how your formula compares to the usual alternatives.]</p>
+<p class="lead-c">Not all cayenne supplements are made the same. Here's how Just Jenny compares.</p>
 <div class="cmp"><div class="cmp-col"></div>
-  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img', 'Photo')}<b>Just Jenny</b></span></span><span>Others</span></div>
+  <div class="cmp-row cmp-head"><span></span><span class="cmp-us"><span>{slot('ed-pic vs-img cmp-img has-img', 'Photo', ' style="background-image:url(/cayenne/assets/pouch.webp)"')}<b>Just Jenny</b></span></span><span>Others</span></div>
   <div class="cmp-body">{''.join(f'<div class="cmp-row"><span>{r}</span><span class="cmp-us">{CMP_CK.replace("<span class=", "<span style=" + chr(34) + "transition-delay:" + str(n * 90) + "ms" + chr(34) + " class=")}</span><span>{CMP_CK if n == 0 else CMP_NO}</span></div>' for n, r in enumerate(vs_rows))}</div>
 </div>
 </div></section>

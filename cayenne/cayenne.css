@@ -735,3 +735,7 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 .ig-img{background-size:cover;background-position:center;background-repeat:no-repeat}
 
 .tl-img{background-size:cover;background-position:center 62%;background-repeat:no-repeat}
+
+.cmp-img{width:78px;height:100px;background-color:transparent;background-size:contain;background-position:center;background-repeat:no-repeat;border-radius:0}
+.cmp{margin-top:112px}.cmp-col{top:-96px}
+@media(max-width:900px){.cmp-img{width:54px;height:70px}.cmp{margin-top:96px}.cmp-col{top:-82px}}
