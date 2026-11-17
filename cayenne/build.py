@@ -235,7 +235,7 @@ html = f'''<!DOCTYPE html>
 </div></section>
 
 <footer class="ft"><div class="wrap ft-in">
-<ul class="ft-links">{''.join((f'<li><a href="{POLICY_URL[p]}" target="_blank" rel="noopener">{p}</a></li>' if p in POLICY_URL else f'<li><span>{p}</span></li>') for p in policies)}</ul>
+<ul class="ft-links">{''.join((f'<li><a href="{POLICY_URL[p]}" target="_blank" rel="noopener">{p}</a></li>' if p in POLICY_URL else '') for p in policies)}</ul>
 </div>
 <div class="wrap pay"><img src="/sage/assets/payments.png" alt="Accepted payment methods" loading="lazy"></div>
 </footer>
