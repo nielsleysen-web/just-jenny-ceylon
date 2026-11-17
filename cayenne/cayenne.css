@@ -650,3 +650,5 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
   .sp-cards{width:auto;margin-left:0;transform:none;gap:16px;align-items:start;max-width:1140px;margin:0 auto}
 }
 .sp-card .sp-n{margin-top:0;padding-top:12px}
+
+.vs-sec{padding-bottom:64px}.vs-sec .vs{margin-bottom:0}

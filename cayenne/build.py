@@ -108,7 +108,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=56">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=57">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -197,13 +197,6 @@ html = f'''<!DOCTYPE html>
   <div class="vs-head"><span></span><span class="vs-us">{slot('ed-pic vs-img', 'Product')}</span><span class="vs-ot">Others</span></div>
   {''.join(f'<div class="vs-row"><span class="vs-f">{r}</span><span class="vs-us">{I_CHECK}</span><span class="vs-ot">{I_CHECK if n == 0 else I_NO}</span></div>' for n, r in enumerate(vs_rows))}
 </div>
-<h2 class="h-c stats-h">[Results headline]</h2>
-<p class="lead-c">[One sentence on when customers report results.]</p>
-<div class="stats">
-  <div class="stat"><b>[XX]%</b><p>[What this share of customers reported, and within how many weeks.]*</p><div class="prog"><i style="width:82%"></i></div></div>
-  <div class="stat"><b>[XX]%</b><p>[What this share of customers reported, and by which week.]*</p><div class="prog"><i style="width:78%"></i></div></div>
-</div>
-<p class="foot-n">*[Source of these figures — your own customer survey, with date and number of respondents.]</p>
 </div></section>
 
 <section class="offer2" id="offer2"><div class="wrap">
