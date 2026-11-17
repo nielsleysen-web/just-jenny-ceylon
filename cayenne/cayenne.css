@@ -733,3 +733,5 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 @media(max-width:900px){.s-img{aspect-ratio:3/2}}
 
 .ig-img{background-size:cover;background-position:center;background-repeat:no-repeat}
+
+.tl-img{background-size:cover;background-position:center 62%;background-repeat:no-repeat}
