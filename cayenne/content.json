@@ -1,11 +1,17 @@
 {
- "saved": "2026-11-17T01:31:49.904Z",
+ "saved": "2026-11-17T05:49:48.601Z",
  "texts": [
   {
    "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
    "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(2)>label:nth-of-type(3)>span:nth-of-type(2)>span:nth-of-type(1)>span",
    "original": "Save 70%",
    "new": "Save 77%"
+  },
+  {
+   "section": "Selected customer reviews",
+   "path": "section:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(2)",
+   "original": "Individual results vary.",
+   "new": ""
   }
  ],
  "images": [
@@ -13,6 +19,48 @@
    "key": ".ed-pic#9",
    "label": "ed-pic",
    "src": "assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#14",
+   "label": "Customer photo 1",
+   "src": "assets/uploads/ed-img-14.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#15",
+   "label": "Customer photo 2",
+   "src": "assets/uploads/ed-img-15.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#16",
+   "label": "Customer photo 3",
+   "src": "assets/uploads/ed-img-16.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#17",
+   "label": "Customer photo 4",
+   "src": "assets/uploads/ed-img-17.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#18",
+   "label": "Customer photo 5",
+   "src": "assets/uploads/ed-img-18.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#19",
+   "label": "Customer photo 6",
+   "src": "assets/uploads/ed-img-19.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#20",
+   "label": "Customer photo 7",
+   "src": "assets/uploads/ed-img-20.webp?v=mwk9w7g0",
    "type": "image/webp"
   }
  ]
