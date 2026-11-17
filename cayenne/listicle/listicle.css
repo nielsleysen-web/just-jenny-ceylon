@@ -76,3 +76,22 @@ h1{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.01em;margin:3
   .end h2{font-size:20px}.of-in h3{font-size:21px}
 }
 html.jj-editing .satc{display:none}
+/* desktop: breder, foto links en tekst rechts (zoals het voorbeeld) */
+@media(min-width:900px){
+  body{font-size:18px}
+  .wrap{max-width:1000px;padding:0 24px}
+  h1{font-size:46px;margin:44px 0 22px}
+  .by-av{width:52px;height:52px;font-size:16px}.by b{font-size:16px}.by div span{font-size:15px}
+  .callout{font-size:18px;padding:14px 18px;margin-bottom:34px}
+  .cmp table{font-size:15px}.cmp th{font-size:16px;padding:18px 8px}.cmp th.us{font-size:19px}.cmp td{padding:22px 8px}.cmp td.lb{padding-left:22px;font-size:16px}
+  .tldr{font-size:17px;margin-bottom:56px}
+  .ls-item{display:grid;grid-template-columns:400px 1fr;column-gap:44px;align-items:start;margin-bottom:70px}
+  .ls-item>.ls-fig{grid-column:1;grid-row:1/span 30;margin:0}
+  .ls-item>*:not(.ls-fig){grid-column:2}
+  .ls-item h2{font-size:30px;margin-bottom:18px}
+  .ls-item .ls-btn{justify-self:start;padding:15px 34px}
+  .end h2{font-size:30px;max-width:760px;margin-left:auto;margin-right:auto}.end>.wrap>p{font-size:17px;max-width:720px;margin-left:auto;margin-right:auto}
+  .offer{max-width:600px;margin-left:auto;margin-right:auto}
+  .bar-t b{font-size:17px}.bar-t span{font-size:15px}.timer b{font-size:24px}.timer i{font-size:10px}.bar-in{max-width:none;padding:10px 12px}
+  .satc .ls-btn{font-size:19px;padding:13px 30px;display:inline-flex;max-width:none}.satc p{font-size:14px}
+}
