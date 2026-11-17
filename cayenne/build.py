@@ -60,6 +60,7 @@ bundles = [
     (3, 'Buy 2 Get 1 Free Gift', 'Save 72%', '$49.95', '$179.85', 'Most Popular', ('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage')),
     (5, 'Buy 3 Get 2 Free Gifts', 'Save 70%', '$89.95', '$299.75', 'Best Value', [('FREE Bamboo Lid Glass Jar ($19.95 Value)', 'Premium softgel storage'), ('FREE On-the-Go Softgel Case ($11.99 Value)', 'Travel-size softgel carrier')]),
 ]
+C_POS = ['center 62%', 'center 45%', 'center 38%', 'center 30%']
 circles = ["You wake up with ice-cold feet that stay numb, no matter the room temperature. Blood isn't flowing there.", "You have that heavy, tiring, dead feeling in your legs that won't change, no matter how much you rest.", "Brain fog rolls in after every meal, and by 2pm you have lost 90% of your energy.", "You stopped being aware of the numbness, because it's been there for such a long time, you start accepting it as the new normal."]
 I_VEIN = '<path d="M3 20c3-1 5.5-3.5 7-7 1-2.4 1.4-5.5 1-10M10 13c2.5-.5 5-2.2 6.5-5.200M13.3 10.6c2.8 1 5.2.8 7.700-.6M6.5 17c.5 1.6.4 3-.2 4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'.replace('.200', '.2').replace('.700', '.7')
 I_SHIELD_HEART = '<path d="M12 2.5l8 3v6c0 5-3.4 8.8-8 10-4.600-1.2-8-5-8-10v-6z" fill="currentColor"/><path d="M12 16s-3.6-2.300-3.600-4.700a2 2 0 013.600-1.200 2 2 0 013.600 1.200c0 2.400-3.600 4.700-3.600 4.700z" fill="#fff"/>'.replace('.600', '.6').replace('.300', '.3')
@@ -111,7 +112,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=64">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=65">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -148,7 +149,7 @@ html = f'''<!DOCTYPE html>
 <section class="prob"><div class="wrap">
 <h2 class="h-c">Diabetes Is Shutting Down Your Circulation</h2>
 <p class="lead-c">Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.</p>
-<div class="circles">{''.join(f'<div class="circ">{slot("ed-img c-img", "Photo")}<span class="c-n">{n}</span><p>{c}</p></div>' for n, c in enumerate(circles, 1))}</div>
+<div class="circles">{''.join(f'<div class="circ">{slot("ed-img c-img has-img", "Photo", f' style="background-image:url(/cayenne/assets/problem-{n}.webp);background-position:{C_POS[n - 1]}"')}<span class="c-n">{n}</span><p>{c}</p></div>' for n, c in enumerate(circles, 1))}</div>
 </div></section>
 
 <section class="red"><div class="wrap">
