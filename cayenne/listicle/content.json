@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:39:58.085Z",
+ "saved": "2026-11-17T08:46:56.304Z",
  "texts": [
   {
    "section": "",
@@ -172,6 +172,43 @@
    "path": "main>article:nth-of-type(2)>figure>p",
    "original": "✨ Feeling Returns.",
    "new": "🌶️Sensations Restored."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(3)>figure>p",
+   "original": "🔥 No More Ice-Cold Feet At Night.",
+   "new": "Bringing the feeling back for good"
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(4)>h2",
+   "original": "4. Liquid cayenne in oil, not powder. Here's why the cayenne you tried before did nothing.",
+   "new": "4. Replaces pain-killers that were slowly losing effectiveness anyway."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(4)>p:nth-of-type(1)",
+   "original": "Most cayenne capsules are dry powder. Capsaicin dissolves in fat, not water. So most of that powder passes straight through you, and the rest burns your stomach on the way.",
+   "new": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n\nSound familiar? That's because pain-killers pills never touched the narrowed and stiff blood vessels.\n\nThey just calm down the over-active nerves so that they transmit fewer pain signals to the brain. And every day you rely on them the veins only get narrower.\n\nJust Jenny helps those tiny capillaries relax and open up again and restores blood flow exactly where you need it.",
+   "html": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n<br><br><b>Sound familiar?</b> That's because pain-killers pills never touched the narrowed and stiff blood vessels.<br><br><b>They just calm down the over-active nerves so that they transmit fewer pain signals to the brain</b>. And every day you rely on them the veins only get narrower.<br><br>Just Jenny <b>helps those tiny capillaries relax and open up again </b>and restores blood flow exactly where you need it."
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(4)>p:nth-of-type(2)",
+   "original": "Just Jenny uses a concentrated 12:1 liquid cayenne extract suspended in MCT oil, a 3,000 mg cayenne equivalent in every serving.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(4)>p:nth-of-type(3)",
+   "original": "Then we add black pepper, which helps your body absorb the other botanicals, so more of every softgel is actually put to work.",
+   "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(4)>p:nth-of-type(4)",
+   "original": "No burning. No reflux. No spicy burps hours later.",
+   "new": ""
   }
  ],
  "images": []
