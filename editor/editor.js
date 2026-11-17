@@ -110,7 +110,7 @@
   function loadDraft() {
     try {
       const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || '{}');
-      document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => { const v = d[el.dataset.edPath]; if (v == null) return; if (typeof v === 'object' && v.html) el.innerHTML = C.sanitize(v.html); else if (el.innerText.trim() !== v) el.innerText = v; });
+      document.querySelectorAll('.ed-text:not(.ed-data)').forEach(el => { const v = d[el.dataset.edPath]; if (v == null) return; if (el.contains(document.activeElement) || el === document.activeElement) return; if (typeof v === 'object' && v.html) el.innerHTML = C.sanitize(v.html); else if (el.innerText.trim() !== v) el.innerText = v; });
       if (!draftDataLoaded) { draftDataLoaded = true; const dd = JSON.parse(localStorage.getItem(DRAFT_KEY + '-data') || '{}'); Object.entries(dd).forEach(([a, v]) => dataEdits.set(a, v)); applyDataEdits(); }
     } catch (e) { }
   }
@@ -288,7 +288,8 @@
     ui();
     updateCount();
     let mo; const rescan = () => { clearTimeout(mo); mo = setTimeout(() => { try { makeImagesDroppable(); makeTextsEditable(); loadDraft(); updateCount(); } catch (e) { } }, 250); };
-    new MutationObserver(muts => { if (muts.some(m => m.addedNodes.length)) rescan(); }).observe(document.body, { childList: true, subtree: true });
+    // Typen in een tekst voegt ook nodes toe: die wijzigingen negeren, anders zet loadDraft() de tekst terug en springt de cursor naar het begin
+    new MutationObserver(muts => { if (muts.some(m => m.addedNodes.length && !(m.target.closest && m.target.closest('[contenteditable=true]')))) rescan(); }).observe(document.body, { childList: true, subtree: true });
     document.querySelectorAll('[x-show]').forEach(el => {
       if (el.closest('.toast, .sticky-atc, .ed-ui')) return;
       if (el.matches('.acc-body, [class*="body"], [class*="panel"]')) el.style.display = 'block';

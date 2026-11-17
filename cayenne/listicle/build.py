@@ -133,7 +133,7 @@ html = f'''<!DOCTYPE html>
 CFG = 'window.JJ_NO_ALPINE=true;window.JJ_IMG_SEL=".ed-pic";window.JJ_BG_SEL=".no-bg";window.JJ_CONTENT_URL="/cayenne/listicle/content.json";window.JJ_ASSET_BASE="/cayenne/listicle/";'
 LIVE_HEAD = f'<script>{CFG}</script>\n<script defer src="/apply-content.js?v=sg2"></script>'
 ED_HEAD = (f'<script>{CFG}window.JJ_NO_APPLY=true;window.JJ_REPO_PREFIX="cayenne/listicle/";window.JJ_LIVE_URL=location.origin+"/cayenne/listicle";window.JJ_READY_SEL=".ls-item";window.JJ_EDITOR=true;</script>\n'
-           '<script defer src="/apply-content.js?v=sg2"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg2"></script>')
+           '<script defer src="/apply-content.js?v=sg2"></script>\n<link rel="stylesheet" href="/editor/editor.css">\n<script defer src="/editor/editor.js?v=sg3"></script>')
 # tracking: zelfde blok als de salespagina
 sp = open(base + '../build.py').read()
 i = sp.index('TRACK_HEAD = """'); j = sp.index('"""', i + 16)
