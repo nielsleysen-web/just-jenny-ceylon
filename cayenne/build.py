@@ -30,14 +30,14 @@ hero_faq = [
     ('When can I expect delivery?', 'Orders ship fast and are usually received within 4–5 business days, based on your location.'),
 ]
 faqs = [
-    ('How is this different from other cayenne supplements?', '[Answer]'),
-    ('Which herb does what in this formula?', '[Answer]'),
-    ('How do I use this product?', '[Answer]'),
-    ('How long until I notice a difference?', '[Answer]'),
-    ('Is this product suitable for daily use?', '[Answer]'),
-    ('Can I take this with other supplements or medication?', '[Answer — always advise to check with a doctor first.]'),
-    ('What does each ingredient actually do?', '[Answer]'),
-    ('Is it suitable for long-term daily use?', '[Answer]'),
+    ('How is this different from other cayenne supplements?', 'Many cayenne capsules are dry powder, with little said about their strength. Just Jenny uses a concentrated liquid cayenne extract (3,000 mg equivalent) in MCT oil, combined with 6 more botanicals chosen for circulation.'),
+    ('Which herb does what in this formula?', "For blood flow and warmth: cayenne and beetroot. For heart and arteries: hawthorn and grape seed. For energy: ginseng. Turmeric and black pepper round out the formula, so you don't have to choose."),
+    ('How do I use this product?', 'Take 2 softgels daily with a glass of water.'),
+    ('How long until I notice a difference?', 'Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.'),
+    ('Is this product suitable for daily use?', 'Yes. Just Jenny Cayenne Pepper Softgels are made for everyday use. Taking them at the same time each day makes it an easy routine.'),
+    ('Can I take this with other supplements or medication?', 'The botanicals in this formula are generally well tolerated. If you take prescription medication, especially for diabetes, blood pressure or blood thinning, talk to your doctor before starting any new supplement.'),
+    ('What does each ingredient actually do?', 'Cayenne helps open the smallest vessels. Beetroot supplies nitrates your body turns into nitric oxide. Hawthorn supports the heart. Turmeric supports a healthy inflammation response. Panax ginseng supports energy. Black pepper aids absorption. Grape seed extract supports the vessel walls.'),
+    ('Is it suitable for long-term daily use?', 'Yes. The formula is designed to be taken every day, month after month.'),
 ]
 tiles = [(I_FLOW, 'Benefit<br>One'), (I_BOLT, 'Benefit<br>Two'), (I_HEART, 'Benefit<br>Three')]
 L = 'fill="none" stroke="#8b8f94" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"'
