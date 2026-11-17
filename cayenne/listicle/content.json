@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T08:33:53.292Z",
+ "saved": "2026-11-17T08:39:58.085Z",
  "texts": [
   {
    "section": "",
@@ -115,8 +115,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(2)>p:nth-of-type(1)",
-   "original": "If you can't feel the floor under your feet anymore…",
-   "new": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\n\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\n\nJust Jenny's pharmaceutical grade capsaicin opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\n\nMost people start feeling the difference within the first 7 days."
+   "original": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\n\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\n\nJust Jenny's pharmaceutical grade capsaicin opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\n\nMost people start feeling the difference within the first 7 days.",
+   "new": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\nJust Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\nMost people start feeling the difference within the first 7 days.",
+   "html": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...<br><br>That's not age. That's <b>nerve starvation from stiff and narrow arteries.</b><br><br>Just Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the <b>blood can flow your nerves that been deprived of oxygen for years</b>.<br><br>Most people start feeling the difference within the first 7 days."
   },
   {
    "section": "",
@@ -145,8 +146,8 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(3)>p:nth-of-type(1)",
-   "original": "Two pairs of socks, a hot-water bottle, the heating on full… and your feet are still ice cold at 2 am.",
-   "new": "Blue pills and other ED supplements only force blood flow for 4 hours then wear off.\n\n\nAurivita restores your body's natural ability to get hard on its own.\n\n\nNo planning ahead. No pills 30 minutes before intimacy.\n\n\nJust your Johnny showing up and doing its job."
+   "original": "Blue pills and other ED supplements only force blood flow for 4 hours then wear off.\n\n\nAurivita restores your body's natural ability to get hard on its own.\n\n\nNo planning ahead. No pills 30 minutes before intimacy.\n\n\nJust your Johnny showing up and doing its job.",
+   "new": "Pain-killers make your drowsy and dizzy, and they only numb the feeling.\n\nAnd socks become sweaty and clammy, and develops quickly fungus.\n\n\nJust Jenny restores the blood flow in your arteries, so the feeling in your feet and hands return on its own.\n\n\n\nNo socks in bed, no heating pads.\n\n\n\nSo you can wake up and feel the floor under your feet again."
   },
   {
    "section": "",
@@ -165,6 +166,12 @@
    "path": "main>article:nth-of-type(3)>p:nth-of-type(4)",
    "original": "Ruby F.: \"I used to sleep with socks because my feet became so cold during the night. Over the last few weeks I stopped wearing them in bed.\"",
    "new": ""
+  },
+  {
+   "section": "",
+   "path": "main>article:nth-of-type(2)>figure>p",
+   "original": "✨ Feeling Returns.",
+   "new": "🌶️Sensations Restored."
   }
  ],
  "images": []
