@@ -32,7 +32,11 @@
   const showBig = (img) => {
     if (!mainEl || ED) return;
     if (!over) { over = document.createElement('div'); over.className = 'g-over'; mainEl.appendChild(over); }
+    const was = over.style.backgroundImage;
     over.style.backgroundImage = img || ''; over.style.display = img ? 'block' : 'none';
+    // korte schuifbeweging in de richting van het bladeren
+    if (img && img !== was && over.animate && showBig.dir) over.animate([{ transform: 'translateX(' + (showBig.dir * 14) + '%)', opacity: 0.35 }, { transform: 'none', opacity: 1 }], { duration: 230, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    showBig.dir = 0;
   };
 
   /* ---------- galerij: klik op een kleine foto → grote foto; pijlen op de foto en vegen met de duim bladeren ---------- */
@@ -47,13 +51,15 @@
       showBig(img); thumbs.forEach((x, k) => x.classList.toggle('on', k === i)); cur = i; return true;
     };
     thumbs.forEach((x, i) => x.addEventListener('click', () => show(i)));
-    const step = (d) => { const n = thumbs.length + 1; let pos = cur + 1; for (let k = 0; k < n; k++) { pos = (((pos + d) % n) + n) % n; if (show(pos - 1)) return; } };
+    const step = (d) => { const n = thumbs.length + 1; let pos = cur + 1; for (let k = 0; k < n; k++) { pos = (((pos + d) % n) + n) % n; showBig.dir = d; if (show(pos - 1)) { if (pos === 0 && mainEl.animate) mainEl.animate([{ opacity: 0.6 }, { opacity: 1 }], { duration: 200 }); return; } } };
     $('.g-prev', nav).addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
     $('.g-next', nav).addEventListener('click', (e) => { e.stopPropagation(); step(1); });
     // vegen: horizontale beweging van minstens 36px (en duidelijk meer horizontaal dan verticaal)
-    let sx = 0, sy = 0, down = false;
-    mainEl.addEventListener('touchstart', (e) => { const p = e.touches[0]; sx = p.clientX; sy = p.clientY; down = true; }, { passive: true });
-    mainEl.addEventListener('touchend', (e) => { if (!down) return; down = false; const p = e.changedTouches[0], dx = p.clientX - sx, dy = p.clientY - sy; if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.4) step(dx < 0 ? 1 : -1); }, { passive: true });
+    // vegen: reageert al tijdens het vegen (na 28px), één stap per veeg
+    let sx = 0, sy = 0, down = false, done = false;
+    mainEl.addEventListener('touchstart', (e) => { const p = e.touches[0]; sx = p.clientX; sy = p.clientY; down = true; done = false; }, { passive: true });
+    mainEl.addEventListener('touchmove', (e) => { if (!down || done) return; const p = e.touches[0], dx = p.clientX - sx, dy = p.clientY - sy; if (Math.abs(dx) > 28 && Math.abs(dx) > Math.abs(dy) * 1.2) { done = true; step(dx < 0 ? 1 : -1); } }, { passive: true });
+    mainEl.addEventListener('touchend', () => { down = false; }, { passive: true });
   })();
 
   /* ---------- bundels: keuze → knop toont de prijs en gaat naar de checkout met die bundel ---------- */
