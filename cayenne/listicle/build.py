@@ -125,7 +125,7 @@ html = f'''<!DOCTYPE html>
 
 <div class="satc" id="satc"><a class="ls-btn" href="/cayenne/">{CTA} <span aria-hidden="true">→</span></a><p>🛡️ 90-Day Money-Back Guarantee</p></div>
 <!--BODY-EXTRA-->
-<script src="/cayenne/listicle/listicle.js?v=2"></script>
+<script src="/cayenne/listicle/listicle.js?v=3"></script>
 </body>
 </html>
 '''

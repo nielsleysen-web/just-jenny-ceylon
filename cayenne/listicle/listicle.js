@@ -40,6 +40,25 @@
   const hideEmpty = () => { if (ED) return; $$('.ls-item p').forEach((p) => p.classList.toggle('is-empty', !p.textContent.trim())); };
   hideEmpty(); addEventListener('load', hideEmpty); setTimeout(hideEmpty, 1200); setTimeout(hideEmpty, 3000);
 
+  /* video's: automatisch afspelen zodra ze in beeld komen (gedempt, in een lus), pauzeren buiten beeld */
+  (function () {
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } else v.pause();
+    }), { threshold: 0.25 }) : null;
+    const prep = (v) => {
+      if (v.__jjAuto) return; v.__jjAuto = true;
+      v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', ''); v.preload = 'auto';
+      if (io) io.observe(v); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    };
+    const scan = () => $$('video').forEach(prep);
+    scan(); new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
+    // sommige telefoons (spaarstand) blokkeren autoplay tot de eerste aanraking
+    const kick = () => $$('video').forEach((v) => { const r = v.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } });
+    addEventListener('touchstart', kick, { passive: true, once: true }); addEventListener('scroll', kick, { passive: true, once: true });
+  })();
+
   /* sticky knop: na de vergelijkingstabel, verborgen bij het offer onderaan */
   const satc = $('#satc'), cmp = $('.cmp'), off = $('.offer');
   if (satc && !ED) {
