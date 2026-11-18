@@ -1,5 +1,5 @@
 {
- "saved": "2026-11-17T13:47:56.446Z",
+ "saved": "2026-11-18T00:17:43.882Z",
  "texts": [
   {
    "section": "",
@@ -84,9 +84,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(1)>p:nth-of-type(1)",
-   "original": "Your doctor checks your A1C, nods, and tells you you're doing fine.",
-   "new": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.\n\nThe capsaicin in cayenne helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the warmth and feeling start to return.",
-   "html": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.<br><br>The <b>capsaicin in cayenne</b> helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the warmth and feeling start to return."
+   "original": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.\n\nThe capsaicin in cayenne helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the warmth and feeling start to return.",
+   "new": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.\n\nThe capsaicin in cayenne helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the feeling returns.",
+   "html": "Years of living with diabetes leave your smallest blood vessels stiff and narrow. Blood can no longer reach your nerves properly, so your toes and fingers are starved of oxygen, and they turn cold and numb.<br><br>The <b>capsaicin in cayenne</b> helps those tiny capillaries relax and open up again. Blood can flow freely back to your feet and fingers, and the feeling returns."
   },
   {
    "section": "",
@@ -109,15 +109,15 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(2)>h2",
-   "original": "2. Wakes up numb toes and helps bring the feeling back.",
-   "new": "2. Wakes up the dead nerves in your feet and hands and restores every sensation from the toes to the ankles"
+   "original": "2. Wakes up the dead nerves in your feet and hands and restores every sensation from the toes to the ankles",
+   "new": "2. Wakes up the dead nerves in your feet and restores every sensation from the toes to the ankles"
   },
   {
    "section": "",
    "path": "main>article:nth-of-type(2)>p:nth-of-type(1)",
-   "original": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\n\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\n\nJust Jenny's pharmaceutical grade capsaicin opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\n\nMost people start feeling the difference within the first 7 days.",
-   "new": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\nJust Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\nMost people start feeling the difference within the first 7 days.",
-   "html": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...<br><br>That's not age. That's <b>nerve starvation from stiff and narrow arteries.</b><br><br>Just Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the <b>blood can flow your nerves that been deprived of oxygen for years</b>.<br><br>Most people start feeling the difference within the first 7 days."
+   "original": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\nJust Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the blood can flow your nerves that been deprived of oxygen for years.\n\nMost people start feeling the difference within the first 7 days.",
+   "new": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...\n\nThat's not age. That's nerve starvation from stiff and narrow arteries.\n\nJust Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the blood can flow to your nerves that have been deprived of oxygen for years.\n\nMost people start feeling the difference within the first 7 days.",
+   "html": "If you feel like your feet are getting stun with a thousand pins and needles at the same time when you lay in bed...<br><br>That's not age. That's <b>nerve starvation from stiff and narrow arteries.</b><br><br>Just Jenny's pharmaceutical grade capsules opens those tiny capillaries again, so the <b>blood can flow to your nerves that have been deprived of oxygen for years</b>.<br><br>Most people start feeling the difference within the first 7 days."
   },
   {
    "section": "",
@@ -146,8 +146,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(3)>p:nth-of-type(1)",
-   "original": "Blue pills and other ED supplements only force blood flow for 4 hours then wear off.\n\n\nAurivita restores your body's natural ability to get hard on its own.\n\n\nNo planning ahead. No pills 30 minutes before intimacy.\n\n\nJust your Johnny showing up and doing its job.",
-   "new": "Pain-killers make your drowsy and dizzy, and they only numb the feeling.\n\nAnd socks become sweaty and clammy, and develops quickly fungus.\n\n\nJust Jenny restores the blood flow in your arteries, so the feeling in your feet and hands return on its own.\n\n\n\nNo socks in bed, no heating pads.\n\n\n\nSo you can wake up and feel the floor under your feet again."
+   "original": "Pain-killers make your drowsy and dizzy, and they only numb the feeling.\n\nAnd socks become sweaty and clammy, and develops quickly fungus.\n\n\nJust Jenny restores the blood flow in your arteries, so the feeling in your feet and hands return on its own.\n\n\n\nNo socks in bed, no heating pads.\n\n\n\nSo you can wake up and feel the floor under your feet again.",
+   "new": "Pain-killers make your drowsy and dizzy, and they only numb the feeling.\n\nAnd socks become sweaty and clammy, and develops quickly fungus.\n\nJust Jenny restores the blood flow in your arteries, so the feeling in your feet and hands return on its own.\n\nNo socks in bed, no heating pads.\n\nSo you can wake up and feel the floor under your feet again.",
+   "html": "Pain-killers make your drowsy and dizzy, and they only numb the feeling.<br><br>And socks become sweaty and clammy, and develops quickly fungus.<br><br>Just Jenny <b>restores the blood flow in your arteries</b>, so the feeling in your feet and hands return on its own.<br><br>No socks in bed, no heating pads.<br><br>So you can wake up and feel the floor under your feet again."
   },
   {
    "section": "",
@@ -182,15 +183,15 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(4)>h2",
-   "original": "4. Liquid cayenne in oil, not powder. Here's why the cayenne you tried before did nothing.",
-   "new": "4. Replaces pain-killers that were slowly losing effectiveness anyway."
+   "original": "4. Replaces pain-killers that were slowly losing effectiveness anyway.",
+   "new": "4. Replaces pain-killers that were slowly losing effectiveness anyway"
   },
   {
    "section": "",
    "path": "main>article:nth-of-type(4)>p:nth-of-type(1)",
-   "original": "Most cayenne capsules are dry powder. Capsaicin dissolves in fat, not water. So most of that powder passes straight through you, and the rest burns your stomach on the way.",
-   "new": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n\nSound familiar? That's because pain-killers pills never touched the narrowed and stiff blood vessels.\n\nThey just calm down the over-active nerves so that they transmit fewer pain signals to the brain. And every day you rely on them the veins only get narrower.\n\nJust Jenny helps those tiny capillaries relax and open up again and restores blood flow exactly where you need it.",
-   "html": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n<br><br><b>Sound familiar?</b> That's because pain-killers pills never touched the narrowed and stiff blood vessels.<br><br><b>They just calm down the over-active nerves so that they transmit fewer pain signals to the brain</b>. And every day you rely on them the veins only get narrower.<br><br>Just Jenny <b>helps those tiny capillaries relax and open up again </b>and restores blood flow exactly where you need it."
+   "original": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n\nSound familiar? That's because pain-killers pills never touched the narrowed and stiff blood vessels.\n\nThey just calm down the over-active nerves so that they transmit fewer pain signals to the brain. And every day you rely on them the veins only get narrower.\n\nJust Jenny helps those tiny capillaries relax and open up again and restores blood flow exactly where you need it.",
+   "new": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n\nSounds familiar? That's because pain-killers pills never touched the narrowed and stiff blood vessels.\n\nThey just calm down the over-active nerves so that they transmit fewer pain signals to the brain. And every day you rely on them the veins only get narrower.\n\nJust Jenny helps those tiny capillaries relax and open up again and restores blood flow exactly where you need it.",
+   "html": "It starts with paracetamol. But you quickly move on to gabapentin. And when 300 mg stops working, you bump you up to 900 mg… then 1,800 mg.\n<br><br><b>Sounds familiar?</b> That's because pain-killers pills never touched the narrowed and stiff blood vessels.<br><br><b>They just calm down the over-active nerves so that they transmit fewer pain signals to the brain</b>. And every day you rely on them the veins only get narrower.<br><br>Just Jenny <b>helps those tiny capillaries relax and open up again </b>and restores blood flow exactly where you need it."
   },
   {
    "section": "",
@@ -219,8 +220,8 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(5)>h2",
-   "original": "5. It's not your fault, and it's not too late.",
-   "new": "5. Designed to fit into your existing routine."
+   "original": "5. Designed to fit into your existing routine.",
+   "new": "5. Designed to fit into your existing routine"
   },
   {
    "section": "",
@@ -256,8 +257,8 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(6)>h2",
-   "original": "6. Costs a fraction of what you're spending on pills that barely work.",
-   "new": "6. Costs a fraction of what you're spending things that barely work"
+   "original": "6. Costs a fraction of what you're spending things that barely work",
+   "new": "6. Helps you to save over $600 a year"
   },
   {
    "section": "",
@@ -268,9 +269,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(6)>p:nth-of-type(1)",
-   "original": "Already taking a handful of pills every morning? Just Jenny isn't another prescription. It's a food-based supplement made from cayenne pepper extract and 6 natural botanicals.",
-   "new": "The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.\n\nIt might feel good in the moment, but it doesn't fix the actual problem.\n\nJust Jenny costs a fraction of that. And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet and hands in the first place.\n\nThat's not just saving money. That's investing it in something that actually works.",
-   "html": "<b>The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.<br><br></b>It might feel good in the moment, but it doesn't fix the actual problem.<br><br><b>Just Jenny costs a fraction of that.</b> And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet and hands in the first place.<br><br>That's not just saving money. That's investing it in something that actually works."
+   "original": "The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.\n\nIt might feel good in the moment, but it doesn't fix the actual problem.\n\nJust Jenny costs a fraction of that. And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet and hands in the first place.\n\nThat's not just saving money. That's investing it in something that actually works.",
+   "new": "The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.\n\nIt might feel good in the moment, but it doesn't fix the actual problem.\n\nJust Jenny costs a fraction of that. And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet in the first place.\n\nThat's not just saving money. That's investing it in something that actually works.",
+   "html": "<b>The average person with diabetes spends $600 extra a year on their energy bill to turn up the heating.<br><br></b>It might feel good in the moment, but it doesn't fix the actual problem.<br><br><b>Just Jenny costs a fraction of that.</b> And it actually relaxes the stiff and narrow veins causing the numb feeling in your feet in the first place.<br><br>That's not just saving money. That's investing it in something that actually works."
   },
   {
    "section": "",
@@ -299,9 +300,9 @@
   {
    "section": "",
    "path": "main>article:nth-of-type(7)>p:nth-of-type(1)",
-   "original": "Not years. Not months. 4 weeks.\n\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n\n82% of Just Jenny users experience this progression.\n\n\nEven person with diabetes in their late 50s who have struggled with cold feet and hands for years.",
-   "new": "Not years. Not months. 4 weeks.\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n82% of Just Jenny users experience this progression.\n\nEven person with diabetes in their late 50s who have struggled with cold feet and hands for years.",
-   "html": "Not years. Not months. 4 weeks.<br><br><b>Week 1:</b> Start to notice warmth in your hands and feet.<br><b>Week 3:</b> The numb spots begin to ease.<br><b>Week 5:</b> The feeling is completely restored.<br><br>82% of Just Jenny users experience this progression.<br><br>Even person with diabetes in their late 50s who have struggled with cold feet and hands for years."
+   "original": "Not years. Not months. 4 weeks.\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n82% of Just Jenny users experience this progression.\n\nEven person with diabetes in their late 50s who have struggled with cold feet and hands for years.",
+   "new": "Not years. Not months. 5 weeks.\n\nWeek 1: Start to notice warmth in your hands and feet.\nWeek 3: The numb spots begin to ease.\nWeek 5: The feeling is completely restored.\n\n82% of Just Jenny users experience this progression.\n\nEvery person with diabetes in their late 50s who have struggled with cold feet and hands for years.",
+   "html": "Not years. Not months. 5 weeks.<br><br><b>Week 1:</b> Start to notice warmth in your hands and feet.<br><b>Week 3:</b> The numb spots begin to ease.<br><b>Week 5:</b> The feeling is completely restored.<br><br>82% of Just Jenny users experience this progression.<br><br>Every person with diabetes in their late 50s who have struggled with cold feet and hands for years."
   },
   {
    "section": "",
@@ -355,8 +356,8 @@
   {
    "section": "Over 20,000 people with diabetes are already retur",
    "path": "section>div>h2",
-   "original": "Over 20,000 people already trust Just Jenny, and more diabetics are getting warm feet and their feeling back every single day.",
-   "new": "Over 20,000 people with diabetes are already returning the feeling and heat in their hands and feet, and it's growing every single day."
+   "original": "Over 20,000 people with diabetes are already returning the feeling and heat in their hands and feet, and it's growing every single day.",
+   "new": "Over 20,000 people with diabetes are already returning the feeling in their feet, and it's growing every single day."
   },
   {
    "section": "Over 20,000 people with diabetes are already retur",
@@ -389,6 +390,12 @@
    "path": "main>article:nth-of-type(7)>figure>p",
    "original": "👣 Keep Walking. Stay Independent.",
    "new": "⚡Results In Days, Not Months."
+  },
+  {
+   "section": "",
+   "path": "main>div:nth-of-type(2)>table>thead>tr>th:nth-of-type(3)",
+   "original": "Socks & Heating Pads",
+   "new": "Socks To Bed"
   }
  ],
  "images": [
