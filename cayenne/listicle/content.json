@@ -17,8 +17,8 @@
    "section": "",
    "path": "main>p:nth-of-type(1)",
    "original": "Read this BEFORE wearing socks to be tonight.",
-   "new": "Read this BEFORE wearing sweaty socks to be tonight or swallowing chemical pain-killers.",
-   "html": "<b>Read this BEFORE</b> wearing sweaty socks to be tonight or swallowing chemical pain-killers.<br>"
+   "new": "Read this BEFORE wearing sweaty socks to bed tonight.",
+   "html": "<b>Read this BEFORE</b> wearing sweaty socks to bed tonight."
   },
   {
    "section": "",
