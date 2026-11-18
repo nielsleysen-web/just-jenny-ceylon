@@ -8,9 +8,10 @@
   const TRACK = !ED && META_PIXEL_ID && window.fbq;
   if (TRACK) { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); }
 
-  // Salespagina: op cayenne.getjustjenny.com de root, anders /cayenne/. Tracking-parameters (fbclid, utm's, ad_id…) gaan mee.
+  // Salespagina: op cayenne.getjustjenny.com /listicle/sales (zelfde salespagina, maar binnen de listicle-funnel
+  // zodat het dashboard kliks en sales aan de listicle toeschrijft), anders /cayenne/. Tracking-parameters gaan mee.
   function salesUrl() {
-    const u = new URL(/^cayenne\./i.test(location.hostname) ? '/' : '/cayenne/', location.origin);
+    const u = new URL(/^cayenne\./i.test(location.hostname) ? '/listicle/sales' : '/cayenne/', location.origin);
     const q = new URLSearchParams(location.search);
     q.forEach((v, k) => u.searchParams.set(k, v));
     u.searchParams.set('src', 'listicle');
