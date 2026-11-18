@@ -8,6 +8,7 @@
   // Tracking-parameters (fbclid, ad_id, utm's…) van jjb-track.js meesturen naar de checkout (ander domein)
   function trackedCheckoutUrl(qty) {
     const url = new URL(CHECKOUT_URL); url.searchParams.set('b', qty);
+    if (window.__jjCur) url.searchParams.set('cur', window.__jjCur); // lokale munt (zelfde als op deze pagina)
     try {
       const d = JSON.parse(localStorage.getItem('jjb_track') || '{}');
       ['ad_id', 'adset_id', 'campaign_id', 'fbclid', 'fbc', 'fbp', 'vid', 'utm_source', 'utm_campaign', 'utm_content', 'first_touch', 'host', 'path', 'pgs'].forEach((k) => { if (d[k]) url.searchParams.set(k, d[k]); });
@@ -104,6 +105,33 @@
       if (user || !window.__galNav) { showBig(bgOf($('.bh-img[data-qty="' + q + '"]'))); if (window.__galReset) window.__galReset(); if (user) window.__galNav = false; }
       $$('.buy-btn').forEach((x) => { x.href = CHECKOUT_URL ? trackedCheckoutUrl(q) : '#'; });
     };
+    // Lokale munt op basis van het land (IP, via de checkout-server): zelfde cijfers, andere munt. GB → £; CA/AU/NZ blijven "$" (eigen dollar, zelfde bedrag).
+    // Testen: ?cur=gbp / cad / aud / nzd
+    (function () {
+      if (ED) return;
+      const MAP = { GB: 'gbp', CA: 'cad', AU: 'aud', NZ: 'nzd' };
+      const swapPound = () => {
+        const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: (n) => /\$\d/.test(n.nodeValue) && !n.parentNode.closest('script,style') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT });
+        const ns = []; while (w.nextNode()) ns.push(w.currentNode);
+        ns.forEach((n) => { n.nodeValue = n.nodeValue.replace(/\$(?=\d)/g, '£'); });
+      };
+      const use = (cur) => {
+        if (!cur) return; window.__jjCur = cur;
+        // knoppen opnieuw laten verwijzen (met &cur=)
+        const sel = document.querySelector('.bundles .bundle.on, .bundles .bundle[aria-checked="true"]');
+        $$('.buy-btn').forEach((x) => { try { const u = new URL(x.href, location.href); if (/checkout/.test(u.host)) { u.searchParams.set('cur', cur); x.href = u.toString(); } } catch (e) { } });
+        if (cur === 'gbp') { swapPound(); let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(swapPound, 0); }).observe(document.body, { childList: true, subtree: true, characterData: true }); }
+      };
+      const q = (new URLSearchParams(location.search).get('cur') || '').toLowerCase();
+      if (['gbp', 'cad', 'aud', 'nzd', 'usd'].includes(q)) { if (q !== 'usd') use(q); return; }
+      let cc = ''; try { cc = sessionStorage.getItem('jj_cc') || ''; } catch (e) { }
+      if (cc) { use(MAP[cc]); return; }
+      fetch('https://checkout.getjustjenny.com/api/geo').then((r) => r.json()).then((d) => {
+        const c = String(d.country || '').toUpperCase(); try { sessionStorage.setItem('jj_cc', c || '-'); } catch (e) { }
+        use(MAP[c]);
+      }).catch(() => { });
+    })();
+
     // sticky add to cart: zichtbaar zodra de knop bovenaan uit beeld is, verborgen bij het offer onderaan en in de editor
     const satc = $('#satc'), topBtn = $('.atc-wrap'), o2 = $('.offer2');
     if (satc && !ED) {
