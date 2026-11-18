@@ -126,7 +126,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=95">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=96">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -153,7 +153,7 @@ html = f'''<!DOCTYPE html>
   <h2 class="sel">Early Black Friday Sale Live</h2>
   <div class="bundles">{BUNDLES}</div>
   {GIFTS}
-  <p class="ship"><i></i><span>Order before 11:59 pm, shipped <b>the same day</b> from the US</span></p>
+  <p class="ship"><i></i><span>Order by 11:59 pm for <b>same-day dispatch</b></span></p>
   <div class="atc-wrap"><a class="buy-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span><span class="bb-2">{svg(I_SHIELD)}<span>90 Day Money-Back Guarantee</span></span></a></div>
   <ul class="pms" aria-label="Accepted payment methods"><li class="pc pc-amex"><img src="/cayenne/assets/pay/amex.svg" alt="American Express" loading="lazy"></li><li class="pc pc-applepay"><img src="/cayenne/assets/pay/applepay.svg" alt="Apple Pay" loading="lazy"></li><li class="pc pc-googlepay"><img src="/cayenne/assets/pay/googlepay.svg" alt="Google Pay" loading="lazy"></li><li class="pc pc-diners"><img src="/cayenne/assets/pay/diners.svg" alt="Diners Club" loading="lazy"></li><li class="pc pc-discover"><img src="/cayenne/assets/pay/discover.svg" alt="Discover" loading="lazy"></li><li class="pc pc-mastercard"><img src="/cayenne/assets/pay/mastercard.svg" alt="Mastercard" loading="lazy"></li><li class="pc pc-paypal"><img src="/cayenne/assets/pay/paypal.svg" alt="PayPal" loading="lazy"></li><li class="pc pc-visa"><img src="/cayenne/assets/pay/visa.svg" alt="Visa" loading="lazy"></li></ul>
   <div class="rv"><div class="rv-top"><span class="tp-stars">{STARS5}</span><span class="rv-on">Review on <b>Trustpilot</b></span></div><p class="rv-t">"I usually get very quick sick from supplements because of my sensitive stomach. But I have been using this for 2 months, and no reflux no stomach issues nothing. Not even bathroom problems."</p><div class="rv-by">{slot('ed-pic rv-av has-img', '', ' style="background-image:url(/cayenne/assets/review-adam.webp)"')}<span>Adam F.</span><span class="rv-date">Nov 16, 2026</span></div></div>
@@ -242,7 +242,7 @@ html = f'''<!DOCTYPE html>
 </div>
 <div class="wrap pay"><img src="/sage/assets/payments.png" alt="Accepted payment methods" loading="lazy"></div>
 </footer>
-<div class="satc" id="satc"><div class="satc-in"><p class="satc-note"><span class="satc-dot"></span><b>Order before 11:59 pm</b>, shipped the same day from the US</p><a class="buy-btn satc-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span></a></div></div>
+<div class="satc" id="satc"><div class="satc-in"><p class="satc-note"><span class="satc-dot"></span><b>Order by 11:59 pm</b> for same-day dispatch</p><a class="buy-btn satc-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span></a></div></div>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
 <script src="/cayenne/cayenne.js?v=23" defer></script>
