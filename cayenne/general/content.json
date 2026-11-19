@@ -193,6 +193,24 @@
       "label": "Just Jenny (vergelijking)",
       "src": "/cayenne/assets/support.webp",
       "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#2",
+      "label": "Vergelijking 1",
+      "src": "assets/uploads/cmp-1.webp?v=2",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#3",
+      "label": "Vergelijking 2",
+      "src": "assets/uploads/cmp-2.webp?v=2",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#4",
+      "label": "Vergelijking 3",
+      "src": "assets/uploads/cmp-3.webp?v=2",
+      "type": "image/webp"
     }
   ]
 }
