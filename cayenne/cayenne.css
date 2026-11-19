@@ -860,3 +860,5 @@ h2.sel{font-size:14.5px;margin:18px 0 14px;gap:14px}@media(max-width:900px){h2.s
 @media(max-width:640px){.sp-tp{flex-wrap:nowrap!important;white-space:nowrap;font-size:12px;gap:5px;max-width:100%}.sp-tp .tp-w{font-size:15px}.sp-tp .tp-stars i{width:17px;height:17px;font-size:12px}}
 @media(min-width:901px){.rec{display:none!important}}
 .ship span{white-space:nowrap}
+
+.c-n.bad{background:#C62828!important;color:#fff}.c-n.good{background:#2E7D32!important;color:#fff}

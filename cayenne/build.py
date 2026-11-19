@@ -126,7 +126,7 @@ html = f'''<!DOCTYPE html>
 <title>Just Jenny Cayenne Pepper Softgels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cayenne/cayenne.css?v=96">
+<link rel="stylesheet" href="/cayenne/cayenne.css?v=97">
 <!--HEAD-EXTRA-->
 </head>
 <body>
@@ -245,7 +245,7 @@ html = f'''<!DOCTYPE html>
 <div class="satc" id="satc"><div class="satc-in"><p class="satc-note"><span class="satc-dot"></span><b>Order by 11:59 pm</b> for same-day shipping</p><a class="buy-btn satc-btn" href="#"><span class="bb-1">Add To Cart <i>·</i> <span class="now">$49.95</span> <s class="bb-was">$179.85</s></span></a></div></div>
 
 <div class="sticky"><a href="#offer">Add To Cart</a></div>
-<script src="/cayenne/cayenne.js?v=24" defer></script>
+<script src="/cayenne/cayenne.js?v=25" defer></script>
 <!--BODY-EXTRA-->
 </body>
 </html>

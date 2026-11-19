@@ -84,29 +84,53 @@
       "section": "NOT ALL CAYENNE IS CREATED EQUAL",
       "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>p",
       "original": "",
-      "new": "Supermarket cayenne capsules: dry, ground-up pepper powder. Low in active capsaicin, and most of it passes straight through you.",
-      "html": "<b>Supermarket cayenne capsules:</b> dry, ground-up pepper powder. Low in active capsaicin, and most of it passes straight through you."
+      "new": "Supermarket cayenne capsules: only ~0.1mg capsaicin. Dry, ground-up pepper powder, and most of it passes straight through you.",
+      "html": "<b>Supermarket cayenne capsules: only ~0.1mg capsaicin.</b> Dry, ground-up pepper powder, and most of it passes straight through you."
     },
     {
       "section": "NOT ALL CAYENNE IS CREATED EQUAL",
       "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>p",
       "original": "",
-      "new": "\"Premium\" mass-market brands: a nicer label, but the same dry powder inside. Often harsh on the stomach, with that burning reflux.",
-      "html": "<b>\"Premium\" mass-market brands:</b> a nicer label, but the same dry powder inside. Often harsh on the stomach, with that burning reflux."
+      "new": "\"Premium\" mass-market brands: only ~0.2mg capsaicin. A nicer label, but the same dry powder inside, often with that burning reflux.",
+      "html": "<b>\"Premium\" mass-market brands: only ~0.2mg capsaicin.</b> A nicer label, but the same dry powder inside, often with that burning reflux."
     },
     {
       "section": "NOT ALL CAYENNE IS CREATED EQUAL",
       "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>p",
       "original": "",
-      "new": "Standard cayenne extract: stronger, but capsaicin only dissolves in fat. Without a fat carrier, your body absorbs very little of it.",
-      "html": "<b>Standard cayenne extract:</b> stronger, but capsaicin only dissolves in fat. Without a fat carrier, your body absorbs very little of it."
+      "new": "Standard cayenne extract: ~0.5mg capsaicin. Stronger, but without a fat carrier your body absorbs very little of it.",
+      "html": "<b>Standard cayenne extract: ~0.5mg capsaicin.</b> Stronger, but without a fat carrier your body absorbs very little of it."
     },
     {
       "section": "NOT ALL CAYENNE IS CREATED EQUAL",
       "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>p",
       "original": "",
-      "new": "Just Jenny: a concentrated 12:1 liquid cayenne extract in MCT oil (3,000mg cayenne equivalent per serving), plus black pepper for better absorption. No burn. No reflux.",
-      "html": "<b>Just Jenny:</b> a concentrated 12:1 liquid cayenne extract in MCT oil (3,000mg cayenne equivalent per serving), plus black pepper for better absorption. No burn. No reflux."
+      "new": "Just Jenny: 3mg capsaicin per serving. A concentrated 12:1 liquid extract in MCT oil, plus black pepper for better absorption. No burn. No reflux.",
+      "html": "<b>Just Jenny: 3mg capsaicin per serving.</b> A concentrated 12:1 liquid extract in MCT oil, plus black pepper for better absorption. No burn. No reflux."
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>span",
+      "original": "1",
+      "new": "✕"
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>span",
+      "original": "2",
+      "new": "✕"
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>span",
+      "original": "3",
+      "new": "✕"
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>span",
+      "original": "4",
+      "new": "✓"
     }
   ],
   "images": [

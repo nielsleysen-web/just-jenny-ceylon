@@ -132,6 +132,10 @@
       }).catch(() => { });
     })();
 
+    // Vergelijkingskaarten (o.a. /general): ✕ = rood, ✓ = groen
+    const markCn = () => $$('.c-n').forEach((x) => { const t = x.textContent.trim(); x.classList.toggle('bad', t === '✕'); x.classList.toggle('good', t === '✓'); });
+    markCn(); setTimeout(markCn, 1200); setTimeout(markCn, 3000);
+
     // sticky add to cart: zichtbaar zodra de knop bovenaan uit beeld is, verborgen bij het offer onderaan en in de editor
     const satc = $('#satc'), topBtn = $('.atc-wrap'), o2 = $('.offer2');
     if (satc && !ED) {
