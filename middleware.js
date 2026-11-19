@@ -1,7 +1,7 @@
 // sageleaf.justjenny.com → de Sage Leaf-salespagina (map /sage) op de root van dat domein.
 // Alle andere domeinen (cannella.getjustjenny.com …) blijven ongewijzigd, behalve de oude cayenne-adressen
 // op cannella.getjustjenny.com: die sturen door naar cayenne.getjustjenny.com (één funnel in het dashboard).
-export const config = { matcher: ['/', '/editor', '/editor/', '/listicle', '/listicle/', '/listicle/editor', '/listicle/editor/', '/listicle/sales', '/listicle/sales/', '/cayenne', '/cayenne/', '/cayenne/listicle', '/cayenne/listicle/'] };
+export const config = { matcher: ['/', '/editor', '/editor/', '/listicle', '/listicle/', '/listicle/editor', '/listicle/editor/', '/listicle/sales', '/listicle/sales/', '/cayenne', '/cayenne/', '/cayenne/listicle', '/cayenne/listicle/', '/general', '/general/', '/general/editor', '/general/editor/'] };
 
 export default function middleware(request) {
   const url = new URL(request.url);
@@ -23,6 +23,7 @@ export default function middleware(request) {
   const p = url.pathname.replace(/\/$/, '');
   // /listicle/sales → de salespagina, maar onder /listicle/ zodat bezoeken, checkout-kliks en sales
   // in het dashboard bij de listicle-funnel blijven (funnel = domein + eerste padsegment)
-  url.pathname = p === '/listicle/sales' ? dir : p.startsWith('/listicle') ? dir + p : p.startsWith('/editor') ? dir + '/editor' : dir;
+  // /general (en /general/editor) → de algemene versie van de salespagina (cayenne/general), eigen funnel in het dashboard
+  url.pathname = p === '/listicle/sales' ? dir : (p.startsWith('/listicle') || p.startsWith('/general')) ? dir + p : p.startsWith('/editor') ? dir + '/editor' : dir;
   return new Response(null, { headers: { 'x-middleware-rewrite': url.toString() } });
 }

@@ -271,4 +271,22 @@ os.makedirs(base + 'assets/uploads', exist_ok=True)
 open(base + 'index.html', 'w').write(html.replace('<!--HEAD-EXTRA-->', LIVE_HEAD + '\n' + TRACK_HEAD).replace('<!--BODY-EXTRA-->', ''))
 open(base + 'editor/index.html', 'w').write(html.replace('<title>Just Jenny Cayenne Pepper Softgels</title>', '<title>Cayenne – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">', '<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->', ED_HEAD).replace('<!--BODY-EXTRA-->', ''))
 if not os.path.exists(base + 'content.json'): open(base + 'content.json', 'w').write('{"texts":[],"images":[]}\n')
+
+# Tweede versie: algemene/brede pagina (/cayenne/general) — zelfde opbouw, eigen teksten en foto's via de eigen editor (/cayenne/general/editor)
+import json as _json
+G = base + 'general/'
+os.makedirs(G + 'editor', exist_ok=True)
+os.makedirs(G + 'assets/uploads', exist_ok=True)
+if not os.path.exists(G + 'content.json'):
+    # start = de huidige pagina: teksten en foto's overnemen (foto's met een absoluut pad naar /cayenne/)
+    c = _json.load(open(base + 'content.json'))
+    for im in c.get('images', []):
+        if not str(im.get('src', '')).startswith(('/', 'http', 'data:')): im['src'] = '/cayenne/' + im['src']
+    open(G + 'content.json', 'w').write(_json.dumps(c, ensure_ascii=False, indent=2) + '\n')
+GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
+G_LIVE = LIVE_HEAD.replace(CFG, GCFG)
+G_ED = ED_HEAD.replace(CFG, GCFG).replace('JJ_REPO_PREFIX="cayenne/"', 'JJ_REPO_PREFIX="cayenne/general/"').replace('location.origin+"/cayenne"', 'location.origin+"/cayenne/general"')
+assert GCFG != CFG and G_ED != ED_HEAD
+open(G + 'index.html', 'w').write(html.replace('<!--HEAD-EXTRA-->', G_LIVE + '\n' + TRACK_HEAD).replace('<!--BODY-EXTRA-->', ''))
+open(G + 'editor/index.html', 'w').write(html.replace('<title>Just Jenny Cayenne Pepper Softgels</title>', '<title>Cayenne (general) – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">', '<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->', G_ED).replace('<!--BODY-EXTRA-->', ''))
 print('ok')

@@ -1,0 +1,73 @@
+{
+  "saved": "2026-11-17T05:54:22.320Z",
+  "texts": [
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(2)>label:nth-of-type(3)>span:nth-of-type(2)>span:nth-of-type(1)>span",
+      "original": "Save 70%",
+      "new": "Save 77%"
+    },
+    {
+      "section": "Selected customer reviews",
+      "path": "section:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(2)",
+      "original": "Individual results vary.",
+      "new": ""
+    }
+  ],
+  "images": [
+    {
+      "key": ".ed-pic#9",
+      "label": "ed-pic",
+      "src": "/cayenne/assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#14",
+      "label": "Customer photo 1",
+      "src": "/cayenne/assets/uploads/ed-img-14.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#15",
+      "label": "Customer photo 2",
+      "src": "/cayenne/assets/uploads/ed-img-15.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#16",
+      "label": "Customer photo 3",
+      "src": "/cayenne/assets/uploads/ed-img-16.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#17",
+      "label": "Customer photo 4",
+      "src": "/cayenne/assets/uploads/ed-img-17.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#18",
+      "label": "Customer photo 5",
+      "src": "/cayenne/assets/uploads/ed-img-18.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#19",
+      "label": "Customer photo 6",
+      "src": "/cayenne/assets/uploads/ed-img-19.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#20",
+      "label": "Customer photo 7",
+      "src": "/cayenne/assets/uploads/ed-img-20.webp?v=mwk9w7g0",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#21",
+      "label": "Customer photo 8",
+      "src": "/cayenne/assets/uploads/ed-img-21.webp?v=mwka23c3",
+      "type": "image/webp"
+    }
+  ]
+}
