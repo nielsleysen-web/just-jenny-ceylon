@@ -187,6 +187,12 @@
       "label": "Customer photo 8",
       "src": "/cayenne/assets/uploads/ed-img-21.webp?v=mwka23c3",
       "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#5",
+      "label": "Just Jenny (vergelijking)",
+      "src": "/cayenne/assets/support.webp",
+      "type": "image/webp"
     }
   ]
 }
