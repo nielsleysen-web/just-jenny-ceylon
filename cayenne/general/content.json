@@ -67,6 +67,46 @@
       "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(5)>p",
       "original": "\"I thought that nerve damage couldn't be reversed, but these capsules actually removed the tingling feeling in my feet, and made them feel warm again. It doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now and I can finally sleep without having to wear socks to bed.\"",
       "new": "\"I thought that these capsaicin soft gels were going to give me stomach issues, reflux, or give a burning feeling down my throat. But 2 weeks in and it doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now.\""
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>h2",
+      "original": "DIABETES IS SHUTTING DOWN YOUR CIRCULATION",
+      "new": "NOT ALL CAYENNE IS CREATED EQUAL"
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>p",
+      "original": "Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.",
+      "new": "Here's what most cayenne brands won't tell you: the form and the dose decide whether it does anything at all."
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>p",
+      "original": "",
+      "new": "Supermarket cayenne capsules: dry, ground-up pepper powder. Low in active capsaicin, and most of it passes straight through you.",
+      "html": "<b>Supermarket cayenne capsules:</b> dry, ground-up pepper powder. Low in active capsaicin, and most of it passes straight through you."
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>p",
+      "original": "",
+      "new": "\"Premium\" mass-market brands: a nicer label, but the same dry powder inside. Often harsh on the stomach, with that burning reflux.",
+      "html": "<b>\"Premium\" mass-market brands:</b> a nicer label, but the same dry powder inside. Often harsh on the stomach, with that burning reflux."
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>p",
+      "original": "",
+      "new": "Standard cayenne extract: stronger, but capsaicin only dissolves in fat. Without a fat carrier, your body absorbs very little of it.",
+      "html": "<b>Standard cayenne extract:</b> stronger, but capsaicin only dissolves in fat. Without a fat carrier, your body absorbs very little of it."
+    },
+    {
+      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>p",
+      "original": "",
+      "new": "Just Jenny: a concentrated 12:1 liquid cayenne extract in MCT oil (3,000mg cayenne equivalent per serving), plus black pepper for better absorption. No burn. No reflux.",
+      "html": "<b>Just Jenny:</b> a concentrated 12:1 liquid cayenne extract in MCT oil (3,000mg cayenne equivalent per serving), plus black pepper for better absorption. No burn. No reflux."
     }
   ],
   "images": [
