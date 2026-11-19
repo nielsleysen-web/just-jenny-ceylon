@@ -49,6 +49,24 @@
       "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4)>span",
       "original": "3,000mg of high-scoville cayenne",
       "new": "Reduces vessel inflammation"
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(1)>div:nth-of-type(4)>details:nth-of-type(1)>div>p",
+      "original": "Blood flow to the feet, legs and fingers, plus steady energy and your body's inflammation response.",
+      "new": "It supports blood flow, opens the veins and reduces the vessel inflammation so your arteries can push the blood to where it belongs."
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(1)>div:nth-of-type(4)>details:nth-of-type(3)>div>p",
+      "original": "Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.",
+      "new": "You will feel a slight change in the first few days. We recommend to keep using it for at least 2 weeks consistently to feel the results."
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(5)>p",
+      "original": "\"I thought that nerve damage couldn't be reversed, but these capsules actually removed the tingling feeling in my feet, and made them feel warm again. It doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now and I can finally sleep without having to wear socks to bed.\"",
+      "new": "\"I thought that these capsaicin soft gels were going to give me stomach issues, reflux, or give a burning feeling down my throat. But 2 weeks in and it doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now.\""
     }
   ],
   "images": [
