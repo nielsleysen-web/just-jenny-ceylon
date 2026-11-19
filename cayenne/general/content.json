@@ -301,6 +301,12 @@
       "label": "Timeline 1",
       "src": "assets/uploads/tl-1.webp?v=1",
       "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#63",
+      "label": "Timeline 2",
+      "src": "assets/uploads/tl-2.webp?v=1",
+      "type": "image/webp"
     }
   ]
 }
