@@ -219,7 +219,7 @@
   ],
   "images": [
     {
-      "key": ".ed-pic#9",
+      "key": ".ed-pic#8",
       "label": "ed-pic",
       "src": "/cayenne/assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
       "type": "image/webp"
@@ -306,6 +306,12 @@
       "key": ".ed-img#63",
       "label": "Timeline 2",
       "src": "assets/uploads/tl-2.webp?v=1",
+      "type": "image/webp"
+    },
+    {
+      "key": ".ed-img#66",
+      "label": "Overall Energy Levels",
+      "src": "assets/uploads/rb-energy.webp?v=1",
       "type": "image/webp"
     }
   ]

@@ -283,10 +283,14 @@ if not os.path.exists(G + 'content.json'):
     for im in c.get('images', []):
         if not str(im.get('src', '')).startswith(('/', 'http', 'data:')): im['src'] = '/cayenne/' + im['src']
     open(G + 'content.json', 'w').write(_json.dumps(c, ensure_ascii=False, indent=2) + '\n')
+# /general: zonder de voordelen-foto (gallery-benefits) in de hero-galerij (18 nov 2026)
+GTHUMB = '<div class="ed-pic th has-img" style="background-image:url(/cayenne/assets/gallery-benefits.webp)"><span class="slot-label">Photo 3</span></div>'
+assert GTHUMB in html
+ghtml = html.replace(GTHUMB, '')
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
 G_LIVE = LIVE_HEAD.replace(CFG, GCFG)
 G_ED = ED_HEAD.replace(CFG, GCFG).replace('JJ_REPO_PREFIX="cayenne/"', 'JJ_REPO_PREFIX="cayenne/general/"').replace('location.origin+"/cayenne"', 'location.origin+"/cayenne/general"')
 assert GCFG != CFG and G_ED != ED_HEAD
-open(G + 'index.html', 'w').write(html.replace('<!--HEAD-EXTRA-->', G_LIVE + '\n' + TRACK_HEAD).replace('<!--BODY-EXTRA-->', ''))
-open(G + 'editor/index.html', 'w').write(html.replace('<title>Just Jenny Cayenne Pepper Softgels</title>', '<title>Cayenne (general) – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">', '<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->', G_ED).replace('<!--BODY-EXTRA-->', ''))
+open(G + 'index.html', 'w').write(ghtml.replace('<!--HEAD-EXTRA-->', G_LIVE + '\n' + TRACK_HEAD).replace('<!--BODY-EXTRA-->', ''))
+open(G + 'editor/index.html', 'w').write(ghtml.replace('<title>Just Jenny Cayenne Pepper Softgels</title>', '<title>Cayenne (general) – Edit &amp; publish</title>').replace('<meta name="robots" content="noindex">', '<meta name="robots" content="noindex,nofollow">').replace('<!--HEAD-EXTRA-->', G_ED).replace('<!--BODY-EXTRA-->', ''))
 print('ok')
