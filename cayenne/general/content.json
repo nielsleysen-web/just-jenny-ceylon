@@ -12,6 +12,43 @@
       "path": "section:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(2)",
       "original": "Individual results vary.",
       "new": ""
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>h1",
+      "original": "JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "new": "JUST JENNY™ CARDIOVASCULAIR HEALTH CAYENNE PEPPER SOFTGELS"
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>p:nth-of-type(1)",
+      "original": "Just Jenny Cayenne Pepper Softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.",
+      "new": "Support your circulation today with our powerful 3,000mg cayenne pepper extract formula.\n\nCayenne pepper improves the cardiovasculair health by supporting the blood flow in the arteries.",
+      "html": "<b>Support your circulation today with our powerful 3,000mg cayenne pepper extract formula.</b><br><br>Cayenne pepper improves the cardiovasculair health by supporting the blood flow in the arteries."
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1)>span",
+      "original": "Boost blood flow to numb feet and fingers",
+      "new": "Supports blood circulation"
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2)>span",
+      "original": "Prevents diabetic fatigue",
+      "new": "Increases natural energy"
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3)>span",
+      "original": "Calms vessel inflammation",
+      "new": "No burn. No reflux."
+    },
+    {
+      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4)>span",
+      "original": "3,000mg of high-scoville cayenne",
+      "new": "Reduces vessel inflammation"
     }
   ],
   "images": [
