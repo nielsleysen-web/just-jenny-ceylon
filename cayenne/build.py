@@ -287,6 +287,8 @@ if not os.path.exists(G + 'content.json'):
 GTHUMB = '<div class="ed-pic th has-img" style="background-image:url(/cayenne/assets/gallery-benefits.webp)"><span class="slot-label">Photo 3</span></div>'
 assert GTHUMB in html
 ghtml = html.replace(GTHUMB, '')
+# /general: grotere headline (lange titel mag over 2 lijnen)
+ghtml = ghtml.replace('</head>', '<style>.hero h1{font-size:37px!important;white-space:normal!important;line-height:1.05}@media(max-width:640px){.hero h1{font-size:29px!important}}</style>\n</head>', 1)
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
 G_LIVE = LIVE_HEAD.replace(CFG, GCFG)
 G_ED = ED_HEAD.replace(CFG, GCFG).replace('JJ_REPO_PREFIX="cayenne/"', 'JJ_REPO_PREFIX="cayenne/general/"').replace('location.origin+"/cayenne"', 'location.origin+"/cayenne/general"')
