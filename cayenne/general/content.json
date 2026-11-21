@@ -1,324 +1,331 @@
 {
-  "saved": "2026-11-19T04:00:33.190Z",
-  "texts": [
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(2)>label:nth-of-type(3)>span:nth-of-type(2)>span:nth-of-type(1)>span",
-      "original": "Save 70%",
-      "new": "Save 77%"
-    },
-    {
-      "section": "Selected customer reviews",
-      "path": "section:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(2)",
-      "original": "Individual results vary.",
-      "new": ""
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>h1",
-      "original": "JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "new": "JUST JENNY™ CARDIOVASCULAIR HEALTH CAYENNE PEPPER SOFTGELS"
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>p:nth-of-type(1)",
-      "original": "Just Jenny Cayenne Pepper Softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.",
-      "new": "Support your circulation today with our powerful 3,000mg cayenne pepper extract formula.\n\nCayenne pepper improves the cardiovasculair health by supporting the blood flow in the arteries.",
-      "html": "<b>Support your circulation today with our powerful 3,000mg cayenne pepper extract formula.</b><br><br>Cayenne pepper improves the cardiovasculair health by supporting the blood flow in the arteries."
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1)>span",
-      "original": "Boost blood flow to numb feet and fingers",
-      "new": "Supports blood circulation"
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2)>span",
-      "original": "Prevents diabetic fatigue",
-      "new": "Increases natural energy"
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3)>span",
-      "original": "Calms vessel inflammation",
-      "new": "No burn. No reflux."
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4)>span",
-      "original": "3,000mg of high-scoville cayenne",
-      "new": "Reduces vessel inflammation"
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(1)>div:nth-of-type(4)>details:nth-of-type(1)>div>p",
-      "original": "Blood flow to the feet, legs and fingers, plus steady energy and your body's inflammation response.",
-      "new": "It supports blood flow, opens the veins and reduces the vessel inflammation so your arteries can push the blood to where it belongs."
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(1)>div:nth-of-type(4)>details:nth-of-type(3)>div>p",
-      "original": "Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.",
-      "new": "You will feel a slight change in the first few days. We recommend to keep using it for at least 2 weeks consistently to feel the results."
-    },
-    {
-      "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
-      "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(5)>p",
-      "original": "\"I thought that nerve damage couldn't be reversed, but these capsules actually removed the tingling feeling in my feet, and made them feel warm again. It doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now and I can finally sleep without having to wear socks to bed.\"",
-      "new": "\"I thought that these capsaicin soft gels were going to give me stomach issues, reflux, or give a burning feeling down my throat. But 2 weeks in and it doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now.\""
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>h2",
-      "original": "DIABETES IS SHUTTING DOWN YOUR CIRCULATION",
-      "new": "NOT ALL CAYENNE IS CREATED EQUAL"
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>p",
-      "original": "Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.",
-      "new": "Here's what most cayenne brands won't tell you: the form and the dose decide whether it does anything at all."
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>p",
-      "original": "",
-      "new": "Supermarket cayenne capsules: only ~0.1mg capsaicin. Dry, ground-up pepper powder, and most of it passes straight through you.",
-      "html": "<b>Supermarket cayenne capsules: only ~0.1mg capsaicin.</b> Dry, ground-up pepper powder, and most of it passes straight through you."
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>p",
-      "original": "",
-      "new": "\"Premium\" mass-market brands: only ~0.2mg capsaicin. A nicer label, but the same dry powder inside, often with that burning reflux.",
-      "html": "<b>\"Premium\" mass-market brands: only ~0.2mg capsaicin.</b> A nicer label, but the same dry powder inside, often with that burning reflux."
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>p",
-      "original": "",
-      "new": "Standard cayenne extract: ~0.5mg capsaicin. Stronger, but without a fat carrier your body absorbs very little of it.",
-      "html": "<b>Standard cayenne extract: ~0.5mg capsaicin.</b> Stronger, but without a fat carrier your body absorbs very little of it."
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>p",
-      "original": "",
-      "new": "Just Jenny: 3mg capsaicin per serving. A concentrated 12:1 liquid extract in MCT oil, plus black pepper for better absorption. No burn. No reflux.",
-      "html": "<b>Just Jenny: 3mg capsaicin per serving.</b> A concentrated 12:1 liquid extract in MCT oil, plus black pepper for better absorption. No burn. No reflux."
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>span",
-      "original": "1",
-      "new": "✕"
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>span",
-      "original": "2",
-      "new": "✕"
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>span",
-      "original": "3",
-      "new": "✕"
-    },
-    {
-      "section": "NOT ALL CAYENNE IS CREATED EQUAL",
-      "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>span",
-      "original": "4",
-      "new": "✓"
-    },
-    {
-      "section": "SUPPORT CIRCULATION",
-      "path": "section:nth-of-type(3)>div>div>div:nth-of-type(1)>div>div:nth-of-type(1)>p",
-      "original": "Cayenne's capsaicin helps open the tiny capillaries in your feet and fingers, where blood barely gets through.",
-      "new": "Cayenne's capsaicin helps open the tiny capillaries so the blood can flow again to support your body."
-    },
-    {
-      "section": "7 BOTANICALS. TWO DAILY SOFTGELS.",
-      "path": "section:nth-of-type(4)>div>div>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>p",
-      "original": "Capsaicin from high-Scoville cayenne helps blood get through to the small capillaries in your feet and fingers.",
-      "new": "Capsaicin from high-Scoville cayenne helps blood get through to the small capillaries through your entire body."
-    },
-    {
-      "section": "Verified customer reviews",
-      "path": "section:nth-of-type(5)>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(1)>p:nth-of-type(1)",
-      "original": "\"I thought, another wonder supplement, yea right... but around the two-week mark I noticed that I stopped wearing socks in bed and my hands got their feeling back! And I stopped drinking cups of coffee to survive my crash after 2pm. It's easy to use, I simply take 2 each morning with my coffee.\"",
-      "new": "\"I thought, another wonder supplement, yea right... but around the two-week mark I noticed that my energy was getting back! I stopped going for another coffee aft er 2pm to survive my crash. It's easy to use, I simply take 2 each morning with my coffee.\""
-    },
-    {
-      "section": "Verified customer reviews",
-      "path": "section:nth-of-type(5)>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(3)>h3",
-      "original": "I Can Finally Sleep Without Wearing Socks!!",
-      "new": "Because of my sensitive stomach..."
-    },
-    {
-      "section": "Verified customer reviews",
-      "path": "section:nth-of-type(5)>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(3)>p:nth-of-type(1)",
-      "original": "\"I used to sleep with socks because my feet became so cold during the night. But over the last few weeks I stopped wearing them in bed!! My feet and also my hands feel a lot warmer, my husband doesn't say they feel like a fridge anymore. I feel like they also have more feeling compared to a month ago... It's hard to explain but it feels like I finally got something back I felt like I lost. Love that it's without any chemicals or additives.\"",
-      "new": "\"I used to hate taking supplements, especially with my sensitive stomach. But over the last few weeks I noticed I could use something for my energy levels and to support my heart and artery health. I started taking these every morning and no reflux, no burning feeling, no stomach issues! I finally got something back I felt like I lost. Love that it's without any chemicals or additives.\""
-    },
-    {
-      "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
-      "path": "section:nth-of-type(6)>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>h3",
-      "original": "FIRST WARMTH",
-      "new": "FIRST FEELING"
-    },
-    {
-      "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
-      "path": "section:nth-of-type(6)>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>p",
-      "original": "Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.",
-      "new": "Capsaicin gets to work from the first softgel. Your arteries open up and their flexibility returns, you start feeling this throughout your entire body."
-    },
-    {
-      "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
-      "path": "section:nth-of-type(6)>div>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(2)>h3",
-      "original": "FEELING COMES BACK",
-      "new": "ENERGY COMES BACK"
-    },
-    {
-      "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
-      "path": "section:nth-of-type(6)>div>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(2)>p",
-      "original": "A light tingling means blood is reaching your toes again. The numb spots begin to ease.",
-      "new": "The crash after 2pm, the brain fog that makes you forget what you were doing. All of this disappears, because the increase in blood circulation returned the overal energy levels."
-    },
-    {
-      "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
-      "path": "section:nth-of-type(6)>div>div>div:nth-of-type(4)>div:nth-of-type(2)>div:nth-of-type(2)>p",
-      "original": "Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.",
-      "new": "Steadier energy, warm feeling through your body, lighter legs and a clearer head. Two softgels a day has become routine."
-    },
-    {
-      "section": "Real Benefits.",
-      "path": "section:nth-of-type(7)>div:nth-of-type(1)>div>details:nth-of-type(2)>summary>span:nth-of-type(1)>b",
-      "original": "Nerve Health Support",
-      "new": "Overal Energy Levels"
-    },
-    {
-      "section": "Real Benefits.",
-      "path": "section:nth-of-type(7)>div:nth-of-type(1)>div>details:nth-of-type(2)>summary>span:nth-of-type(1)>span",
-      "original": "Returns the feeling in the hands & feet",
-      "new": "Returns the natural energy levels"
-    },
-    {
-      "section": "Real Benefits.",
-      "path": "section:nth-of-type(7)>div:nth-of-type(1)>div>details:nth-of-type(2)>div>p",
-      "original": "The Cayenne Pepper softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.",
-      "new": "The Cayenne Pepper softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your cells and brain."
-    },
-    {
-      "section": "Our 8 Most Common Questions, Answered",
-      "path": "section:nth-of-type(10)>div>div>details:nth-of-type(4)>div>p",
-      "original": "Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.",
-      "new": "You will feel a slight change in the first few days. We recommend to keep using it for at least 2 weeks consistently to feel the results."
-    }
-  ],
-  "images": [
-    {
-      "key": ".ed-pic#8",
-      "label": "ed-pic",
-      "src": "/cayenne/assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#14",
-      "label": "Customer photo 1",
-      "src": "/cayenne/assets/uploads/ed-img-14.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#15",
-      "label": "Customer photo 2",
-      "src": "/cayenne/assets/uploads/ed-img-15.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#16",
-      "label": "Customer photo 3",
-      "src": "/cayenne/assets/uploads/ed-img-16.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#17",
-      "label": "Customer photo 4",
-      "src": "/cayenne/assets/uploads/ed-img-17.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#18",
-      "label": "Customer photo 5",
-      "src": "/cayenne/assets/uploads/ed-img-18.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#19",
-      "label": "Customer photo 6",
-      "src": "/cayenne/assets/uploads/ed-img-19.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#20",
-      "label": "Customer photo 7",
-      "src": "/cayenne/assets/uploads/ed-img-20.webp?v=mwk9w7g0",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#21",
-      "label": "Customer photo 8",
-      "src": "/cayenne/assets/uploads/ed-img-21.webp?v=mwka23c3",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#5",
-      "label": "Just Jenny (vergelijking)",
-      "src": "/cayenne/assets/support.webp",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#2",
-      "label": "Vergelijking 1",
-      "src": "assets/uploads/cmp-1.webp?v=2",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#3",
-      "label": "Vergelijking 2",
-      "src": "assets/uploads/cmp-2.webp?v=2",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#4",
-      "label": "Vergelijking 3",
-      "src": "assets/uploads/cmp-3.webp?v=2",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#62",
-      "label": "Timeline 1",
-      "src": "assets/uploads/tl-1.webp?v=1",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#63",
-      "label": "Timeline 2",
-      "src": "assets/uploads/tl-2.webp?v=1",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-img#66",
-      "label": "Overall Energy Levels",
-      "src": "assets/uploads/rb-energy.webp?v=1",
-      "type": "image/webp"
-    },
-    {
-      "key": ".ed-pic#3",
-      "label": "Review (galerij)",
-      "src": "assets/uploads/gallery-review.webp?v=1",
-      "type": "image/webp"
-    }
-  ]
+ "saved": "2026-11-21T08:05:40.418Z",
+ "texts": [
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(2)>label:nth-of-type(3)>span:nth-of-type(2)>span:nth-of-type(1)>span",
+   "original": "Save 70%",
+   "new": "Save 77%"
+  },
+  {
+   "section": "Selected customer reviews",
+   "path": "section:nth-of-type(5)>div:nth-of-type(1)>p:nth-of-type(2)",
+   "original": "Individual results vary.",
+   "new": ""
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>h1",
+   "original": "JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "new": "JUST JENNY™ CARDIOVASCULAIR HEALTH CAYENNE PEPPER SOFTGELS"
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>p:nth-of-type(1)",
+   "original": "Just Jenny Cayenne Pepper Softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.",
+   "new": "Support your circulation today with our powerful 3,000mg cayenne pepper extract formula.\n\nCayenne pepper improves the cardiovasculair health by supporting the blood flow in the arteries.",
+   "html": "<b>Support your circulation today with our powerful 3,000mg cayenne pepper extract formula.</b><br><br>Cayenne pepper improves the cardiovasculair health by supporting the blood flow in the arteries."
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1)>span",
+   "original": "Boost blood flow to numb feet and fingers",
+   "new": "Supports blood circulation"
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2)>span",
+   "original": "Prevents diabetic fatigue",
+   "new": "Increases natural energy"
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3)>span",
+   "original": "Calms vessel inflammation",
+   "new": "No burn. No reflux."
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4)>span",
+   "original": "3,000mg of high-scoville cayenne",
+   "new": "Reduces vessel inflammation"
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(1)>div:nth-of-type(4)>details:nth-of-type(1)>div>p",
+   "original": "Blood flow to the feet, legs and fingers, plus steady energy and your body's inflammation response.",
+   "new": "It supports blood flow, opens the veins and reduces the vessel inflammation so your arteries can push the blood to where it belongs."
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(1)>div:nth-of-type(4)>details:nth-of-type(3)>div>p",
+   "original": "Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.",
+   "new": "You will feel a slight change in the first few days. We recommend to keep using it for at least 2 weeks consistently to feel the results."
+  },
+  {
+   "section": "#top JUST JENNY™ CAYENNE PEPPER SOFTGELS",
+   "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(5)>p",
+   "original": "\"I thought that nerve damage couldn't be reversed, but these capsules actually removed the tingling feeling in my feet, and made them feel warm again. It doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now and I can finally sleep without having to wear socks to bed.\"",
+   "new": "\"I thought that these capsaicin soft gels were going to give me stomach issues, reflux, or give a burning feeling down my throat. But 2 weeks in and it doesn't burn, taste spicy or gives me stomach issues. Been using for 2 months now.\""
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>h2",
+   "original": "DIABETES IS SHUTTING DOWN YOUR CIRCULATION",
+   "new": "NOT ALL CAYENNE IS CREATED EQUAL"
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>p",
+   "original": "Cold feet, numb hands, and constant fatigue aren't just part of having diabetes.",
+   "new": "Here's what most cayenne brands won't tell you: the form and the dose decide whether it does anything at all."
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>p",
+   "original": "",
+   "new": "Supermarket cayenne capsules: only ~0.1mg capsaicin. Dry, ground-up pepper powder, and most of it passes straight through you.",
+   "html": "<b>Supermarket cayenne capsules: only ~0.1mg capsaicin.</b> Dry, ground-up pepper powder, and most of it passes straight through you."
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>p",
+   "original": "",
+   "new": "\"Premium\" mass-market brands: only ~0.2mg capsaicin. A nicer label, but the same dry powder inside, often with that burning reflux.",
+   "html": "<b>\"Premium\" mass-market brands: only ~0.2mg capsaicin.</b> A nicer label, but the same dry powder inside, often with that burning reflux."
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>p",
+   "original": "",
+   "new": "Standard cayenne extract: ~0.5mg capsaicin. Stronger, but without a fat carrier your body absorbs very little of it.",
+   "html": "<b>Standard cayenne extract: ~0.5mg capsaicin.</b> Stronger, but without a fat carrier your body absorbs very little of it."
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>p",
+   "original": "",
+   "new": "Just Jenny: 3mg capsaicin per serving. A concentrated 12:1 liquid extract in MCT oil, plus black pepper for better absorption. No burn. No reflux.",
+   "html": "<b>Just Jenny: 3mg capsaicin per serving.</b> A concentrated 12:1 liquid extract in MCT oil, plus black pepper for better absorption. No burn. No reflux."
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(1)>span",
+   "original": "1",
+   "new": "✕"
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(2)>span",
+   "original": "2",
+   "new": "✕"
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(3)>span",
+   "original": "3",
+   "new": "✕"
+  },
+  {
+   "section": "NOT ALL CAYENNE IS CREATED EQUAL",
+   "path": "section:nth-of-type(2)>div>div>div:nth-of-type(4)>span",
+   "original": "4",
+   "new": "✓"
+  },
+  {
+   "section": "SUPPORT CIRCULATION",
+   "path": "section:nth-of-type(3)>div>div>div:nth-of-type(1)>div>div:nth-of-type(1)>p",
+   "original": "Cayenne's capsaicin helps open the tiny capillaries in your feet and fingers, where blood barely gets through.",
+   "new": "Cayenne's capsaicin helps open the tiny capillaries so the blood can flow again to support your body."
+  },
+  {
+   "section": "7 BOTANICALS. TWO DAILY SOFTGELS.",
+   "path": "section:nth-of-type(4)>div>div>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>p",
+   "original": "Capsaicin from high-Scoville cayenne helps blood get through to the small capillaries in your feet and fingers.",
+   "new": "Capsaicin from high-Scoville cayenne helps blood get through to the small capillaries through your entire body."
+  },
+  {
+   "section": "Verified customer reviews",
+   "path": "section:nth-of-type(5)>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(1)>p:nth-of-type(1)",
+   "original": "\"I thought, another wonder supplement, yea right... but around the two-week mark I noticed that I stopped wearing socks in bed and my hands got their feeling back! And I stopped drinking cups of coffee to survive my crash after 2pm. It's easy to use, I simply take 2 each morning with my coffee.\"",
+   "new": "\"I thought, another wonder supplement, yea right... but around the two-week mark I noticed that my energy was getting back! I stopped going for another coffee aft er 2pm to survive my crash. It's easy to use, I simply take 2 each morning with my coffee.\""
+  },
+  {
+   "section": "Verified customer reviews",
+   "path": "section:nth-of-type(5)>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(3)>h3",
+   "original": "I Can Finally Sleep Without Wearing Socks!!",
+   "new": "Because of my sensitive stomach..."
+  },
+  {
+   "section": "Verified customer reviews",
+   "path": "section:nth-of-type(5)>div:nth-of-type(3)>div:nth-of-type(1)>div:nth-of-type(3)>p:nth-of-type(1)",
+   "original": "\"I used to sleep with socks because my feet became so cold during the night. But over the last few weeks I stopped wearing them in bed!! My feet and also my hands feel a lot warmer, my husband doesn't say they feel like a fridge anymore. I feel like they also have more feeling compared to a month ago... It's hard to explain but it feels like I finally got something back I felt like I lost. Love that it's without any chemicals or additives.\"",
+   "new": "\"I used to hate taking supplements, especially with my sensitive stomach. But over the last few weeks I noticed I could use something for my energy levels and to support my heart and artery health. I started taking these every morning and no reflux, no burning feeling, no stomach issues! I finally got something back I felt like I lost. Love that it's without any chemicals or additives.\""
+  },
+  {
+   "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
+   "path": "section:nth-of-type(6)>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>h3",
+   "original": "FIRST WARMTH",
+   "new": "FIRST FEELING"
+  },
+  {
+   "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
+   "path": "section:nth-of-type(6)>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2)>p",
+   "original": "Capsaicin gets to work from the first softgels. You start to notice warmth in your hands and feet.",
+   "new": "Capsaicin gets to work from the first softgel. Your arteries open up and their flexibility returns, you start feeling this throughout your entire body."
+  },
+  {
+   "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
+   "path": "section:nth-of-type(6)>div>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(2)>h3",
+   "original": "FEELING COMES BACK",
+   "new": "ENERGY COMES BACK"
+  },
+  {
+   "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
+   "path": "section:nth-of-type(6)>div>div>div:nth-of-type(3)>div:nth-of-type(2)>div:nth-of-type(2)>p",
+   "original": "A light tingling means blood is reaching your toes again. The numb spots begin to ease.",
+   "new": "The crash after 2pm, the brain fog that makes you forget what you were doing. All of this disappears, because the increase in blood circulation returned the overal energy levels."
+  },
+  {
+   "section": "WHAT TO EXPECT IN YOUR FIRST 8 WEEKS",
+   "path": "section:nth-of-type(6)>div>div>div:nth-of-type(4)>div:nth-of-type(2)>div:nth-of-type(2)>p",
+   "original": "Steadier energy, warm feet, lighter legs and a clearer head. Two softgels a day has become routine.",
+   "new": "Steadier energy, warm feeling through your body, lighter legs and a clearer head. Two softgels a day has become routine."
+  },
+  {
+   "section": "Real Benefits.",
+   "path": "section:nth-of-type(7)>div:nth-of-type(1)>div>details:nth-of-type(2)>summary>span:nth-of-type(1)>b",
+   "original": "Nerve Health Support",
+   "new": "Overal Energy Levels"
+  },
+  {
+   "section": "Real Benefits.",
+   "path": "section:nth-of-type(7)>div:nth-of-type(1)>div>details:nth-of-type(2)>summary>span:nth-of-type(1)>span",
+   "original": "Returns the feeling in the hands & feet",
+   "new": "Returns the natural energy levels"
+  },
+  {
+   "section": "Real Benefits.",
+   "path": "section:nth-of-type(7)>div:nth-of-type(1)>div>details:nth-of-type(2)>div>p",
+   "original": "The Cayenne Pepper softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your nerves.",
+   "new": "The Cayenne Pepper softgels are designed to reopen your smallest blood vessels, so oxygen-rich blood can flow back to your cells and brain."
+  },
+  {
+   "section": "Our 8 Most Common Questions, Answered",
+   "path": "section:nth-of-type(10)>div>div>details:nth-of-type(4)>div>p",
+   "original": "Warmth in the first few days. Feeling can return to numb extremities around weeks 2-4. Crashes ease by weeks 6-8.",
+   "new": "You will feel a slight change in the first few days. We recommend to keep using it for at least 2 weeks consistently to feel the results."
+  },
+  {
+   "section": "#top JUST JENNY™ CARDIOVASCULAIR HEALTH CAYENNE PEPPER ",
+   "path": "#top>div>div:nth-of-type(2)>div:nth-of-type(1)>p",
+   "original": "Approved by Dr. Wasim Hanif | Certified Diabetologist",
+   "new": "Approved by Dr. Wasim Hanif | Certified Phlebologist",
+   "html": "Approved by <b>Dr. Wasim Hanif</b> | Certified Phlebologist"
+  }
+ ],
+ "images": [
+  {
+   "key": ".ed-pic#8",
+   "label": "ed-pic",
+   "src": "/cayenne/assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#14",
+   "label": "Customer photo 1",
+   "src": "/cayenne/assets/uploads/ed-img-14.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#15",
+   "label": "Customer photo 2",
+   "src": "/cayenne/assets/uploads/ed-img-15.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#16",
+   "label": "Customer photo 3",
+   "src": "/cayenne/assets/uploads/ed-img-16.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#17",
+   "label": "Customer photo 4",
+   "src": "/cayenne/assets/uploads/ed-img-17.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#18",
+   "label": "Customer photo 5",
+   "src": "/cayenne/assets/uploads/ed-img-18.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#19",
+   "label": "Customer photo 6",
+   "src": "/cayenne/assets/uploads/ed-img-19.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#20",
+   "label": "Customer photo 7",
+   "src": "/cayenne/assets/uploads/ed-img-20.webp?v=mwk9w7g0",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#21",
+   "label": "Customer photo 8",
+   "src": "/cayenne/assets/uploads/ed-img-21.webp?v=mwka23c3",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#5",
+   "label": "Just Jenny (vergelijking)",
+   "src": "/cayenne/assets/support.webp",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#2",
+   "label": "Vergelijking 1",
+   "src": "assets/uploads/cmp-1.webp?v=2",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#3",
+   "label": "Vergelijking 2",
+   "src": "assets/uploads/cmp-2.webp?v=2",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#4",
+   "label": "Vergelijking 3",
+   "src": "assets/uploads/cmp-3.webp?v=2",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#62",
+   "label": "Timeline 1",
+   "src": "assets/uploads/tl-1.webp?v=1",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#63",
+   "label": "Timeline 2",
+   "src": "assets/uploads/tl-2.webp?v=1",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-img#66",
+   "label": "Overall Energy Levels",
+   "src": "assets/uploads/rb-energy.webp?v=1",
+   "type": "image/webp"
+  },
+  {
+   "key": ".ed-pic#3",
+   "label": "Review (galerij)",
+   "src": "assets/uploads/gallery-review.webp?v=1",
+   "type": "image/webp"
+  }
+ ]
 }
