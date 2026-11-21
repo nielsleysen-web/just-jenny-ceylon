@@ -14,6 +14,29 @@
   let C = null;             // window.JJ_CONTENT
   let baseline = { texts: [], images: [] };
 
+  /* ---------- mobiele weergave ----------
+     ?view=mobile toont dezelfde bewerkpagina in een telefoonkader van 390 px breed (iframe), zodat de mobiele
+     opmaak geldt en je daar gewoon kunt bewerken en publiceren. Tekstwijzigingen gaan mee tussen desktop en
+     mobiel (concept in deze browser); nieuwe foto's die nog niet gepubliceerd zijn niet. */
+  const IN_FRAME = window.self !== window.top;
+  const PHOTO_WARN = 'Je hebt foto\'s toegevoegd die nog niet gepubliceerd zijn. Die gaan verloren als je van weergave wisselt. Toch wisselen?';
+  window.__jjEdPhotos = () => images.size;
+  if (!IN_FRAME && new URLSearchParams(location.search).get('view') === 'mobile') {
+    const st = document.createElement('style');
+    st.textContent = 'html,body{overflow:hidden!important}#ed-mob{position:fixed;inset:0;z-index:2147483000;background:#2b2d31;display:flex;flex-direction:column;align-items:center;font:13px/1.3 Inter,system-ui,sans-serif;color:#fff}#ed-mob .t{display:flex;align-items:center;gap:12px;padding:9px 16px;width:100%;box-sizing:border-box;background:#111}#ed-mob .t b{flex:1}#ed-mob button{border:0;border-radius:99px;padding:7px 14px;font:600 13px Inter,system-ui,sans-serif;cursor:pointer;background:#444;color:#fff}#ed-mob iframe{flex:1;min-height:0;width:390px;max-width:100%;border:0;background:#fff;margin:14px 0;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.5)}';
+    document.head.appendChild(st);
+    const wrap = document.createElement('div'); wrap.id = 'ed-mob';
+    wrap.innerHTML = '<div class="t"><b>📱 Mobiele weergave · 390 px breed</b><button type="button" id="ed-mob-back">🖥 Desktop</button></div>';
+    const fr = document.createElement('iframe'); fr.title = 'Mobiele weergave'; fr.src = location.pathname + '?embed=1';
+    wrap.appendChild(fr); document.body.appendChild(wrap);
+    wrap.querySelector('#ed-mob-back').onclick = () => {
+      let n = 0; try { n = fr.contentWindow.__jjEdPhotos ? fr.contentWindow.__jjEdPhotos() : 0; } catch (e) { }
+      if (n && !confirm(PHOTO_WARN)) return;
+      location.href = location.pathname;
+    };
+    return; // de buitenste pagina zelf is hier alleen het kader
+  }
+
   /* ---------- teksten ---------- */
   function sectionOf(el) {
     const s = el.closest('section, header, footer, .announce, .sticky-atc'); if (!s) return '';
@@ -273,12 +296,15 @@
   function ui() {
     const bar = document.createElement('div'); bar.className = 'ed-ui';
     bar.innerHTML = '<strong>✏️ Bewerkmodus</strong><span id="ed-count">0 teksten · 0 foto\'s nog niet gepubliceerd</span>' +
-      '<em id="ed-saved"></em><button type="button" id="ed-help">Uitleg</button><button type="button" id="ed-live">Bekijk live</button><button type="button" id="ed-save" class="ed-primary">🚀 Opslaan & publiceren</button><button type="button" id="ed-token">Token</button><button type="button" id="ed-reset">Reset</button>';
+      '<em id="ed-saved"></em>' + (IN_FRAME ? '' : '<button type="button" id="ed-view">📱 Mobiel</button>') + '<button type="button" id="ed-help">Uitleg</button><button type="button" id="ed-live">Bekijk live</button><button type="button" id="ed-save" class="ed-primary">🚀 Opslaan & publiceren</button><button type="button" id="ed-token">Token</button><button type="button" id="ed-reset">Reset</button>';
     document.body.appendChild(bar);
     const help = document.createElement('div'); help.className = 'ed-ui ed-help';
     help.innerHTML = '<b>Zo werkt het</b><ol><li>Klik op een tekst en typ erover (oranje stippellijn = bewerkbaar; grijs = berekend, zoals prijzen en scores). Selecteer woorden en druk Cmd+B (Mac) of Ctrl+B voor vet.</li><li>Klik op een foto-/videovak (groen gestreept) of sleep er een bestand in. Grote foto = foto 1; vakjes 2–9 zijn de andere productfoto\'s. De sectie "Cosa riferiscono i clienti" krijgt een achtergrondfoto met overlay.</li><li>Klik op <b>Opslaan & publiceren</b>: alles gaat naar GitHub en Vercel zet het binnen ±1 minuut live. De eerste keer vraagt de pagina je GitHub-token.</li></ol><p>Niet-gepubliceerde teksten blijven in deze browser staan; foto\'s alleen tot je de pagina herlaadt. Koopknoppen sturen hier niet door naar de checkout.</p><button type="button" id="ed-close">Sluiten</button>';
     help.style.display = 'none'; document.body.appendChild(help);
     document.getElementById('ed-save').onclick = publish;
+    if (IN_FRAME) document.body.style.paddingTop = bar.offsetHeight + 'px'; // smalle balk loopt over meerdere regels: pagina eronder laten beginnen
+    const vb = document.getElementById('ed-view');
+    if (vb) vb.onclick = () => { if (images.size && !confirm(PHOTO_WARN)) return; location.href = location.pathname + '?view=mobile'; };
     document.getElementById('ed-live').onclick = () => window.open(LIVE + '?v=' + Date.now(), '_blank');
     document.getElementById('ed-token').onclick = () => token(true);
     document.getElementById('ed-help').onclick = () => help.style.display = 'block';
