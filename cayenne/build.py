@@ -315,6 +315,9 @@ BEN6 = [('Circulation Support', _fv('<path d="M12 2.600c3.500 4.300 6.100 7.500 
 _ul = '<ul class="bens bens-ck">' + ''.join('<li>' + ic + '<span>' + t + '</span></li>' for t, ic in BEN6)
 ghtml = ghtml[:_a] + _ul + ghtml[_b:]
 ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!important;gap:13px 14px!important}.bens-ck svg.bi{width:22px!important;height:22px!important}@media(min-width:1200px){.bens-ck{grid-template-columns:repeat(3,auto)!important;justify-content:space-between;padding:14px 14px!important}.bens-ck li{white-space:nowrap;font-size:14px!important;gap:7px!important}.bens-ck svg.bi{width:20px!important;height:20px!important}}.bens-ck li{align-items:center}@media(max-width:640px){.bens-ck{grid-template-columns:1fr 1fr!important;justify-content:stretch;gap:12px 10px!important;padding:13px 12px!important}.bens-ck li{font-size:13.5px!important;gap:8px!important}.bens-ck svg.bi{width:21px!important;height:21px!important}}</style>\n</head>', 1)
+# /general: eigen hoofdfoto in de hero (24 nov 2026)
+assert '/cayenne/assets/gallery-product-2.webp' in ghtml
+ghtml = ghtml.replace('/cayenne/assets/gallery-product-2.webp', '/cayenne/general/assets/uploads/hero-main.webp?v=1')
 # /general: grotere headline (lange titel mag over 2 lijnen)
 ghtml = ghtml.replace('</head>', '<style>.hero h1{font-size:37px!important;white-space:normal!important;line-height:1.05}@media(max-width:640px){.hero h1{font-size:29px!important}}</style>\n</head>', 1)
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
