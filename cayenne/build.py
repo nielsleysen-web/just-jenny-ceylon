@@ -302,11 +302,16 @@ BEN_ICONS = [
     _sv('<path d="M3 8.500c3-2 6-2 9 0s6 2 9 0"/><path d="M3 15.500c3-2 6-2 9 0s6 2 9 0"/><circle cx="8" cy="12" r="1.100" fill="currentColor" stroke="none"/><circle cx="12.500" cy="12.600" r="1.100" fill="currentColor" stroke="none"/><circle cx="17" cy="11.600" r="1.100" fill="currentColor" stroke="none"/>'),
 ]
 _a = ghtml.index('<ul class="bens bens-ck">'); _b = ghtml.index('</ul>', _a)
-_ul = ghtml[_a:_b]
-assert _ul.count(CK) == 4
-for _ic in BEN_ICONS: _ul = _ul.replace(CK, _ic, 1)
+# 6 voordelen (24 nov 2026), elk met een eigen icoontje
+BEN6 = [('Circulation Support', BEN_ICONS[0]),
+        ('Blood Pressure', _sv('<path d="M4.200 16.500a8.500 8.500 0 1 1 15.600 0"/><path d="M12 13.500l3.600-4.200"/><circle cx="12" cy="13.800" r="1.300" fill="currentColor" stroke="none"/><path d="M6.500 19.500h11"/>')),
+        ('Heart Health', _sv('<path d="M12 20.300S3.800 15.300 3.800 9.300a4.300 4.300 0 0 1 8.200-1.900 4.300 4.300 0 0 1 8.200 1.900c0 6-8.200 11-8.200 11z"/>')),
+        ('Supports Energy', BEN_ICONS[1]),
+        ('Sensitive Stomach', BEN_ICONS[2]),
+        ('Heart Health', _sv('<path d="M12 20.300S3.800 15.300 3.800 9.300a4.300 4.300 0 0 1 8.200-1.900 4.300 4.300 0 0 1 8.200 1.900c0 6-8.200 11-8.200 11z"/><path d="M6.500 12h3l1.300-2.400 2 4.600 1.300-2.200h3.400"/>'))]
+_ul = '<ul class="bens bens-ck">' + ''.join('<li>' + ic + '<span>' + t + '</span></li>' for t, ic in BEN6)
 ghtml = ghtml[:_a] + _ul + ghtml[_b:]
-ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!important;gap:12px 14px!important}.bens-ck li{align-items:center}.bens-ck svg.bi{width:24px!important;height:24px!important}@media(max-width:640px){.bens-ck{gap:11px 10px!important;padding:13px 12px!important}.bens-ck li{font-size:13.5px!important;gap:8px!important}.bens-ck svg.bi{width:21px!important;height:21px!important}}</style>\n</head>', 1)
+ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!important;gap:13px 14px!important}.bens-ck svg.bi{width:22px!important;height:22px!important}@media(min-width:1200px){.bens-ck{grid-template-columns:repeat(3,auto)!important;justify-content:space-between;padding:14px 14px!important}.bens-ck li{white-space:nowrap;font-size:14px!important;gap:7px!important}.bens-ck svg.bi{width:20px!important;height:20px!important}}.bens-ck li{align-items:center}@media(max-width:640px){.bens-ck{grid-template-columns:1fr 1fr!important;justify-content:stretch;gap:12px 10px!important;padding:13px 12px!important}.bens-ck li{font-size:13.5px!important;gap:8px!important}.bens-ck svg.bi{width:21px!important;height:21px!important}}</style>\n</head>', 1)
 # /general: grotere headline (lange titel mag over 2 lijnen)
 ghtml = ghtml.replace('</head>', '<style>.hero h1{font-size:37px!important;white-space:normal!important;line-height:1.05}@media(max-width:640px){.hero h1{font-size:29px!important}}</style>\n</head>', 1)
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
