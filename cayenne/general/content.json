@@ -311,12 +311,6 @@
       "type": "image/webp"
     },
     {
-      "key": ".ed-pic#5",
-      "label": "Review (galerij)",
-      "src": "assets/uploads/gallery-review.webp?v=1",
-      "type": "image/webp"
-    },
-    {
       "key": ".ed-pic#2",
       "label": "Kenmerken (galerij)",
       "src": "assets/uploads/gallery-features.webp?v=1",

@@ -318,6 +318,14 @@ ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!
 # /general: eigen hoofdfoto in de hero (24 nov 2026)
 assert '/cayenne/assets/gallery-product-2.webp' in ghtml
 ghtml = ghtml.replace('/cayenne/assets/gallery-product-2.webp', '/cayenne/general/assets/uploads/hero-main.webp?v=1')
+# /general: volgorde galerij = verpakking, kenmerken, vergelijking, Feel Like Yourself, Why Just Jenny, review
+_ta = ghtml.index('<div class="thumbs">'); _tb = ghtml.index('</div></div>', _ta) if False else ghtml.index('Photo 5', _ta) + 40
+_t = ghtml[_ta:_tb]
+for _o, _n in [('/cayenne/general/assets/uploads/gallery-feel.webp?v=1', '@@A'), ('/cayenne/general/assets/uploads/gallery-why.webp?v=1', '@@B'), ('/cayenne/assets/gallery-review.webp', '@@C'), ('/cayenne/assets/gallery-vs.webp', '@@D')]:
+    assert _o in _t, _o
+    _t = _t.replace(_o, _n)
+_t = _t.replace('@@A', '/cayenne/assets/gallery-vs.webp').replace('@@B', '/cayenne/general/assets/uploads/gallery-feel.webp?v=1').replace('@@C', '/cayenne/general/assets/uploads/gallery-why.webp?v=1').replace('@@D', '/cayenne/general/assets/uploads/gallery-review.webp?v=1')
+ghtml = ghtml[:_ta] + _t + ghtml[_tb:]
 # /general: 6 galerijfoto's op één rij
 ghtml = ghtml.replace('</head>', '<style>.thumbs{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:6px!important}</style>\n</head>', 1)
 # /general: grotere headline (lange titel mag over 2 lijnen)
