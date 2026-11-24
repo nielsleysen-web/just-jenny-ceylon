@@ -287,6 +287,11 @@ if not os.path.exists(G + 'content.json'):
 GTHUMB = '<div class="ed-pic th has-img" style="background-image:url(/cayenne/assets/gallery-benefits.webp)"><span class="slot-label">Photo 3</span></div>'
 assert GTHUMB in html
 ghtml = html.replace(GTHUMB, '')
+# /general: voorraadbalk ("93% Sold") vlak boven het offer
+SOLD = '<div class="sold"><div class="sold-bar"><i style="width:93%"></i></div><span class="sold-t">93% Sold</span></div>'
+assert '<h2 class="sel">' in ghtml
+ghtml = ghtml.replace('<h2 class="sel">', SOLD + '\n  <h2 class="sel">', 1)
+ghtml = ghtml.replace('</head>', '<style>.sold{display:flex;align-items:center;gap:18px;background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,.06);padding:18px 22px;margin:14px 0 4px}.sold-bar{flex:1;height:9px;border-radius:9px;background:#EDEDED;overflow:hidden}.sold-bar i{display:block;height:100%;border-radius:9px;background:#B8423F}.sold-t{color:#B8423F;font-weight:700;font-size:17px;white-space:nowrap}@media(max-width:640px){.sold{padding:14px 16px;gap:12px}.sold-t{font-size:15px}}</style>\n</head>', 1)
 # /general: grotere headline (lange titel mag over 2 lijnen)
 ghtml = ghtml.replace('</head>', '<style>.hero h1{font-size:37px!important;white-space:normal!important;line-height:1.05}@media(max-width:640px){.hero h1{font-size:29px!important}}</style>\n</head>', 1)
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
