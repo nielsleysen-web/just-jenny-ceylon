@@ -292,6 +292,21 @@ SOLD = '<div class="sold"><div class="sold-bar"><i style="width:93%"></i></div><
 assert '<h2 class="sel">' in ghtml
 ghtml = ghtml.replace('<h2 class="sel">', SOLD + '\n  <h2 class="sel">', 1)
 ghtml = ghtml.replace('</head>', '<style>.sold{display:flex;align-items:center;gap:18px;background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,.06);padding:18px 22px;margin:14px 0 4px}.sold-bar{flex:1;height:9px;border-radius:9px;background:#EDEDED;overflow:hidden}.sold-bar i{display:block;height:100%;border-radius:9px;background:#B8423F}.sold-t{color:#B8423F;font-weight:700;font-size:17px;white-space:nowrap}@media(max-width:640px){.sold{padding:14px 16px;gap:12px}.sold-t{font-size:15px}}</style>\n</head>', 1)
+# /general: voordelen 2 x 2 naast elkaar, elk met een eigen icoontje (bloeddruppel, bliksem, vlam met streep, bloedvat)
+CK = '<svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+_sv = lambda inner: '<svg class="ck bi" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + inner + '</svg>'
+BEN_ICONS = [
+    _sv('<path d="M12 3.2c3.2 4 5.6 7 5.6 10.2a5.6 5.6 0 0 1-11.2 0C6.4 10.2 8.8 7.200 12 3.2z"/><path d="M9.300 14.200a2.800 2.800 0 0 0 2.300 2.600"/>'),
+    _sv('<path d="M13.2 2.800 5.500 13.400h5.300l-1 7.800 7.700-10.600h-5.300z"/>'),
+    _sv('<path d="M12 3.500c.6 2.600 3.900 4.300 3.900 8.300a3.900 3.900 0 0 1-7.800 0c0-1.500.6-2.500 1.400-3.400.3 1.200.9 1.800 1.500 2 .1-2.600.200-4.700 1-6.900z"/><path d="M4.500 4.500l15 15"/><circle cx="12" cy="12" r="9.600"/>'),
+    _sv('<path d="M3 8.500c3-2 6-2 9 0s6 2 9 0"/><path d="M3 15.500c3-2 6-2 9 0s6 2 9 0"/><circle cx="8" cy="12" r="1.100" fill="currentColor" stroke="none"/><circle cx="12.500" cy="12.600" r="1.100" fill="currentColor" stroke="none"/><circle cx="17" cy="11.600" r="1.100" fill="currentColor" stroke="none"/>'),
+]
+_a = ghtml.index('<ul class="bens bens-ck">'); _b = ghtml.index('</ul>', _a)
+_ul = ghtml[_a:_b]
+assert _ul.count(CK) == 4
+for _ic in BEN_ICONS: _ul = _ul.replace(CK, _ic, 1)
+ghtml = ghtml[:_a] + _ul + ghtml[_b:]
+ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!important;gap:12px 14px!important}.bens-ck li{align-items:center}.bens-ck svg.bi{width:24px!important;height:24px!important}@media(max-width:640px){.bens-ck{gap:11px 10px!important;padding:13px 12px!important}.bens-ck li{font-size:13.5px!important;gap:8px!important}.bens-ck svg.bi{width:21px!important;height:21px!important}}</style>\n</head>', 1)
 # /general: grotere headline (lange titel mag over 2 lijnen)
 ghtml = ghtml.replace('</head>', '<style>.hero h1{font-size:37px!important;white-space:normal!important;line-height:1.05}@media(max-width:640px){.hero h1{font-size:29px!important}}</style>\n</head>', 1)
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')
