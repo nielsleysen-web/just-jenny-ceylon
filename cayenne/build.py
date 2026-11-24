@@ -286,7 +286,7 @@ if not os.path.exists(G + 'content.json'):
 # /general: zonder de voordelen-foto (gallery-benefits) in de hero-galerij (18 nov 2026)
 GTHUMB = '<div class="ed-pic th has-img" style="background-image:url(/cayenne/assets/gallery-benefits.webp)"><span class="slot-label">Photo 3</span></div>'
 assert GTHUMB in html
-ghtml = html.replace(GTHUMB, '')
+ghtml = html.replace(GTHUMB, GTHUMB.replace('/cayenne/assets/gallery-benefits.webp', '/cayenne/general/assets/uploads/gallery-feel.webp?v=1'))  # derde galerijfoto: 'Feel Like Yourself Again' (24 nov 2026)
 # /general: voorraadbalk ("93% Sold") vlak boven het offer
 SOLD = '<div class="sold"><div class="sold-bar"><i style="width:93%"></i></div><span class="sold-t">93% Sold</span></div>'
 assert '<h2 class="sel">' in ghtml
