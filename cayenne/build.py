@@ -286,7 +286,7 @@ if not os.path.exists(G + 'content.json'):
 # /general: zonder de voordelen-foto (gallery-benefits) in de hero-galerij (18 nov 2026)
 GTHUMB = '<div class="ed-pic th has-img" style="background-image:url(/cayenne/assets/gallery-benefits.webp)"><span class="slot-label">Photo 3</span></div>'
 assert GTHUMB in html
-ghtml = html.replace(GTHUMB, GTHUMB.replace('/cayenne/assets/gallery-benefits.webp', '/cayenne/general/assets/uploads/gallery-feel.webp?v=1'))  # derde galerijfoto: 'Feel Like Yourself Again' (24 nov 2026)
+ghtml = html.replace(GTHUMB, GTHUMB.replace('/cayenne/assets/gallery-benefits.webp', '/cayenne/general/assets/uploads/gallery-feel.webp?v=1') + GTHUMB.replace('/cayenne/assets/gallery-benefits.webp', '/cayenne/general/assets/uploads/gallery-why.webp?v=1').replace('Photo 3', 'Photo 3b'))  # derde galerijfoto: 'Feel Like Yourself Again' (24 nov 2026)
 # /general: voorraadbalk ("93% Sold") vlak boven het offer
 SOLD = '<div class="sold"><div class="sold-bar"><i style="width:93%"></i></div><span class="sold-t">93% Sold</span></div>'
 assert '<h2 class="sel">' in ghtml
@@ -318,6 +318,8 @@ ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!
 # /general: eigen hoofdfoto in de hero (24 nov 2026)
 assert '/cayenne/assets/gallery-product-2.webp' in ghtml
 ghtml = ghtml.replace('/cayenne/assets/gallery-product-2.webp', '/cayenne/general/assets/uploads/hero-main.webp?v=1')
+# /general: 6 galerijfoto's op één rij
+ghtml = ghtml.replace('</head>', '<style>.thumbs{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:6px!important}</style>\n</head>', 1)
 # /general: grotere headline (lange titel mag over 2 lijnen)
 ghtml = ghtml.replace('</head>', '<style>.hero h1{font-size:37px!important;white-space:normal!important;line-height:1.05}@media(max-width:640px){.hero h1{font-size:29px!important}}</style>\n</head>', 1)
 GCFG = CFG.replace('"/cayenne/content.json"', '"/cayenne/general/content.json"').replace('JJ_ASSET_BASE="/cayenne/"', 'JJ_ASSET_BASE="/cayenne/general/"')

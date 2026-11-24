@@ -215,7 +215,7 @@
   ],
   "images": [
     {
-      "key": ".ed-pic#9",
+      "key": ".ed-pic#10",
       "label": "ed-pic",
       "src": "/cayenne/assets/uploads/ed-pic-9.webp?v=mwk0j0ei",
       "type": "image/webp"
@@ -311,7 +311,7 @@
       "type": "image/webp"
     },
     {
-      "key": ".ed-pic#4",
+      "key": ".ed-pic#5",
       "label": "Review (galerij)",
       "src": "assets/uploads/gallery-review.webp?v=1",
       "type": "image/webp"
