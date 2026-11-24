@@ -303,12 +303,15 @@ BEN_ICONS = [
 ]
 _a = ghtml.index('<ul class="bens bens-ck">'); _b = ghtml.index('</ul>', _a)
 # 6 voordelen (24 nov 2026), elk met een eigen icoontje
-BEN6 = [('Circulation Support', BEN_ICONS[0]),
-        ('Blood Pressure', _sv('<path d="M4.200 16.500a8.500 8.500 0 1 1 15.600 0"/><path d="M12 13.500l3.600-4.200"/><circle cx="12" cy="13.800" r="1.300" fill="currentColor" stroke="none"/><path d="M6.500 19.500h11"/>')),
-        ('Heart Health', _sv('<path d="M12 20.300S3.800 15.300 3.800 9.300a4.300 4.300 0 0 1 8.200-1.900 4.300 4.300 0 0 1 8.200 1.900c0 6-8.200 11-8.200 11z"/>')),
-        ('Supports Energy', BEN_ICONS[1]),
-        ('Sensitive Stomach', BEN_ICONS[2]),
-        ('Heart Health', _sv('<path d="M12 20.300S3.800 15.300 3.800 9.300a4.300 4.300 0 0 1 8.200-1.900 4.300 4.300 0 0 1 8.200 1.900c0 6-8.200 11-8.200 11z"/><path d="M6.500 12h3l1.300-2.400 2 4.600 1.300-2.200h3.400"/>'))]
+_fv = lambda inner: '<svg class="ck bi" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none">' + inner + '</svg>'
+_BG = '#F7F0EE'  # achtergrond van het vak: voor de uitgespaarde details in de ingekleurde icoontjes
+_HEART = '<path d="M12 20.800S3.300 15.600 3.300 9.200A4.600 4.600 0 0 1 12 7.100a4.600 4.600 0 0 1 8.700 2.100c0 6.400-8.700 11.600-8.700 11.600z"/>'
+BEN6 = [('Circulation Support', _fv('<path d="M12 2.600c3.500 4.300 6.100 7.500 6.100 11a6.100 6.100 0 0 1-12.200 0c0-3.500 2.600-6.700 6.100-11z"/><path d="M9.200 14.300a2.900 2.900 0 0 0 2.400 2.700" fill="none" stroke="' + _BG + '" stroke-width="1.700" stroke-linecap="round"/>')),
+        ('Blood Pressure', _fv('<path d="M2.800 17a9.200 9.200 0 1 1 18.400 0z"/><path d="M12 15.200l3.700-5" fill="none" stroke="' + _BG + '" stroke-width="1.900" stroke-linecap="round"/><circle cx="12" cy="15.200" r="1.500" fill="' + _BG + '"/><rect x="6" y="19" width="12" height="2" rx="1"/>')),
+        ('Heart Health', _fv(_HEART)),
+        ('Supports Energy', _fv('<path d="M13.600 2 4.600 13.700h5.600l-1.200 8.300 9-11.700h-5.600z"/>')),
+        ('Sensitive Stomach', _fv('<path d="M12 2.500c.8 3.300 5 5.400 5 10.300a5 5 0 0 1-10 0c0-1.900.8-3.200 1.800-4.300.4 1.500 1.100 2.300 1.900 2.600.1-3.300.3-5.900 1.300-8.600z"/><path d="M4.500 4.500l15 15" fill="none" stroke="' + _BG + '" stroke-width="4.200" stroke-linecap="round"/><path d="M4.500 4.500l15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>')),
+        ('Heart Health', _fv(_HEART + '<path d="M5.500 12h3.300l1.400-2.600 2.200 5 1.400-2.400h4.700" fill="none" stroke="' + _BG + '" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/>'))]
 _ul = '<ul class="bens bens-ck">' + ''.join('<li>' + ic + '<span>' + t + '</span></li>' for t, ic in BEN6)
 ghtml = ghtml[:_a] + _ul + ghtml[_b:]
 ghtml = ghtml.replace('</head>', '<style>.bens-ck{grid-template-columns:1fr 1fr!important;gap:13px 14px!important}.bens-ck svg.bi{width:22px!important;height:22px!important}@media(min-width:1200px){.bens-ck{grid-template-columns:repeat(3,auto)!important;justify-content:space-between;padding:14px 14px!important}.bens-ck li{white-space:nowrap;font-size:14px!important;gap:7px!important}.bens-ck svg.bi{width:20px!important;height:20px!important}}.bens-ck li{align-items:center}@media(max-width:640px){.bens-ck{grid-template-columns:1fr 1fr!important;justify-content:stretch;gap:12px 10px!important;padding:13px 12px!important}.bens-ck li{font-size:13.5px!important;gap:8px!important}.bens-ck svg.bi{width:21px!important;height:21px!important}}</style>\n</head>', 1)
